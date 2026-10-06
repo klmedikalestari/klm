@@ -1253,3 +1253,10 @@ function kinglab_mdk_import_page() {
 
     echo '</div>';
 }
+
+add_action('init', function() {
+    if (isset($_GET['run_chm_import'])) {
+        require_once get_template_directory() . '/import-chm-products.php';
+        exit;
+    }
+});

@@ -38,6 +38,7 @@ get_header(); ?>
                             echo '<li><a href="#">Biolasco</a></li>';
                             echo '<li><a href="#">BioNavis</a></li>';
                             echo '<li><a href="#">Capsovision</a></li>';
+                            echo '<li><a href="#">CHM</a></li>';
                             echo '<li><a href="#">Dynex Technologies</a></li>';
                             echo '<li><a href="#">Finnpipette</a></li>';
                             echo '<li><a href="#">Global DX</a></li>';
