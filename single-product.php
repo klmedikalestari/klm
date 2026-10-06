@@ -87,7 +87,7 @@ get_header(); ?>
                                 </div>
                                 <div class="accordion-panel active">
                                     <?php if ( ! empty( $spec_content ) ) : ?>
-                                        <?php echo wp_kses_post( $spec_content ); ?>
+                                        <?php echo $spec_content; // Removed wp_kses_post to preserve table styles ?>
                                     <?php else : ?>
                                         <p><?php esc_html_e( 'Please add specification content in the editor.', 'Kinglab_Medika_Lestari' ); ?></p>
                                     <?php endif; ?>
