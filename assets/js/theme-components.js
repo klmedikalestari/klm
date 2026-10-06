@@ -74,7 +74,7 @@ window.ThemeComponents = {
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/kinglabmedikalestari?stkn=MWd3ZWtybWxkemt0ZA=="><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>

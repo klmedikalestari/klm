@@ -78,6 +78,9 @@
                             );
                             foreach ($socials as $key => $icon) :
                                 $url = get_theme_mod("contact_{$key}", '#');
+                                if ($key === 'instagram' && $url === '#') {
+                                    $url = 'https://www.instagram.com/kinglabmedikalestari?stkn=MWd3ZWtybWxkemt0ZA==';
+                                }
                                 if ($url) : ?>
                                     <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr(ucfirst($key)); ?>">
                                         <i class="<?php echo esc_attr($icon); ?>"></i>

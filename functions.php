@@ -823,7 +823,7 @@ function Kinglab_Medika_Lestari_customizer($wp_customize) {
         'whatsapp'  => array('label' => 'WhatsApp URL', 'default' => 'https://wa.me/6221739285'),
         'facebook'  => array('label' => 'Facebook URL', 'default' => '#'),
         'youtube'   => array('label' => 'YouTube URL', 'default' => '#'),
-        'instagram' => array('label' => 'Instagram URL', 'default' => '#'),
+        'instagram' => array('label' => 'Instagram URL', 'default' => 'https://www.instagram.com/kinglabmedikalestari?stkn=MWd3ZWtybWxkemt0ZA=='),
     );
 
     foreach ($contact_fields as $key => $field) {
