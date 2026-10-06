@@ -1259,4 +1259,28 @@ add_action('init', function() {
         require_once get_template_directory() . '/import-chm-products.php';
         exit;
     }
+    
+    if (isset($_GET['delete_old_products'])) {
+        $titles_to_delete = ['Quantitative filter paper', 'Qualitative filter paper'];
+        echo "<div style='padding:20px; font-family:sans-serif;'><h2>Deleting Old Junk Products...</h2>";
+        foreach ($titles_to_delete as $title) {
+            $posts = get_posts([
+                'post_type'   => 'product',
+                'title'       => $title,
+                'post_status' => 'any',
+                'numberposts' => -1
+            ]);
+            
+            if (empty($posts)) {
+                echo "<p>✅ Product <strong>'{$title}'</strong> already deleted (not found).</p>";
+            } else {
+                foreach ($posts as $p) {
+                    wp_delete_post($p->ID, true); // true = force delete (skip trash)
+                    echo "<p>🗑️ Deleted <strong>'{$title}'</strong> (ID: {$p->ID})</p>";
+                }
+            }
+        }
+        echo "<h3>✅ Done! You can close this page now.</h3></div>";
+        exit;
+    }
 });
