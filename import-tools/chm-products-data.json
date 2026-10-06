@@ -4,7 +4,7 @@
         "industry": "Life Science",
         "klasifikasi": "Filter Paper",
         "namaBarang": "Ashless Filter Paper for Quantitative Analysis",
-        "type": "Quantitative filter paper",
+        "type": "Ashless Filter Paper for Quantitative Analysis",
         "model": "F2045, F2041, F2043, F2040, F2044, F2042",
         "localImage": "chm-ashless-filter-paper.jpg",
         "description": "<p>These CHM® filter papers are used for quantitative analysis and designed for preparation of samples and gravimetric analysis. They are made of refined pulp and linters with virtually 100% of alpha-cellulose content. Extremely low percentage of ash content (maximum ash content of &lt;0.007%).</p><h3>Grades</h3><ul><li><strong>F2045 GRADE:</strong> Very fast filtration. Wide-pored, soft, spongy structure.</li><li><strong>F2041 GRADE:</strong> Fast filtration. Suitable for analytical procedures and tests involving large particles.</li><li><strong>F2043 GRADE:</strong> Medium filtration. Good retention of medium and thick particles.</li><li><strong>F2040 GRADE:</strong> Medium-slow filtration. Classic general purpose ashless filter paper.</li><li><strong>F2044 GRADE:</strong> Slow filtration. Thinner version of F2042 Grade with a higher flow rate.</li><li><strong>F2042 GRADE:</strong> Very slow filtration. Ashless world standard filter for critical gravimetric analysis.</li></ul>"
@@ -14,7 +14,7 @@
         "industry": "Life Science",
         "klasifikasi": "Filter Paper",
         "namaBarang": "Ashless Hardened Filter Paper for Quantitative Analysis",
-        "type": "Quantitative filter paper",
+        "type": "Ashless Hardened Filter Paper for Quantitative Analysis",
         "model": "F2141, F2140, F2142",
         "localImage": "chm-ashless-hardened-filter.jpg",
         "description": "<p>Ashless hardened Filter papers are acid hardened which reduce the ash content to an extremely low level. A maximum ash content of &lt;0.006% is attained, which means that no contaminants are introduced when filtering. Thanks to the hardened texture, they are often used when the analyst must recover the precipitates retained on the filter surface.</p><h3>Grades</h3><ul><li><strong>F2141 GRADE:</strong> Fast filtration. Preferably used for the filtration of coarse flocculent and bulky precipitates.</li><li><strong>F2140 GRADE:</strong> Medium filtration. Extremely strong and pure. Recommended for filtering medium-sized precipitates.</li><li><strong>F2142 GRADE:</strong> Slow filtration. High retention and slow flow rate. High chemical resistance.</li></ul>"
@@ -24,7 +24,7 @@
         "industry": "Life Science",
         "klasifikasi": "Filter Paper",
         "namaBarang": "Hardened Low Ash Filter Paper for Quantitative Analysis",
-        "type": "Quantitative filter paper",
+        "type": "Hardened Low Ash Filter Paper for Quantitative Analysis",
         "model": "F2054, F2052, F2050",
         "localImage": "chm-hardened-low-ash-filter.jpg",
         "description": "<p>These filters, made from cotton linters fiber, are put through a washing process and treated with strong acids. A very low ash-content filter with a &lt;0.015% (intermediate between CHM® qualitative grades and ashless quantitative grades).</p><h3>Grades</h3><ul><li><strong>F2054 GRADE:</strong> Fast filtration. The fastest filter paper in the range.</li><li><strong>F2052 GRADE:</strong> Medium-fast filtration. General-purpose hardened filter paper with medium-rate filtering.</li><li><strong>F2050 GRADE:</strong> Slow filtration. Excellent retention of very fine particles.</li></ul>"
@@ -34,7 +34,7 @@
         "industry": "Life Science",
         "klasifikasi": "Filter Paper",
         "namaBarang": "Ashless Hardened Filter Paper for Qualitative Analysis",
-        "type": "Qualitative filter paper",
+        "type": "Ashless Hardened Filter Paper for Qualitative Analysis",
         "model": "F1004, F1007, F1001, F1002, F1003, F1006, F1005",
         "localImage": "chm-qualitative-filter-paper.jpg",
         "description": "<p>These filter papers are used for qualitative analysis. Qualitative filters are made of refined pulp and pure cotton linters with an alpha-cellulose content of nearly 100%. The ash content of less than 0,06% is not reduced by post-treatment.</p><h3>Grades</h3><ul><li><strong>F1004 GRADE:</strong> Very fast filtration.</li><li><strong>F1007 GRADE:</strong> Fast filtration.</li><li><strong>F1001 GRADE:</strong> Medium filtration. The most widely used filter paper in the CHM® range.</li><li><strong>F1002 GRADE:</strong> Medium-slow filtration.</li><li><strong>F1003 GRADE:</strong> Medium-slow filtration (thick).</li><li><strong>F1006 GRADE:</strong> Slow filtration.</li><li><strong>F1005 GRADE:</strong> Very slow filtration.</li></ul>"
@@ -44,7 +44,7 @@
         "industry": "Life Science",
         "klasifikasi": "Filter Paper",
         "namaBarang": "General-Purpose Qualitative Filter Paper",
-        "type": "Qualitative filter paper",
+        "type": "General-Purpose Qualitative Filter Paper",
         "model": "F1093, F1094, F1113, F1091, F1096, F1095",
         "localImage": "chm-general-purpose-filter.jpg",
         "description": "<p>These general-purpose filters have a high wet strengthened. They are made of high-purity cotton linters and other virgin fibers. These filter papers have either fast or very fast filtration rates.</p><h3>Grades</h3><ul><li><strong>F1093 GRADE:</strong> Very fast filtration. Smooth Grade.</li><li><strong>F1094 GRADE:</strong> Very fast filtration.</li><li><strong>F1113 GRADE:</strong> Extra-fast filtration. Thick.</li><li><strong>F1091 GRADE:</strong> Very fast filtration. Crêped.</li><li><strong>F1096 GRADE:</strong> Medium-fast filtration.</li><li><strong>F1095 GRADE:</strong> Fast. Crêped.</li></ul>"
