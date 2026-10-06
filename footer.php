@@ -78,7 +78,7 @@
                             );
                             foreach ($socials as $key => $icon) :
                                 $url = get_theme_mod("contact_{$key}", '#');
-                                if ($key === 'instagram' && $url === '#') {
+                                if ($key === 'instagram') {
                                     $url = 'https://www.instagram.com/kinglabmedikalestari?stkn=MWd3ZWtybWxkemt0ZA==';
                                 }
                                 if ($url) : ?>
