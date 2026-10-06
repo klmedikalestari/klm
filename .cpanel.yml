@@ -1,6 +1,4 @@
 ---
 deployment:
   tasks:
-    # Ganti "nama-folder-tema-anda" dengan nama folder tema yang benar di cPanel
-    - export DEPLOYPATH=/home/ambrawar/public_html/wp-content/themes/KINGLAB/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R * /home/ambrawar/public_html/wp-content/themes/KINGLAB/
