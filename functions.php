@@ -1259,4 +1259,22 @@ add_action('init', function() {
         require_once get_template_directory() . '/import-chm-products.php';
         exit;
     }
+    if (isset($_GET['delete_duplicate_chm'])) {
+        $title = 'Ashless Filter Paper for Quantitative Analysis';
+        $posts = get_posts([
+            'post_type' => 'product',
+            'title' => $title,
+            'post_status' => 'any',
+            'numberposts' => -1
+        ]);
+        if (!empty($posts)) {
+            foreach ($posts as $p) {
+                wp_delete_post($p->ID, true);
+            }
+            echo "<h2>✅ Sukses! Produk ganda / lama '{$title}' berhasil dihapus.</h2>";
+        } else {
+            echo "<h2>Produk sudah terhapus.</h2>";
+        }
+        exit;
+    }
 });
