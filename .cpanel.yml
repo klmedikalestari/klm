@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - /bin/cp -R * /home/ambrawar/public_html/wp-content/themes/KINGLAB/
+    - /bin/echo "Theme folder is a symlink to this repo - no copy needed"
