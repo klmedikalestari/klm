@@ -237,11 +237,6 @@ foreach ($products as $index => $product) {
     // Upload featured image
     // ========================================
     $image_status = '⚠️ no image found';
-    if ($product_title === 'CHM Quantitative filter paper' && has_post_thumbnail($post_id)) {
-        // Force delete old image to upload new one
-        wp_delete_attachment(get_post_thumbnail_id($post_id), true);
-    }
-    
     if (has_post_thumbnail($post_id)) {
         $image_status = '📷 (already exists)';
     } elseif (!empty($product['localImage'])) {
