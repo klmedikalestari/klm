@@ -237,6 +237,12 @@ foreach ($products as $index => $product) {
     // Upload featured image
     // ========================================
     $image_status = '⚠️ no image found';
+    
+    // TEMPORARY: Force update image for all CHM products
+    if (has_post_thumbnail($post_id)) {
+        wp_delete_attachment(get_post_thumbnail_id($post_id), true);
+    }
+    
     if (has_post_thumbnail($post_id)) {
         $image_status = '📷 (already exists)';
     } elseif (!empty($product['localImage'])) {
