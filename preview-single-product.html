@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Situ Hybridization – RNAscope ACDBio - Kinglab Medika Lestari Theme Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Link to the main theme CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Single Product Page specific overrides for preview */
+        .single-product-page-wrapper {
+            padding: 80px 0;
+            margin-top: 118px;
+        }
+
+        .product-main-content .product-top-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-bottom: 60px;
+        }
+
+        .product-featured-image {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-featured-image img {
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .product-featured-image i {
+            font-size: 8rem;
+            color: #ddd;
+        }
+
+        .product-main-title {
+            font-size: 2.4rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .product-excerpt {
+            font-size: 1rem;
+            color: var(--text-medium);
+            margin-bottom: 30px;
+            line-height: 1.85;
+        }
+
+        /* Details divider */
+        .product-details-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .product-details-divider span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-medium);
+            white-space: nowrap;
+        }
+
+        .product-details-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--primary-blue);
+        }
+
+        .product-meta-data {
+            margin-bottom: 30px;
+        }
+
+        .meta-row {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .meta-label {
+            font-weight: 700;
+            color: var(--dark-corporate);
+            text-transform: uppercase;
+            margin-right: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-value a {
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Technical Accordions */
+        .product-technical-tabs {
+            margin-top: 40px;
+            max-width: 900px;
+        }
+
+        .technical-accordion-item {
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: var(--light-grey);
+            padding: 18px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .accordion-header h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: var(--dark-corporate);
+            font-weight: 600;
+        }
+
+        .accordion-header i {
+            color: var(--primary-blue);
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active {
+            background: var(--primary-blue);
+        }
+
+        .accordion-header.active h3,
+        .accordion-header.active i {
+            color: #fff;
+        }
+
+        .accordion-panel {
+            max-height: 0;
+            overflow: hidden;
+            background: #fff;
+            transition: all 0.4s ease-out;
+        }
+
+        .accordion-panel.active {
+            max-height: 1000px;
+            padding: 30px 25px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .accordion-panel ul {
+            padding-left: 20px;
+        }
+
+        .accordion-panel ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Send Inquiry Button */
+        .btn-send-inquiry {
+            display: inline-block;
+            background: var(--dark-corporate);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 40px;
+        }
+
+        .btn-send-inquiry:hover {
+            background: var(--primary-blue);
+            transform: translateY(-3px);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .product-main-content .product-top-row {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .product-featured-image {
+                height: 400px;
+            }
+            .product-main-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .single-product-page-wrapper {
+                padding: 40px 0;
+                margin-top: 80px;
+            }
+            .product-featured-image {
+                height: 300px;
+            }
+            .btn-send-inquiry {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+<!-- Single Product Content -->
+<div class="single-product-page-wrapper">
+    <div class="container">
+        <div class="product-main-content">
+            <!-- Top Row: Image + Info -->
+            <div class="product-top-row">
+                <!-- Product Image -->
+                <div class="product-featured-image">
+                    <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=500&fit=crop" alt="In Situ Hybridization - RNAscope ACDBio">
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info-col">
+                    <h1 class="product-main-title">In Situ Hybridization - RNAscope ACDBio</h1>
+                    
+                    <div class="product-excerpt">
+                        <p>The RNAscope® Assays use a novel and proprietary method of in situ hybridization (ISH) to visualize single RNA molecules per cell in samples mounted on slides. RNAscope® Assays do not require the RNA-free environment used for traditional ISH. The assays are based on ACD's patented signal amplification and background suppression technology. RNAscope 2.5 Assay incorporates an additional signal amplification step, which enhances the signal for low expressing genes and RNA present in archived samples and partially degraded specimens.</p>
+
+                        <p>Most of the RNAscope® Assay reagents are available in convenient Ready-To-Use (RTU) dropper bottles and provide a simple, nearly pipette-free workflow. Prepared tissue samples, sections are first pretreated, and then RNA-specific probes are hybridized to target RNA. The signal is amplified using a multi-step process, followed by hybridization to horseradish peroxidase (HRP)- or alkaline phosphatase (AP)-labeled probes and detected using a chromogenic substrate.</p>
+
+                        <p>RNAscope® 2.5 Assays offer the choice of two Detection Reagents: Brown (DAB) and Red (Fast Red), which enable RNA molecules to be visualized as brown or red chromogenic dots.</p>
+                    </div>
+
+                    <!-- Details Section -->
+                    <div class="product-details-divider">
+                        <span>Details</span>
+                    </div>
+
+                    <div class="product-meta-data">
+                        <div class="meta-row">
+                            <span class="meta-label">Category:</span>
+                            <span class="meta-value"><a href="#">Life Science – Molecular Biology – In Situ Hybridization – RNAscope</a></span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Manufacture:</span>
+                            <span class="meta-value"><a href="preview-product-grid.html">ACDBio</a></span>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Tabs -->
+                    <div class="product-technical-tabs">
+                        <div class="technical-accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>Benefit</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-panel">
+                                <ul>
+                                    <li>High sensitivity and specificity even for low copy gene detection</li>
+                                    <li>Single cell resolution and localization of gene expression</li>
+                                    <li>Compatibility with formalin-fixed paraffin-embedded (FFPE) tissue</li>
+                                    <li>Simultaneous detection of multiple targets (multiplexing)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="technical-accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>Specification</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-panel">
+                                <ul>
+                                    <li>Each RNAscope® 2.5 HD Reagent Kit provides enough reagents to stain ~20 tissue sections, each with an area of approximately 20 mm x 20 mm (0.75" x 0.75"). Larger tissue sections will result in fewer tests.</li>
+                                    <li>Each kit contains components: Pretreatment Reagents, Target Retrieval Reagents, Wash Buffer Reagents, and Detection Reagents.</li>
+                                    <li>The reagents have a shelf life of nine months from the date of bulk manufacturing when stored as indicated.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="technical-accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>Cat No</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-panel">
+                                <p>ACD-322300: RNAscope™ 2.5 HD Detection Kit - Brown</p>
+                                <p>ACD-322350: RNAscope™ 2.5 HD Detection Kit - Red</p>
+                            </div>
+                        </div>
+
+                        <div class="technical-accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>Resource</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-panel">
+                                <p><a href="#" style="color:var(--primary-blue); font-weight:600;"><i class="fas fa-link"></i> Find out more from principal website</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Send Inquiry Button -->
+                    <a href="#" class="btn-send-inquiry">Send Us Inquiry</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Theme Components (Shared Header/Footer) -->
+    <script src="assets/js/theme-components.js"></script>
+    <script src="assets/js/main.js"></script>
+<script>
+    function toggleAccordion(header) {
+        header.classList.toggle('active');
+        const content = header.nextElementSibling;
+        content.classList.toggle('active');
+        const icon = header.querySelector('i');
+        if (header.classList.contains('active')) {
+            icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+        } else {
+            icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+        }
+    }
+</script>
+
+</body>
+</html>

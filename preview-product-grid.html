@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACDBio - Product Brand Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Link to the main theme CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Specific tweaks for this preview if needed */
+        .archive-sidebar {
+            position: sticky;
+            top: 140px;
+        }
+        
+        .product-thumb i {
+            font-size: 3rem;
+            color: var(--medium-grey);
+        }
+
+        a.product-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a.product-card:hover .product-title {
+            color: var(--primary-blue);
+        }
+    </style>
+</head>
+<body class="category-archive">
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+<div class="brand-page-wrapper" style="padding-top: 80px; padding-bottom: 100px; text-align: center;">
+    <div class="container">
+        <!-- Brand Title -->
+        <h1 style="font-size: 3.5rem; color: var(--dark-corporate); margin-bottom: 60px; font-weight: 800;">ACDBio</h1>
+
+        <!-- Product Grid (No Sidebar) -->
+        <div class="brand-product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; text-align: center;">
+            
+            <!-- Product 1 -->
+            <a href="preview-single-product.html" class="brand-product-card" style="text-decoration: none; display: block;">
+                <div class="image-wrapper" style="border-radius: 16px; overflow: hidden; background: #e0e5ed; margin-bottom: 20px; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center;">
+                    <i class="fas fa-microscope" style="font-size: 4rem; color: #a4b2c1;"></i>
+                </div>
+                <h3 style="font-size: 1.1rem; color: var(--dark-corporate); font-weight: 500; line-height: 1.4; transition: color var(--transition-fast);">In Situ Hybridization – RNAscope ACDBio</h3>
+            </a>
+
+            <!-- Product 2 -->
+            <a href="preview-single-product.html" class="brand-product-card" style="text-decoration: none; display: block;">
+                <div class="image-wrapper" style="border-radius: 16px; overflow: hidden; background: #e0e5ed; margin-bottom: 20px; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center;">
+                    <i class="fas fa-flask" style="font-size: 4rem; color: #a4b2c1;"></i>
+                </div>
+                <h3 style="font-size: 1.1rem; color: var(--dark-corporate); font-weight: 500; line-height: 1.4; transition: color var(--transition-fast);">BaseScope™ Assay</h3>
+            </a>
+
+            <!-- Product 3 -->
+            <a href="preview-single-product.html" class="brand-product-card" style="text-decoration: none; display: block;">
+                <div class="image-wrapper" style="border-radius: 16px; overflow: hidden; background: #e0e5ed; margin-bottom: 20px; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center;">
+                    <i class="fas fa-dna" style="font-size: 4rem; color: #a4b2c1;"></i>
+                </div>
+                <h3 style="font-size: 1.1rem; color: var(--dark-corporate); font-weight: 500; line-height: 1.4; transition: color var(--transition-fast);">miRNAscope™ Assay</h3>
+            </a>
+
+            <!-- Product 4 -->
+            <a href="preview-single-product.html" class="brand-product-card" style="text-decoration: none; display: block;">
+                <div class="image-wrapper" style="border-radius: 16px; overflow: hidden; background: #e0e5ed; margin-bottom: 20px; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center;">
+                    <i class="fas fa-laptop-medical" style="font-size: 4rem; color: #a4b2c1;"></i>
+                </div>
+                <h3 style="font-size: 1.1rem; color: var(--dark-corporate); font-weight: 500; line-height: 1.4; transition: color var(--transition-fast);">HiPlex Up Discovery</h3>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Theme Components (Shared Header/Footer) -->
+    <script src="assets/js/theme-components.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
