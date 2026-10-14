@@ -185,12 +185,25 @@
             nav.classList.toggle('active');
         });
 
-        // Close menu when clicking a link
+        // Close menu when clicking a link (kecuali parent mega menu)
         const links = nav.querySelectorAll('a');
         links.forEach(function (link) {
+            const parentLi = link.parentElement;
+            if (parentLi && parentLi.classList.contains('has-mega-menu')) return;
             link.addEventListener('click', function () {
                 toggle.classList.remove('active');
                 nav.classList.remove('active');
+            });
+        });
+
+        // Toggle mega menu (Products) on mobile
+        const megaItems = nav.querySelectorAll('li.has-mega-menu > a');
+        megaItems.forEach(function (item) {
+            item.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('mobile-open');
+                }
             });
         });
 

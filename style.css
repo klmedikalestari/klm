@@ -567,9 +567,10 @@ img {
         display: none;
     }
 
-    /* Sembunyikan mega menu di mobile */
+    /* Mega menu di mobile: accordion, dibuka dengan tap (class .mobile-open) */
     .main-navigation ul li.has-mega-menu .mega-menu-wrapper {
         position: static;
+        left: auto;
         transform: none;
         width: 100%;
         box-shadow: none;
@@ -577,10 +578,45 @@ img {
         border-bottom: 1px solid var(--medium-grey);
         display: none;
         border-radius: 0;
+        max-height: none;
+        overflow: visible;
+        background: var(--light-grey, #f7f9f9);
     }
 
     .main-navigation ul li.has-mega-menu:hover .mega-menu-wrapper {
         display: none;
+    }
+
+    .main-navigation ul li.has-mega-menu.mobile-open .mega-menu-wrapper,
+    .main-navigation ul li.has-mega-menu.mobile-open:hover .mega-menu-wrapper {
+        display: block;
+    }
+
+    .main-navigation ul li.has-mega-menu > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-navigation ul li.has-mega-menu > a::after {
+        display: block;
+        content: '';
+        position: static;
+        transform: rotate(45deg);
+        width: 8px;
+        height: 8px;
+        background: none;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transition: transform var(--transition-normal);
+    }
+
+    .main-navigation ul li.has-mega-menu.mobile-open > a::after {
+        transform: rotate(-135deg);
+    }
+
+    .main-navigation ul li.has-mega-menu .mega-menu-list li a {
+        padding: 10px 0;
     }
 
     .mega-menu-container {
@@ -1549,20 +1585,28 @@ img {
     position: relative;
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 .breadcrumbs a {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .breadcrumbs a:hover {
     color: var(--white);
+    text-decoration: underline;
 }
 
 .breadcrumbs span.separator {
     margin: 0 10px;
     opacity: 0.5;
+}
+
+.breadcrumbs .breadcrumb_last {
+    color: var(--white);
+    font-weight: 600;
 }
 
 /* Single Post / Page Content */
