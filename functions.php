@@ -111,9 +111,6 @@ function Kinglab_Medika_Lestari_setup() {
     // Add title tag support
     add_theme_support('title-tag');
 
-    // Add Yoast SEO Breadcrumbs support
-    add_theme_support('yoast-seo-breadcrumbs');
-
     // Add post thumbnails support
     add_theme_support('post-thumbnails');
     set_post_thumbnail_size(800, 500, true);
@@ -386,11 +383,11 @@ function kinglab_inject_products_mega_menu($items, $args) {
     $mega_menu_html = ob_get_clean();
 
     // Cari <li> yang berisi link ke /products/ lalu tambahkan class + mega menu
-    $products_url_trimmed = rtrim($products_url, '/');
+    $products_url = home_url('/products/');
     
     // Tambahkan class has-mega-menu dan inject mega menu HTML ke item Products
     $items = preg_replace_callback(
-        '/<li([^>]*)><a([^>]*)href="' . preg_quote($products_url_trimmed, '/') . '\/?"([^>]*)>(.*?)<\/a>/i',
+        '/<li([^>]*)><a([^>]*)href="' . preg_quote($products_url, '/') . '"([^>]*)>(.*?)<\/a>/i',
         function($matches) use ($mega_menu_html) {
             // Tambahkan class has-mega-menu ke <li>
             $li_attrs = $matches[1];
@@ -889,26 +886,16 @@ function Kinglab_Medika_Lestari_get_mod($key, $default = '') {
 }
 
 /**
- * Breadcrumbs (Integrated with Yoast SEO)
+ * Breadcrumbs
  */
 function Kinglab_Medika_Lestari_breadcrumbs() {
     if (is_front_page()) return;
 
-    // Use Yoast SEO Breadcrumbs if available
-    if (function_exists('yoast_breadcrumb')) {
-        yoast_breadcrumb('<nav class="breadcrumbs" aria-label="Breadcrumb">', '</nav>');
-        return;
-    }
-
-    echo '<nav class="breadcrumbs" aria-label="Breadcrumb">';
+    echo '<nav class="breadcrumbs">';
     echo '<a href="' . esc_url(home_url('/')) . '">Home</a>';
     echo '<span class="separator">/</span>';
 
-    if (is_singular('product')) {
-        echo '<a href="' . esc_url(home_url('/products/')) . '">Products</a>';
-        echo '<span class="separator">/</span>';
-        the_title();
-    } elseif (is_category() || is_single()) {
+    if (is_category() || is_single()) {
         $cats = get_the_category();
         if ($cats) {
             echo '<a href="' . esc_url(get_category_link($cats[0]->term_id)) . '">' . esc_html($cats[0]->name) . '</a>';
@@ -916,8 +903,6 @@ function Kinglab_Medika_Lestari_breadcrumbs() {
                 echo '<span class="separator">/</span>';
                 the_title();
             }
-        } else {
-            the_title();
         }
     } elseif (is_page()) {
         the_title();

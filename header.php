@@ -72,7 +72,7 @@
                         echo '<ul>';
                         echo '<li class="current-menu-item"><a href="' . esc_url(home_url('/')) . '">Home</a></li>';
                         echo '<li><a href="' . esc_url(home_url('/about/')) . '">About</a></li>';
-                        echo '<li class="has-mega-menu"><a href="' . esc_url(home_url('/products/')) . '">Products</a></li>';
+                        echo '<li><a href="' . esc_url(home_url('/products/')) . '">Products</a></li>';
                         echo '<li><a href="' . esc_url(home_url('/news/')) . '">News</a></li>';
                         echo '<li><a href="' . esc_url(home_url('/services/')) . '">Services</a></li>';
                         echo '<li><a href="' . esc_url(home_url('/contact/')) . '">Contact</a></li>';
