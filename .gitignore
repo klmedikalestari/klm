@@ -3,3 +3,4 @@ node_modules/
 *.bak
 *.xlsx
 raw_html.txt
+error_log
