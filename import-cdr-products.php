@@ -181,6 +181,9 @@ foreach ($products as $index => $product) {
         update_post_meta($post_id, '_product_model', $product['model']);
     }
 
+    // Set YouTube video URL
+    update_post_meta($post_id, '_product_video_url', 'https://www.youtube.com/watch?v=8J3gxjpsM90');
+
     // ========================================
     // Set product_brand taxonomy hierarchy
     // Brand -> Klasifikasi

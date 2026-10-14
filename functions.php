@@ -203,6 +203,64 @@ function Kinglab_Medika_Lestari_register_post_types() {
 add_action('init', 'Kinglab_Medika_Lestari_register_post_types');
 
 /**
+ * Convert any YouTube URL into an embed URL
+ */
+function kinglab_get_youtube_embed_url($url) {
+    if (empty($url)) return '';
+    
+    $video_id = '';
+    if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i', $url, $match)) {
+        $video_id = $match[1];
+    }
+    
+    if (!empty($video_id)) {
+        return 'https://www.youtube-nocookie.com/embed/' . $video_id . '?rel=0&enablejsapi=1';
+    }
+    
+    return $url;
+}
+
+/**
+ * Add Meta Box for Product Video URL in WP Admin
+ */
+function kinglab_product_video_metabox() {
+    add_meta_box(
+        'kinglab_product_video',
+        __('Product Video (YouTube)', 'Kinglab_Medika_Lestari'),
+        'kinglab_product_video_metabox_callback',
+        'product',
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'kinglab_product_video_metabox');
+
+function kinglab_product_video_metabox_callback($post) {
+    wp_nonce_field('kinglab_product_video_nonce_action', 'kinglab_product_video_nonce');
+    $value = get_post_meta($post->ID, '_product_video_url', true);
+    ?>
+    <p>
+        <label for="product_video_url"><strong>YouTube URL:</strong></label><br>
+        <input type="url" id="product_video_url" name="product_video_url" value="<?php echo esc_attr($value); ?>" style="width:100%; margin-top:5px;" placeholder="https://www.youtube.com/watch?v=...">
+    </p>
+    <p class="description" style="color:#666; font-size:0.85em;">Masukkan link YouTube. Foto produk akan dapat digeser (slide) untuk menampilkan video ini.</p>
+    <?php
+}
+
+function kinglab_save_product_video_meta($post_id) {
+    if (!isset($_POST['kinglab_product_video_nonce']) || !wp_verify_nonce($_POST['kinglab_product_video_nonce'], 'kinglab_product_video_nonce_action')) {
+        return;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (!current_user_can('edit_post', $post_id)) return;
+
+    if (isset($_POST['product_video_url'])) {
+        update_post_meta($post_id, '_product_video_url', esc_url_raw($_POST['product_video_url']));
+    }
+}
+add_action('save_post_product', 'kinglab_save_product_video_meta');
+
+/**
  * Enqueue Scripts & Styles
  */
 function Kinglab_Medika_Lestari_scripts() {

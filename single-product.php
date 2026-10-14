@@ -15,13 +15,74 @@ get_header(); ?>
         <div class="container">
             <div class="product-main-content">
                 <div class="product-top-row">
-                    <!-- Left: Project Image -->
-                    <div class="product-featured-image">
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <?php the_post_thumbnail( 'large' ); ?>
-                        <?php else : ?>
-                            <div class="product-placeholder">
-                                <i class="fas fa-microscope"></i>
+                    <!-- Left: Product Media Gallery / Slider -->
+                    <?php
+                    $video_url = get_post_meta( get_the_ID(), '_product_video_url', true );
+                    if ( empty( $video_url ) && ( stripos( get_the_title(), 'FoodLab' ) !== false || stripos( get_the_title(), 'CDR' ) !== false ) ) {
+                        $video_url = 'https://www.youtube.com/watch?v=8J3gxjpsM90';
+                    }
+                    $video_embed_url = '';
+                    if ( ! empty( $video_url ) ) {
+                        if ( function_exists( 'kinglab_get_youtube_embed_url' ) ) {
+                            $video_embed_url = kinglab_get_youtube_embed_url( $video_url );
+                        } else {
+                            $video_embed_url = 'https://www.youtube-nocookie.com/embed/8J3gxjpsM90?rel=0&enablejsapi=1';
+                        }
+                    }
+                    ?>
+                    <div class="product-media-slider" id="productMediaSlider">
+                        <div class="product-slider-wrapper">
+                            <div class="product-slider-track" id="productSliderTrack">
+                                <!-- Slide 1: Image -->
+                                <div class="product-slide" data-slide="0">
+                                    <?php if ( has_post_thumbnail() ) : ?>
+                                        <?php the_post_thumbnail( 'large' ); ?>
+                                    <?php else : ?>
+                                        <div class="product-placeholder">
+                                            <i class="fas fa-microscope"></i>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+
+                                <!-- Slide 2: YouTube Video -->
+                                <?php if ( ! empty( $video_embed_url ) ) : ?>
+                                    <div class="product-slide slide-video" data-slide="1">
+                                        <div class="video-responsive-wrapper">
+                                            <iframe 
+                                                id="productVideoIframe"
+                                                src="<?php echo esc_url( $video_embed_url ); ?>" 
+                                                title="<?php echo esc_attr( get_the_title() . ' Video' ); ?>" 
+                                                frameborder="0" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                allowfullscreen>
+                                            </iframe>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+
+                            <?php if ( ! empty( $video_embed_url ) ) : ?>
+                                <!-- Arrows -->
+                                <button type="button" class="slider-arrow-btn prev" onclick="moveProductSlide(-1)" aria-label="Previous">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button type="button" class="slider-arrow-btn next" onclick="moveProductSlide(1)" aria-label="Next">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            <?php endif; ?>
+                        </div>
+
+                        <?php if ( ! empty( $video_embed_url ) ) : ?>
+                            <!-- Media Switcher Tabs -->
+                            <div class="product-slider-thumbs">
+                                <button type="button" class="thumb-btn active" onclick="goToProductSlide(0)">
+                                    <i class="fas fa-image"></i>
+                                    <span>Foto Produk</span>
+                                </button>
+                                <button type="button" class="thumb-btn" onclick="goToProductSlide(1)">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>Video YouTube</span>
+                                </button>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -117,6 +178,71 @@ function toggleProductAccordion(element) {
         icon.classList.replace('fa-minus', 'fa-plus');
     }
 }
+
+/* Product Media Slider */
+let currentProductSlide = 0;
+function goToProductSlide(index) {
+    const track = document.getElementById('productSliderTrack');
+    const thumbs = document.querySelectorAll('.product-slider-thumbs .thumb-btn');
+    if (!track) return;
+
+    currentProductSlide = index;
+    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+
+    thumbs.forEach(function(thumb, i) {
+        if (i === index) {
+            thumb.classList.add('active');
+        } else {
+            thumb.classList.remove('active');
+        }
+    });
+
+    // Pause video when switching back to image slide
+    if (index === 0) {
+        const iframe = document.getElementById('productVideoIframe');
+        if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        }
+    }
+}
+
+function moveProductSlide(direction) {
+    const track = document.getElementById('productSliderTrack');
+    if (!track) return;
+    const slides = track.querySelectorAll('.product-slide');
+    if (slides.length <= 1) return;
+
+    let next = currentProductSlide + direction;
+    if (next < 0) next = slides.length - 1;
+    if (next >= slides.length) next = 0;
+
+    goToProductSlide(next);
+}
+
+// Touch swipe support for mobile
+(function() {
+    const slider = document.getElementById('productMediaSlider');
+    if (!slider) return;
+
+    let startX = 0;
+    let endX = 0;
+
+    slider.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', function(e) {
+        endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        if (Math.abs(diff) > 40) {
+            if (diff > 0) {
+                moveProductSlide(1);
+            } else {
+                moveProductSlide(-1);
+            }
+        }
+    }, { passive: true });
+})();
 </script>
 
 <?php
