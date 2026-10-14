@@ -185,11 +185,11 @@
             nav.classList.toggle('active');
         });
 
-        // Close menu when clicking a link (kecuali parent mega menu)
+        // Close menu when clicking a link (kecuali parent mega menu & sub-menu)
         const links = nav.querySelectorAll('a');
         links.forEach(function (link) {
             const parentLi = link.parentElement;
-            if (parentLi && parentLi.classList.contains('has-mega-menu')) return;
+            if (parentLi && (parentLi.classList.contains('has-mega-menu') || parentLi.classList.contains('menu-item-has-children'))) return;
             link.addEventListener('click', function () {
                 toggle.classList.remove('active');
                 nav.classList.remove('active');
@@ -223,6 +223,7 @@
                     const subMenu = this.nextElementSibling;
                     if (subMenu && subMenu.classList.contains('sub-menu')) {
                         e.preventDefault();
+                        this.parentElement.classList.toggle('mobile-open');
                         subMenu.style.display = subMenu.style.display === 'flex' ? 'none' : 'flex';
                     }
                 }
