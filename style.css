@@ -592,27 +592,33 @@ img {
         display: block;
     }
 
-    .main-navigation ul li.has-mega-menu > a {
-        display: flex;
-        justify-content: space-between;
+    .main-navigation ul li.has-mega-menu > a,
+    .main-navigation ul li.menu-item-has-children > a {
+        display: inline-flex;
         align-items: center;
     }
 
-    .main-navigation ul li.has-mega-menu > a::after {
-        display: block;
+    .main-navigation ul li.has-mega-menu > a::after,
+    .main-navigation ul li.menu-item-has-children > a::after {
+        display: inline-block;
         content: '';
         position: static;
+        margin-left: 8px;
         transform: rotate(45deg);
-        width: 8px;
-        height: 8px;
+        width: 7px;
+        height: 7px;
         background: none;
         border-right: 2px solid currentColor;
         border-bottom: 2px solid currentColor;
         transition: transform var(--transition-normal);
+        margin-top: -3px;
+        flex-shrink: 0;
     }
 
-    .main-navigation ul li.has-mega-menu.mobile-open > a::after {
+    .main-navigation ul li.has-mega-menu.mobile-open > a::after,
+    .main-navigation ul li.menu-item-has-children.mobile-open > a::after {
         transform: rotate(-135deg);
+        margin-top: 1px;
     }
 
     .main-navigation ul li.has-mega-menu .mega-menu-list li a {
