@@ -1259,6 +1259,11 @@ add_action('init', function() {
         require_once get_template_directory() . '/import-chm-products.php';
         exit;
     }
+    if (isset($_GET['run_cdr_import']) || isset($_GET['force_cdr_import'])) {
+        delete_option('kinglab_cdr_imported_v1');
+        require_once get_template_directory() . '/import-cdr-products.php';
+        exit;
+    }
     if (isset($_GET['delete_duplicate_chm'])) {
         $title = 'Ashless Filter Paper for Quantitative Analysis';
         $posts = get_posts([
@@ -1276,5 +1281,26 @@ add_action('init', function() {
             echo "<h2>Produk sudah terhapus.</h2>";
         }
         exit;
+    }
+
+    // Auto import CDR FoodLab products if not yet present
+    if (!get_option('kinglab_cdr_imported_v1')) {
+        $check = get_posts(array(
+            'post_type'   => 'product',
+            'title'       => 'CDR FoodLab® Food Chemical Analysis System',
+            'post_status' => 'any',
+            'numberposts' => 1,
+        ));
+
+        if (!empty($check)) {
+            update_option('kinglab_cdr_imported_v1', 1);
+        } else {
+            if (file_exists(get_template_directory() . '/import-cdr-products.php')) {
+                ob_start();
+                include get_template_directory() . '/import-cdr-products.php';
+                ob_end_clean();
+                update_option('kinglab_cdr_imported_v1', 1);
+            }
+        }
     }
 });

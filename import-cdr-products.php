@@ -14,23 +14,25 @@
  */
 
 // Load WordPress
-$wp_load_paths = array(
-    dirname(__FILE__) . '/wp-load.php',                 // Root directory
-    dirname(__FILE__) . '/../../../wp-load.php',        // Standard theme location
-    dirname(__FILE__) . '/../../../../wp-load.php',     // Child theme
-);
+if (!defined('ABSPATH')) {
+    $wp_load_paths = array(
+        dirname(__FILE__) . '/wp-load.php',                 // Root directory
+        dirname(__FILE__) . '/../../../wp-load.php',        // Standard theme location
+        dirname(__FILE__) . '/../../../../wp-load.php',     // Child theme
+    );
 
-$wp_loaded = false;
-foreach ($wp_load_paths as $wp_load) {
-    if (file_exists($wp_load)) {
-        require_once($wp_load);
-        $wp_loaded = true;
-        break;
+    $wp_loaded = false;
+    foreach ($wp_load_paths as $wp_load) {
+        if (file_exists($wp_load)) {
+            require_once($wp_load);
+            $wp_loaded = true;
+            break;
+        }
     }
-}
 
-if (!$wp_loaded) {
-    die('Error: Could not find wp-load.php. Make sure this file is in your WordPress theme directory.');
+    if (!$wp_loaded) {
+        die('Error: Could not find wp-load.php. Make sure this file is in your WordPress theme directory.');
+    }
 }
 
 // Set time limit for import
