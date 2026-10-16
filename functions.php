@@ -26,6 +26,9 @@ function kinglab_medika_activate_theme() {
     set_theme_mod('contact_email', 'info@kinglabmedikalestari.com');
     set_theme_mod('contact_address', 'Jakarta, Indonesia');
     set_theme_mod('contact_whatsapp', 'https://wa.me/6221739285');
+    set_theme_mod('contact_sales_whatsapp_phone', '6281211174724');
+    set_theme_mod('contact_sales_whatsapp_button_text', 'Hubungi Kinglab');
+    set_theme_mod('contact_sales_whatsapp_text', 'hallo kinglab saya tertearik dengan produk nya');
 
     // About Page defaults
     set_theme_mod('about_company_p1', 'Established in 1981, PT. Kinglab Medika Lestari is one of the leading distributor of Life Science, Biotechnology, Microbiology and Medical products in Indonesia. Coming from a humble beginning, Kinglab Medika Lestari has been contributing to the advancement of scientific technology in Indonesia for more than 40 years.');
@@ -879,6 +882,9 @@ function Kinglab_Medika_Lestari_customizer($wp_customize) {
         'fax'       => array('label' => 'Fax', 'default' => ''),
         'map_url'   => array('label' => 'Google Maps Embed URL', 'default' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126907.031526715!2d106.74558000407769!3d-6.284206596162232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14061ad1ea1%3A0xe53be0697968ff37!2sPT.%20Kinglab%20Medika%20Lestari!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid'),
         'whatsapp'  => array('label' => 'WhatsApp URL', 'default' => 'https://wa.me/6221739285'),
+        'sales_whatsapp_phone'        => array('label' => 'Product Sales WhatsApp Number', 'default' => '6281211174724'),
+        'sales_whatsapp_button_text' => array('label' => 'Product Sales Button Text', 'default' => 'Hubungi Kinglab'),
+        'sales_whatsapp_text'        => array('label' => 'Product Sales Default Message', 'default' => 'hallo kinglab saya tertearik dengan produk nya'),
         'facebook'  => array('label' => 'Facebook URL', 'default' => '#'),
         'youtube'   => array('label' => 'YouTube URL', 'default' => '#'),
         'instagram' => array('label' => 'Instagram URL', 'default' => 'https://www.instagram.com/kinglabmedikalestari?stkn=MWd3ZWtybWxkemt0ZA=='),

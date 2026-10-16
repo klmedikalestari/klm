@@ -135,6 +135,27 @@ get_header(); ?>
                             <?php endif; ?>
                         </div>
 
+                        <!-- Hubungi Kinglab Sales WhatsApp Button -->
+                        <?php
+                        $sales_phone   = get_theme_mod( 'contact_sales_whatsapp_phone', '6281211174724' );
+                        $button_label  = get_theme_mod( 'contact_sales_whatsapp_button_text', 'Hubungi Kinglab' );
+                        $base_msg      = get_theme_mod( 'contact_sales_whatsapp_text', 'hallo kinglab saya tertearik dengan produk nya' );
+                        $clean_phone   = preg_replace( '/[^0-9]/', '', $sales_phone );
+                        if ( empty( $clean_phone ) ) {
+                            $clean_phone = '6281211174724';
+                        }
+                        $product_title = get_the_title();
+                        $full_msg      = trim( $base_msg ) . ': ' . $product_title;
+                        $wa_url        = 'https://api.whatsapp.com/send/?phone=' . $clean_phone . '&text=' . rawurlencode( $full_msg ) . '&type=phone_number&app_absent=0';
+                        ?>
+                        <div class="product-contact-sales-wrap">
+                            <a href="<?php echo esc_url( $wa_url ); ?>" class="btn-sales-pill" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( sprintf( __( '%s via WhatsApp', 'Kinglab_Medika_Lestari' ), $button_label ) ); ?>">
+                                <span class="sales-pill-icon-box">
+                                    <i class="fas fa-shopping-cart icon-cart"></i>
+                                </span>
+                                <span class="sales-pill-text"><?php echo esc_html( $button_label ); ?></span>
+                            </a>
+                        </div>
 
                         <!-- Product Specification Accordion -->
                         <?php
