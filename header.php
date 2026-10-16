@@ -53,34 +53,42 @@
                 <?php endif; ?>
             </div>
 
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <!-- Navigation & Header Actions Wrapper -->
+            <div class="header-nav-wrapper">
+                <!-- Navigation -->
+                <nav class="main-navigation" id="main-navigation" role="navigation" aria-label="Primary Navigation">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'container'      => false,
+                        'menu_class'     => '',
+                        'walker'         => new Kinglab_Medika_Lestari_Nav_Walker(),
+                        'fallback_cb'    => function() {
+                            echo '<ul>';
+                            echo '<li class="current-menu-item"><a href="' . esc_url(home_url('/')) . '">Home</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/about/')) . '">About</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/products/')) . '">Products</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/news/')) . '">News</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/services/')) . '">Services</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/contact/')) . '">Contact</a></li>';
+                            echo '</ul>';
+                        },
+                    ));
+                    ?>
+                </nav>
 
-            <!-- Navigation -->
-            <nav class="main-navigation" id="main-navigation" role="navigation" aria-label="Primary Navigation">
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'container'      => false,
-                    'menu_class'     => '',
-                    'walker'         => new Kinglab_Medika_Lestari_Nav_Walker(),
-                    'fallback_cb'    => function() {
-                        echo '<ul>';
-                        echo '<li class="current-menu-item"><a href="' . esc_url(home_url('/')) . '">Home</a></li>';
-                        echo '<li><a href="' . esc_url(home_url('/about/')) . '">About</a></li>';
-                        echo '<li><a href="' . esc_url(home_url('/products/')) . '">Products</a></li>';
-                        echo '<li><a href="' . esc_url(home_url('/news/')) . '">News</a></li>';
-                        echo '<li><a href="' . esc_url(home_url('/services/')) . '">Services</a></li>';
-                        echo '<li><a href="' . esc_url(home_url('/contact/')) . '">Contact</a></li>';
-                        echo '</ul>';
-                    },
-                ));
-                ?>
-            </nav>
+                <!-- Shopping Cart Icon (Sejajar di samping Contact) -->
+                <a href="<?php echo esc_url(home_url('/products/')); ?>" class="header-cart-btn" title="<?php esc_attr_e('Katalog Produk', 'Kinglab_Medika_Lestari'); ?>" aria-label="<?php esc_attr_e('Katalog Produk', 'Kinglab_Medika_Lestari'); ?>">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </div>
 </header>
