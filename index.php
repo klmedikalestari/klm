@@ -67,14 +67,16 @@ get_header(); ?>
                     <?php endwhile; ?>
                 </div>
 
-                <div class="pagination" style="margin-top: 60px;">
-                    <?php
-                    echo paginate_links(array(
-                        'mid_size'  => 2,
-                        'prev_text' => '<i class="fas fa-chevron-left"></i>',
-                        'next_text' => '<i class="fas fa-chevron-right"></i>',
-                    ));
-                    ?>
+                <div class="pagination">
+                    <div class="nav-links">
+                        <?php
+                        echo paginate_links(array(
+                            'mid_size'  => 2,
+                            'prev_text' => '<i class="fas fa-chevron-left"></i>',
+                            'next_text' => '<i class="fas fa-chevron-right"></i>',
+                        ));
+                        ?>
+                    </div>
                 </div>
             <?php else : ?>
                 <div class="no-results">

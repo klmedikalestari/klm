@@ -1715,43 +1715,102 @@ img {
    PAGINATION
    ============================================ */
 .pagination {
-    margin-top: 40px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
+.pagination,
 .pagination .nav-links {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    align-items: center;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
+/* Screen reader text for accessibility */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+/* Base style for all pagination items */
+.pagination a,
+.pagination span,
 .pagination .nav-links a,
-.pagination .nav-links span {
-    display: flex;
+.pagination .nav-links span,
+.pagination a.page-numbers,
+.pagination span.page-numbers {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 12px;
+    border-radius: 6px;
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
     font-weight: 600;
-    color: var(--text-dark);
-    background: var(--white);
-    border: 1px solid var(--border-color);
+    color: var(--dark-corporate);
+    background: #ffffff;
+    border: 1.5px solid #dce4ec;
     text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
     transition: all var(--transition-fast);
 }
 
-.pagination .nav-links a:hover {
+/* Hover style */
+.pagination a:hover,
+.pagination .nav-links a:hover,
+.pagination a.page-numbers:hover {
     background: var(--primary-blue);
-    color: var(--white);
+    color: #ffffff !important;
     border-color: var(--primary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(27, 107, 90, 0.25);
 }
 
-.pagination .nav-links span.current {
-    background: var(--primary-blue);
-    color: var(--white);
-    border-color: var(--primary-blue);
+/* Current / Active page */
+.pagination span.current,
+.pagination .nav-links span.current,
+.pagination span.page-numbers.current {
+    background: var(--primary-blue) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-blue) !important;
+    box-shadow: 0 3px 8px rgba(27, 107, 90, 0.3);
+    cursor: default;
+}
+
+/* Dots ellipsis */
+.pagination span.dots,
+.pagination .nav-links span.dots,
+.pagination span.page-numbers.dots {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: var(--text-medium);
+    font-weight: 700;
+    min-width: 32px;
+    cursor: default;
+}
+
+/* Next / Prev buttons */
+.pagination a.prev,
+.pagination a.next,
+.pagination a.prev.page-numbers,
+.pagination a.next.page-numbers {
+    font-size: 0.85rem;
 }
 
 /* ============================================
