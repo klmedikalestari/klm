@@ -28,7 +28,7 @@ function kinglab_medika_activate_theme() {
     set_theme_mod('contact_whatsapp', 'https://wa.me/6221739285');
     set_theme_mod('contact_sales_whatsapp_phone', '6281211174724');
     set_theme_mod('contact_sales_whatsapp_button_text', 'Hubungi Kinglab');
-    set_theme_mod('contact_sales_whatsapp_text', 'hallo kinglab saya tertearik dengan produk nya');
+    set_theme_mod('contact_sales_whatsapp_text', 'hallo kinglab saya tertarik dengan produk nya');
 
     // About Page defaults
     set_theme_mod('about_company_p1', 'Established in 1981, PT. Kinglab Medika Lestari is one of the leading distributor of Life Science, Biotechnology, Microbiology and Medical products in Indonesia. Coming from a humble beginning, Kinglab Medika Lestari has been contributing to the advancement of scientific technology in Indonesia for more than 40 years.');
@@ -884,7 +884,7 @@ function Kinglab_Medika_Lestari_customizer($wp_customize) {
         'whatsapp'  => array('label' => 'WhatsApp URL', 'default' => 'https://wa.me/6221739285'),
         'sales_whatsapp_phone'        => array('label' => 'Product Sales WhatsApp Number', 'default' => '6281211174724'),
         'sales_whatsapp_button_text' => array('label' => 'Product Sales Button Text', 'default' => 'Hubungi Kinglab'),
-        'sales_whatsapp_text'        => array('label' => 'Product Sales Default Message', 'default' => 'hallo kinglab saya tertearik dengan produk nya'),
+        'sales_whatsapp_text'        => array('label' => 'Product Sales Default Message', 'default' => 'hallo kinglab saya tertarik dengan produk nya'),
         'facebook'  => array('label' => 'Facebook URL', 'default' => '#'),
         'youtube'   => array('label' => 'YouTube URL', 'default' => '#'),
         'instagram' => array('label' => 'Instagram URL', 'default' => 'https://www.instagram.com/kinglabmedikalestari?stkn=MWd3ZWtybWxkemt0ZA=='),
