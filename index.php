@@ -57,11 +57,11 @@ get_header(); ?>
                                     <?php echo wp_trim_words(get_the_excerpt(), 25, '...'); ?>
                                 </div>
                             </a>
-                            <div class="news-meta" style="margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
-                                <a href="<?php the_permalink(); ?>" class="read-more" style="color: var(--primary-blue); font-weight: 500; text-decoration: none; font-size: 0.95rem;">Learn more</a>
-                                <span class="comments-count" style="color: var(--text-medium); font-size: 0.95rem;">
-                                    <i class="fas fa-quote-left" style="opacity: 0.5; margin-right: 5px;"></i> <?php comments_number('0', '1', '%'); ?>
-                                </span>
+                            <div class="news-meta">
+                                <a href="<?php the_permalink(); ?>" class="btn-learn-more read-more">
+                                    <span><?php esc_html_e('Learn more', 'Kinglab_Medika_Lestari'); ?></span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </article>
                     <?php endwhile; ?>

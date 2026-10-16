@@ -3145,3 +3145,60 @@ img {
         font-size: 0.82rem;
     }
 }
+
+/* ============================================
+   NEWS CARD & LEARN MORE BUTTON UX
+   ============================================ */
+.news-meta {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.btn-learn-more,
+.news-meta .read-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--primary-blue);
+    color: #ffffff !important;
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none !important;
+    box-shadow: 0 2px 6px rgba(27, 107, 90, 0.2);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.btn-learn-more:hover,
+.news-meta .read-more:hover {
+    background: var(--primary-blue-hover);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(27, 107, 90, 0.35);
+}
+
+.btn-learn-more:active,
+.news-meta .read-more:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(27, 107, 90, 0.2);
+}
+
+.btn-learn-more i,
+.news-meta .read-more i {
+    font-size: 0.82rem;
+    transition: transform var(--transition-fast);
+}
+
+.btn-learn-more:hover i,
+.news-meta .read-more:hover i {
+    transform: translateX(4px);
+}
