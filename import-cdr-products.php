@@ -190,6 +190,15 @@ foreach ($products as $index => $product) {
     }
     update_post_meta($post_id, '_product_video_url', $yt_url);
 
+    // Set e-Katalog URL & Secondary Barcode Image if available in JSON
+    if (!empty($product['ecatalogUrl']) || !empty($product['ecatalog_url'])) {
+        $ecat_url = !empty($product['ecatalogUrl']) ? $product['ecatalogUrl'] : $product['ecatalog_url'];
+        update_post_meta($post_id, '_product_ecatalog_url', esc_url_raw($ecat_url));
+    }
+    if (!empty($product['secondaryImage'])) {
+        update_post_meta($post_id, '_product_secondary_image', Kinglab_Medika_Lestari_URI . '/assets/images/' . $product['secondaryImage']);
+    }
+
     // ========================================
     // Set product_brand taxonomy hierarchy
     // Brand -> Klasifikasi

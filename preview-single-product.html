@@ -307,6 +307,78 @@
                 text-align: center;
             }
         }
+        /* QR Code Slide Styles */
+        .product-qr-slide-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .qr-image-frame {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .qr-image-frame a {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none !important;
+            gap: 10px;
+            max-height: 100%;
+        }
+
+        .product-slide .qr-main-img,
+        .product-qr-slide-content .qr-main-img {
+            height: 260px !important;
+            max-height: 260px !important;
+            width: 260px !important;
+            max-width: 260px !important;
+            object-fit: contain;
+            background: #ffffff;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+            flex-shrink: 0;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .qr-image-frame a:hover .qr-main-img {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(10, 77, 60, 0.16);
+        }
+
+        .qr-slide-action-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #0a4d3c 0%, #15803d 100%);
+            color: #ffffff !important;
+            padding: 7px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            box-shadow: 0 3px 12px rgba(10, 77, 60, 0.22);
+            transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-family: var(--font-heading, "Montserrat", sans-serif);
+        }
+
+        .qr-image-frame a:hover .qr-slide-action-badge {
+            background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 5px 16px rgba(10, 77, 60, 0.35);
+        }
     </style>
 </head>
 <body>
@@ -333,8 +405,13 @@
                             <div class="product-slide" data-slide="1">
                                 <div class="product-qr-slide-content">
                                     <div class="qr-image-frame">
-                                        <a href="https://katalog.inaproc.id/pt-kinglab-medika-lestari/saikou-hplc-hba1c-analyzer" target="_blank" rel="noopener noreferrer" title="Buka Produk di e-Katalog LKPP">
-                                            <img src="assets/images/qr-ecatalog-kml340.png" alt="Barcode e-Katalog LKPP - KML-340 HPLC HbA1c Analyzer" class="qr-main-img">
+                                        <a href="https://katalog.inaproc.id/pt-kinglab-medika-lestari" target="_blank" rel="noopener noreferrer" title="Buka Profil di e-Katalog LKPP / INAPROC">
+                                            <img src="assets/images/qr-ecatalog-inaproc-kml.png" alt="Barcode e-Katalog LKPP INAPROC - PT Kinglab Medika Lestari" class="qr-main-img" style="width: 250px; height: 250px; max-width: 250px; max-height: 250px; object-fit: contain;">
+                                            <div class="qr-slide-action-badge">
+                                                <i class="fas fa-qrcode"></i>
+                                                <span>Scan barcode atau klik untuk buka di e-Katalog LKPP</span>
+                                                <i class="fas fa-external-link-alt"></i>
+                                            </div>
                                         </a>
                                     </div>
                                 </div>
@@ -363,7 +440,7 @@
                         <!-- Thumbnail 2: Barcode e-Katalog LKPP -->
                         <button type="button" class="gallery-thumb" onclick="goToProductSlide(1)" title="Barcode e-Katalog LKPP">
                             <div class="thumb-img-wrapper">
-                                <img src="assets/images/qr-ecatalog-kml340.png" alt="Barcode e-Katalog">
+                                <img src="assets/images/qr-ecatalog-inaproc-kml.png" alt="Barcode e-Katalog">
                                 <span class="thumb-qr-badge"><i class="fas fa-qrcode"></i></span>
                             </div>
                             <span class="thumb-caption">e-Katalog LKPP</span>

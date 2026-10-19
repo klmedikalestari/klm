@@ -33,6 +33,28 @@ get_header(); ?>
                         update_post_meta( $product_id, '_product_ecatalog_url', $ecatalog_url );
                     }
 
+                    // Auto-attach official INAPROC KML QR code for CDR FoodLab products
+                    if ( empty( $secondary_img ) && ( stripos( $product_title, 'FoodLab' ) !== false || stripos( $product_title, 'CDR' ) !== false ) ) {
+                        $secondary_img = Kinglab_Medika_Lestari_URI . '/assets/images/qr-ecatalog-inaproc-kml.png';
+                        update_post_meta( $product_id, '_product_secondary_image', $secondary_img );
+                    }
+                    if ( empty( $ecatalog_url ) && ( stripos( $product_title, 'FoodLab' ) !== false || stripos( $product_title, 'CDR' ) !== false ) ) {
+                        $ecatalog_url = 'https://katalog.inaproc.id/pt-kinglab-medika-lestari';
+                        update_post_meta( $product_id, '_product_ecatalog_url', $ecatalog_url );
+                    }
+
+                    // Determine Barcode / QR Code image: custom image, official INAPROC image, or auto-generated from e-Katalog link
+                    $qrcode_img = '';
+                    if ( ! empty( $secondary_img ) ) {
+                        $qrcode_img = $secondary_img;
+                    } elseif ( ! empty( $ecatalog_url ) ) {
+                        if ( rtrim( $ecatalog_url, '/' ) === 'https://katalog.inaproc.id/pt-kinglab-medika-lestari' ) {
+                            $qrcode_img = Kinglab_Medika_Lestari_URI . '/assets/images/qr-ecatalog-inaproc-kml.png';
+                        } else {
+                            $qrcode_img = 'https://api.qrserver.com/v1/create-qr-code/?size=480x480&margin=12&format=png&data=' . rawurlencode( $ecatalog_url );
+                        }
+                    }
+
                     $video_embed_url = '';
                     $video_id = '';
                     if ( ! empty( $video_url ) ) {
@@ -63,12 +85,12 @@ get_header(); ?>
                         );
                     }
 
-                    // Slide 2: Foto ke-2 / Barcode e-Katalog
-                    if ( ! empty( $secondary_img ) ) {
+                    // Slide 2: Barcode e-Katalog LKPP
+                    if ( ! empty( $qrcode_img ) ) {
                         $slides[] = array(
                             'type'      => 'image',
-                            'url'       => $secondary_img,
-                            'thumb'     => $secondary_img,
+                            'url'       => $qrcode_img,
+                            'thumb'     => $qrcode_img,
                             'alt'       => 'Barcode e-Katalog LKPP - ' . $product_title,
                             'label'     => 'e-Katalog LKPP',
                             'link'      => $ecatalog_url,
@@ -122,10 +144,15 @@ get_header(); ?>
                                                 <div class="qr-image-frame">
                                                     <?php if ( ! empty( $slide['link'] ) ) : ?>
                                                         <a href="<?php echo esc_url( $slide['link'] ); ?>" target="_blank" rel="noopener noreferrer" title="<?php esc_attr_e( 'Buka Produk di e-Katalog LKPP', 'Kinglab_Medika_Lestari' ); ?>">
-                                                            <img src="<?php echo esc_url( $slide['url'] ); ?>" alt="<?php echo esc_attr( $slide['alt'] ); ?>" class="qr-main-img">
+                                                            <img src="<?php echo esc_url( $slide['url'] ); ?>" alt="<?php echo esc_attr( $slide['alt'] ); ?>" class="qr-main-img" style="width: 250px; height: 250px; max-width: 250px; max-height: 250px; object-fit: contain;">
+                                                            <div class="qr-slide-action-badge">
+                                                                <i class="fas fa-qrcode"></i>
+                                                                <span>Scan barcode atau klik untuk buka di e-Katalog LKPP</span>
+                                                                <i class="fas fa-external-link-alt"></i>
+                                                            </div>
                                                         </a>
                                                     <?php else : ?>
-                                                        <img src="<?php echo esc_url( $slide['url'] ); ?>" alt="<?php echo esc_attr( $slide['alt'] ); ?>" class="qr-main-img">
+                                                        <img src="<?php echo esc_url( $slide['url'] ); ?>" alt="<?php echo esc_attr( $slide['alt'] ); ?>" class="qr-main-img" style="width: 250px; height: 250px; max-width: 250px; max-height: 250px; object-fit: contain;">
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
