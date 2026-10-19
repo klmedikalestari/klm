@@ -61,7 +61,12 @@ window.ThemeComponents = {
                             <span style="color:var(--primary-blue)">Kinglab</span> Medika Lestari
                         </a>
                     </div>
-                    <p>We are a leading company providing innovative solutions across life science, industry, animal health and medical sectors.</p>
+                    <p>PT Kinglab Medika Lestari adalah perusahaan yang bergerak dibidang supplier Alat-alat Kesehatan dan Alat-alat Laboratorium.</p>
+                    <div class="footer-barcode" style="margin-top: 18px;">
+                        <a href="https://katalog.inaproc.id/pt-kinglab-medika-lestari" target="_blank" rel="noopener noreferrer" style="display: inline-block; text-decoration: none;">
+                            <img src="assets/images/qr-ecatalog-inaproc-kml.png" alt="Barcode e-Katalog LKPP INAPROC PT Kinglab Medika Lestari" style="width: 135px; height: auto; border-radius: 8px; display: block; background: #ffffff; padding: 6px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);">
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Head Office</h4>

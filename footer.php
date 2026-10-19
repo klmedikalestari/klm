@@ -16,7 +16,12 @@
                                 <span style="color: var(--primary-blue);"><?php echo esc_html($first_word); ?></span> <?php echo esc_html($rest_words); ?>
                             </a>
                         </div>
-                        <p><?php echo esc_html(get_theme_mod('footer_about', 'We are a leading company providing innovative solutions across life science, industry, animal health and medical sectors.')); ?></p>
+                        <p><?php echo esc_html(get_theme_mod('footer_about', 'PT Kinglab Medika Lestari adalah perusahaan yang bergerak dibidang supplier Alat-alat Kesehatan dan Alat-alat Laboratorium.')); ?></p>
+                        <div class="footer-barcode" style="margin-top: 18px;">
+                            <a href="<?php echo esc_url(get_theme_mod('footer_barcode_url', 'https://katalog.inaproc.id/pt-kinglab-medika-lestari')); ?>" target="_blank" rel="noopener noreferrer" style="display: inline-block; text-decoration: none;">
+                                <img src="<?php echo esc_url(get_theme_mod('footer_barcode_img', get_template_directory_uri() . '/assets/images/qr-ecatalog-inaproc-kml.png')); ?>" alt="Barcode e-Katalog LKPP INAPROC PT Kinglab Medika Lestari" style="width: 135px; height: auto; border-radius: 8px; display: block; background: #ffffff; padding: 6px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);">
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Column 2: Contact -->
