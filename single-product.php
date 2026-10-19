@@ -139,7 +139,10 @@ get_header(); ?>
                         <?php
                         $sales_phone   = get_theme_mod( 'contact_sales_whatsapp_phone', '6281211174724' );
                         $button_label  = get_theme_mod( 'contact_sales_whatsapp_button_text', 'Hubungi Kinglab' );
-                        $base_msg      = get_theme_mod( 'contact_sales_whatsapp_text', 'hallo kinglab saya tertarik dengan produk nya' );
+                        $base_msg      = get_theme_mod( 'contact_sales_whatsapp_text', 'hallo Kinglab Medika Lestari saya tertarik dengan produk nya' );
+                        if ( empty( $base_msg ) || trim( $base_msg ) === 'hallo kinglab saya tertarik dengan produk nya' ) {
+                            $base_msg = 'hallo Kinglab Medika Lestari saya tertarik dengan produk nya';
+                        }
                         $clean_phone   = preg_replace( '/[^0-9]/', '', $sales_phone );
                         if ( empty( $clean_phone ) ) {
                             $clean_phone = '6281211174724';
