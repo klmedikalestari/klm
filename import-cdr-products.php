@@ -182,7 +182,13 @@ foreach ($products as $index => $product) {
     }
 
     // Set YouTube video URL
-    update_post_meta($post_id, '_product_video_url', 'https://www.youtube.com/watch?v=8J3gxjpsM90');
+    $yt_url = 'https://www.youtube.com/watch?v=8J3gxjpsM90';
+    if (!empty($product['video'])) {
+        $yt_url = $product['video'];
+    } elseif (stripos($product['namaBarang'], 'Jr') !== false || stripos($product['type'], 'Jr') !== false) {
+        $yt_url = 'https://www.youtube.com/watch?v=9wkjBTCHsUY';
+    }
+    update_post_meta($post_id, '_product_video_url', $yt_url);
 
     // ========================================
     // Set product_brand taxonomy hierarchy

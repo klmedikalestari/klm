@@ -17,8 +17,13 @@ get_header(); ?>
                 <div class="product-top-row">
                     <!-- Left: Product Media Gallery / Slider -->
                     <?php
-                    $video_url = get_post_meta( get_the_ID(), '_product_video_url', true );
-                    if ( empty( $video_url ) && ( stripos( get_the_title(), 'FoodLab' ) !== false || stripos( get_the_title(), 'CDR' ) !== false ) ) {
+                    $video_url      = get_post_meta( get_the_ID(), '_product_video_url', true );
+                    $product_title  = get_the_title();
+                    // Set specific YouTube video for CDR FoodLab Jr
+                    if ( stripos( $product_title, 'FoodLab' ) !== false && ( stripos( $product_title, 'Jr' ) !== false || stripos( $product_title, 'Junior' ) !== false ) ) {
+                        $video_url = 'https://www.youtube.com/watch?v=9wkjBTCHsUY';
+                        update_post_meta( get_the_ID(), '_product_video_url', $video_url );
+                    } elseif ( empty( $video_url ) && ( stripos( $product_title, 'FoodLab' ) !== false || stripos( $product_title, 'CDR' ) !== false ) ) {
                         $video_url = 'https://www.youtube.com/watch?v=8J3gxjpsM90';
                     }
                     $video_embed_url = '';
@@ -26,7 +31,7 @@ get_header(); ?>
                         if ( function_exists( 'kinglab_get_youtube_embed_url' ) ) {
                             $video_embed_url = kinglab_get_youtube_embed_url( $video_url );
                         } else {
-                            $video_embed_url = 'https://www.youtube-nocookie.com/embed/8J3gxjpsM90?rel=0&enablejsapi=1';
+                            $video_embed_url = 'https://www.youtube-nocookie.com/embed/9wkjBTCHsUY?rel=0&enablejsapi=1';
                         }
                     }
                     ?>
