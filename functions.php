@@ -251,34 +251,89 @@ function kinglab_get_youtube_embed_url($url) {
 }
 
 /**
- * Add Meta Box for Product Video URL in WP Admin
+ * Add Meta Box for Product Media (Video, Secondary Image / Barcode e-Katalog, e-Katalog URL) in WP Admin
  */
-function kinglab_product_video_metabox() {
+function kinglab_product_media_metabox() {
     add_meta_box(
-        'kinglab_product_video',
-        __('Product Video (YouTube)', 'Kinglab_Medika_Lestari'),
-        'kinglab_product_video_metabox_callback',
+        'kinglab_product_media',
+        __('Media Produk, Barcode & e-Katalog LKPP', 'Kinglab_Medika_Lestari'),
+        'kinglab_product_media_metabox_callback',
         'product',
         'side',
         'default'
     );
 }
-add_action('add_meta_boxes', 'kinglab_product_video_metabox');
+add_action('add_meta_boxes', 'kinglab_product_media_metabox');
 
-function kinglab_product_video_metabox_callback($post) {
-    wp_nonce_field('kinglab_product_video_nonce_action', 'kinglab_product_video_nonce');
-    $value = get_post_meta($post->ID, '_product_video_url', true);
+function kinglab_product_media_metabox_callback($post) {
+    wp_nonce_field('kinglab_product_media_nonce_action', 'kinglab_product_media_nonce');
+    $video_url       = get_post_meta($post->ID, '_product_video_url', true);
+    $secondary_image = get_post_meta($post->ID, '_product_secondary_image', true);
+    $ecatalog_url    = get_post_meta($post->ID, '_product_ecatalog_url', true);
     ?>
-    <p>
-        <label for="product_video_url"><strong>YouTube URL:</strong></label><br>
-        <input type="url" id="product_video_url" name="product_video_url" value="<?php echo esc_attr($value); ?>" style="width:100%; margin-top:5px;" placeholder="https://www.youtube.com/watch?v=...">
-    </p>
-    <p class="description" style="color:#666; font-size:0.85em;">Masukkan link YouTube. Foto produk akan dapat digeser (slide) untuk menampilkan video ini.</p>
+    <div style="margin-bottom:15px;">
+        <label for="product_secondary_image"><strong>Foto ke-2 / Barcode e-Katalog:</strong></label><br>
+        <div style="margin:8px 0; text-align:center; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:6px; padding:10px;">
+            <img id="secondary_image_preview" src="<?php echo esc_url($secondary_image); ?>" style="max-width:100%; max-height:120px; <?php echo empty($secondary_image) ? 'display:none;' : 'display:inline-block;'; ?> border-radius:4px; margin-bottom:8px;">
+            <input type="hidden" id="product_secondary_image" name="product_secondary_image" value="<?php echo esc_attr($secondary_image); ?>">
+            <div>
+                <button type="button" class="button button-secondary" id="btn_upload_secondary_image"><?php echo empty($secondary_image) ? 'Pilih / Upload Gambar' : 'Ganti Gambar'; ?></button>
+                <button type="button" class="button button-link-delete" id="btn_remove_secondary_image" style="<?php echo empty($secondary_image) ? 'display:none;' : 'display:inline-block;'; ?> margin-left:8px; color:#d63638;">Hapus</button>
+            </div>
+        </div>
+        <p class="description" style="color:#666; font-size:0.85em;">Gambar ini akan tampil sebagai thumbnail sub-foto ke-2 (bisa berupa barcode / QR Code e-Katalog atau foto alternatif).</p>
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label for="product_ecatalog_url"><strong>Link e-Katalog LKPP / INAPROC:</strong></label><br>
+        <input type="url" id="product_ecatalog_url" name="product_ecatalog_url" value="<?php echo esc_attr($ecatalog_url); ?>" style="width:100%; margin-top:5px;" placeholder="https://katalog.inaproc.id/...">
+        <p class="description" style="color:#666; font-size:0.85em;">Jika diisi, saat pengunjung klik barcode akan langsung diarahkan ke e-Katalog.</p>
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label for="product_video_url"><strong>Link Video YouTube:</strong></label><br>
+        <input type="url" id="product_video_url" name="product_video_url" value="<?php echo esc_attr($video_url); ?>" style="width:100%; margin-top:5px;" placeholder="https://www.youtube.com/watch?v=...">
+        <p class="description" style="color:#666; font-size:0.85em;">Opsional: Video YouTube untuk thumbnail ke-3.</p>
+    </div>
+
+    <script>
+    jQuery(document).ready(function($) {
+        var file_frame;
+        $('#btn_upload_secondary_image').on('click', function(e) {
+            e.preventDefault();
+            if (file_frame) {
+                file_frame.open();
+                return;
+            }
+            file_frame = wp.media({
+                title: 'Pilih Foto ke-2 / Barcode e-Katalog',
+                button: { text: 'Gunakan Gambar Ini' },
+                multiple: false
+            });
+            file_frame.on('select', function() {
+                var attachment = file_frame.state().get('selection').first().toJSON();
+                $('#product_secondary_image').val(attachment.url);
+                $('#secondary_image_preview').attr('src', attachment.url).show();
+                $('#btn_upload_secondary_image').text('Ganti Gambar');
+                $('#btn_remove_secondary_image').show();
+            });
+            file_frame.open();
+        });
+
+        $('#btn_remove_secondary_image').on('click', function(e) {
+            e.preventDefault();
+            $('#product_secondary_image').val('');
+            $('#secondary_image_preview').attr('src', '').hide();
+            $('#btn_upload_secondary_image').text('Pilih / Upload Gambar');
+            $(this).hide();
+        });
+    });
+    </script>
     <?php
 }
 
-function kinglab_save_product_video_meta($post_id) {
-    if (!isset($_POST['kinglab_product_video_nonce']) || !wp_verify_nonce($_POST['kinglab_product_video_nonce'], 'kinglab_product_video_nonce_action')) {
+function kinglab_save_product_media_meta($post_id) {
+    if (!isset($_POST['kinglab_product_media_nonce']) || !wp_verify_nonce($_POST['kinglab_product_media_nonce'], 'kinglab_product_media_nonce_action')) {
         return;
     }
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
@@ -287,11 +342,29 @@ function kinglab_save_product_video_meta($post_id) {
     if (isset($_POST['product_video_url'])) {
         update_post_meta($post_id, '_product_video_url', esc_url_raw($_POST['product_video_url']));
     }
+    if (isset($_POST['product_secondary_image'])) {
+        update_post_meta($post_id, '_product_secondary_image', esc_url_raw($_POST['product_secondary_image']));
+    }
+    if (isset($_POST['product_ecatalog_url'])) {
+        update_post_meta($post_id, '_product_ecatalog_url', esc_url_raw($_POST['product_ecatalog_url']));
+    }
 }
-add_action('save_post_product', 'kinglab_save_product_video_meta');
+add_action('save_post_product', 'kinglab_save_product_media_meta');
+
+/**
+ * Enqueue Media Uploader Scripts for Product Edit Screen in Admin
+ */
+function kinglab_admin_media_scripts($hook) {
+    global $post_type;
+    if (('post.php' === $hook || 'post-new.php' === $hook) && 'product' === $post_type) {
+        wp_enqueue_media();
+    }
+}
+add_action('admin_enqueue_scripts', 'kinglab_admin_media_scripts');
 
 /**
  * Automatically format KEMENKES RI AKL / AKD licenses into an eye-catching green certified badge
+ * and place the e-Katalog LKPP link directly below it if available
  */
 function kinglab_format_kemenkes_badge($content) {
     if (empty($content) || !is_string($content)) {
@@ -302,17 +375,36 @@ function kinglab_format_kemenkes_badge($content) {
         return $content;
     }
 
+    // Check if on single product and e-katalog url exists
+    $ecatalog_btn = '';
+    if (is_singular('product') || (function_exists('is_product') && is_product())) {
+        $post_id = get_the_ID();
+        $ecatalog_url = get_post_meta($post_id, '_product_ecatalog_url', true);
+        if (empty($ecatalog_url) && stripos(get_the_title($post_id), 'KML-340') !== false) {
+            $ecatalog_url = 'https://katalog.inaproc.id/pt-kinglab-medika-lestari/saikou-hplc-hba1c-analyzer';
+        }
+        if (!empty($ecatalog_url)) {
+            $ecatalog_btn = '<div class="product-ecatalog-wrap">' .
+                '<a href="' . esc_url($ecatalog_url) . '" target="_blank" rel="noopener noreferrer" class="btn-ecatalog-link">' .
+                '<i class="fas fa-external-link-alt"></i> ' .
+                '<span>Buka Produk di e-Katalog LKPP ↗</span>' .
+                '</a>' .
+                '</div>';
+        }
+    }
+
     // Pattern: Target <p> blocks containing KEMENKES RI AKL/AKD
     $pattern = '/<p[^>]*>\s*(?:<strong>|<b>)?\s*(KEMENKES\s+RI\s+(?:AKL|AKD)[^<\r\n]+?)\s*(?:<\/strong>|<\/b>)?\s*<\/p>/i';
 
-    $content = preg_replace_callback($pattern, function($matches) {
+    $content = preg_replace_callback($pattern, function($matches) use ($ecatalog_btn) {
         $text = trim(strip_tags($matches[1]));
         return '<div class="kemenkes-badge-wrap">' .
                '<div class="kemenkes-badge">' .
                '<i class="fas fa-check-circle kemenkes-badge-icon"></i> ' .
                '<span class="kemenkes-badge-text">' . esc_html($text) . '</span>' .
                '</div>' .
-               '</div>';
+               '</div>' .
+               $ecatalog_btn;
     }, $content);
 
     return $content;

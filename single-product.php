@@ -17,56 +17,130 @@ get_header(); ?>
                 <div class="product-top-row">
                     <!-- Left: Product Media Gallery / Slider -->
                     <?php
-                    $video_url      = get_post_meta( get_the_ID(), '_product_video_url', true );
+                    $product_id     = get_the_ID();
                     $product_title  = get_the_title();
-                    // Set specific YouTube video for CDR FoodLab Jr
-                    if ( stripos( $product_title, 'FoodLab' ) !== false && ( stripos( $product_title, 'Jr' ) !== false || stripos( $product_title, 'Junior' ) !== false ) ) {
-                        $video_url = 'https://www.youtube.com/watch?v=9wkjBTCHsUY';
-                        update_post_meta( get_the_ID(), '_product_video_url', $video_url );
-                    } elseif ( empty( $video_url ) && ( stripos( $product_title, 'FoodLab' ) !== false || stripos( $product_title, 'CDR' ) !== false ) ) {
-                        $video_url = 'https://www.youtube.com/watch?v=8J3gxjpsM90';
+                    $video_url      = get_post_meta( $product_id, '_product_video_url', true );
+                    $secondary_img  = get_post_meta( $product_id, '_product_secondary_image', true );
+                    $ecatalog_url   = get_post_meta( $product_id, '_product_ecatalog_url', true );
+
+                    // Auto-attach e-katalog QR code for KML-340 HPLC HbA1c Analyzer
+                    if ( empty( $secondary_img ) && stripos( $product_title, 'KML-340' ) !== false ) {
+                        $secondary_img = Kinglab_Medika_Lestari_URI . '/assets/images/qr-ecatalog-kml340.png';
+                        update_post_meta( $product_id, '_product_secondary_image', $secondary_img );
                     }
+                    if ( empty( $ecatalog_url ) && stripos( $product_title, 'KML-340' ) !== false ) {
+                        $ecatalog_url = 'https://katalog.inaproc.id/pt-kinglab-medika-lestari/saikou-hplc-hba1c-analyzer';
+                        update_post_meta( $product_id, '_product_ecatalog_url', $ecatalog_url );
+                    }
+
                     $video_embed_url = '';
+                    $video_id = '';
                     if ( ! empty( $video_url ) ) {
+                        if ( preg_match( '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i', $video_url, $vm ) ) {
+                            $video_id = $vm[1];
+                        }
                         if ( function_exists( 'kinglab_get_youtube_embed_url' ) ) {
                             $video_embed_url = kinglab_get_youtube_embed_url( $video_url );
                         } else {
-                            $video_embed_url = 'https://www.youtube-nocookie.com/embed/9wkjBTCHsUY?rel=0&enablejsapi=1';
+                            $video_embed_url = 'https://www.youtube-nocookie.com/embed/' . ( $video_id ?: '9wkjBTCHsUY' ) . '?rel=0&enablejsapi=1';
                         }
+                    }
+
+                    // Collect all slides
+                    $slides = array();
+
+                    // Slide 1: Featured Image (Foto Utama)
+                    $featured_url   = get_the_post_thumbnail_url( $product_id, 'large' );
+                    $featured_thumb = get_the_post_thumbnail_url( $product_id, 'thumbnail' ) ?: $featured_url;
+                    if ( ! empty( $featured_url ) ) {
+                        $slides[] = array(
+                            'type'      => 'image',
+                            'url'       => $featured_url,
+                            'thumb'     => $featured_thumb,
+                            'alt'       => $product_title,
+                            'label'     => 'Foto Produk',
+                            'is_qrcode' => false,
+                        );
+                    }
+
+                    // Slide 2: Foto ke-2 / Barcode e-Katalog
+                    if ( ! empty( $secondary_img ) ) {
+                        $slides[] = array(
+                            'type'      => 'image',
+                            'url'       => $secondary_img,
+                            'thumb'     => $secondary_img,
+                            'alt'       => 'Barcode e-Katalog LKPP - ' . $product_title,
+                            'label'     => 'e-Katalog LKPP',
+                            'link'      => $ecatalog_url,
+                            'is_qrcode' => true,
+                        );
+                    }
+
+                    // Slide 3: YouTube Video (if explicitly set)
+                    if ( ! empty( $video_embed_url ) ) {
+                        $video_thumb = ! empty( $video_id ) ? "https://img.youtube.com/vi/{$video_id}/mqdefault.jpg" : '';
+                        $slides[] = array(
+                            'type'      => 'video',
+                            'embed_url' => $video_embed_url,
+                            'thumb'     => $video_thumb,
+                            'alt'       => $product_title . ' Video',
+                            'label'     => 'Video Demo',
+                            'is_qrcode' => false,
+                        );
+                    }
+
+                    // Fallback if no images
+                    if ( empty( $slides ) ) {
+                        $slides[] = array(
+                            'type'      => 'placeholder',
+                            'url'       => '',
+                            'thumb'     => '',
+                            'alt'       => $product_title,
+                            'label'     => 'Foto Produk',
+                            'is_qrcode' => false,
+                        );
                     }
                     ?>
                     <div class="product-media-slider" id="productMediaSlider">
                         <div class="product-slider-wrapper">
                             <div class="product-slider-track" id="productSliderTrack">
-                                <!-- Slide 1: Image -->
-                                <div class="product-slide" data-slide="0">
-                                    <?php if ( has_post_thumbnail() ) : ?>
-                                        <?php the_post_thumbnail( 'large' ); ?>
-                                    <?php else : ?>
-                                        <div class="product-placeholder">
-                                            <i class="fas fa-microscope"></i>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-
-                                <!-- Slide 2: YouTube Video -->
-                                <?php if ( ! empty( $video_embed_url ) ) : ?>
-                                    <div class="product-slide slide-video" data-slide="1">
-                                        <div class="video-responsive-wrapper">
-                                            <iframe 
-                                                id="productVideoIframe"
-                                                src="<?php echo esc_url( $video_embed_url ); ?>" 
-                                                title="<?php echo esc_attr( get_the_title() . ' Video' ); ?>" 
-                                                frameborder="0" 
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                allowfullscreen>
-                                            </iframe>
-                                        </div>
+                                <?php foreach ( $slides as $slide_index => $slide ) : ?>
+                                    <div class="product-slide <?php echo $slide['type'] === 'video' ? 'slide-video' : ''; ?>" data-slide="<?php echo esc_attr( $slide_index ); ?>">
+                                        <?php if ( $slide['type'] === 'video' ) : ?>
+                                            <div class="video-responsive-wrapper">
+                                                <iframe 
+                                                    id="productVideoIframe"
+                                                    src="<?php echo esc_url( $slide['embed_url'] ); ?>" 
+                                                    title="<?php echo esc_attr( $slide['alt'] ); ?>" 
+                                                    frameborder="0" 
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                    allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                        <?php elseif ( ! empty( $slide['is_qrcode'] ) ) : ?>
+                                            <div class="product-qr-slide-content">
+                                                <div class="qr-image-frame">
+                                                    <?php if ( ! empty( $slide['link'] ) ) : ?>
+                                                        <a href="<?php echo esc_url( $slide['link'] ); ?>" target="_blank" rel="noopener noreferrer" title="<?php esc_attr_e( 'Buka Produk di e-Katalog LKPP', 'Kinglab_Medika_Lestari' ); ?>">
+                                                            <img src="<?php echo esc_url( $slide['url'] ); ?>" alt="<?php echo esc_attr( $slide['alt'] ); ?>" class="qr-main-img">
+                                                        </a>
+                                                    <?php else : ?>
+                                                        <img src="<?php echo esc_url( $slide['url'] ); ?>" alt="<?php echo esc_attr( $slide['alt'] ); ?>" class="qr-main-img">
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        <?php elseif ( $slide['type'] === 'placeholder' ) : ?>
+                                            <div class="product-placeholder">
+                                                <i class="fas fa-microscope"></i>
+                                            </div>
+                                        <?php else : ?>
+                                            <img src="<?php echo esc_url( $slide['url'] ); ?>" alt="<?php echo esc_attr( $slide['alt'] ); ?>">
+                                        <?php endif; ?>
                                     </div>
-                                <?php endif; ?>
+                                <?php endforeach; ?>
                             </div>
 
-                            <?php if ( ! empty( $video_embed_url ) ) : ?>
+                            <?php if ( count( $slides ) > 1 ) : ?>
                                 <!-- Arrows -->
                                 <button type="button" class="slider-arrow-btn prev" onclick="moveProductSlide(-1)" aria-label="Previous">
                                     <i class="fas fa-chevron-left"></i>
@@ -77,17 +151,35 @@ get_header(); ?>
                             <?php endif; ?>
                         </div>
 
-                        <?php if ( ! empty( $video_embed_url ) ) : ?>
-                            <!-- Media Switcher Tabs -->
-                            <div class="product-slider-thumbs">
-                                <button type="button" class="thumb-btn active" onclick="goToProductSlide(0)">
-                                    <i class="fas fa-image"></i>
-                                    <span>Foto Produk</span>
-                                </button>
-                                <button type="button" class="thumb-btn" onclick="goToProductSlide(1)">
-                                    <i class="fab fa-youtube"></i>
-                                    <span>Video YouTube</span>
-                                </button>
+                        <?php if ( count( $slides ) > 1 ) : ?>
+                            <!-- Media Switcher Gallery Thumbnails (Sub-Foto) -->
+                            <div class="product-gallery-thumbnails">
+                                <?php foreach ( $slides as $thumb_index => $thumb_slide ) : ?>
+                                    <button type="button" 
+                                            class="gallery-thumb <?php echo $thumb_index === 0 ? 'active' : ''; ?>" 
+                                            onclick="goToProductSlide(<?php echo esc_attr( $thumb_index ); ?>)"
+                                            title="<?php echo esc_attr( $thumb_slide['label'] ); ?>"
+                                            aria-label="<?php echo esc_attr( $thumb_slide['label'] ); ?>">
+                                        <div class="thumb-img-wrapper">
+                                            <?php if ( $thumb_slide['type'] === 'video' ) : ?>
+                                                <?php if ( ! empty( $thumb_slide['thumb'] ) ) : ?>
+                                                    <img src="<?php echo esc_url( $thumb_slide['thumb'] ); ?>" alt="<?php echo esc_attr( $thumb_slide['alt'] ); ?>">
+                                                <?php else : ?>
+                                                    <i class="fab fa-youtube" style="font-size:24px; color:#ff0000;"></i>
+                                                <?php endif; ?>
+                                                <span class="thumb-play-overlay"><i class="fas fa-play"></i></span>
+                                            <?php elseif ( $thumb_slide['type'] === 'placeholder' ) : ?>
+                                                <i class="fas fa-microscope" style="font-size:20px; color:#94a3b8;"></i>
+                                            <?php else : ?>
+                                                <img src="<?php echo esc_url( $thumb_slide['thumb'] ); ?>" alt="<?php echo esc_attr( $thumb_slide['alt'] ); ?>">
+                                                <?php if ( ! empty( $thumb_slide['is_qrcode'] ) ) : ?>
+                                                    <span class="thumb-qr-badge"><i class="fas fa-qrcode"></i></span>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
+                                        </div>
+                                        <span class="thumb-caption"><?php echo esc_html( $thumb_slide['label'] ); ?></span>
+                                    </button>
+                                <?php endforeach; ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -99,6 +191,15 @@ get_header(); ?>
                         <div class="product-excerpt">
                             <?php the_content(); ?>
                         </div>
+
+                        <?php if ( ! empty( $ecatalog_url ) && strpos( get_the_content(), 'product-ecatalog-wrap' ) === false ) : ?>
+                            <div class="product-ecatalog-wrap">
+                                <a href="<?php echo esc_url( $ecatalog_url ); ?>" target="_blank" rel="noopener noreferrer" class="btn-ecatalog-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Buka Produk di e-Katalog LKPP ↗</span>
+                                </a>
+                            </div>
+                        <?php endif; ?>
 
 
 
@@ -212,7 +313,7 @@ function toggleProductAccordion(element) {
 let currentProductSlide = 0;
 function goToProductSlide(index) {
     const track = document.getElementById('productSliderTrack');
-    const thumbs = document.querySelectorAll('.product-slider-thumbs .thumb-btn');
+    const thumbs = document.querySelectorAll('.product-gallery-thumbnails .gallery-thumb, .product-slider-thumbs .thumb-btn');
     if (!track) return;
 
     currentProductSlide = index;
@@ -221,17 +322,18 @@ function goToProductSlide(index) {
     thumbs.forEach(function(thumb, i) {
         if (i === index) {
             thumb.classList.add('active');
+            if (typeof thumb.scrollIntoView === 'function') {
+                thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
         } else {
             thumb.classList.remove('active');
         }
     });
 
-    // Pause video when switching back to image slide
-    if (index === 0) {
-        const iframe = document.getElementById('productVideoIframe');
-        if (iframe && iframe.contentWindow) {
-            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        }
+    // Pause video when switching away from video slide
+    const iframe = document.getElementById('productVideoIframe');
+    if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     }
 }
 

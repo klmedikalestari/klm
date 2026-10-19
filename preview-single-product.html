@@ -320,14 +320,60 @@
         <div class="product-main-content">
             <!-- Top Row: Image + Info -->
             <div class="product-top-row">
-                <!-- Product Image -->
-                <div class="product-featured-image">
-                    <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=500&fit=crop" alt="In Situ Hybridization - RNAscope ACDBio">
+                <!-- Product Media Slider with Sub-Foto / Gallery Thumbnails -->
+                <div class="product-media-slider" id="productMediaSlider">
+                    <div class="product-slider-wrapper">
+                        <div class="product-slider-track" id="productSliderTrack">
+                            <!-- Slide 1: Main Product Image -->
+                            <div class="product-slide" data-slide="0">
+                                <img src="assets/images/kml-340-hplc-hba1c-analyzer.png" alt="KML-340 HPLC HbA1c Analyzer">
+                            </div>
+
+                            <!-- Slide 2: Barcode / QR Code e-Katalog LKPP -->
+                            <div class="product-slide" data-slide="1">
+                                <div class="product-qr-slide-content">
+                                    <div class="qr-image-frame">
+                                        <a href="https://katalog.inaproc.id/pt-kinglab-medika-lestari/saikou-hplc-hba1c-analyzer" target="_blank" rel="noopener noreferrer" title="Buka Produk di e-Katalog LKPP">
+                                            <img src="assets/images/qr-ecatalog-kml340.png" alt="Barcode e-Katalog LKPP - KML-340 HPLC HbA1c Analyzer" class="qr-main-img">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slider Arrows -->
+                        <button type="button" class="slider-arrow-btn prev" onclick="moveProductSlide(-1)" aria-label="Previous">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button type="button" class="slider-arrow-btn next" onclick="moveProductSlide(1)" aria-label="Next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Sub-Foto / Gallery Thumbnails Strip -->
+                    <div class="product-gallery-thumbnails">
+                        <!-- Thumbnail 1: Foto Produk -->
+                        <button type="button" class="gallery-thumb active" onclick="goToProductSlide(0)" title="Foto Produk">
+                            <div class="thumb-img-wrapper">
+                                <img src="assets/images/kml-340-hplc-hba1c-analyzer.png" alt="Foto Produk">
+                            </div>
+                            <span class="thumb-caption">Foto Produk</span>
+                        </button>
+
+                        <!-- Thumbnail 2: Barcode e-Katalog LKPP -->
+                        <button type="button" class="gallery-thumb" onclick="goToProductSlide(1)" title="Barcode e-Katalog LKPP">
+                            <div class="thumb-img-wrapper">
+                                <img src="assets/images/qr-ecatalog-kml340.png" alt="Barcode e-Katalog">
+                                <span class="thumb-qr-badge"><i class="fas fa-qrcode"></i></span>
+                            </div>
+                            <span class="thumb-caption">e-Katalog LKPP</span>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Product Info -->
                 <div class="product-info-col">
-                    <h1 class="product-main-title">In Situ Hybridization - RNAscope ACDBio</h1>
+                    <h1 class="product-main-title">KML-340 HPLC HbA1c Analyzer</h1>
                     
                     <div class="product-excerpt">
                         <p>The RNAscope® Assays use a novel and proprietary method of in situ hybridization (ISH) to visualize single RNA molecules per cell in samples mounted on slides. RNAscope® Assays do not require the RNA-free environment used for traditional ISH. The assays are based on ACD's patented signal amplification and background suppression technology. RNAscope 2.5 Assay incorporates an additional signal amplification step, which enhances the signal for low expressing genes and RNA present in archived samples and partially degraded specimens.</p>
@@ -341,6 +387,14 @@
                                 <i class="fas fa-check-circle kemenkes-badge-icon"></i>
                                 <span class="kemenkes-badge-text">KEMENKES RI AKL 20101621266</span>
                             </div>
+                        </div>
+
+                        <!-- Link Buka Produk di e-Katalog LKPP di bawah AKL -->
+                        <div class="product-ecatalog-wrap">
+                            <a href="https://katalog.inaproc.id/pt-kinglab-medika-lestari/saikou-hplc-hba1c-analyzer" target="_blank" rel="noopener noreferrer" class="btn-ecatalog-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Buka Produk di e-Katalog LKPP ↗</span>
+                            </a>
                         </div>
                     </div>
 
@@ -448,6 +502,47 @@
         } else {
             icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
         }
+    }
+
+    /* Product Media Slider */
+    let currentProductSlide = 0;
+    function goToProductSlide(index) {
+        const track = document.getElementById('productSliderTrack');
+        const thumbs = document.querySelectorAll('.product-gallery-thumbnails .gallery-thumb');
+        if (!track) return;
+
+        currentProductSlide = index;
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+
+        thumbs.forEach(function(thumb, i) {
+            if (i === index) {
+                thumb.classList.add('active');
+                if (typeof thumb.scrollIntoView === 'function') {
+                    thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            } else {
+                thumb.classList.remove('active');
+            }
+        });
+
+        // Pause video when switching away from video slide
+        const iframe = document.getElementById('productVideoIframe');
+        if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        }
+    }
+
+    function moveProductSlide(direction) {
+        const track = document.getElementById('productSliderTrack');
+        if (!track) return;
+        const slides = track.querySelectorAll('.product-slide');
+        if (slides.length <= 1) return;
+
+        let next = currentProductSlide + direction;
+        if (next < 0) next = slides.length - 1;
+        if (next >= slides.length) next = 0;
+
+        goToProductSlide(next);
     }
 </script>
 

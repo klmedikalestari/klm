@@ -2812,7 +2812,224 @@ img {
     right: 15px;
 }
 
-/* Thumbnail / Selector Tabs */
+/* ============================================
+   PRODUCT GALLERY THUMBNAILS (E-Commerce Sub-Foto)
+   ============================================ */
+.product-gallery-thumbnails {
+    display: flex;
+    gap: 14px;
+    margin-top: 18px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding: 6px 2px 12px 2px;
+    scrollbar-width: thin;
+}
+
+.product-gallery-thumbnails::-webkit-scrollbar {
+    height: 4px;
+}
+
+.product-gallery-thumbnails::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.gallery-thumb {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.thumb-img-wrapper {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.thumb-img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.gallery-thumb:hover .thumb-img-wrapper {
+    border-color: #2e7d32;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.18);
+}
+
+.gallery-thumb.active .thumb-img-wrapper {
+    border-color: #1b5e20;
+    box-shadow: 0 0 0 2px rgba(27, 94, 32, 0.2), 0 4px 14px rgba(27, 94, 32, 0.25);
+    background: #f0fdf4;
+    transform: translateY(-2px);
+}
+
+.thumb-caption {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-medium, #64748b);
+    max-width: 80px;
+    text-align: center;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: var(--font-heading, "Montserrat", sans-serif);
+}
+
+.gallery-thumb.active .thumb-caption {
+    color: #1b5e20;
+    font-weight: 700;
+}
+
+/* Play button overlay on video thumbnail */
+.thumb-play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.thumb-play-overlay i {
+    margin-left: 2px;
+}
+
+.gallery-thumb:hover .thumb-play-overlay {
+    background: #ff0000;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* QR Badge icon overlay on Barcode thumbnail */
+.thumb-qr-badge {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    background: #1b5e20;
+    color: #ffffff;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Main slide display for Barcode / QR Code */
+.product-qr-slide-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.qr-image-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.qr-image-frame a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 440px;
+    max-width: 440px;
+}
+
+.product-slide .qr-main-img,
+.product-qr-slide-content .qr-main-img {
+    max-height: 420px !important;
+    max-width: 420px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease;
+}
+
+.qr-image-frame a:hover .qr-main-img {
+    transform: scale(1.02);
+}
+
+/* E-Katalog LKPP Button (under AKL badge) */
+.product-ecatalog-wrap {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-ecatalog-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #0a4d3c 0%, #15803d 100%);
+    color: #ffffff !important;
+    padding: 11px 24px;
+    border-radius: 50px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(10, 77, 60, 0.25);
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-family: var(--font-heading, "Montserrat", sans-serif);
+    letter-spacing: 0.3px;
+}
+
+.btn-ecatalog-link:hover {
+    background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(10, 77, 60, 0.35);
+}
+
+.btn-ecatalog-link:active {
+    transform: translateY(0);
+}
+
+/* Legacy support for thumb-btn */
 .product-slider-thumbs {
     display: flex;
     gap: 12px;
