@@ -102,11 +102,31 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <?php $whatsapp = get_theme_mod('contact_whatsapp', 'https://wa.me/6221739285'); ?>
-    <?php if ($whatsapp) : ?>
-        <a href="<?php echo esc_url($whatsapp); ?>" class="floating-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+    <?php
+    $wa_phone        = get_theme_mod( 'contact_sales_whatsapp_phone', '6281211174724' );
+    $clean_wa_phone  = preg_replace( '/[^0-9]/', '', $wa_phone );
+    if ( empty( $clean_wa_phone ) ) {
+        $clean_wa_phone = '6281211174724';
+    }
+    $wa_floating_msg = get_theme_mod( 'floating_whatsapp_text', 'Selamat datang di Kinglab Medika Lestari, ada yang bisa dibantu?' );
+    $whatsapp_url    = get_theme_mod( 'contact_whatsapp' );
+
+    if ( empty( $whatsapp_url ) || strpos( $whatsapp_url, '6221739285' ) !== false ) {
+        $whatsapp_url = 'https://api.whatsapp.com/send/?phone=' . $clean_wa_phone . '&text=' . rawurlencode( $wa_floating_msg ) . '&type=phone_number&app_absent=0';
+    } elseif ( strpos( $whatsapp_url, 'text=' ) === false ) {
+        $separator    = ( strpos( $whatsapp_url, '?' ) !== false ) ? '&' : '?';
+        $whatsapp_url .= $separator . 'text=' . rawurlencode( $wa_floating_msg );
+    }
+    ?>
+    <?php if ( $whatsapp_url ) : ?>
+        <div class="floating-wa-wrapper">
+            <a href="<?php echo esc_url( $whatsapp_url ); ?>" class="floating-wa-bubble" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( $wa_floating_msg ); ?>">
+                <span><?php echo esc_html( $wa_floating_msg ); ?></span>
+            </a>
+            <a href="<?php echo esc_url( $whatsapp_url ); ?>" class="floating-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
     <?php endif; ?>
 
     <!-- Scroll to Top -->

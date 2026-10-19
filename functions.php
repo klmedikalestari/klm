@@ -25,7 +25,8 @@ function kinglab_medika_activate_theme() {
     set_theme_mod('contact_phone', '+62-21-739 2856');
     set_theme_mod('contact_email', 'info@kinglabmedikalestari.com');
     set_theme_mod('contact_address', 'Jakarta, Indonesia');
-    set_theme_mod('contact_whatsapp', 'https://wa.me/6221739285');
+    set_theme_mod('contact_whatsapp', 'https://api.whatsapp.com/send/?phone=6281211174724&text=' . rawurlencode('Selamat datang di Kinglab Medika Lestari, ada yang bisa dibantu?') . '&type=phone_number&app_absent=0');
+    set_theme_mod('floating_whatsapp_text', 'Selamat datang di Kinglab Medika Lestari, ada yang bisa dibantu?');
     set_theme_mod('contact_sales_whatsapp_phone', '6281211174724');
     set_theme_mod('contact_sales_whatsapp_button_text', 'Hubungi Kinglab');
     set_theme_mod('contact_sales_whatsapp_text', 'hallo Kinglab Medika Lestari saya tertarik dengan produk nya');
@@ -167,6 +168,15 @@ function Kinglab_Medika_Lestari_setup() {
     // Auto-upgrade legacy whatsapp default text
     if (get_theme_mod('contact_sales_whatsapp_text') === 'hallo kinglab saya tertarik dengan produk nya') {
         set_theme_mod('contact_sales_whatsapp_text', 'hallo Kinglab Medika Lestari saya tertarik dengan produk nya');
+    }
+
+    // Auto-upgrade legacy floating whatsapp button
+    $current_wa = get_theme_mod('contact_whatsapp');
+    if (empty($current_wa) || strpos($current_wa, '6221739285') !== false) {
+        set_theme_mod('contact_whatsapp', 'https://api.whatsapp.com/send/?phone=6281211174724&text=' . rawurlencode('Selamat datang di Kinglab Medika Lestari, ada yang bisa dibantu?') . '&type=phone_number&app_absent=0');
+    }
+    if (empty(get_theme_mod('floating_whatsapp_text'))) {
+        set_theme_mod('floating_whatsapp_text', 'Selamat datang di Kinglab Medika Lestari, ada yang bisa dibantu?');
     }
 }
 add_action('after_setup_theme', 'Kinglab_Medika_Lestari_setup');
@@ -886,7 +896,8 @@ function Kinglab_Medika_Lestari_customizer($wp_customize) {
         'address'   => array('label' => 'Address', 'default' => 'Jakarta, Indonesia'),
         'fax'       => array('label' => 'Fax', 'default' => ''),
         'map_url'   => array('label' => 'Google Maps Embed URL', 'default' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126907.031526715!2d106.74558000407769!3d-6.284206596162232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14061ad1ea1%3A0xe53be0697968ff37!2sPT.%20Kinglab%20Medika%20Lestari!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid'),
-        'whatsapp'  => array('label' => 'WhatsApp URL', 'default' => 'https://wa.me/6221739285'),
+        'whatsapp'  => array('label' => 'WhatsApp URL', 'default' => 'https://api.whatsapp.com/send/?phone=6281211174724&text=' . rawurlencode('Selamat datang di Kinglab Medika Lestari, ada yang bisa dibantu?') . '&type=phone_number&app_absent=0'),
+        'floating_whatsapp_text'     => array('label' => 'Floating WhatsApp Greeting Text', 'default' => 'Selamat datang di Kinglab Medika Lestari, ada yang bisa dibantu?'),
         'sales_whatsapp_phone'        => array('label' => 'Product Sales WhatsApp Number', 'default' => '6281211174724'),
         'sales_whatsapp_button_text' => array('label' => 'Product Sales Button Text', 'default' => 'Hubungi Kinglab'),
         'sales_whatsapp_text'        => array('label' => 'Product Sales Default Message', 'default' => 'hallo Kinglab Medika Lestari saya tertarik dengan produk nya'),
