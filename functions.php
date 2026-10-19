@@ -291,6 +291,35 @@ function kinglab_save_product_video_meta($post_id) {
 add_action('save_post_product', 'kinglab_save_product_video_meta');
 
 /**
+ * Automatically format KEMENKES RI AKL / AKD licenses into an eye-catching green certified badge
+ */
+function kinglab_format_kemenkes_badge($content) {
+    if (empty($content) || !is_string($content)) {
+        return $content;
+    }
+
+    if (stripos($content, 'KEMENKES') === false) {
+        return $content;
+    }
+
+    // Pattern: Target <p> blocks containing KEMENKES RI AKL/AKD
+    $pattern = '/<p[^>]*>\s*(?:<strong>|<b>)?\s*(KEMENKES\s+RI\s+(?:AKL|AKD)[^<\r\n]+?)\s*(?:<\/strong>|<\/b>)?\s*<\/p>/i';
+
+    $content = preg_replace_callback($pattern, function($matches) {
+        $text = trim(strip_tags($matches[1]));
+        return '<div class="kemenkes-badge-wrap">' .
+               '<div class="kemenkes-badge">' .
+               '<i class="fas fa-check-circle kemenkes-badge-icon"></i> ' .
+               '<span class="kemenkes-badge-text">' . esc_html($text) . '</span>' .
+               '</div>' .
+               '</div>';
+    }, $content);
+
+    return $content;
+}
+add_filter('the_content', 'kinglab_format_kemenkes_badge', 20);
+
+/**
  * Enqueue Scripts & Styles
  */
 function Kinglab_Medika_Lestari_scripts() {

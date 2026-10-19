@@ -2870,6 +2870,49 @@ img {
     margin-bottom: 30px;
 }
 
+/* ── Kemenkes RI AKL / AKD Certified Badge ── */
+.kemenkes-badge-wrap,
+p.kemenkes-badge-wrap {
+    margin: 22px 0 26px 0 !important;
+    display: block;
+}
+
+.kemenkes-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #d4edda 100%);
+    border: 1.5px solid #388e3c;
+    border-left: 5px solid #1b5e20;
+    padding: 9px 18px;
+    border-radius: 6px;
+    color: #1b5e20;
+    box-shadow: 0 3px 12px rgba(46, 125, 50, 0.15);
+    transition: all 0.25s ease;
+}
+
+.kemenkes-badge:hover {
+    background: linear-gradient(135deg, #dcfce7 0%, #c8e6c9 100%);
+    border-color: #1b5e20;
+    box-shadow: 0 5px 16px rgba(46, 125, 50, 0.24);
+    transform: translateY(-2px);
+}
+
+.kemenkes-badge-icon {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    flex-shrink: 0;
+}
+
+.kemenkes-badge-text {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1b5e20;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
 .product-meta-data {
     margin-bottom: 30px;
 }

@@ -16,6 +16,7 @@
         updateHeaderHeight(); // hitung tinggi header aktual
         initHeroSlider();
         initAnimateOnScroll();
+        initKemenkesBadges();
     });
 
     /**
@@ -313,6 +314,26 @@
 
         elements.forEach(function (el) {
             observer.observe(el);
+        });
+    }
+
+    /**
+     * Transform any plain KEMENKES RI AKL/AKD paragraphs into certified badges
+     */
+    function initKemenkesBadges() {
+        const containers = document.querySelectorAll('.product-excerpt, .single-product-page-wrapper, .entry-content');
+        containers.forEach(function (container) {
+            const paragraphs = container.querySelectorAll('p');
+            paragraphs.forEach(function (p) {
+                if (p.querySelector('.kemenkes-badge') || p.classList.contains('kemenkes-badge-wrap')) {
+                    return;
+                }
+                const text = p.textContent.trim();
+                if (/^KEMENKES\s+RI\s+(?:AKL|AKD)/i.test(text)) {
+                    p.classList.add('kemenkes-badge-wrap');
+                    p.innerHTML = '<div class="kemenkes-badge"><i class="fas fa-check-circle kemenkes-badge-icon"></i> <span class="kemenkes-badge-text">' + text + '</span></div>';
+                }
+            });
         });
     }
 })();
