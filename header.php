@@ -14,22 +14,41 @@
     <!-- Top Bar -->
     <div class="header-top-bar">
         <div class="container">
-            <?php
-            $phone = get_theme_mod('contact_phone', '+62-21-739 2856');
-            $email = get_theme_mod('contact_email', 'info@kinglabmedikalestari.com');
-            ?>
-            <?php if ($phone) : ?>
-                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', $phone)); ?>">
-                    <i class="fas fa-phone-alt"></i>
-                    <?php echo esc_html($phone); ?>
-                </a>
-            <?php endif; ?>
-            <?php if ($email) : ?>
-                <a href="mailto:<?php echo esc_attr($email); ?>">
-                    <i class="fas fa-envelope"></i>
-                    <?php echo esc_html($email); ?>
-                </a>
-            <?php endif; ?>
+            <div class="header-top-left">
+                <?php
+                $phone = get_theme_mod('contact_phone', '+62-21-739 2856');
+                $email = get_theme_mod('contact_email', 'info@kinglabmedikalestari.com');
+                ?>
+                <?php if ($phone) : ?>
+                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', $phone)); ?>">
+                        <i class="fas fa-phone-alt"></i>
+                        <span><?php echo esc_html($phone); ?></span>
+                    </a>
+                <?php endif; ?>
+                <?php if ($email) : ?>
+                    <a href="mailto:<?php echo esc_attr($email); ?>">
+                        <i class="fas fa-envelope"></i>
+                        <span><?php echo esc_html($email); ?></span>
+                    </a>
+                <?php endif; ?>
+            </div>
+            <div class="header-top-right">
+                <?php
+                $idak  = get_theme_mod('company_idak', '12290002200830022');
+                $cdakb = get_theme_mod('company_cdakb', '122900022008300150007');
+                ?>
+                <div class="header-license-info">
+                    <?php if ($idak) : ?>
+                        <span class="license-item"><strong>IDAK :</strong> <?php echo esc_html($idak); ?></span>
+                    <?php endif; ?>
+                    <?php if ($idak && $cdakb) : ?>
+                        <span class="license-divider">-</span>
+                    <?php endif; ?>
+                    <?php if ($cdakb) : ?>
+                        <span class="license-item"><strong>CDAKB :</strong> <?php echo esc_html($cdakb); ?></span>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
     </div>
 

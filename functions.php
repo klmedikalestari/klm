@@ -31,6 +31,10 @@ function kinglab_medika_activate_theme() {
     set_theme_mod('contact_sales_whatsapp_button_text', 'Hubungi Kinglab');
     set_theme_mod('contact_sales_whatsapp_text', 'hallo Kinglab Medika Lestari saya tertarik dengan produk nya');
 
+    // Legal Licenses
+    set_theme_mod('company_idak', '12290002200830022');
+    set_theme_mod('company_cdakb', '122900022008300150007');
+
     // About Page defaults
     set_theme_mod('about_company_p1', 'Established in 1981, PT. Kinglab Medika Lestari is one of the leading distributor of Life Science, Biotechnology, Microbiology and Medical products in Indonesia. Coming from a humble beginning, Kinglab Medika Lestari has been contributing to the advancement of scientific technology in Indonesia for more than 40 years.');
     set_theme_mod('about_advantages_p1', 'One of the advantages of choosing Kinglab Medika Lestari is access to our expansive and cutting edge product portfolio ranging from Life Science equipments and consumables, Microbiological and Food Safety products, Animal Health kits, and Medical instruments and consumables.');
@@ -177,6 +181,14 @@ function Kinglab_Medika_Lestari_setup() {
     }
     if (empty(get_theme_mod('floating_whatsapp_text'))) {
         set_theme_mod('floating_whatsapp_text', 'Selamat datang di Kinglab Medika Lestari, ada yang bisa dibantu?');
+    }
+
+    // Auto-setup IDAK & CDAKB defaults
+    if (empty(get_theme_mod('company_idak'))) {
+        set_theme_mod('company_idak', '12290002200830022');
+    }
+    if (empty(get_theme_mod('company_cdakb'))) {
+        set_theme_mod('company_cdakb', '122900022008300150007');
     }
 }
 add_action('after_setup_theme', 'Kinglab_Medika_Lestari_setup');

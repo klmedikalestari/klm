@@ -243,9 +243,21 @@ img {
 
 .header-top-bar .container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
+}
+
+.header-top-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-top-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .header-top-bar a {
@@ -265,6 +277,25 @@ img {
     font-size: 0.9rem;
     color: var(--white);
     opacity: 0.9;
+}
+
+.header-license-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.82rem;
+    letter-spacing: 0.2px;
+}
+
+.header-license-info .license-item strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.header-license-info .license-divider {
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0 4px;
 }
 
 .header-main {
