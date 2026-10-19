@@ -192,15 +192,6 @@ get_header(); ?>
                             <?php the_content(); ?>
                         </div>
 
-                        <?php if ( ! empty( $ecatalog_url ) && strpos( get_the_content(), 'product-ecatalog-wrap' ) === false ) : ?>
-                            <div class="product-ecatalog-wrap">
-                                <a href="<?php echo esc_url( $ecatalog_url ); ?>" target="_blank" rel="noopener noreferrer" class="btn-ecatalog-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Buka Produk di e-Katalog LKPP ↗</span>
-                                </a>
-                            </div>
-                        <?php endif; ?>
-
 
 
                         <div class="product-meta-data">

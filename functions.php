@@ -364,7 +364,6 @@ add_action('admin_enqueue_scripts', 'kinglab_admin_media_scripts');
 
 /**
  * Automatically format KEMENKES RI AKL / AKD licenses into an eye-catching green certified badge
- * and place the e-Katalog LKPP link directly below it if available
  */
 function kinglab_format_kemenkes_badge($content) {
     if (empty($content) || !is_string($content)) {
@@ -375,36 +374,17 @@ function kinglab_format_kemenkes_badge($content) {
         return $content;
     }
 
-    // Check if on single product and e-katalog url exists
-    $ecatalog_btn = '';
-    if (is_singular('product') || (function_exists('is_product') && is_product())) {
-        $post_id = get_the_ID();
-        $ecatalog_url = get_post_meta($post_id, '_product_ecatalog_url', true);
-        if (empty($ecatalog_url) && stripos(get_the_title($post_id), 'KML-340') !== false) {
-            $ecatalog_url = 'https://katalog.inaproc.id/pt-kinglab-medika-lestari/saikou-hplc-hba1c-analyzer';
-        }
-        if (!empty($ecatalog_url)) {
-            $ecatalog_btn = '<div class="product-ecatalog-wrap">' .
-                '<a href="' . esc_url($ecatalog_url) . '" target="_blank" rel="noopener noreferrer" class="btn-ecatalog-link">' .
-                '<i class="fas fa-external-link-alt"></i> ' .
-                '<span>Buka Produk di e-Katalog LKPP ↗</span>' .
-                '</a>' .
-                '</div>';
-        }
-    }
-
     // Pattern: Target <p> blocks containing KEMENKES RI AKL/AKD
     $pattern = '/<p[^>]*>\s*(?:<strong>|<b>)?\s*(KEMENKES\s+RI\s+(?:AKL|AKD)[^<\r\n]+?)\s*(?:<\/strong>|<\/b>)?\s*<\/p>/i';
 
-    $content = preg_replace_callback($pattern, function($matches) use ($ecatalog_btn) {
+    $content = preg_replace_callback($pattern, function($matches) {
         $text = trim(strip_tags($matches[1]));
         return '<div class="kemenkes-badge-wrap">' .
                '<div class="kemenkes-badge">' .
                '<i class="fas fa-check-circle kemenkes-badge-icon"></i> ' .
                '<span class="kemenkes-badge-text">' . esc_html($text) . '</span>' .
                '</div>' .
-               '</div>' .
-               $ecatalog_btn;
+               '</div>';
     }, $content);
 
     return $content;
