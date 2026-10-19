@@ -119,14 +119,9 @@
     }
     ?>
     <?php if ( $whatsapp_url ) : ?>
-        <div class="floating-wa-wrapper">
-            <a href="<?php echo esc_url( $whatsapp_url ); ?>" class="floating-wa-bubble" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( $wa_floating_msg ); ?>">
-                <span><?php echo esc_html( $wa_floating_msg ); ?></span>
-            </a>
-            <a href="<?php echo esc_url( $whatsapp_url ); ?>" class="floating-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
+        <a href="<?php echo esc_url( $whatsapp_url ); ?>" class="floating-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     <?php endif; ?>
 
     <!-- Scroll to Top -->
