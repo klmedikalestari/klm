@@ -17,22 +17,6 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: 🔍 Check FTP Directory
-      run: |
-        echo "=== PWD ===" > ftp_listing.txt
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/" -Q "PWD" >> ftp_listing.txt || true
-        echo "=== Root listing ===" >> ftp_listing.txt
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/" >> ftp_listing.txt || true
-        echo "=== Server functions.php around By Brand ===" >> ftp_listing.txt
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/functions.php" | grep -n -C 10 "By Brand" >> ftp_listing.txt || true
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git checkout -B debug-ftp
-        git add -f ftp_listing.txt
-        git commit -m "debug: ftp listing and server functions snippet" || true
-        git push -f origin debug-ftp || true
-        git checkout main
-
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
@@ -53,30 +37,9 @@ jobs:
           raw_html.txt
           produk.xlsx
 
-    - name: 📤 Force upload critical files via FTPS
+    - name: 📤 Force upload functions.php via FTPS
       run: |
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T functions.php "ftp://${{ secrets.FTP_SERVER }}/functions.php"
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T import-chm-products.php "ftp://${{ secrets.FTP_SERVER }}/import-chm-products.php"
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T front-page.php "ftp://${{ secrets.FTP_SERVER }}/front-page.php"
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T 404.php "ftp://${{ secrets.FTP_SERVER }}/404.php"
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T author.php "ftp://${{ secrets.FTP_SERVER }}/author.php"
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T taxonomy-product_brand-aczet.php "ftp://${{ secrets.FTP_SERVER }}/taxonomy-product_brand-aczet.php"
-
-    - name: 🔄 Purge OPcache & LiteSpeed Cache (Post-Deploy)
-      run: |
-        sleep 2
-        echo "Executing opcache purge via import-chm-products..."
-        curl -s -k "https://kinglabmedikalestari.com/?run_chm_import=1&reset_cache=1" || true
-        echo "Purging via taxonomy-product_brand-aczet..."
-        curl -s -k "https://kinglabmedikalestari.com/product_brand/aczet/?purge=1" || true
-        echo "Purging via front-page..."
-        curl -s -k "https://kinglabmedikalestari.com/?purge_klm_cache=1" || true
-        echo "Restart LSPHP" > restart.txt
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/.lsphp_restart.txt" || true
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../.lsphp_restart.txt" || true
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../.lsphp_restart.txt" || true
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../../.lsphp_restart.txt" || true
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../../../.lsphp_restart.txt" || true
 
     - name: 🚀 Warmup Cache
       run: |
