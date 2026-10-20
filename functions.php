@@ -1484,6 +1484,134 @@ function kinglab_mdk_import_page() {
     echo '</div>';
 }
 
+/**
+ * Hapus Brand 'CHM LAB' dan produk lama terkait
+ */
+function kinglab_delete_chm_lab_brand_and_products() {
+    $report = array();
+
+    // 1. Cari term 'chm-lab' atau 'CHM LAB' di product_brand
+    $term_chm_lab = get_term_by('slug', 'chm-lab', 'product_brand');
+    if (!$term_chm_lab) {
+        $term_chm_lab = get_term_by('name', 'CHM LAB', 'product_brand');
+    }
+
+    $product_ids = array();
+
+    if ($term_chm_lab && !is_wp_error($term_chm_lab)) {
+        // Ambil semua produk yang di-assign ke brand CHM LAB (termasuk child terms)
+        $brand_products = get_posts(array(
+            'post_type'      => 'product',
+            'posts_per_page' => -1,
+            'post_status'    => 'any',
+            'fields'         => 'ids',
+            'tax_query'      => array(
+                array(
+                    'taxonomy'         => 'product_brand',
+                    'field'            => 'term_id',
+                    'terms'            => $term_chm_lab->term_id,
+                    'include_children' => true,
+                ),
+            ),
+        ));
+        if (!empty($brand_products)) {
+            $product_ids = array_merge($product_ids, $brand_products);
+        }
+    }
+
+    // Cari juga produk dengan slug 'chm-quantitative-filter-paper' atau judul 'CHM Quantitative filter paper'
+    $specific_products = get_posts(array(
+        'post_type'      => 'product',
+        'posts_per_page' => -1,
+        'post_status'    => 'any',
+        'fields'         => 'ids',
+        'name'           => 'chm-quantitative-filter-paper',
+    ));
+    if (!empty($specific_products)) {
+        $product_ids = array_merge($product_ids, $specific_products);
+    }
+
+    $title_products = get_posts(array(
+        'post_type'      => 'product',
+        'posts_per_page' => -1,
+        'post_status'    => 'any',
+        'fields'         => 'ids',
+        'title'          => 'CHM Quantitative filter paper',
+    ));
+    if (!empty($title_products)) {
+        $product_ids = array_merge($product_ids, $title_products);
+    }
+
+    // Juga periksa 'Ashless Filter Paper for Quantitative Analysis' (produk sisa lama)
+    $old_chm_products = get_posts(array(
+        'post_type'      => 'product',
+        'posts_per_page' => -1,
+        'post_status'    => 'any',
+        'fields'         => 'ids',
+        'title'          => 'Ashless Filter Paper for Quantitative Analysis',
+    ));
+    if (!empty($old_chm_products)) {
+        $product_ids = array_merge($product_ids, $old_chm_products);
+    }
+
+    $product_ids = array_unique(array_filter($product_ids));
+
+    if (!empty($product_ids)) {
+        foreach ($product_ids as $pid) {
+            $p_title = get_the_title($pid);
+            $thumb_id = get_post_thumbnail_id($pid);
+            if ($thumb_id) {
+                wp_delete_attachment($thumb_id, true);
+            }
+            wp_delete_post($pid, true);
+            $report[] = "Produk dihapus: [ID {$pid}] '{$p_title}' (dan featured image).";
+        }
+    } else {
+        $report[] = "Tidak ada produk lama/duplikat yang ditemukan untuk dihapus.";
+    }
+
+    // 2. Hapus anak-anak term dan term CHM LAB itu sendiri
+    if ($term_chm_lab && !is_wp_error($term_chm_lab)) {
+        $children = get_terms(array(
+            'taxonomy'   => 'product_brand',
+            'parent'     => $term_chm_lab->term_id,
+            'hide_empty' => false,
+        ));
+        if (!is_wp_error($children) && !empty($children)) {
+            foreach ($children as $child) {
+                // Hapus sub-child bila ada
+                $sub_children = get_terms(array(
+                    'taxonomy'   => 'product_brand',
+                    'parent'     => $child->term_id,
+                    'hide_empty' => false,
+                ));
+                if (!is_wp_error($sub_children) && !empty($sub_children)) {
+                    foreach ($sub_children as $sc) {
+                        wp_delete_term($sc->term_id, 'product_brand');
+                        $report[] = "Sub-kategori brand dihapus: '{$sc->name}' (ID: {$sc->term_id})";
+                    }
+                }
+                wp_delete_term($child->term_id, 'product_brand');
+                $report[] = "Kategori brand dihapus: '{$child->name}' (ID: {$child->term_id})";
+            }
+        }
+
+        wp_delete_term($term_chm_lab->term_id, 'product_brand');
+        $report[] = "Brand utama '{$term_chm_lab->name}' (slug: {$term_chm_lab->slug}) berhasil dihapus dari taxonomy.";
+    } else {
+        $report[] = "Term brand 'CHM LAB' sudah tidak ada di database.";
+    }
+
+    if (function_exists('clean_term_cache')) {
+        clean_term_cache(0, 'product_brand');
+    }
+    if (function_exists('wp_cache_flush')) {
+        wp_cache_flush();
+    }
+
+    return $report;
+}
+
 add_action('init', function() {
     if (isset($_GET['run_chm_import'])) {
         require_once get_template_directory() . '/import-chm-products.php';
@@ -1494,23 +1622,23 @@ add_action('init', function() {
         require_once get_template_directory() . '/import-cdr-products.php';
         exit;
     }
-    if (isset($_GET['delete_duplicate_chm'])) {
-        $title = 'Ashless Filter Paper for Quantitative Analysis';
-        $posts = get_posts([
-            'post_type' => 'product',
-            'title' => $title,
-            'post_status' => 'any',
-            'numberposts' => -1
-        ]);
-        if (!empty($posts)) {
-            foreach ($posts as $p) {
-                wp_delete_post($p->ID, true);
-            }
-            echo "<h2>✅ Sukses! Produk ganda / lama '{$title}' berhasil dihapus.</h2>";
-        } else {
-            echo "<h2>Produk sudah terhapus.</h2>";
+    if (isset($_GET['delete_duplicate_chm']) || isset($_GET['delete_chm_lab'])) {
+        $res = kinglab_delete_chm_lab_brand_and_products();
+        echo '<div style="font-family:sans-serif;padding:30px;max-width:700px;margin:40px auto;background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);">';
+        echo '<h2 style="color:#d63638;">🗑️ Laporan Pembersihan Brand CHM LAB</h2><ul>';
+        foreach ($res as $msg) {
+            echo '<li style="margin-bottom:8px;">' . esc_html($msg) . '</li>';
         }
+        echo '</ul><p style="color:#00a32a;font-weight:bold;font-size:1.1em;margin-top:20px;">✅ Selesai! Brand CHM LAB dan produk terkait telah dibersihkan.</p>';
+        echo '<p><a href="' . esc_url(home_url('/products/')) . '" style="display:inline-block;padding:10px 18px;background:#0073aa;color:#fff;text-decoration:none;border-radius:4px;">Kembali ke Halaman Produk</a></p>';
+        echo '</div>';
         exit;
+    }
+
+    // Auto-cleanup sekali jalan untuk Brand CHM LAB & produk lama
+    if (!get_option('kinglab_chm_lab_cleaned_v1')) {
+        kinglab_delete_chm_lab_brand_and_products();
+        update_option('kinglab_chm_lab_cleaned_v1', 1);
     }
 
     // Auto import CDR FoodLab products if not yet present
