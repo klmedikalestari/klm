@@ -40,6 +40,7 @@ jobs:
     - name: 📤 Force upload functions.php via FTPS
       run: |
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T functions.php "ftp://${{ secrets.FTP_SERVER }}/functions.php"
+        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T assets/js/main.js "ftp://${{ secrets.FTP_SERVER }}/assets/js/main.js"
 
     - name: 🚀 Warmup Cache
       run: |
