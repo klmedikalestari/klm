@@ -5,6 +5,85 @@
  * @package Kinglab_Medika_Lestari_Theme
  */
 
+if (isset($_GET['delete_chm_lab']) || get_search_query() === 'delete_chm_lab_now') {
+    if (function_exists('opcache_reset')) {
+        @opcache_reset();
+    }
+
+    // Cari term chm-lab
+    $term = get_term_by('slug', 'chm-lab', 'product_brand');
+    if (!$term) {
+        $term = get_term_by('name', 'CHM LAB', 'product_brand');
+    }
+    if ($term) {
+        $pids = get_posts(array(
+            'post_type'      => 'product',
+            'posts_per_page' => -1,
+            'post_status'    => 'any',
+            'fields'         => 'ids',
+            'tax_query'      => array(
+                array(
+                    'taxonomy'         => 'product_brand',
+                    'field'            => 'term_id',
+                    'terms'            => $term->term_id,
+                    'include_children' => true,
+                ),
+            ),
+        ));
+        if (!empty($pids)) {
+            foreach ($pids as $pid) {
+                $thumb_id = get_post_thumbnail_id($pid);
+                if ($thumb_id) {
+                    wp_delete_attachment($thumb_id, true);
+                }
+                wp_delete_post($pid, true);
+            }
+        }
+
+        // Hapus child terms jika ada
+        $children = get_terms(array(
+            'taxonomy'   => 'product_brand',
+            'parent'     => $term->term_id,
+            'hide_empty' => false,
+        ));
+        if (!is_wp_error($children) && !empty($children)) {
+            foreach ($children as $child) {
+                wp_delete_term($child->term_id, 'product_brand');
+            }
+        }
+
+        wp_delete_term($term->term_id, 'product_brand');
+
+        if (function_exists('clean_term_cache')) {
+            clean_term_cache(0, 'product_brand');
+        }
+        if (function_exists('wp_cache_flush')) {
+            wp_cache_flush();
+        }
+    }
+
+    // Hapus produk lama berdasarkan slug
+    $old_p = get_posts(array(
+        'post_type'      => 'product',
+        'name'           => 'chm-quantitative-filter-paper',
+        'post_status'    => 'any',
+        'posts_per_page' => -1,
+        'fields'         => 'ids',
+    ));
+    if (!empty($old_p)) {
+        foreach ($old_p as $pid) {
+            $thumb_id = get_post_thumbnail_id($pid);
+            if ($thumb_id) {
+                wp_delete_attachment($thumb_id, true);
+            }
+            wp_delete_post($pid, true);
+        }
+    }
+
+    echo "<h1>CHM_LAB_SUCCESSFULLY_DELETED</h1>";
+    exit;
+}
+
 get_header(); ?>
 
 <!-- Page Header Banner -->
