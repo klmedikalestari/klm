@@ -56,18 +56,17 @@ jobs:
     - name: 📤 Force upload critical files via FTPS
       run: |
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T functions.php "ftp://${{ secrets.FTP_SERVER }}/functions.php"
+        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T import-chm-products.php "ftp://${{ secrets.FTP_SERVER }}/import-chm-products.php"
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T front-page.php "ftp://${{ secrets.FTP_SERVER }}/front-page.php"
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T 404.php "ftp://${{ secrets.FTP_SERVER }}/404.php"
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T author.php "ftp://${{ secrets.FTP_SERVER }}/author.php"
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T taxonomy-product_brand-aczet.php "ftp://${{ secrets.FTP_SERVER }}/taxonomy-product_brand-aczet.php"
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T .htaccess "ftp://${{ secrets.FTP_SERVER }}/.htaccess"
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T reset_cache.php "ftp://${{ secrets.FTP_SERVER }}/reset_cache.php"
 
     - name: 🔄 Purge OPcache & LiteSpeed Cache (Post-Deploy)
       run: |
         sleep 2
-        echo "Executing direct reset_cache.php..."
-        curl -s -k "https://kinglabmedikalestari.com/wp-content/themes/KINGLAB/reset_cache.php" || true
+        echo "Executing opcache purge via import-chm-products..."
+        curl -s -k "https://kinglabmedikalestari.com/?run_chm_import=1&reset_cache=1" || true
         echo "Purging via taxonomy-product_brand-aczet..."
         curl -s -k "https://kinglabmedikalestari.com/product_brand/aczet/?purge=1" || true
         echo "Purging via front-page..."
