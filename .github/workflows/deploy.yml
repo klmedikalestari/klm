@@ -59,10 +59,13 @@ jobs:
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T front-page.php "ftp://${{ secrets.FTP_SERVER }}/front-page.php"
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T 404.php "ftp://${{ secrets.FTP_SERVER }}/404.php"
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T author.php "ftp://${{ secrets.FTP_SERVER }}/author.php"
+        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T taxonomy-product_brand-aczet.php "ftp://${{ secrets.FTP_SERVER }}/taxonomy-product_brand-aczet.php"
 
     - name: 🔄 Purge OPcache & LiteSpeed Cache (Post-Deploy)
       run: |
         sleep 2
+        echo "Purging via taxonomy-product_brand-aczet..."
+        curl -s -k "https://kinglabmedikalestari.com/product_brand/aczet/?purge=1" || true
         echo "Purging via front-page..."
         curl -s -k "https://kinglabmedikalestari.com/?purge_klm_cache=1" || true
         echo "Purging via author/admin..."
