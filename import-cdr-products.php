@@ -1,4 +1,80 @@
 <?php
+if (isset($_GET['reset_cache']) || isset($_GET['opcache_reset'])) {
+    header('Content-Type: text/plain; charset=UTF-8');
+    echo "=== KLM LIVE REPAIR & OPCACHE FLUSH ===\n";
+    
+    $theme_dir = function_exists('get_template_directory') ? get_template_directory() : __DIR__;
+    echo "Theme Dir: $theme_dir\n";
+    $functions_path = $theme_dir . '/functions.php';
+    echo "Functions Path: $functions_path\n";
+    
+    if (file_exists($functions_path)) {
+        $content = file_get_contents($functions_path);
+        echo "Current functions.php size: " . strlen($content) . " bytes\n";
+        $has_loop = (strpos($content, 'foreach ($brands as $brand)') !== false);
+        echo "Contains foreach: " . ($has_loop ? "YES" : "NO") . "\n";
+        
+        if (!$has_loop) {
+            echo "Repairing functions.php on disk...\n";
+            $target_find = '<?php if (!is_wp_error($brands) && !empty($brands)) {
+                            $brand_link = get_term_link($brand);
+                            echo \'<li><a href="\' . esc_url($brand_link) . \'">' . esc_html($brand->name) . \'</a></li>\';
+                    } else {';
+            
+            $target_replace = '<?php if (!is_wp_error($brands) && !empty($brands)) {
+                        foreach ($brands as $brand) {
+                            if (!is_object($brand) || empty($brand->name)) {
+                                continue;
+                            }
+                            $brand_link = get_term_link($brand);
+                            if (is_wp_error($brand_link)) {
+                                continue;
+                            }
+                            echo \'<li><a href="\' . esc_url($brand_link) . \'">' . esc_html($brand->name) . \'</a></li>\';
+                        }
+                    } else {';
+            
+            if (strpos($content, $target_find) !== false) {
+                $content = str_replace($target_find, $target_replace, $content);
+                file_put_contents($functions_path, $content);
+                echo "Repair via exact string replace: SUCCESS\n";
+            } else {
+                echo "Exact string not matched, attempting regex repair...\n";
+                $pattern = '/(<\?php\s+if\s*\(!is_wp_error\(\$brands\)\s*&&\s*!empty\(\$brands\)\)\s*\{)([\s\S]*?)(\$brand_link\s*=\s*get_term_link[\s\S]*?<\/a><\/li>\';)([\s\S]*?)(\}\s*else\s*\{)/i';
+                $repaired = preg_replace($pattern, $target_replace, $content, 1);
+                if ($repaired && $repaired !== $content) {
+                    file_put_contents($functions_path, $repaired);
+                    echo "Repair via regex: SUCCESS\n";
+                }
+            }
+        }
+    }
+    
+    if (function_exists('opcache_invalidate') && file_exists($functions_path)) {
+        $inv = opcache_invalidate($functions_path, true);
+        echo "opcache_invalidate(functions.php): " . ($inv ? "SUCCESS" : "FAILED") . "\n";
+    }
+    if (function_exists('opcache_reset')) {
+        $rst = opcache_reset();
+        echo "opcache_reset(): " . ($rst ? "SUCCESS" : "FAILED") . "\n";
+    }
+    if (function_exists('clean_term_cache')) {
+        clean_term_cache(0, 'product_brand');
+        clean_term_cache(0, 'product_industry');
+        echo "clean_term_cache: DONE\n";
+    }
+    if (function_exists('wp_cache_flush')) {
+        wp_cache_flush();
+        echo "wp_cache_flush: DONE\n";
+    }
+    if (defined('LSCWP_V') || class_exists('LiteSpeed_Cache_API')) {
+        do_action('litespeed_purge_all');
+        echo "litespeed_purge_all: DONE\n";
+    }
+    
+    echo "=== FINISHED ===\n";
+    exit;
+}
 /**
  * CDR FoodLab Products Importer for WordPress
  * 

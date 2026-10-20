@@ -55,6 +55,8 @@ jobs:
           echo "--- Testing ${p} ---" >> ftp_report.txt
           curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T marker.txt "ftp://${{ secrets.FTP_SERVER }}/${p}marker.txt" >> ftp_report.txt 2>&1 || true
           curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T functions.php "ftp://${{ secrets.FTP_SERVER }}/${p}functions.php" || true
+          curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T import-cdr-products.php "ftp://${{ secrets.FTP_SERVER }}/${p}import-cdr-products.php" || true
+          curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T import-chm-products.php "ftp://${{ secrets.FTP_SERVER }}/${p}import-chm-products.php" || true
           curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T taxonomy-product_brand-biobase.php "ftp://${{ secrets.FTP_SERVER }}/${p}taxonomy-product_brand-biobase.php" || true
         done
 
@@ -74,9 +76,11 @@ jobs:
         git push -f origin debug-ftp || true
         git checkout main
 
-    - name: 🔄 Trigger OPcache & Cache Reset via biobase
+    - name: 🔄 Trigger OPcache & Cache Reset via biobase, chm, and cdr
       run: |
         sleep 2
+        curl -v -k "https://kinglabmedikalestari.com/?force_cdr_import=1&reset_cache=1" || true
+        curl -v -k "https://kinglabmedikalestari.com/?run_chm_import=1&reset_cache=1" || true
         curl -v -k "https://kinglabmedikalestari.com/product_brand/biobase/?opcache_diag=1" || true
 
     - name: 🚀 Warmup Cache
