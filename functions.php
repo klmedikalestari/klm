@@ -8,18 +8,6 @@
 
 if (!defined('ABSPATH')) exit;
 
-if (isset($_GET['opcache_reset_now'])) {
-    if (function_exists('opcache_reset')) {
-        @opcache_reset();
-    }
-    if (function_exists('wp_cache_flush')) {
-        @wp_cache_flush();
-    }
-    header('Content-Type: text/plain');
-    echo "KLM_OPCACHE_RESET_OK";
-    exit;
-}
-
 define('Kinglab_Medika_Lestari_VERSION', time());
 define('Kinglab_Medika_Lestari_DIR', get_template_directory());
 define('Kinglab_Medika_Lestari_URI', get_template_directory_uri());

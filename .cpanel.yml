@@ -1,5 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/ambrawar/public_html/wp-content/themes/KINGLAB/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/echo "Theme folder is a symlink to this repo - no copy needed"
