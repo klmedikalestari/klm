@@ -70,8 +70,16 @@ if (isset($_GET['reset_cache']) || isset($_GET['opcache_reset'])) {
     if (defined('LSCWP_V') || class_exists('LiteSpeed_Cache_API')) {
         do_action('litespeed_purge_all');
         echo "litespeed_purge_all: DONE\n";
+    // Restart LiteSpeed PHP worker if detached
+    @touch('/home/ambrawar/.lsphp_restart.txt');
+    @touch($theme_dir . '/.lsphp_restart.txt');
+    @touch(dirname(dirname(dirname($theme_dir))) . '/.lsphp_restart.txt');
+    $web_root = dirname(dirname($theme_dir));
+    if (file_exists($web_root . '/.htaccess')) {
+        @touch($web_root . '/.htaccess');
+        echo "Touched root .htaccess\n";
     }
-    
+
     echo "=== FINISHED ===\n";
     exit;
 }
