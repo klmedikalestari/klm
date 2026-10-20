@@ -23,11 +23,13 @@ jobs:
         curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/" -Q "PWD" >> ftp_listing.txt || true
         echo "=== Root listing ===" >> ftp_listing.txt
         curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/" >> ftp_listing.txt || true
+        echo "=== Server functions.php around By Brand ===" >> ftp_listing.txt
+        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/functions.php" | grep -n -C 10 "By Brand" >> ftp_listing.txt || true
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git checkout -B debug-ftp
         git add -f ftp_listing.txt
-        git commit -m "debug: ftp listing" || true
+        git commit -m "debug: ftp listing and server functions snippet" || true
         git push -f origin debug-ftp || true
         git checkout main
 
