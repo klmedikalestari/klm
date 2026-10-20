@@ -581,6 +581,9 @@ function kinglab_inject_products_mega_menu($items, $args) {
                 <ul class="mega-menu-list">
                     <?php if (!is_wp_error($brands) && !empty($brands)) {
                         foreach ($brands as $brand) {
+                            if ( strtolower( trim( $brand->slug ) ) === 'chm-lab' || strtoupper( trim( $brand->name ) ) === 'CHM LAB' ) {
+                                continue;
+                            }
                             echo '<li><a href="' . esc_url(get_term_link($brand)) . '">' . esc_html($brand->name) . '</a></li>';
                         }
                     } else {
