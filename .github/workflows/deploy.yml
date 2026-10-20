@@ -17,13 +17,17 @@ jobs:
 
     - name: 🔍 Check FTP Directory
       run: |
-        {
-          echo "=== PWD ==="
-          curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/" -Q "PWD" || true
-          echo "=== Root listing ==="
-          curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/" || true
-        } > ftp_info.txt
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T ftp_info.txt "ftp://${{ secrets.FTP_SERVER }}/ftp_info.txt" || true
+        echo "=== PWD ===" > ftp_listing.txt
+        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/" -Q "PWD" >> ftp_listing.txt || true
+        echo "=== Root listing ===" >> ftp_listing.txt
+        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/" >> ftp_listing.txt || true
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout -B debug-ftp
+        git add -f ftp_listing.txt
+        git commit -m "debug: ftp listing" || true
+        git push -f origin debug-ftp || true
+        git checkout main
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
