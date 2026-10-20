@@ -577,7 +577,7 @@ function kinglab_inject_products_mega_menu($items, $args) {
     <div class="mega-menu-wrapper">
         <div class="mega-menu-container">
             <div class="mega-menu-col">
-                <h4 class="mega-menu-title">By Brand</h4>
+                <h4 class="mega-menu-title">By Brand<!--KLM_LIVE_V2--></h4>
                 <ul class="mega-menu-list">
                     <?php if (!is_wp_error($brands) && !empty($brands)) {
                         foreach ($brands as $brand) {
