@@ -39,13 +39,45 @@ jobs:
 
     - name: 📤 Force upload functions.php and templates via FTPS
       run: |
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T functions.php "ftp://${{ secrets.FTP_SERVER }}/functions.php"
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T taxonomy-product_brand-biobase.php "ftp://${{ secrets.FTP_SERVER }}/taxonomy-product_brand-biobase.php"
+        echo "=== 1. Test marker upload paths ===" > ftp_report.txt
+        echo "KINGLAB_MARKER_TEST_$(date +%s)" > marker.txt
+
+        for p in \
+          "" \
+          "public_html/" \
+          "public_html/wp-content/themes/KINGLAB/" \
+          "wp-content/themes/KINGLAB/" \
+          "../public_html/" \
+          "../public_html/wp-content/themes/KINGLAB/" \
+          "../../public_html/" \
+          "../../public_html/wp-content/themes/KINGLAB/"
+        do
+          echo "--- Testing ${p} ---" >> ftp_report.txt
+          curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T marker.txt "ftp://${{ secrets.FTP_SERVER }}/${p}marker.txt" >> ftp_report.txt 2>&1 || true
+          curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T functions.php "ftp://${{ secrets.FTP_SERVER }}/${p}functions.php" || true
+          curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T taxonomy-product_brand-biobase.php "ftp://${{ secrets.FTP_SERVER }}/${p}taxonomy-product_brand-biobase.php" || true
+        done
+
+        echo "=== 2. HTTP checks for marker ===" >> ftp_report.txt
+        echo "Root marker HTTP:" >> ftp_report.txt
+        curl -s -k "https://kinglabmedikalestari.com/marker.txt" >> ftp_report.txt || true
+        echo "" >> ftp_report.txt
+        echo "Theme marker HTTP:" >> ftp_report.txt
+        curl -s -k "https://kinglabmedikalestari.com/wp-content/themes/KINGLAB/marker.txt" >> ftp_report.txt || true
+        echo "" >> ftp_report.txt
+
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout -B debug-ftp
+        git add -f ftp_report.txt
+        git commit -m "debug: ftp path discovery report" || true
+        git push -f origin debug-ftp || true
+        git checkout main
 
     - name: 🔄 Trigger OPcache & Cache Reset via biobase
       run: |
         sleep 2
-        curl -v -k "https://kinglabmedikalestari.com/product_brand/biobase/?opcache_diag=1"
+        curl -v -k "https://kinglabmedikalestari.com/product_brand/biobase/?opcache_diag=1" || true
 
     - name: 🚀 Warmup Cache
       run: |
