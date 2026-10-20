@@ -13,16 +13,6 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
     
-    - name: 🔄 Restart LiteSpeed PHP (Recycle OPcache)
-      run: |
-        echo "Restart LSPHP" > restart.txt
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/.lsphp_restart.txt" || true
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../.lsphp_restart.txt" || true
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../.lsphp_restart.txt" || true
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../../.lsphp_restart.txt" || true
-        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../../../.lsphp_restart.txt" || true
-
-
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
@@ -42,6 +32,18 @@ jobs:
           test-extract/**
           raw_html.txt
           produk.xlsx
+
+    - name: 🔄 Purge OPcache & LiteSpeed Cache (Post-Deploy)
+      run: |
+        sleep 2
+        curl -s -k "https://kinglabmedikalestari.com/author/admin/?purge_klm_cache=1" || true
+        curl -s -k "https://kinglabmedikalestari.com/random-cache-purge-trigger/?purge_klm_cache=1" || true
+        echo "Restart LSPHP" > restart.txt
+        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/.lsphp_restart.txt" || true
+        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../.lsphp_restart.txt" || true
+        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../.lsphp_restart.txt" || true
+        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../../.lsphp_restart.txt" || true
+        curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../../../.lsphp_restart.txt" || true
 
     - name: 🚀 Warmup Cache
       run: |

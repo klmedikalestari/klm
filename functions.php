@@ -581,7 +581,14 @@ function kinglab_inject_products_mega_menu($items, $args) {
                 <ul class="mega-menu-list">
                     <?php if (!is_wp_error($brands) && !empty($brands)) {
                         foreach ($brands as $brand) {
-                            echo '<li><a href="' . esc_url(get_term_link($brand)) . '">' . esc_html($brand->name) . '</a></li>';
+                            if (!is_object($brand) || empty($brand->name)) {
+                                continue;
+                            }
+                            $brand_link = get_term_link($brand);
+                            if (is_wp_error($brand_link)) {
+                                continue;
+                            }
+                            echo '<li><a href="' . esc_url($brand_link) . '">' . esc_html($brand->name) . '</a></li>';
                         }
                     } else {
                         echo '<li><span style="color:#999;font-size:0.9rem;">No brands found.</span></li>';
