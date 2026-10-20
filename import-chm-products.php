@@ -48,6 +48,104 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// ==========================================
+// CLEANUP: Hapus Brand "CHM LAB" & Produk Lama
+// ==========================================
+$cleanup_report = array();
+
+$chm_lab_terms = array();
+$t1 = get_term_by('slug', 'chm-lab', 'product_brand');
+if ($t1) {
+    $chm_lab_terms[] = $t1;
+}
+$t2 = get_term_by('name', 'CHM LAB', 'product_brand');
+if ($t2 && (!isset($t1->term_id) || $t1->term_id !== $t2->term_id)) {
+    $chm_lab_terms[] = $t2;
+}
+
+foreach ($chm_lab_terms as $term) {
+    $pids = get_posts(array(
+        'post_type'      => 'product',
+        'posts_per_page' => -1,
+        'post_status'    => 'any',
+        'fields'         => 'ids',
+        'tax_query'      => array(
+            array(
+                'taxonomy'         => 'product_brand',
+                'field'            => 'term_id',
+                'terms'            => $term->term_id,
+                'include_children' => true,
+            ),
+        ),
+    ));
+    if (!empty($pids)) {
+        foreach ($pids as $pid) {
+            $thumb_id = get_post_thumbnail_id($pid);
+            if ($thumb_id) {
+                wp_delete_attachment($thumb_id, true);
+            }
+            wp_delete_post($pid, true);
+            $cleanup_report[] = "Deleted product attached to " . $term->name . ": ID " . $pid;
+        }
+    }
+
+    $children = get_terms(array(
+        'taxonomy'   => 'product_brand',
+        'parent'     => $term->term_id,
+        'hide_empty' => false,
+    ));
+    if (!is_wp_error($children) && !empty($children)) {
+        foreach ($children as $child) {
+            wp_delete_term($child->term_id, 'product_brand');
+            $cleanup_report[] = "Deleted child term: " . $child->name . " (ID: " . $child->term_id . ")";
+        }
+    }
+
+    wp_delete_term($term->term_id, 'product_brand');
+    $cleanup_report[] = "Deleted brand term: " . $term->name . " (slug: " . $term->slug . ", ID: " . $term->term_id . ")";
+}
+
+// Hapus juga produk lama berdasarkan slug chm-quantitative-filter-paper jika masih ada
+$old_products = get_posts(array(
+    'post_type'      => 'product',
+    'name'           => 'chm-quantitative-filter-paper',
+    'post_status'    => 'any',
+    'posts_per_page' => -1,
+    'fields'         => 'ids',
+));
+if (!empty($old_products)) {
+    foreach ($old_products as $pid) {
+        $thumb_id = get_post_thumbnail_id($pid);
+        if ($thumb_id) {
+            wp_delete_attachment($thumb_id, true);
+        }
+        wp_delete_post($pid, true);
+        $cleanup_report[] = "Deleted old product: chm-quantitative-filter-paper (ID: " . $pid . ")";
+    }
+}
+
+// Clean caches & OPcache
+if (function_exists('clean_term_cache')) {
+    clean_term_cache(0, 'product_brand');
+}
+if (function_exists('wp_cache_flush')) {
+    wp_cache_flush();
+}
+if (function_exists('opcache_reset')) {
+    @opcache_reset();
+}
+
+if (isset($_GET['delete_chm_only'])) {
+    header('Content-Type: text/plain; charset=UTF-8');
+    echo "CLEANUP COMPLETE:\n";
+    if (empty($cleanup_report)) {
+        echo "No CHM LAB terms or products found (already deleted).\n";
+    } else {
+        echo implode("\n", $cleanup_report) . "\n";
+    }
+    exit;
+}
+
 // Path to data
 $json_file = dirname(__FILE__) . '/import-tools/chm-products-data.json';
 $images_dir = dirname(__FILE__) . '/import-tools/images/';
