@@ -43,11 +43,9 @@ jobs:
           raw_html.txt
           produk.xlsx
 
-    - name: 🚀 Trigger Cleanup and Verify
+    - name: 🚀 Warmup Cache
       run: |
         sleep 2
-        echo "Calling /product_brand/chm-lab/?debug=1 ..."
-        curl -s -k "https://kinglabmedikalestari.com/product_brand/chm-lab/?debug=1&nocache=$(date +%s)" | head -n 30 || true
-        echo "Calling /?delete_duplicate_chm=1 ..."
-        curl -s -k "https://kinglabmedikalestari.com/?delete_duplicate_chm=1&nocache=$(date +%s)" | head -n 30 || true
+        curl -s -k "https://kinglabmedikalestari.com/?warmup=$(date +%s)" > /dev/null || true
+
 

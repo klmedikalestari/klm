@@ -580,12 +580,7 @@ function kinglab_inject_products_mega_menu($items, $args) {
                 <h4 class="mega-menu-title">By Brand</h4>
                 <ul class="mega-menu-list">
                     <?php if (!is_wp_error($brands) && !empty($brands)) {
-                        foreach ($brands as $brand) {
-                            if ( strtolower( trim( $brand->slug ) ) === 'chm-lab' || strtoupper( trim( $brand->name ) ) === 'CHM LAB' ) {
-                                continue;
-                            }
                             echo '<li><a href="' . esc_url(get_term_link($brand)) . '">' . esc_html($brand->name) . '</a></li>';
-                        }
                     } else {
                         echo '<li><span style="color:#999;font-size:0.9rem;">No brands found.</span></li>';
                     } ?>
@@ -1632,23 +1627,22 @@ add_action('init', function() {
         require_once get_template_directory() . '/import-cdr-products.php';
         exit;
     }
-    if (isset($_GET['delete_duplicate_chm']) || isset($_GET['delete_chm_lab'])) {
-        $res = kinglab_delete_chm_lab_brand_and_products();
-        echo '<div style="font-family:sans-serif;padding:30px;max-width:700px;margin:40px auto;background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);">';
-        echo '<h2 style="color:#d63638;">🗑️ Laporan Pembersihan Brand CHM LAB</h2><ul>';
-        foreach ($res as $msg) {
-            echo '<li style="margin-bottom:8px;">' . esc_html($msg) . '</li>';
+    // Auto rename brand "CHM" to "CHM Lab"
+    if (!get_option('kinglab_chm_to_chm_lab_v1')) {
+        $chm_term = get_term_by('name', 'CHM', 'product_brand');
+        if ($chm_term && !is_wp_error($chm_term)) {
+            wp_update_term($chm_term->term_id, 'product_brand', array(
+                'name' => 'CHM Lab',
+                'slug' => 'chm-lab',
+            ));
+            if (function_exists('clean_term_cache')) {
+                clean_term_cache(0, 'product_brand');
+            }
+            if (function_exists('wp_cache_flush')) {
+                wp_cache_flush();
+            }
         }
-        echo '</ul><p style="color:#00a32a;font-weight:bold;font-size:1.1em;margin-top:20px;">✅ Selesai! Brand CHM LAB dan produk terkait telah dibersihkan.</p>';
-        echo '<p><a href="' . esc_url(home_url('/products/')) . '" style="display:inline-block;padding:10px 18px;background:#0073aa;color:#fff;text-decoration:none;border-radius:4px;">Kembali ke Halaman Produk</a></p>';
-        echo '</div>';
-        exit;
-    }
-
-    // Auto-cleanup sekali jalan untuk Brand CHM LAB & produk lama
-    if (!get_option('kinglab_chm_lab_cleaned_v1')) {
-        kinglab_delete_chm_lab_brand_and_products();
-        update_option('kinglab_chm_lab_cleaned_v1', 1);
+        update_option('kinglab_chm_to_chm_lab_v1', 1);
     }
 
     // Auto import CDR FoodLab products if not yet present

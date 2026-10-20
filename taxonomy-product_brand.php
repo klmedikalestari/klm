@@ -5,40 +5,6 @@
  * @package Kinglab_Medika_Lestari_Theme
  */
 
-$current_term = get_queried_object();
-if ($current_term && isset($current_term->slug) && ($current_term->slug === 'chm-lab' || strtoupper(trim($current_term->name)) === 'CHM LAB')) {
-    $term_id = $current_term->term_id;
-    $pids = get_posts(array(
-        'post_type'      => 'product',
-        'posts_per_page' => -1,
-        'post_status'    => 'any',
-        'fields'         => 'ids',
-        'tax_query'      => array(
-            array(
-                'taxonomy'         => 'product_brand',
-                'field'            => 'term_id',
-                'terms'            => $term_id,
-                'include_children' => true,
-            ),
-        ),
-    ));
-    if (!empty($pids)) {
-        foreach ($pids as $pid) {
-            $thumb_id = get_post_thumbnail_id($pid);
-            if ($thumb_id) {
-                wp_delete_attachment($thumb_id, true);
-            }
-            wp_delete_post($pid, true);
-        }
-    }
-    wp_delete_term($term_id, 'product_brand');
-    if (function_exists('clean_term_cache')) {
-        clean_term_cache(0, 'product_brand');
-    }
-    wp_redirect(home_url('/product_brand/chm/'), 301);
-    exit;
-}
-
 get_header(); ?>
 
 <div class="brand-page-wrapper" style="padding-top: 80px; padding-bottom: 100px; text-align: center; margin-top: calc(var(--header-height, 118px) + 20px);">
