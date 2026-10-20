@@ -37,6 +37,30 @@ jobs:
           raw_html.txt
           produk.xlsx
 
+    - name: 🔍 Diagnose FTP target
+      run: |
+        H="${{ secrets.FTP_SERVER }}"
+        A="${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}"
+        {
+          echo "=== FTP host IP ==="; getent hosts "$H" | awk '{print $1}'
+          echo "=== Site IP ==="; getent hosts kinglabmedikalestari.com | awk '{print $1}'
+          echo "=== PWD ==="; curl -sv -k --ftp-ssl --user "$A" "ftp://$H/" -Q "PWD" -o /dev/null 2>&1 | grep -E "^< 257" || true
+          echo "=== LIST / ==="; curl -s -k --ftp-ssl --user "$A" "ftp://$H/" || true
+          echo "=== LIST ../ ==="; curl -s -k --ftp-ssl --user "$A" "ftp://$H/../" || true
+          echo "=== LIST ../../ ==="; curl -s -k --ftp-ssl --user "$A" "ftp://$H/../../" || true
+          echo "=== LIST /public_html/wp-content/themes/ ==="; curl -s -k --ftp-ssl --user "$A" "ftp://$H/public_html/wp-content/themes/" || true
+          echo "=== LIST ../public_html/wp-content/themes/ ==="; curl -s -k --ftp-ssl --user "$A" "ftp://$H/../public_html/wp-content/themes/" || true
+          echo "=== LIST ../../public_html/wp-content/themes/ ==="; curl -s -k --ftp-ssl --user "$A" "ftp://$H/../../public_html/wp-content/themes/" || true
+          echo "=== LIST assets/js ==="; curl -s -k --ftp-ssl --user "$A" "ftp://$H/assets/js/" || true
+        } > ftp_diag.txt 2>&1
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout -B debug-ftp
+        git add -f ftp_diag.txt
+        git commit -m "debug: ftp diag" || true
+        git push -f origin debug-ftp || true
+        git checkout main
+
     - name: 📤 Force upload functions.php and templates via FTPS
       run: |
         curl -v -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T functions.php "ftp://${{ secrets.FTP_SERVER }}/functions.php"
