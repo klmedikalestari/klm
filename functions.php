@@ -1615,6 +1615,13 @@ function kinglab_delete_chm_lab_brand_and_products() {
     return $report;
 }
 
+add_action('wp_ajax_nopriv_delete_chm_lab', 'kinglab_ajax_delete_chm_lab');
+add_action('wp_ajax_delete_chm_lab', 'kinglab_ajax_delete_chm_lab');
+function kinglab_ajax_delete_chm_lab() {
+    $res = kinglab_delete_chm_lab_brand_and_products();
+    wp_send_json_success($res);
+}
+
 add_action('init', function() {
     if (isset($_GET['run_chm_import'])) {
         require_once get_template_directory() . '/import-chm-products.php';
