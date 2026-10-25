@@ -107,7 +107,7 @@ const oldCardMarkup = `                        <article class="arco-product-card
                                 <!-- Action Buttons -->
                                 <div class="arco-card-actions">
                                     <a href="<?php echo esc_url($wa_link); ?>" class="arco-btn-wa" target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-whatsapp"></i> Minta Penawaran Resmi
+                                        <i class="fab fa-whatsapp"></i> Penawaran
                                     </a>
 
                                     <button type="button" class="arco-btn-spec-modal" 
@@ -171,7 +171,7 @@ const newCardMarkup = `                        <article class="arco-product-card
                                     <!-- Action Buttons -->
                                     <div class="arco-card-actions">
                                         <a href="<?php echo esc_url($wa_link); ?>" class="arco-btn-wa" target="_blank" rel="noopener noreferrer">
-                                            <i class="fab fa-whatsapp"></i> Minta Penawaran Resmi
+                                            <i class="fab fa-whatsapp"></i> Penawaran
                                         </a>
 
                                         <button type="button" class="arco-btn-spec-modal" 
@@ -442,7 +442,7 @@ function generatePreviewHtml(prods) {
                                 </div>
                                 <div class="arco-card-actions">
                                     <a href="${waLink}" class="arco-btn-wa" target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-whatsapp"></i> Minta Penawaran Resmi
+                                        <i class="fab fa-whatsapp"></i> Penawaran
                                     </a>
                                     <button type="button" class="arco-btn-spec-modal" 
                                             data-title="${prod.title}" 
@@ -556,7 +556,7 @@ function generatePreviewHtml(prods) {
                     </p>
                     <div class="arco-cta-btns">
                         <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20kami%20ingin%20konsultasi%20dan%20penawaran%20pengadaan%20peralatan%20laboratorium%20ARCO%20Scientific%20untuk%20fasilitas%20kami.&type=phone_number&app_absent=0" class="arco-cta-btn-wa" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-whatsapp"></i> Hubungi Konsultan Laboratorium Kami
+                            <i class="fab fa-whatsapp"></i> Hubungi Kami
                         </a>
                     </div>
                 </div>
@@ -583,7 +583,7 @@ function generatePreviewHtml(prods) {
             </div>
             <div style="margin-top:24px; padding-top:16px; border-top:1px solid #e2e8f0; display:flex; justify-content:flex-end; gap:12px;">
                 <a href="#" class="arco-btn-wa" id="arcoModalWaBtn" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i> Minta Penawaran Resmi
+                    <i class="fab fa-whatsapp"></i> Penawaran
                 </a>
             </div>
         </div>

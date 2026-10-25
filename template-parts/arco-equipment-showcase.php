@@ -935,7 +935,7 @@ $arco_products = array(
                                     <!-- Action Buttons -->
                                     <div class="arco-card-actions">
                                         <a href="<?php echo esc_url($wa_link); ?>" class="arco-btn-wa" target="_blank" rel="noopener noreferrer">
-                                            <i class="fab fa-whatsapp"></i> Minta Penawaran Resmi
+                                            <i class="fab fa-whatsapp"></i> Penawaran
                                         </a>
 
                                         <button type="button" class="arco-btn-spec-modal" 
@@ -1049,7 +1049,7 @@ $arco_products = array(
                 </p>
                 <div class="arco-cta-btns">
                     <a href="https://api.whatsapp.com/send/?phone=<?php echo esc_attr($clean_phone); ?>&text=<?php echo rawurlencode('Halo PT Kinglab Medika Lestari, kami ingin konsultasi dan penawaran pengadaan peralatan laboratorium ARCO Scientific untuk fasilitas kami.'); ?>&type=phone_number&app_absent=0" class="arco-cta-btn-wa" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-whatsapp"></i> Hubungi Konsultan Laboratorium Kami
+                        <i class="fab fa-whatsapp"></i> Hubungi Kami
                     </a>
                 </div>
             </div>
@@ -1077,7 +1077,7 @@ $arco_products = array(
         </div>
         <div style="margin-top:24px; padding-top:16px; border-top:1px solid #e2e8f0; display:flex; justify-content:flex-end; gap:12px;">
             <a href="#" class="arco-btn-wa" id="arcoModalWaBtn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-whatsapp"></i> Minta Penawaran Resmi
+                <i class="fab fa-whatsapp"></i> Penawaran
             </a>
         </div>
     </div>
