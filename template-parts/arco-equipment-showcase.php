@@ -777,15 +777,6 @@ $arco_products = array(
                     Lini produk <strong>ARCO Scientific®</strong> menghadirkan rangkaian perlengkapan laboratorium berstandar internasional (ISO, DIN, ASTM). Mulai dari <em>Glassware</em> kaca borosilikat 3.3 tahan suhu tinggi, <em>Plasticware</em> bebas kontaminasi autoclavable, <em>Rubberware</em> berpresisi kedap udara, <em>Metalware</em> stainless steel tugas berat, hingga <em>Woodenware</em> kayu keras terawat. Didukung jaminan kualitas resmi dan suplai terpercaya dari <strong>PT Kinglab Medika Lestari</strong>.
                 </p>
 
-                <!-- Quick Action Buttons -->
-                <div class="arco-hero-actions">
-                    <a href="#arco-brochure-section" class="arco-hero-btn-brochure">
-                        <i class="fas fa-file-pdf"></i> Download Katalog Lengkap ARCO (PDF)
-                    </a>
-                    <a href="https://api.whatsapp.com/send/?phone=<?php echo esc_attr($clean_phone); ?>&text=<?php echo rawurlencode('Halo PT Kinglab Medika Lestari, saya tertarik dengan informasi produk laboratorium ARCO Scientific. Mohon bantuan penawaran dan katalognya. Terima kasih.'); ?>&type=phone_number&app_absent=0" class="arco-hero-btn-wa" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-whatsapp"></i> Hubungi Sales Kami
-                    </a>
-                </div>
 
                 <!-- 4 Value Pillars -->
                 <div class="arco-pillars-grid">
@@ -819,7 +810,7 @@ $arco_products = array(
         <div class="arco-container">
             <div class="arco-tiles-header">
                 <h3>Jelajahi Berdasarkan Kategori Peralatan</h3>
-                <p>Pilih kategori untuk melihat 10 produk unggulan atau unduh katalog lengkap untuk ribuan varian lainnya.</p>
+                <p>Pilih kategori untuk melihat produk unggulan atau unduh katalog lengkap untuk ribuan varian lainnya.</p>
             </div>
 
             <div class="arco-category-tiles-grid">
@@ -830,7 +821,7 @@ $arco_products = array(
                         </div>
                         <div class="arco-tile-info">
                             <h4 class="arco-tile-name"><?php echo esc_html($cat['name']); ?></h4>
-                            <span class="arco-tile-count">10 Unggulan • Lengkap di PDF</span>
+                            <span class="arco-tile-count">Koleksi Lengkap di PDF</span>
                         </div>
                     </a>
                 <?php endforeach; ?>
@@ -843,11 +834,11 @@ $arco_products = array(
         <div class="arco-container">
             <div class="arco-filter-tabs" role="tablist" aria-label="Filter Kategori ARCO">
                 <button class="arco-filter-btn active" data-filter="all" type="button">
-                    <i class="fas fa-th-large"></i> Semua Kategori <span class="badge-num">50</span>
+                    <i class="fas fa-th-large"></i> Semua Kategori
                 </button>
                 <?php foreach ($arco_categories as $slug => $cat) : ?>
                     <button class="arco-filter-btn" data-filter="<?php echo esc_attr($slug); ?>" type="button">
-                        <?php echo esc_html($cat['name']); ?> <span class="badge-num">10</span>
+                        <?php echo esc_html($cat['name']); ?>
                     </button>
                 <?php endforeach; ?>
             </div>
@@ -871,7 +862,7 @@ $arco_products = array(
                         <h2 class="arco-cat-header-title">
                             <?php echo esc_html($cat_meta['name']); ?>
                             <span class="arco-cat-header-badge <?php echo esc_attr($cat_meta['tag_class']); ?>">
-                                10 Produk Unggulan
+                                Produk Unggulan
                             </span>
                         </h2>
                         <p class="arco-cat-header-desc"><?php echo esc_html($cat_meta['description']); ?></p>
@@ -990,11 +981,6 @@ $arco_products = array(
                         <li><i class="fas fa-check-circle"></i> Tabel Spesifikasi Metrologi & Akurasi ISO / DIN</li>
                     </ul>
 
-                    <div style="display:flex; gap:16px; flex-wrap:wrap;">
-                        <a href="https://api.whatsapp.com/send/?phone=<?php echo esc_attr($clean_phone); ?>&text=<?php echo rawurlencode('Halo PT Kinglab Medika Lestari, saya ingin meminta brosur dan katalog lengkap ARCO Scientific dalam bentuk PDF. Mohon dapat dikirimkan. Terima kasih.'); ?>&type=phone_number&app_absent=0" class="arco-hero-btn-wa" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-whatsapp"></i> Minta Brosur via WhatsApp
-                        </a>
-                    </div>
                 </div>
 
                 <div class="arco-brochure-card">

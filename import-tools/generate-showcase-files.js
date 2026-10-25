@@ -257,16 +257,6 @@ function generatePreviewHtml(prods) {
                         Lini produk <strong>ARCO Scientific®</strong> menghadirkan rangkaian perlengkapan laboratorium berstandar internasional (ISO, DIN, ASTM). Mulai dari <em>Glassware</em> kaca borosilikat 3.3 tahan suhu tinggi, <em>Plasticware</em> bebas kontaminasi autoclavable, <em>Rubberware</em> berpresisi kedap udara, <em>Metalware</em> stainless steel tugas berat, hingga <em>Woodenware</em> kayu keras terawat. Didukung jaminan kualitas resmi dan suplai terpercaya dari <strong>PT Kinglab Medika Lestari</strong>.
                     </p>
 
-                    <!-- Quick Action Buttons -->
-                    <div class="arco-hero-actions">
-                        <a href="#arco-brochure-section" class="arco-hero-btn-brochure">
-                            <i class="fas fa-file-pdf"></i> Download Katalog Lengkap ARCO (PDF)
-                        </a>
-                        <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20informasi%20produk%20laboratorium%20ARCO%20Scientific.%20Mohon%20bantuan%20penawaran%20dan%20katalognya.%20Terima%20kasih.&type=phone_number&app_absent=0" class="arco-hero-btn-wa" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-whatsapp"></i> Hubungi Sales Kami
-                        </a>
-                    </div>
-
                     <!-- 4 Value Pillars -->
                     <div class="arco-pillars-grid">
                         <div class="arco-pillar-item">
@@ -299,7 +289,7 @@ function generatePreviewHtml(prods) {
             <div class="arco-container">
                 <div class="arco-tiles-header">
                     <h3>Jelajahi Berdasarkan Kategori Peralatan</h3>
-                    <p>Pilih kategori untuk melihat 10 produk unggulan atau unduh katalog lengkap untuk ribuan varian lainnya.</p>
+                    <p>Pilih kategori untuk melihat produk unggulan atau unduh katalog lengkap untuk ribuan varian lainnya.</p>
                 </div>
 
                 <div class="arco-category-tiles-grid">
@@ -309,7 +299,7 @@ function generatePreviewHtml(prods) {
                         </div>
                         <div class="arco-tile-info">
                             <h4 class="arco-tile-name">Glassware</h4>
-                            <span class="arco-tile-count">10 Unggulan • Lengkap di PDF</span>
+                            <span class="arco-tile-count">Koleksi Lengkap di PDF</span>
                         </div>
                     </a>
 
@@ -319,7 +309,7 @@ function generatePreviewHtml(prods) {
                         </div>
                         <div class="arco-tile-info">
                             <h4 class="arco-tile-name">Plasticware</h4>
-                            <span class="arco-tile-count">10 Unggulan • Lengkap di PDF</span>
+                            <span class="arco-tile-count">Koleksi Lengkap di PDF</span>
                         </div>
                     </a>
 
@@ -329,7 +319,7 @@ function generatePreviewHtml(prods) {
                         </div>
                         <div class="arco-tile-info">
                             <h4 class="arco-tile-name">Rubberware</h4>
-                            <span class="arco-tile-count">10 Unggulan • Lengkap di PDF</span>
+                            <span class="arco-tile-count">Koleksi Lengkap di PDF</span>
                         </div>
                     </a>
 
@@ -339,7 +329,7 @@ function generatePreviewHtml(prods) {
                         </div>
                         <div class="arco-tile-info">
                             <h4 class="arco-tile-name">Metalware</h4>
-                            <span class="arco-tile-count">10 Unggulan • Lengkap di PDF</span>
+                            <span class="arco-tile-count">Koleksi Lengkap di PDF</span>
                         </div>
                     </a>
 
@@ -349,7 +339,7 @@ function generatePreviewHtml(prods) {
                         </div>
                         <div class="arco-tile-info">
                             <h4 class="arco-tile-name">Woodenware</h4>
-                            <span class="arco-tile-count">10 Unggulan • Lengkap di PDF</span>
+                            <span class="arco-tile-count">Koleksi Lengkap di PDF</span>
                         </div>
                     </a>
                 </div>
@@ -361,22 +351,22 @@ function generatePreviewHtml(prods) {
             <div class="arco-container">
                 <div class="arco-filter-tabs" role="tablist" aria-label="Filter Kategori ARCO">
                     <button class="arco-filter-btn active" data-filter="all" type="button">
-                        <i class="fas fa-th-large"></i> Semua Kategori <span class="badge-num">50</span>
+                        <i class="fas fa-th-large"></i> Semua Kategori
                     </button>
                     <button class="arco-filter-btn" data-filter="glassware" type="button">
-                        Glassware <span class="badge-num">10</span>
+                        Glassware
                     </button>
                     <button class="arco-filter-btn" data-filter="plasticware" type="button">
-                        Plasticware <span class="badge-num">10</span>
+                        Plasticware
                     </button>
                     <button class="arco-filter-btn" data-filter="rubberware" type="button">
-                        Rubberware <span class="badge-num">10</span>
+                        Rubberware
                     </button>
                     <button class="arco-filter-btn" data-filter="metalware" type="button">
-                        Metalware <span class="badge-num">10</span>
+                        Metalware
                     </button>
                     <button class="arco-filter-btn" data-filter="woodenware" type="button">
-                        Woodenware <span class="badge-num">10</span>
+                        Woodenware
                     </button>
                 </div>
             </div>
@@ -399,7 +389,7 @@ function generatePreviewHtml(prods) {
                     <div>
                         <h2 class="arco-cat-header-title">
                             ${catMeta.name}
-                            <span class="arco-cat-header-badge ${catMeta.tag_class}">10 Produk Unggulan</span>
+                            <span class="arco-cat-header-badge ${catMeta.tag_class}">Produk Unggulan</span>
                         </h2>
                         <p class="arco-cat-header-desc">${catMeta.desc}</p>
                     </div>
@@ -498,11 +488,6 @@ function generatePreviewHtml(prods) {
                             <li><i class="fas fa-check-circle"></i> Tabel Spesifikasi Metrologi &amp; Akurasi ISO / DIN</li>
                         </ul>
 
-                        <div style="display:flex; gap:16px; flex-wrap:wrap;">
-                            <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20ingin%20meminta%20brosur%20dan%20katalog%20lengkap%20ARCO%20Scientific%20dalam%20bentuk%20PDF.%20Mohon%20dapat%20dikirimkan.%20Terima%20kasih.&type=phone_number&app_absent=0" class="arco-hero-btn-wa" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-whatsapp"></i> Minta Brosur via WhatsApp
-                            </a>
-                        </div>
                     </div>
 
                     <div class="arco-brochure-card">
