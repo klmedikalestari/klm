@@ -229,6 +229,18 @@ function Kinglab_Medika_Lestari_register_post_types() {
         'show_ui'      => true,
         'rewrite'      => array('slug' => 'product_industry'),
     ));
+
+    // Ensure key brand terms exist
+    if (!term_exists('Yingtai Centrifuge', 'product_brand')) {
+        wp_insert_term('Yingtai Centrifuge', 'product_brand', array('slug' => 'yingtai'));
+    }
+    if (!term_exists('Arco', 'product_brand')) {
+        wp_insert_term('Arco', 'product_brand', array('slug' => 'arco'));
+    }
+    // Ensure key industry terms exist
+    if (!term_exists('Hospital', 'product_industry')) {
+        wp_insert_term('Hospital', 'product_industry', array('slug' => 'hospital'));
+    }
 }
 add_action('init', 'Kinglab_Medika_Lestari_register_post_types');
 
@@ -579,10 +591,15 @@ function kinglab_inject_products_mega_menu($items, $args) {
             <div class="mega-menu-col">
                 <h4 class="mega-menu-title">By Brand</h4>
                 <ul class="mega-menu-list">
-                    <?php if (!is_wp_error($brands) && !empty($brands)) {
+                    <?php 
+                    $has_yingtai = false;
+                    if (!is_wp_error($brands) && !empty($brands)) {
                         foreach ($brands as $brand) {
                             if (!is_object($brand) || empty($brand->name)) {
                                 continue;
+                            }
+                            if (stripos($brand->name, 'yingtai') !== false || stripos($brand->slug, 'yingtai') !== false || stripos($brand->slug, 'centrifuge') !== false) {
+                                $has_yingtai = true;
                             }
                             $brand_link = get_term_link($brand);
                             if (is_wp_error($brand_link)) {
@@ -590,24 +607,33 @@ function kinglab_inject_products_mega_menu($items, $args) {
                             }
                             echo '<li><a href="' . esc_url($brand_link) . '">' . esc_html($brand->name) . '</a></li>';
                         }
-                    } else {
-                        echo '<li><span style="color:#999;font-size:0.9rem;">No brands found.</span></li>';
-                    } ?>
+                    }
+                    if (!$has_yingtai) {
+                        echo '<li><a href="' . esc_url(home_url('/product_brand/yingtai/')) . '">Yingtai Centrifuge</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
             <div class="mega-menu-col">
                 <h4 class="mega-menu-title">By Industry</h4>
                 <ul class="mega-menu-list">
-                    <?php if (!is_wp_error($industries) && !empty($industries)) {
+                    <?php 
+                    $has_hospital = false;
+                    if (!is_wp_error($industries) && !empty($industries)) {
                         foreach ($industries as $industry) {
                             if ( strtolower( trim( $industry->name ) ) === 'medical' ) {
                                 continue;
                             }
+                            if ( strtolower( trim( $industry->name ) ) === 'hospital' ) {
+                                $has_hospital = true;
+                            }
                             echo '<li><a href="' . esc_url(get_term_link($industry)) . '">' . esc_html($industry->name) . '</a></li>';
                         }
-                    } else {
-                        echo '<li><span style="color:#999;font-size:0.9rem;">No industries found yet.</span></li>';
-                    } ?>
+                    }
+                    if (!$has_hospital) {
+                        echo '<li><a href="' . esc_url(home_url('/product_industry/hospital/')) . '">Hospital</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>

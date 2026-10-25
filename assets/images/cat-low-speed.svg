@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Low Speed Benchtop Clinical Centrifuge -->
+  <rect width="120" height="120" rx="16" fill="#ecfdf5"/>
+  <!-- Smooth Curved Chassis -->
+  <path d="M28 48 Q28 36 60 36 Q92 36 92 48 L88 84 Q88 88 80 88 L40 88 Q32 88 32 84 Z" fill="#ffffff" stroke="#059669" stroke-width="3"/>
+  <!-- Round Lid Window -->
+  <circle cx="60" cy="50" r="14" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+  <!-- Angle Rotor Tubes Inside -->
+  <line x1="53" y1="45" x2="49" y2="55" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+  <line x1="67" y1="45" x2="71" y2="55" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="60" cy="50" r="3" fill="#059669"/>
+  <!-- Digital Control Panel -->
+  <rect x="44" y="68" width="32" height="12" rx="3" fill="#064e3b"/>
+  <text x="60" y="77" font-size="7" font-weight="bold" fill="#34d399" text-anchor="middle" font-family="monospace">4,000 RPM</text>
+  <!-- Indicator Lights -->
+  <circle cx="40" cy="74" r="2" fill="#10b981"/>
+  <circle cx="80" cy="74" r="2" fill="#3b82f6"/>
+</svg>

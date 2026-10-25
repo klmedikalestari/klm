@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Mini & Specialty Centrifuge -->
+  <rect width="120" height="120" rx="16" fill="#fef3c7"/>
+  <!-- Compact Dome Shape -->
+  <ellipse cx="60" cy="58" rx="34" ry="26" fill="#ffffff" stroke="#d97706" stroke-width="3"/>
+  <ellipse cx="60" cy="52" rx="26" ry="18" fill="#fef9c3" stroke="#d97706" stroke-width="2"/>
+  <!-- Microtubes / Rotor Array Inside -->
+  <circle cx="60" cy="52" r="5" fill="#d97706"/>
+  <ellipse cx="48" cy="48" rx="2.5" ry="4" fill="#b45309"/>
+  <ellipse cx="72" cy="48" rx="2.5" ry="4" fill="#b45309"/>
+  <ellipse cx="52" cy="59" rx="2.5" ry="4" fill="#b45309"/>
+  <ellipse cx="68" cy="59" rx="2.5" ry="4" fill="#b45309"/>
+  <!-- Latch & Power Switch -->
+  <rect x="54" y="74" width="12" height="6" rx="2" fill="#d97706"/>
+  <!-- Base Rubber Feet -->
+  <rect x="36" y="82" width="8" height="4" rx="2" fill="#78350f"/>
+  <rect x="76" y="82" width="8" height="4" rx="2" fill="#78350f"/>
+  <!-- Mini Sparkle Icon -->
+  <path d="M92 28 L94 34 L100 36 L94 38 L92 44 L90 38 L84 36 L90 34 Z" fill="#f59e0b"/>
+</svg>

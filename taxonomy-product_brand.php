@@ -47,6 +47,26 @@ if ($is_arco_brand) {
     return;
 }
 
+// Check if current brand is Yingtai Centrifuge (or cn-centrifuge)
+$is_yingtai_brand = false;
+if ($current_term && isset($current_term->taxonomy) && $current_term->taxonomy === 'product_brand') {
+    if ($current_term->slug === 'yingtai' || stripos($current_term->slug, 'yingtai') !== false || stripos($current_term->slug, 'centrifuge') !== false || stripos($current_term->name, 'yingtai') !== false || stripos($current_term->name, 'centrifuge') !== false) {
+        $is_yingtai_brand = true;
+    } elseif (!empty($current_term->parent)) {
+        $parent_term = get_term($current_term->parent, 'product_brand');
+        if ($parent_term && !is_wp_error($parent_term) && (stripos($parent_term->slug, 'yingtai') !== false || stripos($parent_term->slug, 'centrifuge') !== false || stripos($parent_term->name, 'yingtai') !== false || stripos($parent_term->name, 'centrifuge') !== false)) {
+            $is_yingtai_brand = true;
+        }
+    }
+}
+
+if ($is_yingtai_brand) {
+    get_header();
+    get_template_part('template-parts/yingtai-centrifuge-showcase');
+    get_footer();
+    return;
+}
+
 get_header(); ?>
 
 <div class="brand-page-wrapper" style="padding-top: 80px; padding-bottom: 100px; text-align: center; margin-top: calc(var(--header-height, 118px) + 20px);">

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- High Speed Centrifuge Icon -->
+  <rect width="120" height="120" rx="16" fill="#eef2ff"/>
+  <!-- Compact Tabletop Body -->
+  <path d="M26 42 Q26 36 34 36 L86 36 Q94 36 94 42 L90 84 Q90 90 82 90 L38 90 Q30 90 30 84 Z" fill="#ffffff" stroke="#4f46e5" stroke-width="3"/>
+  <!-- Rotor Chamber Dome -->
+  <ellipse cx="60" cy="46" rx="26" ry="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+  <!-- Spinning Rotor Vortex -->
+  <circle cx="60" cy="46" r="5" fill="#4f46e5"/>
+  <path d="M60 41 Q68 41 72 45 M65 49 Q65 55 58 55 M52 46 Q55 39 60 41" stroke="#3730a3" stroke-width="2" stroke-linecap="round"/>
+  <!-- LED Speed Display -->
+  <rect x="42" y="66" width="36" height="13" rx="3" fill="#07236d"/>
+  <text x="60" y="75" font-size="7" font-weight="bold" fill="#818cf8" text-anchor="middle" font-family="monospace">20,000 RPM</text>
+  <!-- Touch controls -->
+  <circle cx="48" cy="83" r="2.5" fill="#4f46e5"/>
+  <circle cx="60" cy="83" r="2.5" fill="#4f46e5"/>
+  <circle cx="72" cy="83" r="2.5" fill="#10b981"/>
+</svg>

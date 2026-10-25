@@ -33,6 +33,7 @@ get_header(); ?>
                             echo '<li><a href="#">ACDBio</a></li>';
                             echo '<li><a href="#">Agilent</a></li>';
                             echo '<li><a href="#">Airtech</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/product_brand/arco/')) . '">Arco</a></li>';
                             echo '<li><a href="#">Asecos</a></li>';
                             echo '<li><a href="#">Bio-Bottle</a></li>';
                             echo '<li><a href="#">Biolasco</a></li>';
@@ -47,6 +48,7 @@ get_header(); ?>
                             echo '<li><a href="#">IDEXX</a></li>';
                             echo '<li><a href="#">Interscience</a></li>';
                             echo '<li><a href="#">LI-COR</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/product_brand/yingtai/')) . '" style="font-weight:600; color:#0d47a1;">Yingtai Centrifuge</a></li>';
                             echo '</ul>';
                         },
                     ));
@@ -64,9 +66,9 @@ get_header(); ?>
                         'fallback_cb'    => function() {
                             echo '<ul class="nav-list">';
                             echo '<li><a href="#">Animal Health</a></li>';
-                            echo '<li><a href="#">Hospital</a></li>';
-                            echo '<li><a href="#">Industry</a></li>';
-                            echo '<li><a href="#">Life Science</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/product_industry/hospital/')) . '">Hospital</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/product_industry/industry/')) . '">Industry</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/product_industry/life-science/')) . '">Life Science</a></li>';
                             echo '</ul>';
                         },
                     ));

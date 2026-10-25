@@ -42,7 +42,7 @@ window.ThemeComponents = {
                                         <h4 class="mega-menu-title">By Brand</h4>
                                         <ul class="mega-menu-list">
                                             <li><a href="preview-product-grid.html">Aczet</a></li>
-                                            <li><a href="preview-product-grid.html">Arco</a></li>
+                                            <li><a href="preview-arco-equipment.html">Arco</a></li>
                                             <li><a href="preview-product-grid.html">Biobase</a></li>
                                             <li><a href="preview-product-grid.html">Biolab</a></li>
                                             <li><a href="preview-product-grid.html">CDR FoodLab</a></li>
@@ -59,12 +59,13 @@ window.ThemeComponents = {
                                             <li><a href="preview-product-grid.html">Kason</a></li>
                                             <li><a href="preview-product-grid.html">MDK</a></li>
                                             <li><a href="preview-product-grid.html">Scitek</a></li>
+                                            <li><a href="preview-yingtai-centrifuge.html">Yingtai Centrifuge</a></li>
                                         </ul>
                                     </div>
                                     <div class="mega-menu-col">
                                         <h4 class="mega-menu-title">By Industry</h4>
                                         <ul class="mega-menu-list">
-                                            <li><a href="preview-products.html">Hospital</a></li>
+                                            <li><a href="preview-yingtai-centrifuge.html#cat-hospital-blood">Hospital (Centrifuges & Blood Bank)</a></li>
                                             <li><a href="preview-products.html">Industry</a></li>
                                             <li><a href="preview-products.html">Life Science</a></li>
                                         </ul>
