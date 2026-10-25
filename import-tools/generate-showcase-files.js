@@ -492,7 +492,7 @@ function generatePreviewHtml(prods) {
 
                     <div class="arco-brochure-card">
                         <div class="arco-brochure-icon">
-                            <i class="fas fa-file-pdf"></i>
+                            <i class="fas fa-file-lines fa-file-alt"></i>
                         </div>
                         <h4>Katalog Lengkap ARCO Scientific</h4>
                         <div class="arco-brochure-meta">
@@ -501,7 +501,7 @@ function generatePreviewHtml(prods) {
                         </div>
 
                         <a href="assets/docs/Katalog-Lengkap-ARCO-Scientific-PT-Kinglab-Medika-Lestari.pdf" class="arco-btn-download-pdf" download="Katalog-Lengkap-ARCO-Scientific-Kinglab.pdf" id="arcoDownloadBtn">
-                            <i class="fas fa-download"></i> Unduh Katalog PDF (Full)
+                            <i class="fas fa-download"></i> Unduh Katalog PDF
                         </a>
                         <div class="arco-download-note">
                             <i class="fas fa-info-circle"></i> File PDF dapat diakses gratis oleh institusi pendidikan, industri, dan laboratorium penguji.
