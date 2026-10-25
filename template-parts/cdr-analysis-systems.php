@@ -324,30 +324,41 @@ $cdr_systems = array(
     <div class="cdr-nav-wrapper" id="cdr-sticky-nav">
         <div class="cdr-container">
             <div class="cdr-nav-container">
-                <!-- Filter Category Tabs -->
-                <div class="cdr-filter-tabs" role="tablist">
-                    <button class="cdr-filter-btn active" data-filter="all" type="button">
-                        <i class="fas fa-th-large"></i> <?php esc_html_e('Semua Sistem', 'Kinglab_Medika_Lestari'); ?>
-                    </button>
-                    <button class="cdr-filter-btn" data-filter="food" type="button">
-                        <i class="fas fa-seedling"></i> <?php esc_html_e('Minyak, Sawit & Pangan', 'Kinglab_Medika_Lestari'); ?>
-                    </button>
-                    <button class="cdr-filter-btn" data-filter="beverage" type="button">
-                        <i class="fas fa-wine-bottle"></i> <?php esc_html_e('Minuman & Fermentasi', 'Kinglab_Medika_Lestari'); ?>
-                    </button>
-                    <button class="cdr-filter-btn" data-filter="compact" type="button">
-                        <i class="fas fa-suitcase"></i> <?php esc_html_e('Kompak & Portabel', 'Kinglab_Medika_Lestari'); ?>
-                    </button>
+                <!-- Baris 1: Filter Kategori & Quick Jump Hint -->
+                <div class="cdr-nav-filter-row">
+                    <div class="cdr-filter-tabs" role="tablist" aria-label="Filter Kategori Sistem">
+                        <button class="cdr-filter-btn active" data-filter="all" type="button">
+                            <i class="fas fa-th-large"></i> <?php esc_html_e('Semua Sistem (10)', 'Kinglab_Medika_Lestari'); ?>
+                        </button>
+                        <button class="cdr-filter-btn" data-filter="food" type="button">
+                            <i class="fas fa-seedling"></i> <?php esc_html_e('Minyak, Sawit & Pangan', 'Kinglab_Medika_Lestari'); ?>
+                        </button>
+                        <button class="cdr-filter-btn" data-filter="beverage" type="button">
+                            <i class="fas fa-wine-bottle"></i> <?php esc_html_e('Minuman & Fermentasi', 'Kinglab_Medika_Lestari'); ?>
+                        </button>
+                        <button class="cdr-filter-btn" data-filter="compact" type="button">
+                            <i class="fas fa-suitcase"></i> <?php esc_html_e('Kompak & Portabel', 'Kinglab_Medika_Lestari'); ?>
+                        </button>
+                    </div>
+                    <div class="cdr-nav-quick-hint">
+                        <i class="fas fa-bolt"></i>
+                        <span><?php esc_html_e('Pilih instrumen untuk lompat cepat ke spesifikasi', 'Kinglab_Medika_Lestari'); ?></span>
+                    </div>
                 </div>
 
-                <!-- Horizontal Quick Scroll Pills -->
-                <div class="cdr-icon-scroller" aria-label="Pilih Sistem CDR">
-                    <?php foreach ($cdr_systems as $sys) : ?>
-                        <a href="#<?php echo esc_attr($sys['id']); ?>" class="cdr-icon-pill" title="<?php echo esc_attr($sys['title']); ?>">
-                            <img src="<?php echo esc_url($theme_uri . '/assets/images/' . $sys['logo']); ?>" alt="<?php echo esc_attr($sys['title']); ?>" loading="lazy" />
-                            <span><?php echo esc_html(str_replace('CDR ', '', $sys['title'])); ?></span>
-                        </a>
-                    <?php endforeach; ?>
+                <!-- Baris 2: Quick Jump Instrument Pills (Full width di Desktop & Smooth touch swipe di Mobile) -->
+                <div class="cdr-nav-pills-row">
+                    <div class="cdr-icon-scroller" aria-label="Pilih Sistem CDR">
+                        <?php foreach ($cdr_systems as $sys) : ?>
+                            <a href="#<?php echo esc_attr($sys['id']); ?>" 
+                               class="cdr-icon-pill" 
+                               data-category="<?php echo esc_attr($sys['category']); ?>"
+                               title="<?php echo esc_attr($sys['title']); ?>">
+                                <img src="<?php echo esc_url($theme_uri . '/assets/images/' . $sys['logo']); ?>" alt="<?php echo esc_attr($sys['title']); ?>" loading="lazy" />
+                                <span><?php echo esc_html(str_replace('CDR ', '', $sys['title'])); ?></span>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -677,6 +688,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. Category Filtering
     var filterBtns = document.querySelectorAll('.cdr-filter-btn');
     var cards = document.querySelectorAll('.cdr-system-card');
+    var pills = document.querySelectorAll('.cdr-icon-pill');
 
     filterBtns.forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -696,20 +708,41 @@ document.addEventListener('DOMContentLoaded', function() {
                     card.style.display = 'none';
                 }
             });
+
+            // Highlight matching pills & dim others
+            pills.forEach(function(pill) {
+                var pCat = pill.getAttribute('data-category');
+                if (filter === 'all') {
+                    pill.classList.remove('dimmed', 'highlighted');
+                } else if (pCat === filter) {
+                    pill.classList.add('highlighted');
+                    pill.classList.remove('dimmed');
+                } else {
+                    pill.classList.add('dimmed');
+                    pill.classList.remove('highlighted');
+                }
+            });
         });
     });
 
     // 2. Smooth Scroll for Icon Pills
-    var pills = document.querySelectorAll('.cdr-icon-pill, .cdr-matrix-table a[href^="#"]');
-    pills.forEach(function(pill) {
-        pill.addEventListener('click', function(e) {
+    var scrollLinks = document.querySelectorAll('.cdr-icon-pill, .cdr-matrix-table a[href^="#"]');
+    scrollLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
             var targetId = this.getAttribute('href');
             if (targetId && targetId.indexOf('#') === 0) {
                 var targetElem = document.querySelector(targetId);
                 if (targetElem) {
                     e.preventDefault();
                     // Make sure the target card is visible if filter was applied
-                    targetElem.style.display = 'block';
+                    if (targetElem.style.display === 'none') {
+                        filterBtns.forEach(function(b) {
+                            if (b.getAttribute('data-filter') === 'all') b.classList.add('active');
+                            else b.classList.remove('active');
+                        });
+                        cards.forEach(function(card) { card.style.display = 'block'; });
+                        pills.forEach(function(p) { p.classList.remove('dimmed', 'highlighted'); });
+                    }
                     targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     // Highlight effect
                     targetElem.style.boxShadow = '0 0 0 3px #0a4d3c, 0 20px 40px rgba(10, 77, 60, 0.2)';

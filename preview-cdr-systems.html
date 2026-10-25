@@ -75,64 +75,72 @@
         <div class="cdr-nav-wrapper" id="cdr-sticky-nav">
             <div class="cdr-container">
                 <div class="cdr-nav-container">
-                    <!-- Filter Category Tabs -->
-                    <div class="cdr-filter-tabs" role="tablist">
-                        <button class="cdr-filter-btn active" data-filter="all" type="button">
-                            <i class="fas fa-th-large"></i> Semua Sistem (10)
-                        </button>
-                        <button class="cdr-filter-btn" data-filter="food" type="button">
-                            <i class="fas fa-seedling"></i> Minyak, Sawit & Pangan
-                        </button>
-                        <button class="cdr-filter-btn" data-filter="beverage" type="button">
-                            <i class="fas fa-wine-bottle"></i> Minuman & Fermentasi
-                        </button>
-                        <button class="cdr-filter-btn" data-filter="compact" type="button">
-                            <i class="fas fa-suitcase"></i> Kompak & Portabel
-                        </button>
+                    <!-- Row 1: Filter Category Tabs & Quick Jump Hint -->
+                    <div class="cdr-nav-filter-row">
+                        <div class="cdr-filter-tabs" role="tablist" aria-label="Filter Kategori Sistem">
+                            <button class="cdr-filter-btn active" data-filter="all" type="button">
+                                <i class="fas fa-th-large"></i> Semua Sistem (10)
+                            </button>
+                            <button class="cdr-filter-btn" data-filter="food" type="button">
+                                <i class="fas fa-seedling"></i> Minyak, Sawit & Pangan
+                            </button>
+                            <button class="cdr-filter-btn" data-filter="beverage" type="button">
+                                <i class="fas fa-wine-bottle"></i> Minuman & Fermentasi
+                            </button>
+                            <button class="cdr-filter-btn" data-filter="compact" type="button">
+                                <i class="fas fa-suitcase"></i> Kompak & Portabel
+                            </button>
+                        </div>
+                        <div class="cdr-nav-quick-hint">
+                            <i class="fas fa-bolt"></i>
+                            <span>Pilih instrumen untuk lompat cepat ke spesifikasi</span>
+                        </div>
                     </div>
 
-                    <!-- Horizontal Quick Scroll Pills -->
-                    <div class="cdr-icon-scroller" aria-label="Pilih Sistem CDR">
-                        <a href="#cdr-palmoiltester" class="cdr-icon-pill">
-                            <img src="assets/images/cdr-palmoiltester-logo.svg" alt="PalmOilTester" />
-                            <span>PalmOilTester</span>
-                        </a>
-                        <a href="#cdr-foodlab-standard" class="cdr-icon-pill">
-                            <img src="assets/images/cdr-foodlab-logo.svg" alt="FoodLab" />
-                            <span>FoodLab®</span>
-                        </a>
-                        <a href="#cdr-foodlab-jr" class="cdr-icon-pill">
-                            <img src="assets/images/cdr-foodlab-logo.svg" alt="FoodLab Jr" />
-                            <span>FoodLab® Jr</span>
-                        </a>
-                        <a href="#cdr-oxitester" class="cdr-icon-pill">
-                            <img src="assets/images/cdr-oxitester-logo.svg" alt="OxiTester" />
-                            <span>OxiTester</span>
-                        </a>
-                        <a href="#cdr-drinklab" class="cdr-icon-pill">
-                            <img src="assets/images/cdr-drinklab-logo.svg" alt="DrinkLab" />
-                            <span>DrinkLab®</span>
-                        </a>
-                        <a href="#cdr-coffeelab" class="cdr-icon-pill">
-                            <img src="assets/images/cdr-coffeelab-logo.svg" alt="CoffeeLab" />
-                            <span>CoffeeLab®</span>
-                        </a>
-                        <a href="#cdr-beerlab" class="cdr-icon-pill">
-                            <img src="assets/images/cdr-beerlab-logo.svg" alt="BeerLab" />
-                            <span>BeerLab®</span>
-                        </a>
-                        <a href="#cdr-winelab" class="cdr-icon-pill">
-                            <img src="assets/images/cdr-winelab-logo.svg" alt="WineLab" />
-                            <span>WineLab®</span>
-                        </a>
-                        <a href="#cdr-kombuchalab" class="cdr-icon-pill">
-                            <img src="assets/images/cdr-kombuchalab-logo.svg" alt="KombuchaLab" />
-                            <span>KombuchaLab</span>
-                        </a>
-                        <a href="#cdr-ciderlab" class="cdr-icon-pill">
-                            <img src="assets/images/cdr-ciderlab-logo.svg" alt="CiderLab" />
-                            <span>CiderLab</span>
-                        </a>
+                    <!-- Row 2: Full Width Quick Jump Instrument Pills -->
+                    <div class="cdr-nav-pills-row">
+                        <div class="cdr-icon-scroller" aria-label="Pilih Sistem CDR">
+                            <a href="#cdr-palmoiltester" class="cdr-icon-pill" data-category="food" title="CDR PalmOilTester">
+                                <img src="assets/images/cdr-palmoiltester-logo.svg" alt="PalmOilTester" />
+                                <span>PalmOilTester</span>
+                            </a>
+                            <a href="#cdr-foodlab-standard" class="cdr-icon-pill" data-category="food" title="CDR FoodLab®">
+                                <img src="assets/images/cdr-foodlab-logo.svg" alt="FoodLab" />
+                                <span>FoodLab®</span>
+                            </a>
+                            <a href="#cdr-foodlab-jr" class="cdr-icon-pill" data-category="compact" title="CDR FoodLab® Jr">
+                                <img src="assets/images/cdr-foodlab-logo.svg" alt="FoodLab Jr" />
+                                <span>FoodLab® Jr</span>
+                            </a>
+                            <a href="#cdr-oxitester" class="cdr-icon-pill" data-category="food" title="CDR OxiTester">
+                                <img src="assets/images/cdr-oxitester-logo.svg" alt="OxiTester" />
+                                <span>OxiTester</span>
+                            </a>
+                            <a href="#cdr-drinklab" class="cdr-icon-pill" data-category="beverage" title="CDR DrinkLab®">
+                                <img src="assets/images/cdr-drinklab-logo.svg" alt="DrinkLab" />
+                                <span>DrinkLab®</span>
+                            </a>
+                            <a href="#cdr-coffeelab" class="cdr-icon-pill" data-category="beverage" title="CDR CoffeeLab®">
+                                <img src="assets/images/cdr-coffeelab-logo.svg" alt="CoffeeLab" />
+                                <span>CoffeeLab®</span>
+                            </a>
+                            <a href="#cdr-beerlab" class="cdr-icon-pill" data-category="beverage" title="CDR BeerLab®">
+                                <img src="assets/images/cdr-beerlab-logo.svg" alt="BeerLab" />
+                                <span>BeerLab®</span>
+                            </a>
+                            <a href="#cdr-winelab" class="cdr-icon-pill" data-category="beverage" title="CDR WineLab®">
+                                <img src="assets/images/cdr-winelab-logo.svg" alt="WineLab" />
+                                <span>WineLab®</span>
+                            </a>
+                            <a href="#cdr-kombuchalab" class="cdr-icon-pill" data-category="beverage" title="CDR KombuchaLab">
+                                <img src="assets/images/cdr-kombuchalab-logo.svg" alt="KombuchaLab" />
+                                <span>KombuchaLab</span>
+                            </a>
+                            <a href="#cdr-ciderlab" class="cdr-icon-pill" data-category="beverage" title="CDR CiderLab">
+                                <img src="assets/images/cdr-ciderlab-logo.svg" alt="CiderLab" />
+                                <span>CiderLab</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1083,6 +1091,7 @@
         // 1. Category Filtering
         var filterBtns = document.querySelectorAll('.cdr-filter-btn');
         var cards = document.querySelectorAll('.cdr-system-card');
+        var pills = document.querySelectorAll('.cdr-icon-pill');
 
         filterBtns.forEach(function(btn) {
             btn.addEventListener('click', function() {
@@ -1091,6 +1100,7 @@
                 filterBtns.forEach(function(b) { b.classList.remove('active'); });
                 this.classList.add('active');
 
+                // Filter cards
                 cards.forEach(function(card) {
                     var cat = card.getAttribute('data-category');
                     if (filter === 'all' || cat === filter) {
@@ -1099,19 +1109,41 @@
                         card.style.display = 'none';
                     }
                 });
+
+                // Highlight matching pills & dim others
+                pills.forEach(function(pill) {
+                    var pCat = pill.getAttribute('data-category');
+                    if (filter === 'all') {
+                        pill.classList.remove('dimmed', 'highlighted');
+                    } else if (pCat === filter) {
+                        pill.classList.add('highlighted');
+                        pill.classList.remove('dimmed');
+                    } else {
+                        pill.classList.add('dimmed');
+                        pill.classList.remove('highlighted');
+                    }
+                });
             });
         });
 
         // 2. Smooth Scroll for Icon Pills
-        var pills = document.querySelectorAll('.cdr-icon-pill, .cdr-matrix-table a[href^="#"]');
-        pills.forEach(function(pill) {
-            pill.addEventListener('click', function(e) {
+        var scrollLinks = document.querySelectorAll('.cdr-icon-pill, .cdr-matrix-table a[href^="#"]');
+        scrollLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
                 var targetId = this.getAttribute('href');
                 if (targetId && targetId.indexOf('#') === 0) {
                     var targetElem = document.querySelector(targetId);
                     if (targetElem) {
                         e.preventDefault();
-                        targetElem.style.display = 'block';
+                        // Make sure the target card is visible if filter was applied
+                        if (targetElem.style.display === 'none') {
+                            filterBtns.forEach(function(b) {
+                                if (b.getAttribute('data-filter') === 'all') b.classList.add('active');
+                                else b.classList.remove('active');
+                            });
+                            cards.forEach(function(card) { card.style.display = 'block'; });
+                            pills.forEach(function(p) { p.classList.remove('dimmed', 'highlighted'); });
+                        }
                         targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         targetElem.style.boxShadow = '0 0 0 3px #0a4d3c, 0 20px 40px rgba(10, 77, 60, 0.2)';
                         setTimeout(function() {

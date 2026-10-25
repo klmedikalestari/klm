@@ -202,30 +202,38 @@
 }
 
 /* --------------------------------------------------------------------------
+/* --------------------------------------------------------------------------
    2. TOP SUB-NAV (SYSTEMS QUICK SELECTOR / FILTER BAR)
    -------------------------------------------------------------------------- */
 .cdr-nav-wrapper {
     position: sticky;
     top: var(--header-height, 100px);
     z-index: 95;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--cdr-slate-200);
-    padding: 14px 0;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    padding: 12px 0 14px;
+    box-shadow: 0 4px 20px rgba(10, 77, 60, 0.05);
     transition: var(--cdr-transition);
 }
 
 .cdr-nav-container {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Row 1: Category Filter Tabs & Quick Jump Hint */
+.cdr-nav-filter-row {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    flex-wrap: wrap;
+    width: 100%;
 }
 
-/* Category Filter Tabs */
 .cdr-filter-tabs {
     display: flex;
     align-items: center;
@@ -233,7 +241,7 @@
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding: 2px;
+    padding: 2px 0;
 }
 
 .cdr-filter-tabs::-webkit-scrollbar {
@@ -243,10 +251,10 @@
 .cdr-filter-btn {
     appearance: none;
     background: var(--cdr-slate-100);
-    border: 1px solid transparent;
-    padding: 8px 16px;
+    border: 1px solid #e2e8f0;
+    padding: 7px 16px;
     border-radius: 999px;
-    font-size: 0.86rem;
+    font-size: 0.84rem;
     font-weight: 600;
     color: var(--cdr-slate-600);
     cursor: pointer;
@@ -254,58 +262,214 @@
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
+}
+
+.cdr-filter-btn i {
+    font-size: 0.82rem;
+    opacity: 0.85;
 }
 
 .cdr-filter-btn:hover {
     background: #e6ebf1;
     color: var(--cdr-slate-900);
+    border-color: #cbd5e1;
 }
 
 .cdr-filter-btn.active {
     background: var(--cdr-teal);
     color: #ffffff;
-    box-shadow: 0 3px 10px rgba(10, 77, 60, 0.25);
+    border-color: var(--cdr-teal);
+    box-shadow: 0 3px 12px rgba(10, 77, 60, 0.28);
 }
 
-/* System Quick Icon Scroller */
+.cdr-filter-btn.active i {
+    color: #a7f3d0;
+}
+
+.cdr-nav-quick-hint {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--cdr-slate-500);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.cdr-nav-quick-hint i {
+    color: var(--cdr-gold);
+    font-size: 0.84rem;
+}
+
+/* Row 2: Quick Jump Instrument Pills Bar */
+.cdr-nav-pills-row {
+    position: relative;
+    width: 100%;
+}
+
 .cdr-icon-scroller {
     display: flex;
     align-items: center;
-    gap: 12px;
-    overflow-x: auto;
-    scrollbar-width: thin;
-    padding: 4px 2px;
-    max-width: 620px;
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 2px 0 4px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.cdr-icon-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+/* Desktop Width: Span gracefully across the full container */
+@media (min-width: 1200px) {
+    .cdr-icon-scroller {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+        overflow: visible;
+    }
+    .cdr-icon-pill {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding: 7px 10px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .cdr-icon-scroller {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        overflow: visible;
+    }
 }
 
 .cdr-icon-pill {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
+    justify-content: center;
+    gap: 7px;
+    padding: 7px 12px;
     background: #ffffff;
     border: 1px solid var(--cdr-slate-200);
-    border-radius: 8px;
+    border-radius: 999px;
     text-decoration: none;
     color: var(--cdr-slate-700);
-    font-size: 0.82rem;
+    font-size: 0.80rem;
     font-weight: 600;
     white-space: nowrap;
-    transition: var(--cdr-transition);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
 }
 
 .cdr-icon-pill img {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.cdr-icon-pill span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .cdr-icon-pill:hover {
     border-color: var(--cdr-teal);
     color: var(--cdr-teal);
+    background: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 3px 8px rgba(10, 77, 60, 0.1);
+    box-shadow: 0 4px 12px rgba(10, 77, 60, 0.14);
+}
+
+.cdr-icon-pill:hover img {
+    transform: scale(1.15);
+}
+
+/* Highlighted state when matching active filter */
+.cdr-icon-pill.highlighted {
+    border-color: var(--cdr-teal);
+    background: var(--cdr-teal-soft);
+    color: var(--cdr-teal);
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(10, 77, 60, 0.12);
+}
+
+/* Dimmed state when category doesn't match active filter */
+.cdr-icon-pill.dimmed {
+    opacity: 0.38;
+    background: #f8fafc;
+    border-color: #e2e8f0;
+}
+
+.cdr-icon-pill.dimmed:hover {
+    opacity: 0.85;
+}
+
+/* Mobile & Tablet Styles */
+@media (max-width: 991px) {
+    .cdr-nav-wrapper {
+        padding: 10px 0;
+    }
+    
+    .cdr-nav-container {
+        gap: 8px;
+    }
+    
+    .cdr-nav-quick-hint {
+        display: none;
+    }
+    
+    .cdr-filter-tabs {
+        width: 100%;
+        padding-bottom: 2px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .cdr-filter-btn {
+        padding: 6px 13px;
+        font-size: 0.78rem;
+        flex-shrink: 0;
+    }
+    
+    /* Horizontal swipe on mobile with subtle fade indicator */
+    .cdr-nav-pills-row {
+        position: relative;
+        mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+    }
+    
+    .cdr-icon-scroller {
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        gap: 8px;
+        padding: 2px 20px 4px 2px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .cdr-icon-pill {
+        flex-shrink: 0;
+        padding: 6px 12px;
+        font-size: 0.76rem;
+    }
+    
+    .cdr-icon-pill img {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 /* --------------------------------------------------------------------------
@@ -1063,12 +1227,5 @@
     }
     .cdr-cta-title {
         font-size: 1.7rem;
-    }
-    .cdr-nav-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .cdr-icon-scroller {
-        max-width: 100%;
     }
 }
