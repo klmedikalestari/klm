@@ -1024,9 +1024,6 @@ $arco_products = array(
                     <a href="<?php echo esc_url($brochure_pdf_url); ?>" class="arco-btn-download-pdf" download="BROSUR-ARCO-Scientific-Kinglab.pdf" id="arcoDownloadBtn" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-download"></i> Unduh Katalog PDF
                     </a>
-                    <div class="arco-download-note">
-                        <i class="fas fa-info-circle"></i> File PDF dapat diakses gratis oleh institusi pendidikan, industri, dan laboratorium penguji.
-                    </div>
                 </div>
             </div>
         </div>
