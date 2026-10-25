@@ -261,7 +261,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="Ashless Quantitative Filter Paper"
                                             data-code="F2040-F2045"
                                             data-category="Filtration"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Ashless%20Quantitative%20Filter%20Paper%20(F2040-F2045).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Ashless%20Quantitative%20Filter%20Paper%20(F2040-F2045).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;F2040&lt;/td&gt;
             &lt;td&gt;Medium-Slow&lt;/td&gt;
@@ -314,7 +314,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Ashless%20Quantitative%20Filter%20Paper%20(F2040-F2045).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Ashless%20Quantitative%20Filter%20Paper%20(F2040-F2045).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -363,7 +363,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="Ashless Hardened Quantitative Filter Paper"
                                             data-code="F2140-F2142"
                                             data-category="Filtration"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Ashless%20Hardened%20Quantitative%20Filter%20Paper%20(F2140-F2142).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Ashless%20Hardened%20Quantitative%20Filter%20Paper%20(F2140-F2142).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;F2140&lt;/td&gt;
             &lt;td&gt;Medium&lt;/td&gt;
@@ -392,7 +392,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Ashless%20Hardened%20Quantitative%20Filter%20Paper%20(F2140-F2142).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Ashless%20Hardened%20Quantitative%20Filter%20Paper%20(F2140-F2142).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -441,7 +441,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="Qualitative Standard Filter Paper"
                                             data-code="F1001-F1007"
                                             data-category="Filtration"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Qualitative%20Standard%20Filter%20Paper%20(F1001-F1007).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Qualitative%20Standard%20Filter%20Paper%20(F1001-F1007).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;F1001&lt;/td&gt;
             &lt;td&gt;Medium&lt;/td&gt;
@@ -486,7 +486,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Qualitative%20Standard%20Filter%20Paper%20(F1001-F1007).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Qualitative%20Standard%20Filter%20Paper%20(F1001-F1007).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -535,7 +535,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="Glass Microfiber Filters (Binder-Free)"
                                             data-code="GF1-GF5"
                                             data-category="Filtration"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Glass%20Microfiber%20Filters%20(Binder-Free)%20(GF1-GF5).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Glass%20Microfiber%20Filters%20(Binder-Free)%20(GF1-GF5).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;GF1&lt;/td&gt;
             &lt;td&gt;Fast&lt;/td&gt;
@@ -580,7 +580,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Glass%20Microfiber%20Filters%20(Binder-Free)%20(GF1-GF5).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Glass%20Microfiber%20Filters%20(Binder-Free)%20(GF1-GF5).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -645,7 +645,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="CHM® Disc Membrane Filters"
                                             data-code="MCE-NY-PTFE"
                                             data-category="Microfiltration"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20Disc%20Membrane%20Filters%20(MCE-NY-PTFE).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20Disc%20Membrane%20Filters%20(MCE-NY-PTFE).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;MCE Membrane&lt;/td&gt;
             &lt;td&gt;High Flow&lt;/td&gt;
@@ -682,7 +682,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20Disc%20Membrane%20Filters%20(MCE-NY-PTFE).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20Disc%20Membrane%20Filters%20(MCE-NY-PTFE).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -731,7 +731,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="CHM® Syringe Filters"
                                             data-code="SYR-13-25-33"
                                             data-category="Microfiltration"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20Syringe%20Filters%20(SYR-13-25-33).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20Syringe%20Filters%20(SYR-13-25-33).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;Nylon Syringe Filter&lt;/td&gt;
             &lt;td&gt;Universal&lt;/td&gt;
@@ -768,7 +768,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20Syringe%20Filters%20(SYR-13-25-33).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20Syringe%20Filters%20(SYR-13-25-33).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -833,7 +833,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="Specimen Collection Cards (DBS)"
                                             data-code="DBS-903"
                                             data-category="Specialities"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Specimen%20Collection%20Cards%20(DBS)%20(DBS-903).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Specimen%20Collection%20Cards%20(DBS)%20(DBS-903).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;CHM 903 Card&lt;/td&gt;
             &lt;td&gt;Calibrated Spot&lt;/td&gt;
@@ -854,7 +854,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Specimen%20Collection%20Cards%20(DBS)%20(DBS-903).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Specimen%20Collection%20Cards%20(DBS)%20(DBS-903).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -903,7 +903,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="Lens Cleaning Tissue (Paper Lens)"
                                             data-code="LENS-105"
                                             data-category="Specialities"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Lens%20Cleaning%20Tissue%20(Paper%20Lens)%20(LENS-105).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Lens%20Cleaning%20Tissue%20(Paper%20Lens)%20(LENS-105).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;Grade 105&lt;/td&gt;
             &lt;td&gt;Instant Wipe&lt;/td&gt;
@@ -916,7 +916,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Lens%20Cleaning%20Tissue%20(Paper%20Lens)%20(LENS-105).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Lens%20Cleaning%20Tissue%20(Paper%20Lens)%20(LENS-105).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -965,7 +965,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="Phase Separation Filter Paper"
                                             data-code="F2080-PHASE"
                                             data-category="Specialities"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Phase%20Separation%20Filter%20Paper%20(F2080-PHASE).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Phase%20Separation%20Filter%20Paper%20(F2080-PHASE).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;F2080&lt;/td&gt;
             &lt;td&gt;Fast Flow&lt;/td&gt;
@@ -978,7 +978,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Phase%20Separation%20Filter%20Paper%20(F2080-PHASE).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Phase%20Separation%20Filter%20Paper%20(F2080-PHASE).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -1043,7 +1043,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="CHM® HPLC Analytical Columns"
                                             data-code="HPLC-C18-C8"
                                             data-category="Chromatography"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20HPLC%20Analytical%20Columns%20(HPLC-C18-C8).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20HPLC%20Analytical%20Columns%20(HPLC-C18-C8).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;CHM-C18 5µm&lt;/td&gt;
             &lt;td&gt;High Efficiency&lt;/td&gt;
@@ -1072,7 +1072,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20HPLC%20Analytical%20Columns%20(HPLC-C18-C8).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20HPLC%20Analytical%20Columns%20(HPLC-C18-C8).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -1121,7 +1121,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="CHM® SPE Solid Phase Extraction Columns"
                                             data-code="SPE-C18-SCX"
                                             data-category="Chromatography"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20SPE%20Solid%20Phase%20Extraction%20Columns%20(SPE-C18-SCX).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20SPE%20Solid%20Phase%20Extraction%20Columns%20(SPE-C18-SCX).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;SPE C18 (Endcapped)&lt;/td&gt;
             &lt;td&gt;Reversed Phase&lt;/td&gt;
@@ -1150,7 +1150,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20SPE%20Solid%20Phase%20Extraction%20Columns%20(SPE-C18-SCX).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20SPE%20Solid%20Phase%20Extraction%20Columns%20(SPE-C18-SCX).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -1199,7 +1199,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="Autosampler Vials, Caps &amp; Septa (2 mL)"
                                             data-code="VIAL-9MM-2ML"
                                             data-category="Chromatography"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Autosampler%20Vials%2C%20Caps%20%26%20Septa%20(2%20mL)%20(VIAL-9MM-2ML).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Autosampler%20Vials%2C%20Caps%20%26%20Septa%20(2%20mL)%20(VIAL-9MM-2ML).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;Clear Vial 2 mL&lt;/td&gt;
             &lt;td&gt;Screw 9-425&lt;/td&gt;
@@ -1228,7 +1228,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Autosampler%20Vials%2C%20Caps%20%26%20Septa%20(2%20mL)%20(VIAL-9MM-2ML).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Autosampler%20Vials%2C%20Caps%20%26%20Septa%20(2%20mL)%20(VIAL-9MM-2ML).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -1293,7 +1293,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="Industrial Depth Filter Sheets &amp; Boards"
                                             data-code="SHEET-DEPTH-F"
                                             data-category="Industrial Filtration"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Industrial%20Depth%20Filter%20Sheets%20%26%20Boards%20(SHEET-DEPTH-F).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Industrial%20Depth%20Filter%20Sheets%20%26%20Boards%20(SHEET-DEPTH-F).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;Coarse Clarification&lt;/td&gt;
             &lt;td&gt;Very High Flow&lt;/td&gt;
@@ -1322,7 +1322,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Industrial%20Depth%20Filter%20Sheets%20%26%20Boards%20(SHEET-DEPTH-F).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Industrial%20Depth%20Filter%20Sheets%20%26%20Boards%20(SHEET-DEPTH-F).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -1371,7 +1371,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="Industrial Crêped &amp; Plain Filter Papers"
                                             data-code="CREPE-IND-PAPER"
                                             data-category="Industrial Filtration"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Industrial%20Cr%C3%AAped%20%26%20Plain%20Filter%20Papers%20(CREPE-IND-PAPER).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Industrial%20Cr%C3%AAped%20%26%20Plain%20Filter%20Papers%20(CREPE-IND-PAPER).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;F1091 Crêped&lt;/td&gt;
             &lt;td&gt;Extra Fast&lt;/td&gt;
@@ -1400,7 +1400,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Industrial%20Cr%C3%AAped%20%26%20Plain%20Filter%20Papers%20(CREPE-IND-PAPER).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20Industrial%20Cr%C3%AAped%20%26%20Plain%20Filter%20Papers%20(CREPE-IND-PAPER).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -1465,7 +1465,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                             data-title="CHM® CapFIL Tri-Clamp &amp; Hose Barb Capsule Filters"
                                             data-code="CAPFIL-TC-HB"
                                             data-category="Capsule Filters"
-                                            data-wa="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20CapFIL%20Tri-Clamp%20%26%20Hose%20Barb%20Capsule%20Filters%20(CAPFIL-TC-HB).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok."
+                                            data-wa="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20CapFIL%20Tri-Clamp%20%26%20Hose%20Barb%20Capsule%20Filters%20(CAPFIL-TC-HB).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0"
                                             data-specs='&lt;tr&gt;
             &lt;td style=&quot;font-weight:700; color:#1e3a8a;&quot;&gt;CapFIL-PES 0.22µm&lt;/td&gt;
             &lt;td&gt;High Flow Liquid&lt;/td&gt;
@@ -1494,7 +1494,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                                         <i class="fas fa-table"></i>
                                         <span>Spesifikasi</span>
                                     </button>
-                                    <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20CapFIL%20Tri-Clamp%20%26%20Hose%20Barb%20Capsule%20Filters%20(CAPFIL-TC-HB).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok." target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
+                                    <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20tertarik%20dengan%20produk%20CHMLAB%3A%20CHM%C2%AE%20CapFIL%20Tri-Clamp%20%26%20Hose%20Barb%20Capsule%20Filters%20(CAPFIL-TC-HB).%20Mohon%20info%20penawaran%20harga%20dan%20ketersediaan%20stok.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-btn-wa">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>Penawaran</span>
                                     </a>
@@ -1526,7 +1526,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                             <i class="fas fa-exchange-alt"></i>
                             <span>Tabel Ekuivalensi Merk (PDF)</span>
                         </a>
-                        <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari,%20saya%20ingin%20konsultasi%20pemilihan%20filter%20CHMLAB" target="_blank" rel="noopener noreferrer" class="chm-cta-btn-eq" style="background:#25d366; border-color:#25d366;">
+                        <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20ingin%20konsultasi%20pemilihan%20filter%20CHMLAB&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-cta-btn-eq" style="background:#25d366; border-color:#25d366;">
                             <i class="fab fa-whatsapp"></i>
                             <span>Konsultasi Produk Lab</span>
                         </a>

@@ -34,7 +34,7 @@ get_header(); ?>
                                 <span>Lihat Katalog Centrifuge Rumah Sakit</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
-                            <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari,%20saya%20ingin%20konsultasi%20centrifuge%20untuk%20Rumah%20Sakit" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #fff; padding: 12px 22px; border-radius: 8px; font-weight: 700; text-decoration: none;">
+                            <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20ingin%20konsultasi%20centrifuge%20untuk%20Rumah%20Sakit&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #fff; padding: 12px 22px; border-radius: 8px; font-weight: 700; text-decoration: none;">
                                 <i class="fab fa-whatsapp" style="font-size: 1.1rem;"></i>
                                 <span>Konsultasi Alat RS</span>
                             </a>

@@ -207,7 +207,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
     cat.products.forEach(p => {
       // Build WhatsApp Link
       const waText = encodeURIComponent(`Halo PT Kinglab Medika Lestari, saya tertarik dengan produk CHMLAB: ${p.title} (${p.code}). Mohon info penawaran harga dan ketersediaan stok.`);
-      const waLink = `https://wa.me/6281119214488?text=${waText}`;
+      const waLink = `https://api.whatsapp.com/send/?phone=6281211174724&text=${waText}&type=phone_number&app_absent=0`;
 
       // Build specs table HTML for modal
       let tableRows = '';
@@ -299,7 +299,7 @@ wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/c
                             <i class="fas fa-exchange-alt"></i>
                             <span>Tabel Ekuivalensi Merk (PDF)</span>
                         </a>
-                        <a href="https://wa.me/6281119214488?text=Halo%20PT%20Kinglab%20Medika%20Lestari,%20saya%20ingin%20konsultasi%20pemilihan%20filter%20CHMLAB" target="_blank" rel="noopener noreferrer" class="chm-cta-btn-eq" style="background:#25d366; border-color:#25d366;">
+                        <a href="https://api.whatsapp.com/send/?phone=6281211174724&text=Halo%20PT%20Kinglab%20Medika%20Lestari%2C%20saya%20ingin%20konsultasi%20pemilihan%20filter%20CHMLAB&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="chm-cta-btn-eq" style="background:#25d366; border-color:#25d366;">
                             <i class="fab fa-whatsapp"></i>
                             <span>Konsultasi Produk Lab</span>
                         </a>
