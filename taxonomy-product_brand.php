@@ -67,6 +67,26 @@ if ($is_yingtai_brand) {
     return;
 }
 
+// Check if current brand is CHM Lab (or CHMLAB Group)
+$is_chm_brand = false;
+if ($current_term && isset($current_term->taxonomy) && $current_term->taxonomy === 'product_brand') {
+    if ($current_term->slug === 'chm' || $current_term->slug === 'chm-lab' || stripos($current_term->slug, 'chm') !== false || stripos($current_term->name, 'chm') !== false) {
+        $is_chm_brand = true;
+    } elseif (!empty($current_term->parent)) {
+        $parent_term = get_term($current_term->parent, 'product_brand');
+        if ($parent_term && !is_wp_error($parent_term) && (stripos($parent_term->slug, 'chm') !== false || stripos($parent_term->name, 'chm') !== false)) {
+            $is_chm_brand = true;
+        }
+    }
+}
+
+if ($is_chm_brand) {
+    get_header();
+    get_template_part('template-parts/chm-filtration-showcase');
+    get_footer();
+    return;
+}
+
 get_header(); ?>
 
 <div class="brand-page-wrapper" style="padding-top: 80px; padding-bottom: 100px; text-align: center; margin-top: calc(var(--header-height, 118px) + 20px);">

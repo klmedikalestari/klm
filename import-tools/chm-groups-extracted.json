@@ -1,0 +1,62 @@
+[
+  {
+    "group": {
+      "slug": "filtration",
+      "name": "Filtration",
+      "color": "#e53935",
+      "img": "https://www.chmlab.com/files/products/familias/1001/filtration.jpg"
+    },
+    "subLinks": [],
+    "images": []
+  },
+  {
+    "group": {
+      "slug": "microfiltration",
+      "name": "Microfiltration",
+      "color": "#fb8c00",
+      "img": "https://www.chmlab.com/files/products/familias/1002/microfiltration.jpg"
+    },
+    "subLinks": [],
+    "images": []
+  },
+  {
+    "group": {
+      "slug": "specialties",
+      "name": "Specialities",
+      "color": "#fbc02d",
+      "img": "https://www.chmlab.com/files/products/familias/1003/specialities.jpg"
+    },
+    "subLinks": [],
+    "images": []
+  },
+  {
+    "group": {
+      "slug": "chromatography",
+      "name": "Chromatography",
+      "color": "#43a047",
+      "img": "https://www.chmlab.com/files/products/familias/1004/1667160830cromatography.jpg"
+    },
+    "subLinks": [],
+    "images": []
+  },
+  {
+    "group": {
+      "slug": "industrial-filtration",
+      "name": "Industrial Filtration",
+      "color": "#00acc1",
+      "img": "https://www.chmlab.com/files/products/familias/1005/industrialfiltration.jpg"
+    },
+    "subLinks": [],
+    "images": []
+  },
+  {
+    "group": {
+      "slug": "capsule-filters",
+      "name": "Capsule Filters",
+      "color": "#039be5",
+      "img": "https://www.chmlab.com/files/products/familias/1006/capsulefilters.jpg"
+    },
+    "subLinks": [],
+    "images": []
+  }
+]

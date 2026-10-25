@@ -1,0 +1,916 @@
+/* ==========================================================================
+   CHMLAB GROUP - SHOWCASE STYLESHEET
+   Laboratory Filtration, Microfiltration, Chromatography & Separation Systems
+   PT Kinglab Medika Lestari
+   ========================================================================== */
+
+:root {
+    --chm-primary: #1e3a8a;
+    --chm-primary-dark: #0f172a;
+    --chm-primary-light: #3b82f6;
+    --chm-accent-filtration: #e53935;
+    --chm-accent-micro: #fb8c00;
+    --chm-accent-specialties: #fbc02d;
+    --chm-accent-chroma: #43a047;
+    --chm-accent-industrial: #00acc1;
+    --chm-accent-capsule: #039be5;
+    --chm-bg-light: #f8fafc;
+    --chm-card-bg: #ffffff;
+    --chm-border: #e2e8f0;
+    --chm-text-dark: #0f172a;
+    --chm-text-muted: #64748b;
+    --chm-radius: 16px;
+    --chm-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --chm-shadow-hover: 0 20px 40px -10px rgba(30, 58, 138, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.06);
+    --chm-font-heading: 'Montserrat', sans-serif;
+    --chm-font-body: 'Open Sans', sans-serif;
+}
+
+.chm-showcase-wrapper {
+    font-family: var(--chm-font-body);
+    color: var(--chm-text-dark);
+    background-color: var(--chm-bg-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.chm-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+.chm-hero-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1e40af 100%);
+    color: #ffffff;
+    padding: 140px 0 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.chm-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.25) 0%, transparent 60%),
+                radial-gradient(circle at 10% 80%, rgba(229, 57, 53, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.chm-breadcrumb {
+    display: none !important;
+}
+
+.chm-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.chm-hero-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    padding: 16px 36px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    margin-bottom: 24px;
+    transition: transform 0.3s ease;
+}
+
+.chm-hero-logo:hover {
+    transform: translateY(-3px);
+}
+
+.chm-hero-logo img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.chm-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    color: #e2e8f0;
+}
+
+.chm-badge i {
+    color: #38bdf8;
+}
+
+.chm-hero-title {
+    font-family: var(--chm-font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+}
+
+.chm-hero-title span {
+    background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.chm-hero-desc {
+    font-size: 1.12rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+}
+
+/* Hero Stats Bar */
+.chm-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    padding: 24px;
+    margin-top: 40px;
+}
+
+.chm-stat-item {
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0 12px;
+}
+
+.chm-stat-item:last-child {
+    border-right: none;
+}
+
+.chm-stat-number {
+    font-family: var(--chm-font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.chm-stat-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #93c5fd;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.chm-stat-sub {
+    font-size: 0.78rem;
+    color: #cbd5e1;
+}
+
+/* ==========================================================================
+   2. CATEGORY TILES (SCREENSHOT REPLICATION - 6 KOTAK UTAMA)
+   ========================================================================== */
+.chm-categories-overview-section {
+    padding: 60px 0 40px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--chm-border);
+}
+
+.chm-section-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 40px;
+}
+
+.chm-section-badge {
+    display: inline-block;
+    background: #eff6ff;
+    color: #1e40af;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.chm-section-title {
+    font-family: var(--chm-font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--chm-text-dark);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.chm-section-subtitle {
+    font-size: 1.05rem;
+    color: var(--chm-text-muted);
+}
+
+.chm-tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.chm-tile-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.chm-tile-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    z-index: 3;
+    transition: height 0.3s ease;
+}
+
+.chm-tile-card.tile-filtration::before { background-color: var(--chm-accent-filtration); }
+.chm-tile-card.tile-microfiltration::before { background-color: var(--chm-accent-micro); }
+.chm-tile-card.tile-specialties::before { background-color: var(--chm-accent-specialties); }
+.chm-tile-card.tile-chromatography::before { background-color: var(--chm-accent-chroma); }
+.chm-tile-card.tile-industrial-filtration::before { background-color: var(--chm-accent-industrial); }
+.chm-tile-card.tile-capsule-filters::before { background-color: var(--chm-accent-capsule); }
+
+.chm-tile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(15, 23, 42, 0.75) 100%);
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.chm-tile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+}
+
+.chm-tile-card:hover::before {
+    height: 8px;
+}
+
+.chm-tile-card:hover .chm-tile-overlay {
+    background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(15, 23, 42, 0.85) 100%);
+}
+
+.chm-tile-content {
+    position: relative;
+    z-index: 2;
+}
+
+.chm-tile-title {
+    font-family: var(--chm-font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.chm-tile-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+}
+
+.chm-tile-card:hover .chm-tile-btn {
+    background: #ffffff;
+    color: var(--chm-primary-dark);
+}
+
+/* ==========================================================================
+   3. STICKY FILTER NAVIGATION BAR
+   ========================================================================== */
+.chm-sticky-nav-wrapper {
+    position: sticky;
+    top: var(--header-height, 80px);
+    z-index: 90;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--chm-border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.chm-filter-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.chm-filter-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.chm-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-family: var(--chm-font-heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--chm-text-dark);
+    background: #f1f5f9;
+    border: 1px solid transparent;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.chm-filter-btn:hover {
+    background: #e2e8f0;
+    color: var(--chm-primary);
+}
+
+.chm-filter-btn.active {
+    background: var(--chm-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+}
+
+.chm-filter-btn .dot-badge {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   4. PRODUCT SECTIONS & CARDS
+   ========================================================================== */
+.chm-category-section {
+    padding: 70px 0;
+    border-bottom: 1px solid var(--chm-border);
+}
+
+.chm-category-section:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.chm-cat-header-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 36px;
+    border-left: 5px solid var(--chm-primary);
+    padding-left: 20px;
+}
+
+.chm-cat-title-wrap h2 {
+    font-family: var(--chm-font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--chm-text-dark);
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+.chm-cat-title-wrap p {
+    font-size: 1rem;
+    color: var(--chm-text-muted);
+    max-width: 800px;
+}
+
+.chm-cat-badge-pill {
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* Products Grid */
+.chm-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 28px;
+}
+
+.chm-product-card {
+    background: var(--chm-card-bg);
+    border: 1px solid var(--chm-border);
+    border-radius: var(--chm-radius);
+    overflow: hidden;
+    box-shadow: var(--chm-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.chm-product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--chm-shadow-hover);
+    border-color: #cbd5e1;
+}
+
+.chm-card-img-wrap {
+    height: 220px;
+    background: #f8fafc;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--chm-border);
+}
+
+.chm-card-img-wrap img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.chm-product-card:hover .chm-card-img-wrap img {
+    transform: scale(1.04);
+}
+
+.chm-card-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.chm-card-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.chm-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.chm-card-code {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.chm-card-title {
+    font-family: var(--chm-font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--chm-text-dark);
+    line-height: 1.35;
+    margin-bottom: 8px;
+}
+
+.chm-card-desc {
+    font-size: 0.92rem;
+    color: var(--chm-text-muted);
+    line-height: 1.55;
+    margin-bottom: 18px;
+}
+
+/* Specs pills grid */
+.chm-specs-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.chm-spec-pill {
+    display: flex;
+    flex-direction: column;
+}
+
+.chm-spec-pill-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.chm-spec-pill-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.chm-card-sizes {
+    font-size: 0.8rem;
+    color: #475569;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.chm-card-sizes i {
+    color: #2563eb;
+    margin-top: 3px;
+}
+
+/* Card Buttons */
+.chm-card-actions {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.chm-btn-spec-modal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #1e3a8a;
+    border: 1.5px solid #1e3a8a;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-family: var(--chm-font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.chm-btn-spec-modal:hover {
+    background: #1e3a8a;
+    color: #ffffff;
+}
+
+.chm-btn-wa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #25d366;
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-family: var(--chm-font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1.5px solid #25d366;
+    transition: all 0.2s ease;
+}
+
+.chm-btn-wa:hover {
+    background: #1ebe5b;
+    border-color: #1ebe5b;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   5. INTERACTIVE SPECS MODAL
+   ========================================================================== */
+.chm-modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.chm-modal-backdrop.active {
+    display: flex;
+}
+
+.chm-modal-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 860px;
+    max-height: 90vh;
+    border-radius: 18px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: chmModalZoom 0.25s ease-out;
+}
+
+@keyframes chmModalZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.chm-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.chm-modal-title-group h3 {
+    font-family: var(--chm-font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+    color: #ffffff;
+}
+
+.chm-modal-title-group p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin: 4px 0 0;
+}
+
+.chm-modal-close {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.chm-modal-close:hover {
+    background: rgba(229, 57, 53, 0.8);
+}
+
+.chm-modal-body {
+    padding: 28px;
+    overflow-y: auto;
+    max-height: calc(90vh - 160px);
+}
+
+.chm-table-responsive {
+    overflow-x: auto;
+    margin-bottom: 24px;
+}
+
+.chm-spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    text-align: left;
+}
+
+.chm-spec-table th {
+    background: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.chm-spec-table td {
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.chm-spec-table tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+.chm-modal-footer {
+    padding: 16px 28px;
+    background: #f8fafc;
+    border-top: 1px solid var(--chm-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   6. DOWNLOAD CATALOGUE & INQUIRY BANNER
+   ========================================================================== */
+.chm-cta-banner-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.chm-cta-box {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.chm-cta-title {
+    font-family: var(--chm-font-heading);
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.chm-cta-desc {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+.chm-cta-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.chm-cta-btn-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #e53935;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: var(--chm-font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(229, 57, 53, 0.35);
+    transition: all 0.2s ease;
+}
+
+.chm-cta-btn-pdf:hover {
+    background: #c62828;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.chm-cta-btn-eq {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: var(--chm-font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    backdrop-filter: blur(6px);
+    transition: all 0.2s ease;
+}
+
+.chm-cta-btn-eq:hover {
+    background: #ffffff;
+    color: var(--chm-primary-dark);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 992px) {
+    .chm-hero-title {
+        font-size: 2.3rem;
+    }
+    .chm-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .chm-stat-item:nth-child(2) {
+        border-right: none;
+    }
+    .chm-tiles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .chm-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .chm-hero-section {
+        padding: 110px 0 50px;
+    }
+    .chm-hero-title {
+        font-size: 1.85rem;
+    }
+    .chm-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .chm-stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 12px;
+    }
+    .chm-stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .chm-tiles-grid {
+        grid-template-columns: 1fr;
+    }
+    .chm-card-actions {
+        grid-template-columns: 1fr;
+    }
+}

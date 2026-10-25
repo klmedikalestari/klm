@@ -1,0 +1,208 @@
+{
+  "filtration": {
+    "desc": "Filtration is the mechanical-physical operation which is used for the separation of solids from fluids (liquids or gases) by interposing a porous media through which only the fluid can pass. Oversize solids in the fluid are retained on the surface as well as within the matrix of the filter media.Filtration has a wide range of applications: from laboratory analytical procedures to techniques in big production lines.",
+    "subs": [
+      {
+        "name": "Quantitative filter paper",
+        "url": "https://www.chmlab.com/shop/filtration/quantitative-filter-paper"
+      },
+      {
+        "name": "Qualitative filter paper",
+        "url": "https://www.chmlab.com/shop/filtration/qualitative-filter-paper"
+      },
+      {
+        "name": "Special filter papers",
+        "url": "https://www.chmlab.com/shop/filtration/special-filter-papers"
+      },
+      {
+        "name": "Glass microfiber filters",
+        "url": "https://www.chmlab.com/shop/filtration/glass-microfiber-filters"
+      },
+      {
+        "name": "Quartz microfiber filters",
+        "url": "https://www.chmlab.com/shop/filtration/quartz-microfiber-filters"
+      },
+      {
+        "name": "Extraction thimbles",
+        "url": "https://www.chmlab.com/shop/filtration/extraction-thimbles"
+      },
+      {
+        "name": "Filter paper for surface protection",
+        "url": "https://www.chmlab.com/shop/filtration/filter-paper-for-surface-protection"
+      },
+      {
+        "name": "Phase separation paper",
+        "url": "https://www.chmlab.com/shop/filtration/phase-separation-paper"
+      },
+      {
+        "name": "Technical filter papers for special analysis",
+        "url": "https://www.chmlab.com/shop/filtration/technical-filter-papers-for-special-analysis"
+      },
+      {
+        "name": "pH indicator and test papers",
+        "url": "https://www.chmlab.com/shop/filtration/pH-indicator-and-test-papers"
+      }
+    ]
+  },
+  "microfiltration": {
+    "desc": "Microfiltration is a membrane technical filtration process which removes contaminants from a fluid (liquid or gas) by passing through a microporous membrane. Membrane filters are surface filters with a precise micro-porous structure.",
+    "subs": [
+      {
+        "name": "Membrane filters",
+        "url": "https://www.chmlab.com/shop/microfiltration/membrane-filters"
+      },
+      {
+        "name": "Syringe filters",
+        "url": "https://www.chmlab.com/shop/microfiltration/syringe-filters"
+      },
+      {
+        "name": "Venting Filters",
+        "url": "https://www.chmlab.com/shop/microfiltration/venting-filters"
+      },
+      {
+        "name": "BIO-tr@ns blotting membranes",
+        "url": "https://www.chmlab.com/shop/microfiltration/BIO-tr@ns-blotting-membranes"
+      },
+      {
+        "name": "Microbiological monitors",
+        "url": "https://www.chmlab.com/shop/microfiltration/microbiological-monitors"
+      },
+      {
+        "name": "Membrane hardware",
+        "url": "https://www.chmlab.com/shop/microfiltration/membrane-hardware"
+      },
+      {
+        "name": "Sterile disposable vacuum filtration units",
+        "url": "https://www.chmlab.com/shop/microfiltration/sterile-disposable-vacuum-filtration-units"
+      }
+    ]
+  },
+  "specialties": {
+    "desc": "CHMLAB offers a wide range of special papers and filters, called specialities, for different kind of industries as pharma, biotechnology, R+D, and many others.\r\nThese specialities includes Specimen collection cards, antibiotic test paper, paper for cytological analysis, germination papers and other specific papers.",
+    "subs": [
+      {
+        "name": "Specimen collection cards",
+        "url": "https://www.chmlab.com/shop/specialties/specimen-collection-cards"
+      },
+      {
+        "name": "Weighing paper and aluminium containers",
+        "url": "https://www.chmlab.com/shop/specialties/weighing-paper-and-aluminium-containers"
+      },
+      {
+        "name": "Antibiotic test paper",
+        "url": "https://www.chmlab.com/shop/specialties/antibiotic-test-paper"
+      },
+      {
+        "name": "Lens cleaning tissue",
+        "url": "https://www.chmlab.com/shop/specialties/lens-cleaning-tissue"
+      },
+      {
+        "name": "Paper for cytological analysis",
+        "url": "https://www.chmlab.com/shop/specialties/paper-for-cytological-analysis"
+      },
+      {
+        "name": "Smelling test paper",
+        "url": "https://www.chmlab.com/shop/specialties/smelling-test-paper"
+      },
+      {
+        "name": "Germination test paper",
+        "url": "https://www.chmlab.com/shop/specialties/germination-test-paper"
+      },
+      {
+        "name": "Absorbent paper for the paper industry",
+        "url": "https://www.chmlab.com/shop/specialties/absorbent-paper-for-the-paper-industry"
+      },
+      {
+        "name": "Joseph paper",
+        "url": "https://www.chmlab.com/shop/specialties/joseph-paper"
+      },
+      {
+        "name": "Cellulose stoppers",
+        "url": "https://www.chmlab.com/shop/specialties/cellulose-stoppers"
+      },
+      {
+        "name": "Stainless steel mesh",
+        "url": "https://www.chmlab.com/shop/specialties/stainless-steel-mesh"
+      },
+      {
+        "name": "Polyester mesh filters",
+        "url": "https://www.chmlab.com/shop/specialties/polyester-mesh-filters"
+      },
+      {
+        "name": "Non-woven fabric filters",
+        "url": "https://www.chmlab.com/shop/specialties/non-woven-fabric-filters"
+      },
+      {
+        "name": "CHM® filtration assistants",
+        "url": "https://www.chmlab.com/shop/specialties/chm-filtration-assistants"
+      }
+    ]
+  },
+  "chromatography": {
+    "desc": "Chromatography is an analytical technique used for the separation of a mixture into its individual components. The mixture is dissolved in a fluid called the mobile phase, which carries it through a structure holding another material called the stationary phase. The different components of the mixture travel at different speeds, causing them to separate from one another.According to the nature of the specific mobile and stationary phases, the different compounds have differential retention times on the stationary phase and thus affect the separation.  The individual components can be thoroughly analysed. Chromatography may be preparative or analytical, and there are many types of chromatography and techniques, but all of these employ the same basic principles. Chromatography is a popular technique used in laboratories worldwide as an analysis tool for pharmaceuticals, food and beverage, industrial, forensics, and many other industries. CHMLAB is offering a wide range of chromatography consumables and sample preparation with the highest quality designed to ensure the best results in your lab.",
+    "subs": [
+      {
+        "name": "HPLC Columns",
+        "url": "https://www.chmlab.com/shop/chromatography/hplc-columns"
+      },
+      {
+        "name": "TLC Thin layer chromatoghraphy",
+        "url": "https://www.chmlab.com/shop/chromatography/tlc-thin-layer-chromatoghraphy"
+      },
+      {
+        "name": "Vials, caps and septa",
+        "url": "https://www.chmlab.com/shop/chromatography/vials-caps-and-septa"
+      },
+      {
+        "name": "Micro insert",
+        "url": "https://www.chmlab.com/shop/chromatography/micro-insert"
+      },
+      {
+        "name": "Syringeless @Minivial",
+        "url": "https://www.chmlab.com/shop/chromatography/syringeless-minivial"
+      },
+      {
+        "name": "SPE Columns",
+        "url": "https://www.chmlab.com/shop/chromatography/spe-columns"
+      },
+      {
+        "name": "QuEChERS",
+        "url": "https://www.chmlab.com/shop/chromatography/quechers"
+      }
+    ]
+  },
+  "industrial-filtration": {
+    "desc": "CHMLAB offers a complete selection of filter papers and filter boards used in industrial filtration processes for the production of all kinds of liquids. Liquids such as: food products, beverages, pharmaceutical industry, chemical products, electroplating, edible or industrial oils, technical fats, biodiesel, cosmetics, inks, etc. Each of these filter media are adapted to different industrial products, such as filtration speed, flow rate, retention, load capacity and other physical features. This range consists of the following filter media: - Plain (smooth) filter papers between 50 and 650 g/m2 - Crêped filter papers between 50 and 240 g/m2 - Filter boards for depth filtration by coarse, clarifying, fine and even sterilizing filtration CHMLAB puts at your disposal any required format: sheets with or without holes, circles, discs or rolls of requested width.",
+    "subs": [
+      {
+        "name": "Plain filter paper",
+        "url": "https://www.chmlab.com/shop/industrial-filtration/plain-filter-paper"
+      },
+      {
+        "name": "Crêped filter paper",
+        "url": "https://www.chmlab.com/shop/industrial-filtration/cr%C3%AAped-filter-paper"
+      },
+      {
+        "name": "Filter boards",
+        "url": "https://www.chmlab.com/shop/industrial-filtration/filter-boards"
+      }
+    ]
+  },
+  "capsule-filters": {
+    "desc": "CHM® CapFIL capsule filters have been specially designed for simple, quick, and efficient particles or bacteria filtration of aqueous or solvent solutions and gases used in laboratory, pilot-plant and small-scale applications. They are ready-to-use filters, eliminating the need to disassemble, clean and reassemble filter housings. CHM® CapFIL capsule filters contain no adhesives, binders, or surfactants. Thanks to their serial layer filter design the CapFIL increase their throughput and extend their working life. All capsules containing membrane media are pre-flushed with purified water to reduce extractables. The all-polypropylene construction provides excellent chemical compatibility and superior flow per unit area as compared to other membrane cartridges.",
+    "subs": [
+      {
+        "name": "CHM® TRI-CLAMP Capsule filter CapFIL",
+        "url": "https://www.chmlab.com/shop/product/tri-clamp-capsule-filter-capfil"
+      },
+      {
+        "name": "CHM® Hose Barb capsule filter",
+        "url": "https://www.chmlab.com/shop/product/hose-barb-capsule-filter"
+      },
+      {
+        "name": "CHM® 1/4&quot; NPT  capsule filter",
+        "url": "https://www.chmlab.com/shop/product/npt-capsule-filter"
+      }
+    ]
+  }
+}
