@@ -73,36 +73,19 @@
     overflow: hidden;
 }
 
+/* Breadcrumb - visually hidden for clean UI, preserved in DOM for SEO crawlers & screen-readers */
 .arco-breadcrumb {
-    margin-bottom: 24px;
-    font-size: 0.88rem;
-    color: var(--arco-slate-500);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }
 
-.arco-breadcrumb a {
-    color: var(--arco-slate-600);
-    text-decoration: none;
-    transition: var(--arco-transition);
-}
-
-.arco-breadcrumb a:hover {
-    color: var(--arco-navy);
-    text-decoration: underline;
-}
-
-.arco-breadcrumb .separator {
-    color: var(--arco-slate-400);
-    font-size: 0.75rem;
-}
-
-.arco-breadcrumb .current {
-    color: var(--arco-navy);
-    font-weight: 600;
-}
 
 .arco-hero-content {
     max-width: 980px;

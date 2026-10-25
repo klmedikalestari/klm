@@ -23,7 +23,34 @@
         <!-- 1. HERO SECTION -->
         <section class="cdr-hero-section">
             <div class="cdr-container">
-                <!-- Breadcrumb -->
+                <!-- SEO Breadcrumb Schema (JSON-LD) for Search Engines -->
+                <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "https://kinglab.co.id/"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Products",
+                            "item": "https://kinglab.co.id/products/"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "CDR FoodLab® Analysis Systems"
+                        }
+                    ]
+                }
+                </script>
+
+                <!-- Breadcrumb (Visually hidden via CSS for clean UI, preserved in DOM for SEO & accessibility) -->
                 <nav class="cdr-breadcrumb" aria-label="Breadcrumb">
                     <a href="preview.html">Home</a>
                     <span class="separator">/</span>

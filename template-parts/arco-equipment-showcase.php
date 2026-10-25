@@ -750,7 +750,35 @@ $arco_products = array(
     <!-- 1. HERO SECTION -->
     <section class="arco-hero-section">
         <div class="arco-container">
-            <!-- Breadcrumb -->
+            <!-- SEO Breadcrumb Schema (JSON-LD) for Search Engines -->
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "<?php echo esc_url(home_url('/')); ?>"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Products",
+                        "item": "<?php echo esc_url(home_url('/products/')); ?>"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "ARCO Scientific® Equipment",
+                        "item": "<?php echo esc_url(get_permalink()); ?>"
+                    }
+                ]
+            }
+            </script>
+
+            <!-- Breadcrumb (Visually hidden via CSS for clean UI, preserved in DOM for SEO & accessibility) -->
             <nav class="arco-breadcrumb" aria-label="Breadcrumb">
                 <a href="<?php echo esc_url(home_url('/')); ?>">Home</a>
                 <span class="separator">/</span>

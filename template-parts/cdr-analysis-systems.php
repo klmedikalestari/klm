@@ -272,7 +272,35 @@ $cdr_systems = array(
     <!-- 1. HERO SECTION -->
     <section class="cdr-hero-section">
         <div class="cdr-container">
-            <!-- Breadcrumb -->
+            <!-- SEO Breadcrumb Schema (JSON-LD) for Search Engines -->
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "<?php echo esc_url(home_url('/')); ?>"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Products",
+                        "item": "<?php echo esc_url(home_url('/products/')); ?>"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "CDR FoodLab® Analysis Systems",
+                        "item": "<?php echo esc_url(get_permalink()); ?>"
+                    }
+                ]
+            }
+            </script>
+
+            <!-- Breadcrumb (Visually hidden via CSS for clean UI, preserved in DOM for SEO & accessibility) -->
             <nav class="cdr-breadcrumb" aria-label="Breadcrumb">
                 <a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Home', 'Kinglab_Medika_Lestari'); ?></a>
                 <span class="separator">/</span>
