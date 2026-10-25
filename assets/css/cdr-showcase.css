@@ -56,15 +56,6 @@
     overflow: hidden;
 }
 
-.cdr-hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #0a4d3c 0%, #00a876 50%, #d99119 100%);
-}
 
 .cdr-breadcrumb {
     margin-bottom: 24px;
