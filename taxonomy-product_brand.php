@@ -5,6 +5,28 @@
  * @package Kinglab_Medika_Lestari_Theme
  */
 
+// Check if current brand is CDR FoodLab (or a child taxonomy of CDR FoodLab)
+$current_term = get_queried_object();
+$is_cdr_brand = false;
+
+if ($current_term && isset($current_term->taxonomy) && $current_term->taxonomy === 'product_brand') {
+    if ($current_term->slug === 'cdr-foodlab' || stripos($current_term->slug, 'cdr') !== false || stripos($current_term->name, 'cdr') !== false) {
+        $is_cdr_brand = true;
+    } elseif (!empty($current_term->parent)) {
+        $parent_term = get_term($current_term->parent, 'product_brand');
+        if ($parent_term && !is_wp_error($parent_term) && (stripos($parent_term->slug, 'cdr') !== false || stripos($parent_term->name, 'cdr') !== false)) {
+            $is_cdr_brand = true;
+        }
+    }
+}
+
+if ($is_cdr_brand) {
+    get_header();
+    get_template_part('template-parts/cdr-analysis-systems');
+    get_footer();
+    return;
+}
+
 get_header(); ?>
 
 <div class="brand-page-wrapper" style="padding-top: 80px; padding-bottom: 100px; text-align: center; margin-top: calc(var(--header-height, 118px) + 20px);">
