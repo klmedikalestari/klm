@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Rubberware: Red Rubber Pipette Filler Bulbs & Dropper Teats -->
+  <rect width="120" height="120" rx="16" fill="#fff5f5"/>
+  <!-- Main 3-way pipette bulb -->
+  <g transform="translate(10, 15)">
+    <!-- Main central bulb -->
+    <ellipse cx="45" cy="45" rx="17" ry="21" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+    <!-- Top valve A -->
+    <path d="M42 24 L42 12 Q42 10 45 10 Q48 10 48 12 L48 24 Z" fill="#dc2626" stroke="#b91c1c" stroke-width="1.5"/>
+    <circle cx="45" cy="18" r="4.5" fill="#f87171" stroke="#b91c1c" stroke-width="1"/>
+    <!-- Bottom stem with valve S and E -->
+    <path d="M41 66 L41 85 Q41 88 45 88 Q49 88 49 85 L49 66 Z" fill="#dc2626" stroke="#b91c1c" stroke-width="1.5"/>
+    <circle cx="45" cy="72" r="4" fill="#f87171" stroke="#b91c1c" stroke-width="1"/>
+    <!-- Side valve E arm -->
+    <path d="M49 74 Q62 74 62 82 Q62 88 56 88 L52 88" stroke="#b91c1c" stroke-width="2" fill="none"/>
+    <circle cx="62" cy="78" r="3.5" fill="#f87171" stroke="#b91c1c" stroke-width="1"/>
+  </g>
+  <!-- Secondary smaller dropper teat bulb -->
+  <g transform="translate(62, 38)">
+    <ellipse cx="22" cy="20" rx="12" ry="15" fill="#f87171" stroke="#b91c1c" stroke-width="2"/>
+    <rect x="17" y="34" width="10" height="12" rx="2" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+  </g>
+</svg>

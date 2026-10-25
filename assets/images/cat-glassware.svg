@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Lab Glassware Beaker -->
+  <rect width="120" height="120" rx="16" fill="#f0f7ff"/>
+  <path d="M35 28 L30 32 L35 34 L35 88 Q35 94 42 94 L78 94 Q85 94 85 88 L85 34 L88 32 L85 28 Z" fill="#ffffff" stroke="#0284c7" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Spout rim -->
+  <path d="M28 32 L35 34 L85 34 L92 32" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+  <!-- Liquid content -->
+  <path d="M36 58 Q48 56 60 59 T84 57 L84 88 Q84 93 78 93 L42 93 Q36 93 36 88 Z" fill="#e0f2fe" opacity="0.8"/>
+  <path d="M36 58 Q48 56 60 59 T84 57" stroke="#38bdf8" stroke-width="2"/>
+  <!-- Graduations & Logo Stamp -->
+  <line x1="42" y1="46" x2="56" y2="46" stroke="#004480" stroke-width="2" stroke-linecap="round"/>
+  <line x1="42" y1="54" x2="52" y2="54" stroke="#004480" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="42" y1="62" x2="56" y2="62" stroke="#004480" stroke-width="2" stroke-linecap="round"/>
+  <line x1="42" y1="70" x2="52" y2="70" stroke="#004480" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="42" y1="78" x2="56" y2="78" stroke="#004480" stroke-width="2" stroke-linecap="round"/>
+  <rect x="62" y="66" width="14" height="14" rx="2" fill="#004480"/>
+  <text x="69" y="77" font-size="8" font-weight="bold" fill="#fff" text-anchor="middle" font-family="Arial">B3.3</text>
+</svg>

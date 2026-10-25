@@ -1,0 +1,1197 @@
+/* ==========================================================================
+   ARCO SCIENTIFIC® EQUIPMENT SHOWCASE STYLING
+   PT Kinglab Medika Lestari
+   Inspired by: https://www.arcoscientific.com/ & CDR FoodLab Showcase
+   ========================================================================== */
+
+:root {
+    --arco-navy: #004480;
+    --arco-navy-dark: #002d56;
+    --arco-navy-light: #005bb0;
+    --arco-blue: #0284c7;
+    --arco-blue-light: #e0f2fe;
+    --arco-blue-soft: #f0f7ff;
+    --arco-accent: #0ea5e9;
+    --arco-gold: #d97706;
+    --arco-gold-light: #fef3c7;
+    
+    --arco-slate-900: #0f172a;
+    --arco-slate-800: #1e293b;
+    --arco-slate-700: #334155;
+    --arco-slate-600: #475569;
+    --arco-slate-500: #64748b;
+    --arco-slate-300: #cbd5e1;
+    --arco-slate-200: #e2e8f0;
+    --arco-slate-100: #f1f5f9;
+    --arco-slate-50: #f8fafc;
+
+    /* Category accent colors */
+    --cat-glassware: #0284c7;
+    --cat-glassware-bg: #e0f2fe;
+    --cat-plasticware: #059669;
+    --cat-plasticware-bg: #ecfdf5;
+    --cat-rubberware: #dc2626;
+    --cat-rubberware-bg: #fef2f2;
+    --cat-metalware: #475569;
+    --cat-metalware-bg: #f1f5f9;
+    --cat-woodenware: #b45309;
+    --cat-woodenware-bg: #fef3c7;
+
+    --arco-shadow-card: 0 10px 25px -5px rgba(0, 68, 128, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+    --arco-shadow-hover: 0 20px 35px -10px rgba(0, 68, 128, 0.18), 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+    --arco-radius-sm: 8px;
+    --arco-radius-md: 14px;
+    --arco-radius-lg: 20px;
+    --arco-transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Wrapper */
+.arco-showcase-wrapper {
+    background-color: #f8fafc;
+    color: var(--arco-slate-800);
+    font-family: var(--font-body, 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif);
+    padding-bottom: 90px;
+    margin-top: calc(var(--header-height, 118px) + 10px);
+}
+
+.arco-container {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.arco-hero-section {
+    position: relative;
+    padding: 50px 0 40px;
+    background: radial-gradient(circle at 85% 15%, rgba(2, 132, 199, 0.08) 0%, rgba(255, 255, 255, 0) 50%),
+                radial-gradient(circle at 10% 80%, rgba(0, 68, 128, 0.06) 0%, rgba(255, 255, 255, 0) 60%),
+                linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
+    border-bottom: 1px solid var(--arco-slate-200);
+    overflow: hidden;
+}
+
+.arco-breadcrumb {
+    margin-bottom: 24px;
+    font-size: 0.88rem;
+    color: var(--arco-slate-500);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.arco-breadcrumb a {
+    color: var(--arco-slate-600);
+    text-decoration: none;
+    transition: var(--arco-transition);
+}
+
+.arco-breadcrumb a:hover {
+    color: var(--arco-navy);
+    text-decoration: underline;
+}
+
+.arco-breadcrumb .separator {
+    color: var(--arco-slate-400);
+    font-size: 0.75rem;
+}
+
+.arco-breadcrumb .current {
+    color: var(--arco-navy);
+    font-weight: 600;
+}
+
+.arco-hero-content {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.arco-hero-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.arco-hero-logo img {
+    max-width: 280px;
+    height: auto;
+}
+
+.arco-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: var(--arco-blue-light);
+    color: var(--arco-navy);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    border: 1px solid rgba(0, 68, 128, 0.15);
+}
+
+.arco-badge i {
+    color: var(--arco-blue);
+}
+
+.arco-hero-title {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1.22;
+    color: var(--arco-slate-900);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.arco-hero-title span {
+    color: var(--arco-blue);
+    background: linear-gradient(135deg, var(--arco-navy) 0%, var(--arco-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.arco-hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--arco-slate-600);
+    margin-bottom: 32px;
+}
+
+.arco-hero-desc strong {
+    color: var(--arco-navy);
+    font-weight: 700;
+}
+
+/* Quick Action CTA in Hero */
+.arco-hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+
+.arco-hero-btn-brochure {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 26px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--arco-navy) 0%, var(--arco-blue) 100%);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 68, 128, 0.25);
+    transition: var(--arco-transition);
+}
+
+.arco-hero-btn-brochure:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 68, 128, 0.35);
+    color: #ffffff !important;
+}
+
+.arco-hero-btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 26px;
+    border-radius: 999px;
+    background: #25d366;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    transition: var(--arco-transition);
+}
+
+.arco-hero-btn-wa:hover {
+    background: #20ba59;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    color: #ffffff !important;
+}
+
+/* 4 Value Pillars */
+.arco-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+    text-align: left;
+}
+
+.arco-pillar-item {
+    background: #ffffff;
+    border: 1px solid var(--arco-slate-200);
+    border-radius: var(--arco-radius-md);
+    padding: 22px 20px;
+    transition: var(--arco-transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.arco-pillar-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--arco-blue);
+    box-shadow: var(--arco-shadow-card);
+}
+
+.arco-pillar-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--arco-blue-light);
+    color: var(--arco-navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+    transition: var(--arco-transition);
+}
+
+.arco-pillar-item:hover .arco-pillar-icon {
+    background: var(--arco-navy);
+    color: #ffffff;
+}
+
+.arco-pillar-title {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--arco-slate-900);
+    margin: 0 0 8px 0;
+}
+
+.arco-pillar-text {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--arco-slate-600);
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. CATEGORY VISUAL TILES (Matching user reference banner)
+   -------------------------------------------------------------------------- */
+.arco-category-tiles-section {
+    padding: 30px 0 10px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--arco-slate-200);
+}
+
+.arco-tiles-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.arco-tiles-header h3 {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--arco-slate-900);
+    margin: 0 0 6px;
+}
+
+.arco-tiles-header p {
+    font-size: 0.92rem;
+    color: var(--arco-slate-500);
+    margin: 0;
+}
+
+.arco-category-tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.arco-cat-tile {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 1px solid var(--arco-slate-300);
+    border-radius: var(--arco-radius-sm);
+    text-decoration: none;
+    color: var(--arco-slate-800);
+    transition: var(--arco-transition);
+    gap: 14px;
+}
+
+.arco-cat-tile:hover {
+    border-color: var(--arco-blue);
+    box-shadow: 0 6px 18px rgba(0, 68, 128, 0.12);
+    transform: translateY(-2px);
+}
+
+.arco-cat-tile.active {
+    border-color: var(--arco-navy);
+    background: var(--arco-blue-soft);
+    box-shadow: 0 4px 12px rgba(0, 68, 128, 0.1);
+}
+
+.arco-tile-thumb {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.arco-tile-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.arco-tile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.arco-tile-name {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--arco-slate-900);
+    margin: 0 0 2px 0;
+    line-height: 1.2;
+}
+
+.arco-tile-count {
+    font-size: 0.78rem;
+    color: var(--arco-slate-500);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   3. STICKY FILTER NAVIGATION
+   -------------------------------------------------------------------------- */
+.arco-nav-wrapper {
+    position: sticky;
+    top: var(--header-height, 118px);
+    z-index: 95;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--arco-slate-200);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: var(--arco-transition);
+    padding: 12px 0;
+}
+
+.arco-filter-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.arco-filter-btn {
+    appearance: none;
+    border: 1px solid var(--arco-slate-300);
+    background: #ffffff;
+    color: var(--arco-slate-700);
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--arco-transition);
+}
+
+.arco-filter-btn:hover {
+    border-color: var(--arco-navy);
+    color: var(--arco-navy);
+    background: var(--arco-blue-soft);
+}
+
+.arco-filter-btn.active {
+    background: var(--arco-navy);
+    color: #ffffff;
+    border-color: var(--arco-navy);
+    box-shadow: 0 4px 12px rgba(0, 68, 128, 0.25);
+}
+
+.arco-filter-btn .badge-num {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.arco-filter-btn:not(.active) .badge-num {
+    background: var(--arco-slate-200);
+    color: var(--arco-slate-700);
+}
+
+/* --------------------------------------------------------------------------
+   4. SHOWCASE SECTION & PRODUCT CARDS
+   -------------------------------------------------------------------------- */
+.arco-showcase-section {
+    padding: 40px 0 60px;
+}
+
+.arco-section-category-header {
+    margin: 40px 0 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--arco-slate-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.arco-section-category-header:first-of-type {
+    margin-top: 10px;
+}
+
+.arco-cat-header-title {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--arco-slate-900);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+}
+
+.arco-cat-header-badge {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.arco-cat-header-desc {
+    font-size: 0.92rem;
+    color: var(--arco-slate-500);
+    margin: 0;
+}
+
+/* Category Grid (2 columns on Desktop, 1 on Mobile) */
+.arco-products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+}
+
+.arco-product-card {
+    background: #ffffff;
+    border: 1px solid var(--arco-slate-200);
+    border-radius: var(--arco-radius-md);
+    overflow: hidden;
+    box-shadow: var(--arco-shadow-card);
+    transition: var(--arco-transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.arco-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--arco-shadow-hover);
+    border-color: var(--arco-blue);
+}
+
+/* Card Header Bar */
+.arco-card-header-bar {
+    padding: 12px 20px;
+    background: var(--arco-slate-50);
+    border-bottom: 1px solid var(--arco-slate-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.arco-card-item-code {
+    font-family: monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--arco-slate-600);
+    background: #ffffff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--arco-slate-200);
+}
+
+.arco-card-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Category Tag Colors */
+.tag-glassware { background: var(--cat-glassware-bg); color: var(--cat-glassware); border: 1px solid rgba(2, 132, 199, 0.2); }
+.tag-plasticware { background: var(--cat-plasticware-bg); color: var(--cat-plasticware); border: 1px solid rgba(5, 150, 105, 0.2); }
+.tag-rubberware { background: var(--cat-rubberware-bg); color: var(--cat-rubberware); border: 1px solid rgba(220, 38, 38, 0.2); }
+.tag-metalware { background: var(--cat-metalware-bg); color: var(--cat-metalware); border: 1px solid rgba(71, 85, 105, 0.2); }
+.tag-woodenware { background: var(--cat-woodenware-bg); color: var(--cat-woodenware); border: 1px solid rgba(180, 83, 9, 0.2); }
+
+/* Card Body with Photo Column */
+.arco-card-body {
+    padding: 22px 24px;
+    display: flex;
+    gap: 22px;
+    flex: 1;
+}
+
+.arco-card-visual-col {
+    width: 170px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arco-card-img-frame {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: radial-gradient(circle at center, #ffffff 40%, #f1f5f9 100%);
+    border: 1px solid var(--arco-slate-200);
+    border-radius: var(--arco-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.arco-card-img-frame img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.07));
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.arco-product-card:hover .arco-card-img-frame img {
+    transform: scale(1.08);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+}
+
+.arco-img-badge {
+    margin-top: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--arco-slate-500);
+    background: var(--arco-slate-100);
+    padding: 2px 8px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.arco-img-badge i {
+    color: var(--arco-blue);
+}
+
+.arco-card-info-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.arco-card-main-info {
+    flex: 1;
+}
+
+.arco-product-title {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--arco-slate-900);
+    margin: 0 0 6px 0;
+    line-height: 1.35;
+}
+
+.arco-product-standard {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--arco-blue);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.arco-product-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--arco-slate-600);
+    margin-bottom: 16px;
+}
+
+/* Key Spec Badges */
+.arco-spec-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.arco-spec-badge {
+    background: var(--arco-slate-100);
+    color: var(--arco-slate-700);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--arco-slate-200);
+}
+
+.arco-spec-badge i {
+    color: var(--arco-navy);
+}
+
+/* Card Actions */
+.arco-card-actions {
+    display: flex;
+    gap: 10px;
+    padding-top: 16px;
+    border-top: 1px solid var(--arco-slate-100);
+    flex-wrap: wrap;
+}
+
+.arco-btn-wa {
+    flex: 1;
+    min-width: 170px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #25d366;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.88rem;
+    border-radius: var(--arco-radius-sm);
+    text-decoration: none;
+    transition: var(--arco-transition);
+}
+
+.arco-btn-wa:hover {
+    background: #20ba59;
+    color: #ffffff !important;
+}
+
+.arco-btn-spec-modal {
+    appearance: none;
+    border: 1px solid var(--arco-slate-300);
+    background: #ffffff;
+    color: var(--arco-slate-700);
+    padding: 10px 14px;
+    border-radius: var(--arco-radius-sm);
+    font-size: 0.86rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--arco-transition);
+}
+
+.arco-btn-spec-modal:hover {
+    border-color: var(--arco-navy);
+    color: var(--arco-navy);
+    background: var(--arco-blue-soft);
+}
+
+/* --------------------------------------------------------------------------
+   5. DOWNLOAD BROCHURE / CATALOG SECTION
+   -------------------------------------------------------------------------- */
+.arco-brochure-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #002d56 0%, #004480 60%, #0284c7 100%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+    border-radius: var(--arco-radius-lg);
+    box-shadow: 0 20px 40px rgba(0, 45, 86, 0.25);
+}
+
+.arco-brochure-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.arco-brochure-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.arco-brochure-text h2 {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    line-height: 1.25;
+}
+
+.arco-brochure-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #e0f2fe;
+    margin: 0 0 24px 0;
+}
+
+.arco-brochure-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+}
+
+.arco-brochure-features li {
+    font-size: 0.92rem;
+    color: #f0f9ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arco-brochure-features li i {
+    color: #38bdf8;
+}
+
+.arco-brochure-card {
+    background: #ffffff;
+    color: var(--arco-slate-800);
+    border-radius: var(--arco-radius-md);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.arco-brochure-icon {
+    font-size: 3.5rem;
+    color: #ef4444;
+    margin-bottom: 12px;
+}
+
+.arco-brochure-card h4 {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--arco-slate-900);
+    margin: 0 0 6px 0;
+}
+
+.arco-brochure-meta {
+    font-size: 0.85rem;
+    color: var(--arco-slate-500);
+    margin-bottom: 22px;
+}
+
+.arco-brochure-meta span {
+    display: inline-block;
+    margin: 0 6px;
+}
+
+.arco-btn-download-pdf {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--arco-navy) 0%, var(--arco-blue) 100%);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: var(--arco-radius-sm);
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0, 68, 128, 0.3);
+    transition: var(--arco-transition);
+}
+
+.arco-btn-download-pdf:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 68, 128, 0.4);
+    color: #ffffff !important;
+}
+
+.arco-download-note {
+    font-size: 0.78rem;
+    color: var(--arco-slate-500);
+    margin-top: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   6. DISTRIBUTOR VALUE & BOTTOM CTA
+   -------------------------------------------------------------------------- */
+.arco-support-section {
+    padding: 40px 0 20px;
+}
+
+.arco-section-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px;
+}
+
+.arco-section-title {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--arco-slate-900);
+    margin: 12px 0;
+}
+
+.arco-section-desc {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--arco-slate-600);
+    margin: 0;
+}
+
+.arco-support-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.arco-support-card {
+    background: #ffffff;
+    border: 1px solid var(--arco-slate-200);
+    border-radius: var(--arco-radius-md);
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: var(--arco-shadow-card);
+    transition: var(--arco-transition);
+}
+
+.arco-support-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--arco-blue);
+    box-shadow: var(--arco-shadow-hover);
+}
+
+.arco-support-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--arco-blue-light);
+    color: var(--arco-navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin: 0 auto 16px;
+}
+
+.arco-support-title {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--arco-slate-900);
+    margin: 0 0 8px 0;
+}
+
+.arco-support-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--arco-slate-600);
+    margin: 0;
+}
+
+/* Bottom CTA Banner */
+.arco-cta-banner {
+    background: #ffffff;
+    border: 1px solid var(--arco-slate-200);
+    border-radius: var(--arco-radius-lg);
+    padding: 40px;
+    text-align: center;
+    box-shadow: var(--arco-shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.arco-cta-title {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--arco-slate-900);
+    margin: 0 0 12px 0;
+}
+
+.arco-cta-desc {
+    font-size: 1.02rem;
+    color: var(--arco-slate-600);
+    max-width: 720px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+}
+
+.arco-cta-btns {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.arco-cta-btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: #25d366;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+    transition: var(--arco-transition);
+}
+
+.arco-cta-btn-wa:hover {
+    background: #20ba59;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+    color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. TECHNICAL SPECS MODAL
+   -------------------------------------------------------------------------- */
+.arco-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+
+.arco-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.arco-modal-container {
+    background: #ffffff;
+    border-radius: var(--arco-radius-md);
+    max-width: 650px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arco-modal-overlay.active .arco-modal-container {
+    transform: translateY(0) scale(1);
+}
+
+.arco-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--arco-slate-100);
+    border: none;
+    color: var(--arco-slate-600);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: var(--arco-transition);
+}
+
+.arco-modal-close:hover {
+    background: var(--arco-slate-200);
+    color: var(--arco-slate-900);
+}
+
+.arco-modal-header {
+    margin-bottom: 20px;
+    padding-right: 40px;
+}
+
+.arco-modal-title {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--arco-slate-900);
+    margin: 0 0 6px 0;
+}
+
+.arco-modal-subtitle {
+    font-size: 0.9rem;
+    color: var(--arco-blue);
+    margin: 0;
+    font-weight: 600;
+}
+
+.arco-modal-specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.arco-modal-specs-table tr {
+    border-bottom: 1px solid var(--arco-slate-200);
+}
+
+.arco-modal-specs-table tr:last-child {
+    border-bottom: none;
+}
+
+.arco-modal-specs-table th {
+    text-align: left;
+    padding: 12px 14px 12px 0;
+    font-weight: 700;
+    color: var(--arco-slate-700);
+    width: 38%;
+    vertical-align: top;
+    background: transparent;
+}
+
+.arco-modal-specs-table td {
+    padding: 12px 0;
+    color: var(--arco-slate-800);
+    vertical-align: top;
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .arco-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .arco-support-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .arco-category-tiles-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .arco-brochure-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .arco-showcase-wrapper {
+        margin-top: var(--header-height, 100px);
+    }
+    .arco-hero-title {
+        font-size: 2.1rem;
+    }
+    .arco-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+    .arco-category-tiles-grid {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+    }
+    .arco-cat-tile {
+        min-width: 220px;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+    .arco-products-grid {
+        grid-template-columns: 1fr;
+    }
+    .arco-support-grid {
+        grid-template-columns: 1fr;
+    }
+    .arco-brochure-features {
+        grid-template-columns: 1fr;
+    }
+    .arco-card-body {
+        padding: 18px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .arco-card-visual-col {
+        width: 100%;
+        max-width: 220px;
+        margin-bottom: 12px;
+    }
+    .arco-card-actions {
+        width: 100%;
+    }
+    .arco-filter-tabs {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 4px 16px;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+    }
+    .arco-filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}

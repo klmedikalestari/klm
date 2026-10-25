@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Woodenware: Natural Cork Stoppers / Bungs & Hardwood Holder -->
+  <rect width="120" height="120" rx="16" fill="#fdfbf7"/>
+  <!-- Large Center Cork Bung -->
+  <path d="M48 42 L72 42 L68 76 L52 76 Z" fill="#d97706" stroke="#b45309" stroke-width="2" stroke-linejoin="round"/>
+  <ellipse cx="60" cy="42" rx="12" ry="4" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+  <ellipse cx="60" cy="76" rx="8" ry="3" fill="#b45309"/>
+  <!-- Small Left Cork -->
+  <path d="M24 56 L38 56 L36 82 L26 82 Z" fill="#d97706" stroke="#b45309" stroke-width="1.5" stroke-linejoin="round"/>
+  <ellipse cx="31" cy="56" rx="7" ry="2.5" fill="#f59e0b" stroke="#b45309" stroke-width="1"/>
+  <!-- Medium Right Cork -->
+  <path d="M82 52 L98 52 L95 80 L85 80 Z" fill="#d97706" stroke="#b45309" stroke-width="1.5" stroke-linejoin="round"/>
+  <ellipse cx="90" cy="52" rx="8" ry="3" fill="#f59e0b" stroke="#b45309" stroke-width="1"/>
+  <!-- Cork Texture Specks -->
+  <circle cx="56" cy="54" r="1" fill="#78350f" opacity="0.6"/>
+  <circle cx="64" cy="62" r="1.2" fill="#78350f" opacity="0.6"/>
+  <circle cx="58" cy="68" r="0.8" fill="#78350f" opacity="0.6"/>
+  <circle cx="30" cy="68" r="1" fill="#78350f" opacity="0.6"/>
+  <circle cx="89" cy="66" r="1" fill="#78350f" opacity="0.6"/>
+</svg>

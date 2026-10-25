@@ -1,0 +1,1062 @@
+{
+  "glassware": [
+    {
+      "query": "beaker",
+      "fallbackIndex": 0,
+      "file": "glassware-beaker.jpg",
+      "title": "Beaker Low Form with Spout (Griffin Beaker)",
+      "item_code": "ARCO-2060420_1_DIB",
+      "standard": "ISO 3819 • DIN 12331",
+      "material": "Borosilicate Glass 3.3",
+      "tagline": "Gelas piala bentuk rendah dengan bibir tuang presisi & skala ganda putih tahan pudar.",
+      "description": "Beaker standar industri dengan ketebalan dinding seragam untuk distribusi panas optimal. Ideal untuk pemanasan cairan, pencampuran larutan, dan titrasi kimia pada suhu hingga 500°C.",
+      "highlights": [
+        "Kapasitas: 25 ml – 5000 ml",
+        "Boro 3.3 Thermal Shock Proof",
+        "Skala Terkalibrasi Putih Enamel",
+        "Spout Anti-Tetes"
+      ],
+      "specs_table": "<tr><th>Rentang Kapasitas</th><td>25 ml, 50 ml, 100 ml, 150 ml, 250 ml, 400 ml, 500 ml, 600 ml, 800 ml, 1000 ml, 2000 ml, 3000 ml, 5000 ml</td></tr><tr><th>Standar Manufaktur</th><td>ISO 3819 / DIN 12331 / ASTM E960</td></tr><tr><th>Ketahanan Suhu</th><td>Strain Point 510°C, Annealing Point 565°C, Softening Point 820°C</td></tr><tr><th>Koefisien Muai</th><td>3.3 x 10^-6 K^-1 (Tahan perubahan suhu ekstrem)</td></tr><tr><th>Ketahanan Kimia</th><td>Kelas 1 Hydrolytic Resistance (ISO 719), Kelas 1 Acid Resistance (DIN 12116)</td></tr><tr><th>Autoclavable</th><td>Dapat disterilisasi uap berulang pada 121°C / 134°C</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2060420_1-1.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2060420_1-1.jpg",
+      "scrapedTitle": "Beakers LOW FORM, WITH SPOUT,ISI mark, 5mL"
+    },
+    {
+      "query": "volumetric",
+      "fallbackIndex": 15,
+      "file": "glassware-volumetric-flask.jpg",
+      "title": "Volumetric Flask Class A with Glass Stopper",
+      "item_code": "ARCO-2064511_12_EBU",
+      "standard": "DIN EN ISO 1042 • ASTM E288",
+      "material": "Borosilicate Glass 3.3",
+      "tagline": "Labu ukur presisi analitik Kelas A dilengkapi nomor batch & sertifikat kalibrasi pabrik.",
+      "description": "Labu takar berakurasi tinggi untuk pembuatan larutan standar analitik. Tanda kalibrasi melingkar di leher labu dicetak dengan teknologi presisi untuk pembacaan meniskus yang akurat.",
+      "highlights": [
+        "Akurasi Kelas A (Class A Certified)",
+        "Kapasitas: 5 ml – 2000 ml",
+        "Tutup Kaca Ground Joint Kedap",
+        "Batch Certificate Terlampir"
+      ],
+      "specs_table": "<tr><th>Kapasitas & Toleransi</th><td>5 ml (±0.04 ml), 10 ml (±0.04 ml), 25 ml (±0.06 ml), 50 ml (±0.08 ml), 100 ml (±0.10 ml), 250 ml (±0.15 ml), 500 ml (±0.25 ml), 1000 ml (±0.40 ml), 2000 ml (±0.60 ml)</td></tr><tr><th>Sertifikasi</th><td>Kelas A dengan sertifikat batch (Batch Certificate conformity)</td></tr><tr><th>Ground Joint Stopper</th><td>Tutup kaca standar interchangeables (NS 10/19 hingga NS 29/32)</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2026/01/2064511-12-FLASK-VOLUMETRIC-CLASS-A-USP-Wide-Mouth-Clear-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2026/01/2064511-12-FLASK-VOLUMETRIC-CLASS-A-USP-Wide-Mouth-Clear.jpg",
+      "scrapedTitle": "FLASK VOLUMETRIC, CLASS &#8216;A’, USP Wide Mouth, Clear with Individual Calibration Certificate Neck Size as per ISO 1000mL"
+    },
+    {
+      "query": "distillation",
+      "fallbackIndex": 93,
+      "file": "glassware-distillation-set.jpg",
+      "title": "Distillation Apparatus Set (Interchangeable Joint)",
+      "item_code": "ARCO-2064055_1",
+      "standard": "DIN 12594 • ISO 3819",
+      "material": "Borosilicate Glass 3.3",
+      "tagline": "Set peralatan distilasi fraksionasi lengkap dengan sambungan ground joint presisi anti-bocor.",
+      "description": "Set distilasi analitik lengkap mencakup labu didih dasar bulat, kepala distilasi (still head), kondensor Liebig jaket pendingin, adaptor vakum, dan labu penampung kaca borosilikat 3.3 tahan suhu hingga 500°C.",
+      "highlights": [
+        "Set Ground Joint 24/29 Presisi",
+        "Kondensor Liebig Jaket Pendingin",
+        "Kaca Boro 3.3 Suhu hingga 500°C",
+        "Labu Didih & Receiver Flask"
+      ],
+      "specs_table": "<tr><th>Komponen Set</th><td>Labu Didih 500ml (24/29), Still Head Distilasi (14/23 & 24/29), Kondensor Liebig 250mm, Receiver Adapter Vakum, Labu Penampung Erlenmeyer 250ml</td></tr><tr><th>Ukuran Ground Joint</th><td>Standar ISO 383 Sambungan Asah Presisi Kerapatan Tinggi</td></tr><tr><th>Ketahanan Termal</th><td>Borosilikat 3.3 ekspansi rendah 3.3x10^-6 K^-1</td></tr><tr><th>Aplikasi Utama</th><td>Pemurnian pelarut, pemisahan senyawa kimia organik, dan sintesis laboratorium</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/12/2064055-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/12/2064055-300x300.jpg",
+      "scrapedTitle": "DISTILLATION EQUIPMENT SET (SIMPLE)"
+    },
+    {
+      "query": "erlenmeyer|conical",
+      "fallbackIndex": 45,
+      "file": "glassware-erlenmeyer.jpg",
+      "title": "Erlenmeyer Conical Flask Narrow Neck",
+      "item_code": "ARCO-2064170_13",
+      "standard": "ISO 1773 • DIN 12380",
+      "material": "Borosilicate Glass 3.3",
+      "tagline": "Labu erlenmeyer leher sempit dengan bibir rim tebal untuk titrasi & kultur mikrobiologi.",
+      "description": "Labu konikal dengan dasar datar lebar untuk pengadukan pusaran (swirling) tanpa risiko tumpah. Bibir atas yang diperkuat meminimalkan risiko retak saat dipasang sumbat karet atau kapas.",
+      "highlights": [
+        "Kapasitas: 25 ml – 5000 ml",
+        "Bibir Leher Reinforced Rim",
+        "Tahan Autoklaf 121°C",
+        "Bidang Tulis Keramik Putih"
+      ],
+      "specs_table": "<tr><th>Rentang Ukuran</th><td>25 ml, 50 ml, 100 ml, 250 ml, 500 ml, 1000 ml, 2000 ml, 3000 ml, 5000 ml</td></tr><tr><th>Aplikasi</th><td>Titrasi kimia, preparasi media kultur, pemanasan reagen, evaporasi pelarut</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2064170_13-1.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2064170_13-1.jpg",
+      "scrapedTitle": "Flask, Erlenmeyer, (Conical) Narrow Neck with Socket, 100mL"
+    },
+    {
+      "query": "separating|funnel",
+      "fallbackIndex": 60,
+      "file": "glassware-separating-funnel.jpg",
+      "title": "Separating Funnel Pear Shape with PTFE Stopcock",
+      "item_code": "ARCO-2065040_3",
+      "standard": "ISO 4800 • DIN 12424",
+      "material": "Borosilicate Glass 3.3 + PTFE",
+      "tagline": "Corong pemisah bentuk pir dengan keran PTFE bebas pelumas anti-bocor.",
+      "description": "Peralatan ekstraksi cair-cair berkapasitas presisi. Keran PTFE (Teflon) halus tidak memerlukan pelumas silikon, mencegah kontaminasi pada fase organik maupun aqueous yang dipisahkan.",
+      "highlights": [
+        "Kapasitas: 50 ml – 2000 ml",
+        "Keran PTFE Grease-Free",
+        "Bentuk Pir (Pear Shape)",
+        "Tutup Kaca Interchangeable Joint"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>50 ml, 100 ml, 250 ml, 500 ml, 1000 ml, 2000 ml</td></tr><tr><th>Tipe Keran</th><td>Keran jarum/putar PTFE anti-macet</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2065040_3-1.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2065040_3-1.jpg",
+      "scrapedTitle": "Funnel, Separating, Pear Shape with PP Stopper, 250mL"
+    },
+    {
+      "query": "burette",
+      "fallbackIndex": 75,
+      "file": "glassware-burette.jpg",
+      "title": "Burette Straight Bore Class A with Schellbach Stripe",
+      "item_code": "ARCO-2061952_1_DII",
+      "standard": "DIN EN ISO 385",
+      "material": "Borosilicate Glass 3.3 + PTFE Key",
+      "tagline": "Buret analitik garis Schellbach dengan keran PTFE lurus untuk titrasi kuantitatif akurat.",
+      "description": "Dilengkapi pita biru vertikal Schellbach di bagian belakang tabung yang membentuk panah ganda pada meniskus, menghilangkan paralaks mata analis saat menentukan volume titik akhir titrasi.",
+      "highlights": [
+        "Garis Schellbach Anti-Paralaks",
+        "Akurasi Kelas A (Class A)",
+        "Keran PTFE Smooth Flow",
+        "Kapasitas 10 ml, 25 ml, 50 ml, 100 ml"
+      ],
+      "specs_table": "<tr><th>Kapasitas & Subdivisi</th><td>10 ml (div. 0.02 ml), 25 ml (div. 0.05 ml), 50 ml (div. 0.10 ml), 100 ml (div. 0.20 ml)</td></tr><tr><th>Standar</th><td>DIN EN ISO 385 Kelas A dengan Batch Certificate</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/1970/01/2061952-1-BURETTES-CLASS-A-SCHELLBACH-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/1970/01/2061952-1-BURETTES-CLASS-A-SCHELLBACH.jpg",
+      "scrapedTitle": "BURETTES, CLASS &#8216;A' SCHELLBACH WITH DETACHABLE STOP COCK, 10mL"
+    },
+    {
+      "query": "condenser",
+      "fallbackIndex": 90,
+      "file": "glassware-condenser.jpg",
+      "title": "Liebig & Allihn Reflux Condenser with Ground Joint",
+      "item_code": "ARCO-2062540_7",
+      "standard": "DIN 12576 / DIN 12581",
+      "material": "Borosilicate Glass 3.3",
+      "tagline": "Pendingin kondensor lurus dan refluks bertiup dengan sambungan sambung asah standar.",
+      "description": "Kondensor destilasi dan sintesis kimia dengan jaket pendingin air efisien. Sambungan ground joint presisi memastikan kerapatan uap pelarut tanpa menggunakan sealing tape berbahaya.",
+      "highlights": [
+        "Panjang Jaket: 200 mm – 500 mm",
+        "Joint: 19/26, 24/29, 29/32",
+        "Nozel Selang Kaca Berulir",
+        "Tahan Panas & Vakum"
+      ],
+      "specs_table": "<tr><th>Panjang Efektif Jaket</th><td>200 mm, 300 mm, 400 mm, 500 mm</td></tr><tr><th>Ukuran Asahan (Joint)</th><td>Cone & Socket standar NS 19/26, 24/29, 29/32</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2062540_7-1.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2062540_7-1.jpg",
+      "scrapedTitle": "Condenser, Air, 19/26"
+    },
+    {
+      "query": "petri|dish",
+      "fallbackIndex": 105,
+      "file": "glassware-petri-dish.jpg",
+      "title": "Petri Dish Borosilicate Glass (Pair)",
+      "item_code": "ARCO-2060240_A4",
+      "standard": "DIN 13132",
+      "material": "Borosilicate Glass 3.3",
+      "tagline": "Cawan petri kaca borosilikat bening bebas distorsi optik, tahan autoklaf berulang.",
+      "description": "Cawan kultur bakteri dan jamur dengan permukaan dasar yang sangat rata (optically flat). Ketahanan termal tinggi memungkinkan sterilisasi oven udara panas kering 180°C maupun autoklaf 121°C.",
+      "highlights": [
+        "Diameter: 60 mm – 150 mm",
+        "Transparansi Optik Tinggi",
+        "Dasar Datar Sempurna",
+        "Reusable & Autoclavable"
+      ],
+      "specs_table": "<tr><th>Dimensi Diameter x Tinggi</th><td>60 x 15 mm, 80 x 15 mm, 90 x 15 mm, 100 x 15 mm, 120 x 20 mm, 150 x 25 mm</td></tr><tr><th>Standar</th><td>DIN 13132</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2060240_A4-1.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2060240_A4-1.jpg",
+      "scrapedTitle": "Dish Crystallizing, Without Spout, 25mL"
+    },
+    {
+      "query": "distill|filtration|filtering",
+      "fallbackIndex": 120,
+      "file": "glassware-filtering-flask.jpg",
+      "title": "Filtering Flask Heavy Wall with Side Tubulation",
+      "item_code": "ARCO-2064054_3",
+      "standard": "ISO 6556 • DIN 12476",
+      "material": "Borosilicate Glass 3.3",
+      "tagline": "Labu hisap vakum dinding ekstra tebal untuk filtrasi corong Büchner tanpa risiko implosi.",
+      "description": "Labu hisap dinding berat (heavy wall) yang dirancang khusus untuk filtrasi vakum di bawah tekanan negatif tinggi. Pipa samping integral terhubung langsung ke pompa vakum atau aspirator air.",
+      "highlights": [
+        "Kapasitas: 100 ml – 5000 ml",
+        "Heavy Wall Vacuum Proof",
+        "Pipa Samping Berigi Pengaman",
+        "Sesuai Corong Büchner"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>100 ml, 250 ml, 500 ml, 1000 ml, 2000 ml, 5000 ml</td></tr><tr><th>Konstruksi</th><td>Heavy duty wall thickness menahan perbedaan tekanan hingga 1 bar</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2026/01/2064054-3-DISTILLING-APPARATUS-Dean-Stark-without-stopcock-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2026/01/2064054-3-DISTILLING-APPARATUS-Dean-Stark-without-stopcock.jpg",
+      "scrapedTitle": "DISTILLING APPARATUS DEAN & STARK, WITHOUT STOPCOCK 25ml"
+    },
+    {
+      "query": "test tube",
+      "fallbackIndex": 135,
+      "file": "glassware-test-tubes.jpg",
+      "title": "Test Tubes Round Bottom with Beaded Rim",
+      "item_code": "ARCO-2067380_A1",
+      "standard": "ISO 4142 • DIN 12215",
+      "material": "Borosilicate Glass 3.3 Neutral",
+      "tagline": "Tabung reaksi kaca borosilikat berkualitas tinggi dengan bibir beaded rim pencegah gumpil.",
+      "description": "Tabung reaksi serbaguna untuk pengujian kualitatif, reaksi pengendapan, pemanasan nyala api langsung Bunsen, dan penyimpanan larutan sementara di laboratorium kimia & biologi.",
+      "highlights": [
+        "Ukuran: 10x75 mm – 25x200 mm",
+        "Tahan Nyala Api Langsung",
+        "Dinding Tebal Tahan Benturan",
+        "Bibir Beaded Rim Halus"
+      ],
+      "specs_table": "<tr><th>Dimensi Diameter x Panjang</th><td>10 x 75 mm, 12 x 75 mm, 12 x 100 mm, 15 x 125 mm, 16 x 150 mm, 18 x 150 mm, 25 x 150 mm, 25 x 200 mm</td></tr><tr><th>Ketahanan Api</th><td>Bebas dari pelepasan alkali saat dipanaskan di atas api bunsen</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2067380_A1-1.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2024/11/2067380_A1-1.jpg",
+      "scrapedTitle": "Test Tube With Rim, 3mL"
+    }
+  ],
+  "plasticware": [
+    {
+      "query": "cylinder|protector",
+      "fallbackIndex": 10,
+      "file": "plasticware-cylinder.jpg",
+      "title": "Measuring Cylinder Polypropylene (PP) Hexagonal Base",
+      "item_code": "ARCO-2063210_2",
+      "standard": "ISO 6706 Class B • Pure PP",
+      "material": "Pure Polypropylene (PP)",
+      "tagline": "Silinder ukur plastik anti pecah dengan graduasi timbul permanen & tahan autoklaf.",
+      "description": "Pilihan aman pengganti silinder kaca di laboratorium lapangan dan pabrik pengolahan pangan. Transparansi tinggi dan tidak akan pecah saat terjatuh ke lantai.",
+      "highlights": [
+        "Autoclavable pada 121°C",
+        "Kapasitas: 10 ml – 2000 ml",
+        "Shatterproof Bebas Pecah",
+        "Graduasi Timbul Anti Luntur"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>10 ml, 25 ml, 50 ml, 100 ml, 250 ml, 500 ml, 1000 ml, 2000 ml</td></tr><tr><th>Ketahanan Suhu</th><td>-20°C hingga +121°C (Autoclavable)</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2063210_2-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2063210_2.jpg",
+      "scrapedTitle": "Protectors for Measuring Cylinders, 25 ml"
+    },
+    {
+      "query": "jug|beaker",
+      "fallbackIndex": 12,
+      "file": "plasticware-beaker.jpg",
+      "title": "Beaker / Measuring Jug Polypropylene (PP) with Molded Handle",
+      "item_code": "ARCO-2065570_1",
+      "standard": "ISO 7056 • Polypropylene (PP)",
+      "material": "Polypropylene (PP)",
+      "tagline": "Beaker plastik bertangkai ergonomis untuk penuangan aman cairan asam dan basa kuat.",
+      "description": "Beaker plastik berdinding tebal dengan pegangan tangan kokoh yang memberikan kendali penuh saat memindahkan volume cairan panas atau larutan kimia korosif.",
+      "highlights": [
+        "Kapasitas: 100 ml – 5000 ml",
+        "Pegangan Ergonomis Kokoh",
+        "Tahan Bahan Kimia Agresif",
+        "Bibir Tuang Presisi"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>100 ml, 250 ml, 500 ml, 1000 ml, 2000 ml, 3000 ml, 5000 ml</td></tr><tr><th>Fitur</th><td>Molded-in handle terintegrasi kuat</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2065570_4-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2065570_4.jpg",
+      "scrapedTitle": "Measuring Jugs, Printed Graduation, Polypropylene, 100ml"
+    },
+    {
+      "query": "aspirator|can|bottle",
+      "fallbackIndex": 9,
+      "file": "plasticware-wash-bottle.jpg",
+      "title": "Aspirator Can / Wash Bottle Polyethylene with Stopcock",
+      "item_code": "ARCO-2060150_2",
+      "standard": "Lab Storage Standard • Heavy Duty Polythene",
+      "material": "Low-Density Polyethylene (LDPE)",
+      "tagline": "Jerigen aspirator dan botol cuci fleksibel dengan keran penuang anti-bocor.",
+      "description": "Ideal untuk penampungan cadangan aquades dan dispensing pelarut tanpa tumpah. Bodi tebal dengan ketahanan kimia asam encer dan garam netral.",
+      "highlights": [
+        "Kapasitas: 2000 ml – 5000 ml",
+        "Keran Keramik / Plastik Kedap",
+        "Bodi Polietilen Lentur Kuat",
+        "Pegangan Integral Nyaman"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>2000 ml, 5000 ml, 10000 ml</td></tr><tr><th>Material</th><td>Virgin Polythene tebal bebas bocor</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2060150_2-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2060150_2.jpg",
+      "scrapedTitle": "CAN, ASPIRATOR, POLYTHENE, 5000 ml"
+    },
+    {
+      "query": "wire pattern|stand|rack",
+      "fallbackIndex": 3,
+      "file": "plasticware-tube-stand.jpg",
+      "title": "Test Tube Stand Wire Pattern Polypropylene (PP)",
+      "item_code": "ARCO-2072520_6",
+      "standard": "Autoclavable Modular Stand",
+      "material": "Pure Polypropylene (PP)",
+      "tagline": "Rak tabung reaksi pola kawat polipropilena tahan autoklaf untuk perendaman waterbath.",
+      "description": "Pola jaring terbuka memberikan visibilitas penuh isi tabung dan sirkulasi air merata saat diletakkan di waterbath. Tidak mengapung di dalam air.",
+      "highlights": [
+        "Untuk Tabung 13 mm – 30 mm",
+        "Kapasitas 21 hingga 90 Tabung",
+        "Autoclavable 121°C",
+        "Tidak Mengapung di Waterbath"
+      ],
+      "specs_table": "<tr><th>Ukuran</th><td>30mm x 21 tabung, 25mm x 24 tabung, 20mm x 40 tabung, 13mm x 90 tabung</td></tr><tr><th>Sterilisasi</th><td>Autoklaf pada 121°C</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072520-Test-Tube-Stand-Wire-Pattern-Polypropylene-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072520-Test-Tube-Stand-Wire-Pattern-Polypropylene.jpg",
+      "scrapedTitle": "Test Tube Stand, Wire Pattern, Polypropylene : 30mm×21 Tubes"
+    },
+    {
+      "query": "desiccator",
+      "fallbackIndex": 6,
+      "file": "plasticware-desiccator.jpg",
+      "title": "Vacuum Desiccator Polycarbonate (PC) with Stopcock",
+      "item_code": "ARCO-2063450_3",
+      "standard": "High Vacuum Certified",
+      "material": "Polycarbonate Dome + PP Base",
+      "tagline": "Eksikator vakum plastik transparan tahan benturan dengan pelat porselen keramik.",
+      "description": "Kubah polikarbonat sejernih kaca memberikan visibilitas penuh terhadap silika gel dan sampel tanpa risiko bahaya pecahan kaca jika terjadi kegagalan vakum mendadak.",
+      "highlights": [
+        "Diameter: 150 mm – 300 mm",
+        "Kubah Polikarbonat Anti Pecah",
+        "Keran PTFE 3-Arah Vakum",
+        "O-Ring Silikon Grease-Free"
+      ],
+      "specs_table": "<tr><th>Diameter Pelat</th><td>150 mm (6\"), 200 mm (8\"), 250 mm (10\"), 300 mm (12\")</td></tr><tr><th>Kekuatan Vakum</th><td>0.133 MPa (1 Torr) > 24 jam</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2063450_3-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2063450_3.jpg",
+      "scrapedTitle": "Desiccators, Vacuum , 250 mm"
+    },
+    {
+      "query": "tray",
+      "fallbackIndex": 4,
+      "file": "plasticware-lab-tray.jpg",
+      "title": "Laboratory Utility Tray Polypropylene (PP)",
+      "item_code": "ARCO-5014250_1",
+      "standard": "Spill Containment Standards",
+      "material": "Polypropylene (PP)",
+      "tagline": "Baki nampan laboratorium tahan tumpahan bahan kimia dan sterilisasi autoklaf.",
+      "description": "Melindungi meja laboratorium dari tumpahan reagen kimia saat preparasi sampel. Tepi melengkung halus mempermudah pembersihan dan disinfeksi.",
+      "highlights": [
+        "Ukuran: 375x300 s/d 450x350 mm",
+        "Tepi Tinggi Penampung Tumpahan",
+        "Autoclavable 121°C",
+        "Permukaan Tahan Goresan"
+      ],
+      "specs_table": "<tr><th>Dimensi</th><td>375 x 300 x 75 mm dan 450 x 350 x 75 mm</td></tr><tr><th>Material</th><td>Polypropylene food & chemical grade</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/5014250-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/5014250.jpg",
+      "scrapedTitle": "Tray, Laboratory &#8211; 450×350×75mm"
+    },
+    {
+      "query": "pipette|microliter",
+      "fallbackIndex": 8,
+      "file": "plasticware-micropipette.jpg",
+      "title": "Precision Microliter Pipette Fixed & Variable Volume",
+      "item_code": "ARCO-2066210_2",
+      "standard": "ISO 8655 Calibration",
+      "material": "Chemical Resistant Polymer",
+      "tagline": "Mikropipet presisi analitik dengan pegangan ergonomis & ejektor tip terintegrasi.",
+      "description": "Mekanisme pegas ringan mengurangi kelelahan tangan saat pemipetan repetitif ratusan sampel di laboratorium mikrobiologi dan biologi molekuler.",
+      "highlights": [
+        "Volume: 0.5 μL hingga 5000 μL",
+        "Akurasi Standar ISO 8655",
+        "Ejektor Tip Ergonomis",
+        "Kalibrasi Pabrik Terverifikasi"
+      ],
+      "specs_table": "<tr><th>Volume</th><td>Fixed: 10, 20, 50, 100, 200, 500, 1000 μL; Variable tersedia</td></tr><tr><th>Standar</th><td>ISO 8655</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066210-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066210.jpg",
+      "scrapedTitle": "Tips (For Micro Pipettes), 2-2020 (μL)"
+    },
+    {
+      "query": "funnel|thistle",
+      "fallbackIndex": 14,
+      "file": "plasticware-funnel.jpg",
+      "title": "Laboratory Funnels & Thistle Funnels (PP)",
+      "item_code": "ARCO-2065235_2",
+      "standard": "Liquid Transfer Utility",
+      "material": "Polypropylene (PP)",
+      "tagline": "Corong plastik sudut 60 derajat dengan tangkai sempit untuk penuangan cepat.",
+      "description": "Permukaan dalam sangat halus mencegah penempelan zat padat dan mempercepat laju aliran cairan saat penyaringan kimia.",
+      "highlights": [
+        "Diameter: 50 mm – 150 mm",
+        "Sudut Dinding 60° Presisi",
+        "Tangkai Berigi Aliran Cepat",
+        "Tahan Bahan Asam/Basa"
+      ],
+      "specs_table": "<tr><th>Diameter Bibir</th><td>50 mm, 65 mm, 75 mm, 100 mm, 150 mm</td></tr><tr><th>Material</th><td>Pure Polypropylene</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2065235_2-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2065235_2.jpg",
+      "scrapedTitle": "Funnels, Thistle"
+    },
+    {
+      "query": "magnetic|receiver",
+      "fallbackIndex": 2,
+      "file": "plasticware-magnetic-receiver.jpg",
+      "title": "Magnetic Stirring Bar Receiver & Retriever (PTFE)",
+      "item_code": "ARCO-2051600",
+      "standard": "Chemical Stirring Accessory",
+      "material": "PTFE Coated Alnico Magnet",
+      "tagline": "Batang penarik magnet pengaduk (stirrer retriever) tahan pelarut kimia agresif.",
+      "description": "Memudahkan pengambilan stir bar magnetik dari dasar gelas kimia tanpa perlu menuang atau mengotori larutan sampel yang sedang diuji.",
+      "highlights": [
+        "Panjang Batang: 300 mm – 450 mm",
+        "Pelapis Penuh PTFE Inert",
+        "Magnet Neodymium Super Kuat",
+        "Ujung Fleksibel Anti Pecah"
+      ],
+      "specs_table": "<tr><th>Panjang</th><td>300 mm, 350 mm, 450 mm</td></tr><tr><th>Material Pelapis</th><td>PTFE (Teflon) murni tahan suhu 250°C</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2051600-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2051600.jpg",
+      "scrapedTitle": "Magnetic Receiver"
+    },
+    {
+      "query": "utility|tray",
+      "fallbackIndex": 7,
+      "file": "plasticware-utility-tray.jpg",
+      "title": "Heavy Duty Deep Utility Laboratory Tray",
+      "item_code": "ARCO-5014250_1",
+      "standard": "Chemical Storage Containment",
+      "material": "High-Density Polyethylene",
+      "tagline": "Bak nampan penampung dalam (kedalaman 130 mm) untuk pencucian dan penyimpanan reagen.",
+      "description": "Kedalaman 130 mm menampung botol reagen dan mencegah cairan tumpah mencemari lantai gudang atau lemari asam laboratorium.",
+      "highlights": [
+        "Ukuran: 375 x 350 x 130 mm",
+        "Kedalaman Ekstra 130 mm",
+        "Dinding Tebal Menahan Benturan",
+        "Bisa Ditumpuk (Stackable)"
+      ],
+      "specs_table": "<tr><th>Dimensi Luar</th><td>375 x 350 x 130 mm</td></tr><tr><th>Kapasitas Tampung Cairan</th><td>12 Liter</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/5014250-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/5014250.jpg",
+      "scrapedTitle": "Tray, Laboratory &#8211; 450×350×75mm"
+    }
+  ],
+  "rubberware": [
+    {
+      "query": "pipette bulbs|silicon",
+      "fallbackIndex": 0,
+      "file": "rubberware-silicon-pipette-bulb.jpg",
+      "title": "Pipette Bulbs Silicone & Natural Rubber (Cap. 5-15 ml)",
+      "item_code": "ARCO-2066095_1",
+      "standard": "Laboratory Liquid Dispensing",
+      "material": "Medical Grade Silicone / Natural Rubber",
+      "tagline": "Bola hisap silikon elastis tahan ozon dan sterilisasi autoklaf berulang 134°C.",
+      "description": "Memberikan respons hisap cepat tanpa kehilangan kelenturan seiring waktu. Bebas bau karet dan tidak meninggalkan residu bubuk pada pipet kaca.",
+      "highlights": [
+        "Kapasitas: 5 ml, 10 ml, 15 ml",
+        "Autoclavable pada 134°C",
+        "Bebas Bau & Residu Kimia",
+        "Elastisitas Cepat Memulih"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>5 ml, 10 ml, 15 ml</td></tr><tr><th>Material</th><td>Silikon medis transparan / elastis merah</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066095-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066095.jpg",
+      "scrapedTitle": "Pipette Bulbs, Silicon &#8211; Cap. 5mL"
+    },
+    {
+      "query": "stopper.*red.*without hole",
+      "fallbackIndex": 1,
+      "file": "rubberware-red-stopper.jpg",
+      "title": "Rubber Stopper Red Color Solid (Without Hole)",
+      "item_code": "ARCO-2066930_12",
+      "standard": "DIN 12871 Standard Sizes",
+      "material": "Heavy Duty Natural Red Rubber",
+      "tagline": "Sumbat karet konikal merah pejal untuk penyegelan kedap udara labu dan tabung reaksi.",
+      "description": "Tekstur lentur dengan kepadatan Shore A 45 ± 5 memberikan kerapatan sempurna pada mulut kaca tanpa risiko lepas saat terjadi perubahan tekanan.",
+      "highlights": [
+        "Ukuran: Stopper No. 0 hingga No. 25",
+        "Kedap Gas & Cairan Kimia",
+        "Kepadatan Shore A 45 ± 5",
+        "Tahan Tekanan Vakum Lab"
+      ],
+      "specs_table": "<tr><th>Rentang Ukuran</th><td>Stopper No. 0 (13/9 mm) s/d No. 25 (60/52 mm)</td></tr><tr><th>Kekerasan</th><td>Shore A 45 ± 5</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066930-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066930.jpg",
+      "scrapedTitle": "Stopper, Rubber, Red Color Without Hole &#8211; Stopper No. 11"
+    },
+    {
+      "query": "stopper.*silicon",
+      "fallbackIndex": 2,
+      "file": "rubberware-silicone-stopper.jpg",
+      "title": "Silicone Rubber Stopper Translucent (Heat Resistant)",
+      "item_code": "ARCO-2067110_9",
+      "standard": "USP Class VI • FDA Grade",
+      "material": "High-Temperature Silicone",
+      "tagline": "Sumbat silikon bening tahan panas tinggi dari -60°C hingga +220°C.",
+      "description": "Ideal untuk aplikasi fermentasi mikrobiologi, kultur sel steril, dan destilasi bersuhu tinggi di mana karet alam biasa dapat meleleh atau melepaskan bau belerang.",
+      "highlights": [
+        "Suhu Ekstrem: -60°C s/d +220°C",
+        "Translucent Bersih Higienis",
+        "Autoclavable Berulang 134°C",
+        "Inert Bebas Bau Belerang"
+      ],
+      "specs_table": "<tr><th>Ukuran</th><td>No. 9 hingga No. 45</td></tr><tr><th>Rentang Suhu</th><td>-60°C hingga +220°C</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2067110_9-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2067110_9.jpg",
+      "scrapedTitle": "Stopper, Rubber, Silicon, Without Hole &#8211; Stopper No. 25"
+    },
+    {
+      "query": "bulbs teat.*latex",
+      "fallbackIndex": 4,
+      "file": "rubberware-latex-teats.jpg",
+      "title": "Bulbs Teat Latex (Dropper Bulbs Cap. 1-3 ml)",
+      "item_code": "ARCO-2066130_2",
+      "standard": "Precision Pipetting Teat",
+      "material": "Natural Latex Amber",
+      "tagline": "Karet dot pipet tetes lateks ultra elastis untuk pipet pasteur dan penetes obat.",
+      "description": "Memberikan sensitivitas pemipetan tetes per tetes dengan presisi tinggi. Sesuai untuk pengujian biokimia, serologi, dan titrasi mikro.",
+      "highlights": [
+        "Kapasitas: 1 ml, 2 ml, 3 ml",
+        "Lateks Alami Elastisitas Tinggi",
+        "Kontrol Tetesan Sangat Halus",
+        "Kemasan Isi 50 / 100 Pcs"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>1 ml, 2 ml, 3 ml</td></tr><tr><th>Kesesuaian</th><td>Pipet tetes kaca diameter 6 – 7 mm</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066130-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066130.jpg",
+      "scrapedTitle": "Bulbs Teat, Latex (Dropper Bulbs) &#8211; Cap. 2-3mL"
+    },
+    {
+      "query": "rubber tubing.*nitrile",
+      "fallbackIndex": 6,
+      "file": "rubberware-nitrile-tubing.jpg",
+      "title": "Rubber Tubing Nitrile (Oil & Chemical Resistant)",
+      "item_code": "ARCO-2068110_8",
+      "standard": "Chemical Transfer Hose",
+      "material": "NBR Nitrile Rubber",
+      "tagline": "Selang karet nitril tahan minyak pelumas, hidrokarbon, dan pelarut non-polar.",
+      "description": "Dirancang khusus untuk sirkulasi bahan bakar, minyak atsiri, dan pelarut organik hidrokarbon yang dapat melarutkan selang karet alam konvensional.",
+      "highlights": [
+        "Ukuran: 6.0x1.5 mm – 12.0x2.0 mm",
+        "Tahan Minyak & Hidrokarbon",
+        "Elastisitas Mekanis Kuat",
+        "Panjang Roll 5m / 10m"
+      ],
+      "specs_table": "<tr><th>Ukuran ID x Tebal</th><td>6x1.5 mm, 8x1.5 mm, 10x2 mm, 12x2 mm</td></tr><tr><th>Resistensi</th><td>Minyak nabati, minyak mineral, pelarut alifatik</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2068110_8-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2068110_8.jpg",
+      "scrapedTitle": "Rubber Tubing, Nitrile &#8211; 12.0×2.0mm"
+    },
+    {
+      "query": "rubber tubing.*neoprene",
+      "fallbackIndex": 7,
+      "file": "rubberware-neoprene-tubing.jpg",
+      "title": "Rubber Tubing Neoprene (Ozone & Acid Resistant)",
+      "item_code": "ARCO-2068105_3",
+      "standard": "Corrosive Acid Transfer",
+      "material": "Neoprene Synthetic Elastomer",
+      "tagline": "Selang karet neoprene sintetis tahan degradasi ozon, cuaca, dan asam encer.",
+      "description": "Memberikan usia pakai yang jauh lebih panjang di lingkungan laboratorium ber-AC dan lemari asam tanpa risiko retak getas akibat paparan ozon.",
+      "highlights": [
+        "Ukuran: 4.0x1.0 mm – 10.0x2.0 mm",
+        "Resisten Degradasi Ozon",
+        "Tahan Asam Anorganik Encer",
+        "Dinding Anti Kinking"
+      ],
+      "specs_table": "<tr><th>Ukuran</th><td>4x1 mm, 6x1.5 mm, 8x1.5 mm, 10x2 mm</td></tr><tr><th>Material</th><td>Neoprene kualitas industri lab</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2068105_3-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2068105_3.jpg",
+      "scrapedTitle": "Rubber Tubing, Neoprene &#8211; 6.0×1.5mm"
+    },
+    {
+      "query": "burner tubing",
+      "fallbackIndex": 8,
+      "file": "rubberware-burner-tubing.jpg",
+      "title": "Bunsen Burner Gas Tubing Neoprene Rubber (Reinforced)",
+      "item_code": "ARCO-2067960_1",
+      "standard": "DIN 30664 Gas Hose Standard",
+      "material": "Heavy Duty Flame-Resistant Rubber",
+      "tagline": "Selang gas pembakar bunsen berdinding tebal dengan ujung elastis pengunci rapat nozel.",
+      "description": "Memenuhi standar keselamatan laboratorium untuk instalasi gas LPG dan gas kota. Dinding tebal mencegah kebocoran gas dan tidak mudah terlipat menutup api.",
+      "highlights": [
+        "Panjang: 450 mm, 600 mm, 900 mm",
+        "Ujung Elastis Mencengkeram Nozel",
+        "Tahan Nyala Api Langsung Singkat",
+        "Standar Gas Safety Lab"
+      ],
+      "specs_table": "<tr><th>Panjang</th><td>450 mm, 600 mm, 900 mm</td></tr><tr><th>Standar</th><td>DIN 30664 untuk selang gas laboratorium</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2067960_1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2067960_1.jpg",
+      "scrapedTitle": "Burner Tubing, Neoprene Rubber &#8211; 450mm"
+    },
+    {
+      "query": "bulbs teat.*rubber",
+      "fallbackIndex": 10,
+      "file": "rubberware-rubber-teats.jpg",
+      "title": "Bulbs Teat Heavy Duty Red Rubber (Dropper Bulbs)",
+      "item_code": "ARCO-2066120_1",
+      "standard": "Dispensing Standards",
+      "material": "Pure Red Rubber",
+      "tagline": "Karet dot merah dinding tebal untuk pipet tetes volumetrik kasar dan reagen rutin.",
+      "description": "Lebih tahan terhadap keausan mekanis daripada lateks tipis, cocok untuk praktikum pendidikan dan penyiapan sampel rutin harian.",
+      "highlights": [
+        "Kapasitas: 1 ml & 2 ml",
+        "Dinding Karet Tebal Tahan Robek",
+        "Cengkeraman Kuat pada Kaca",
+        "Warna Merah Klasik Lab"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>1 ml dan 2 ml</td></tr><tr><th>Kemasan</th><td>Pack isi 100 pcs</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066120-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066120.jpg",
+      "scrapedTitle": "Bulbs Teat, Rubber (Dropper Bulbs) &#8211; Cap. 1mL"
+    },
+    {
+      "query": "tubing.*pvc",
+      "fallbackIndex": 12,
+      "file": "rubberware-pvc-tubing.jpg",
+      "title": "Clear Flexible PVC Tubing for Laboratory Circulation",
+      "item_code": "ARCO-2067920_2-67924",
+      "standard": "Water Circulation Standards",
+      "material": "Transparent Plasticized PVC",
+      "tagline": "Selang PVC bening transparan untuk aliran sirkulasi air pendingin kondensor.",
+      "description": "Kejernihan transparan mempermudah pemantauan ada tidaknya gelembung udara atau sumbatan aliran air pendingin pada mantel kondensor destilasi.",
+      "highlights": [
+        "Ukuran ID x OD: 6x9 mm – 12x16 mm",
+        "Transparan Visibilitas Penuh",
+        "Permukaan Dalam Ultra Halus",
+        "Tahan Tekanan Air Meja Lab"
+      ],
+      "specs_table": "<tr><th>Ukuran</th><td>6x9 mm, 8x11 mm, 10x14 mm, 12x16 mm</td></tr><tr><th>Material</th><td>Medical grade clear PVC</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2067920_2-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2067920_2.jpg",
+      "scrapedTitle": "Tubing, PVC &#8211; 12 x 2 mm"
+    },
+    {
+      "query": "stopper.*without hole",
+      "fallbackIndex": 3,
+      "file": "rubberware-solid-bungs.jpg",
+      "title": "Assorted Rubber Bungs Set (Conical Laboratory Plugs)",
+      "item_code": "ARCO-2066930_12",
+      "standard": "Universal Lab Sealing",
+      "material": "Elastic Vulcanized Rubber",
+      "tagline": "Set sumbat karet aneka ukuran untuk memenuhi kebutuhan seluruh mulut alat gelas lab.",
+      "description": "Pilihan lengkap untuk laboratorium multi-disiplin, memastikan selalu tersedia sumbat karet dengan diameter yang tepat untuk erlenmeyer maupun tabung reaksi.",
+      "highlights": [
+        "Ukuran #00 sampai #15 Lengkap",
+        "Tersedia Model 1 Lubang & 2 Lubang",
+        "Karet Kenyal Kedap Sempurna",
+        "Tahan Reagen Kimia Netral"
+      ],
+      "specs_table": "<tr><th>Isi Set</th><td>Kotak aneka ragam ukuran 20 pcs</td></tr><tr><th>Material</th><td>Vulcanized natural rubber</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066930-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066930.jpg",
+      "scrapedTitle": "Stopper, Rubber, Red Color Without Hole &#8211; Stopper No. 11"
+    }
+  ],
+  "metalware": [
+    {
+      "query": "laboratory jack",
+      "fallbackIndex": 12,
+      "file": "metalware-lab-jack.jpg",
+      "title": "Laboratory Jack (Lab Jack Scissor Stand SS 304)",
+      "item_code": "ARCO-2050520-1",
+      "standard": "DIN 12897 • Stainless Steel 304",
+      "material": "Stainless Steel 304",
+      "tagline": "Meja pengangkat gunting laboratorium presisi untuk penyesuaian ketinggian pemanas.",
+      "description": "Mekanisme ulir putar halus memungkinkan penyesuaian ketinggian posisi beaker, heating mantle, dan penangas air secara presisi dengan beban hingga 30 kg tanpa getaran.",
+      "highlights": [
+        "Pelat Stainless Steel SS 304",
+        "Kapasitas Beban Hingga 30 kg",
+        "Kenop Putar Presisi Halus",
+        "Ukuran 100x100 s/d 200x200 mm"
+      ],
+      "specs_table": "<tr><th>Ukuran Pelat</th><td>100 x 100 mm, 150 x 150 mm, 200 x 200 mm</td></tr><tr><th>Rentang Tinggi</th><td>Ketinggian minimum 60 mm s/d maksimum 260 mm</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2050520_1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2050520_1.jpg",
+      "scrapedTitle": "Laboratory Jack, Sheet Metal"
+    },
+    {
+      "query": "rods for retort",
+      "fallbackIndex": 0,
+      "file": "metalware-retort-rods.jpg",
+      "title": "Rods For Retort Stands (Mild Steel & SS 304)",
+      "item_code": "ARCO-2071840-1",
+      "standard": "DIN 12892 • Solid Mild Steel / SS 304",
+      "material": "Mild Steel Zinc Plated / SS 304",
+      "tagline": "Batang statif silinder berkekuatan tarik tinggi dengan ulir bawah presisi anti-goyang.",
+      "description": "Batang vertikal kokoh untuk dipasangkan pada dasar besi cor statif. Menopang susunan kondensor, buret, dan klem reaksi dengan stabilitas tegak lurus sempurna.",
+      "highlights": [
+        "Panjang: 500 mm – 1000 mm",
+        "Diameter Batang: 10 mm & 12 mm",
+        "Ulir Metrik M10 Presisi",
+        "Finishing Krom / Stainless Steel"
+      ],
+      "specs_table": "<tr><th>Dimensi</th><td>Panjang 500 mm, 600 mm, 750 mm, 1000 mm; diameter 10 mm & 12 mm</td></tr><tr><th>Ulir</th><td>M10 threaded bottom</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2071840_1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2071840_1.jpg",
+      "scrapedTitle": "Rods For Retort Stands, MS"
+    },
+    {
+      "query": "tube rack.*ss|tube rack.*square",
+      "fallbackIndex": 4,
+      "file": "metalware-tube-rack-ss.jpg",
+      "title": "Stainless Steel Test Tube Rack (Square Grid SS 304)",
+      "item_code": "ARCO-2073978-9",
+      "standard": "Autoclavable Metal Racks",
+      "material": "Stainless Steel 304 Electropolished",
+      "tagline": "Rak tabung reaksi kawat baja tahan karat anti korosi, dapat disterilisasi oven panas 250°C.",
+      "description": "Permukaan elektropolishing yang sangat halus tanpa sudut tajam. Tahan terhadap uap autoklaf berulang kali dan oven panas 250°C tanpa risiko karat atau korosi.",
+      "highlights": [
+        "Full SS 304 Anti Karat",
+        "Kapasitas 24, 40, 50 Lubang",
+        "Tahan Panas Kering 250°C",
+        "Tenggelam Sempurna di Waterbath"
+      ],
+      "specs_table": "<tr><th>Kapasitas Lubang</th><td>24 lubang (3x8), 40 lubang (4x10), 50 lubang (5x10)</td></tr><tr><th>Sterilisasi</th><td>Autoklaf 121°C & Oven kering 250°C</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2073978_7-1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2073978_7-1.jpg",
+      "scrapedTitle": "Tube Rack, Square, Ss"
+    },
+    {
+      "query": "test tube stand.*3 tier",
+      "fallbackIndex": 6,
+      "file": "metalware-tube-stand-3tier.jpg",
+      "title": "Test Tube Stand 3-Tier Stainless Steel",
+      "item_code": "ARCO-2072920-1A",
+      "standard": "High Stability Tube Holder",
+      "material": "Stainless Steel Sheet SS 304",
+      "tagline": "Stand tabung reaksi pelat 3 tingkat stainless steel dengan lubang presisi nomor indeks.",
+      "description": "Konstruksi pelat lipat kokoh memberikan penopangan 3 titik pada setiap tabung reaksi, mencegah tabung miring atau saling membentur saat dipindahkan.",
+      "highlights": [
+        "Konstruksi Pelat Lipat SS 304",
+        "3 Tingkat Penyangga Kokoh",
+        "Tersedia Kode Alfabet/Angka",
+        "Tahan Bahan Kimia Keras"
+      ],
+      "specs_table": "<tr><th>Lubang</th><td>Diameter 16 mm, 18 mm, 25 mm (kapasitas 24 & 40 tabung)</td></tr><tr><th>Material</th><td>Stainless Steel 304 tebal 1.0 mm</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072920-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072920.jpg",
+      "scrapedTitle": "Test Tube Stand, 3 Tier, Aluminum"
+    },
+    {
+      "query": "z-shaped",
+      "fallbackIndex": 8,
+      "file": "metalware-tube-stand-z.jpg",
+      "title": "Test Tube Stand Z-Shaped Stainless Steel",
+      "item_code": "ARCO-2073000",
+      "standard": "Space-Saving Bench Stand",
+      "material": "Stainless Steel 304",
+      "tagline": "Stand tabung reaksi bentuk Z yang hemat tempat, dapat ditumpuk saat tidak digunakan.",
+      "description": "Desain profil Z memberikan kestabilan tinggi dengan bobot ringan. Dapat ditumpuk secara rapi di dalam lemari penyimpanan laboratorium.",
+      "highlights": [
+        "Desain Profil Z Ergonomis",
+        "Bisa Ditumpuk (Stackable)",
+        "Autoclavable 121°C / 134°C",
+        "Mudah Dicuci Bersih"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>50 lubang (diameter 12 mm / 17 mm)</td></tr><tr><th>Material</th><td>SS 304 electropolished</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2073000-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2073000.jpg",
+      "scrapedTitle": "Test Tube Stand, Z-Shaped"
+    },
+    {
+      "query": "wire gauze",
+      "fallbackIndex": 9,
+      "file": "metalware-wire-gauze.jpg",
+      "title": "Wire Gauze Stainless Steel Superior Heat Distribution",
+      "item_code": "ARCO-2068300",
+      "standard": "Heating Safety Support",
+      "material": "Stainless Steel 304 Wire Mesh",
+      "tagline": "Kasa kawat baja tahan karat superior tanpa asbes perata distribusi panas api bunsen.",
+      "description": "Kawat anyaman stainless steel berkekuatan tinggi yang tidak mudah terbakar putus atau berkarat setelah ratusan jam pemanasan di atas api gas.",
+      "highlights": [
+        "Material Full SS 304 Anyam",
+        "Ukuran: 125x125 & 150x150 mm",
+        "Tepi Dilipat Rapi Halus",
+        "Tahan Suhu Nyala Api 800°C"
+      ],
+      "specs_table": "<tr><th>Dimensi</th><td>125 x 125 mm dan 150 x 150 mm</td></tr><tr><th>Tipe</th><td>Superior stainless steel wire gauze</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2068300-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2068300.jpg",
+      "scrapedTitle": "Wire Gauze, SS, Superior"
+    },
+    {
+      "query": "spatula.*chattaway",
+      "fallbackIndex": 11,
+      "file": "metalware-spatula.jpg",
+      "title": "Spatula Chattaway Stainless Steel (Double Ended)",
+      "item_code": "ARCO-2066420-2",
+      "standard": "Chemical Sampling Standards",
+      "material": "Stainless Steel 304 Mirror Polished",
+      "tagline": "Spatula kimia sendok dua sisi untuk pengambilan reagen serbuk dan penimbangan analitik.",
+      "description": "Satu sisi berbentuk sendok cekung untuk menyendok kristal kimia dari botol, dan sisi lain berbentuk spatula pipih rata untuk meratakan zat.",
+      "highlights": [
+        "Panjang: 150 mm – 250 mm",
+        "Full Stainless Steel SS 304",
+        "Dua Sisi (Sendok & Pipih)",
+        "Mirror Polished Higienis"
+      ],
+      "specs_table": "<tr><th>Panjang</th><td>150 mm, 200 mm, 250 mm</td></tr><tr><th>Material</th><td>SS 304 mirror finish</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066420_2-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066420_2.jpg",
+      "scrapedTitle": "Spatula, Chattaway, SS"
+    },
+    {
+      "query": "centrifuge tube rack",
+      "fallbackIndex": 5,
+      "file": "metalware-centrifuge-rack.jpg",
+      "title": "Centrifuge Tube Rack Stainless Steel (15ml & 50ml)",
+      "item_code": "ARCO-2073972-2",
+      "standard": "Centrifugation Lab Hardware",
+      "material": "Stainless Steel 304",
+      "tagline": "Rak tabung sentrifus stainless steel untuk tabung dasar kerucut 15 ml dan 50 ml.",
+      "description": "Menampung tabung sentrifus Falcon kerucut dengan stabil saat penimbangan atau inkubasi di waterbath tanpa risiko roboh.",
+      "highlights": [
+        "Khusus Tabung Kerucut 15 & 50 ml",
+        "Dasar Berparit Penopang Kerucut",
+        "Full SS 304 Tahan Karat",
+        "Autoclavable 121°C"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>16 lubang (tabung 50 ml) dan 25 lubang (tabung 15 ml)</td></tr><tr><th>Material</th><td>Stainless Steel 304</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2073972_1-1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2073972_1-1.jpg",
+      "scrapedTitle": "Centrifuge Tube Rack, Ss"
+    },
+    {
+      "query": "draining rack",
+      "fallbackIndex": 14,
+      "file": "metalware-draining-rack.jpg",
+      "title": "Draining Rack Metal Wire Vinyl Coated (Wall Mounted)",
+      "item_code": "ARCO-2071960-1",
+      "standard": "Lab Drying Fixture",
+      "material": "Epoxy / Vinyl Coated Heavy Wire",
+      "tagline": "Rak peniris cucian alat gelas dinding dengan pin penyangga bervariasi panjang.",
+      "description": "Dilengkapi nampan penampung tetesan air di bagian bawah dan gantungan dinding kokoh untuk mengeringkan beaker, labu, dan silinder secara teratur.",
+      "highlights": [
+        "Kapasitas 32 s/d 55 Pegs Pin",
+        "Lapisan Vinyl Putih Anti Benturan",
+        "Baki Penampung Air Terintegrasi",
+        "Dapat Digantung di Dinding Lab"
+      ],
+      "specs_table": "<tr><th>Jumlah Pin</th><td>32 pegs, 55 pegs, 72 pegs</td></tr><tr><th>Finishing</th><td>Thick vinyl plastic coating</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2071960_1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2071960_1.jpg",
+      "scrapedTitle": "Draining Rack, Metal Wire"
+    },
+    {
+      "query": "specimen container rack",
+      "fallbackIndex": 2,
+      "file": "metalware-specimen-rack.jpg",
+      "title": "Specimen Container Rack Stainless Steel",
+      "item_code": "ARCO-2073980-6",
+      "standard": "Clinical Lab Organization",
+      "material": "Stainless Steel 304",
+      "tagline": "Rak wadah spesimen klinis stainless steel untuk botol sampel urine dan dahak.",
+      "description": "Dirancang untuk menampung botol spesimen berdiameter lebar di laboratorium patologi dan diagnostik rumah sakit dengan higienitas tinggi.",
+      "highlights": [
+        "Diameter Lubang Lebar: 45 – 55 mm",
+        "Kapasitas 12 & 24 Wadah",
+        "Mudah Disterilkan dengan Disinfektan",
+        "Konstruksi Kawat SS Kokoh"
+      ],
+      "specs_table": "<tr><th>Ukuran Lubang</th><td>Diameter 50 mm (12 dan 24 lubang)</td></tr><tr><th>Material</th><td>Stainless steel 304</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2073980-2-1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2073980-2-1.jpg",
+      "scrapedTitle": "Specimen Container Rack"
+    }
+  ],
+  "woodenware": [
+    {
+      "query": "six holes.*six pegs",
+      "fallbackIndex": 2,
+      "file": "woodenware-stand-6pegs.jpg",
+      "title": "Test Tube Stand with Six Holes and Six Drying Pegs",
+      "item_code": "ARCO-2072760_2",
+      "standard": "Classic Laboratory Furniture",
+      "material": "Seasoned Hardwood / Teak",
+      "tagline": "Rak tabung reaksi kayu berkualitas tinggi dengan pin pengering tabung terbalik.",
+      "description": "Terbuat dari kayu keras pilihan yang telah dikeringkan dan dipoles pernis anti jamur. Dilengkapi pin/pasak tegak di bagian belakang untuk menjemur tabung reaksi sehabis dicuci.",
+      "highlights": [
+        "6 Lubang Tabung + 6 Pin Pengering",
+        "Kayu Keras Alami Polished",
+        "Lapisan Tahan Percikan Air",
+        "Konstruksi Kokoh Tidak Goyang"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>6 lubang + 6 drying pins</td></tr><tr><th>Diameter Lubang</th><td>22 mm dan 25 mm</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072760_1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072760_1.jpg",
+      "scrapedTitle": "Test Tube Stand with Six holes and Six pegs"
+    },
+    {
+      "query": "stopper cork.*no",
+      "fallbackIndex": 0,
+      "file": "woodenware-cork-stoppers.jpg",
+      "title": "Natural Cork Stoppers / Bungs (Grade A Premium)",
+      "item_code": "ARCO-2066870_1",
+      "standard": "Natural Bungs ISO Standards",
+      "material": "100% Pure Natural Suber Cork",
+      "tagline": "Sumbat gabus alami Grade A dengan pori halus rapat untuk botol dan peralatan gelas.",
+      "description": "Dipanen dari kulit pohon Quercus suber pilihan. Memberikan penyegelan alami yang lentur tanpa bereaksi terhadap pelarut organik, minyak nabati, dan bahan kimia non-korosif.",
+      "highlights": [
+        "Ukuran Standar: #000 hingga #24",
+        "100% Gabus Alami Grade A",
+        "Pori Halus & Padat Tanpa Remah",
+        "Mudah Ditembus Pelubang Gabus"
+      ],
+      "specs_table": "<tr><th>Rentang Ukuran</th><td>No. 000 hingga No. 24 (diameter 7 mm s/d 45 mm)</td></tr><tr><th>Mutu</th><td>Grade A premium natural cork</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066870_1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2066870_1.jpg",
+      "scrapedTitle": "Stopper Cork No. 000"
+    },
+    {
+      "query": "burette stand.*double",
+      "fallbackIndex": 4,
+      "file": "woodenware-burette-stand.jpg",
+      "title": "Wooden Burette Stand Double with Clamps (Base 290x110mm)",
+      "item_code": "ARCO-2072040_2",
+      "standard": "Volumetric Titration Stand",
+      "material": "Polished Seasoned Teakwood",
+      "tagline": "Stand buret kayu terawat lengkap dengan klem penjepit kayu berlapis gabus lembut.",
+      "description": "Alternatif statif logam yang bebas karat dan elegan untuk stasiun titrasi asam-basa. Rahang penjepit kayu dilapisi lembaran gabus yang menahan buret kaca dengan lembut tanpa goresan.",
+      "highlights": [
+        "Model Ganda (2 Buret Paralel)",
+        "Rahang Klem Dilapisi Gabus Lembut",
+        "Dasar Kayu Luas untuk Erlenmeyer",
+        "Bebas Karat Seumur Hidup"
+      ],
+      "specs_table": "<tr><th>Dimensi Dasar</th><td>290 x 110 mm kayu solid berbobot mantap</td></tr><tr><th>Ketinggian Tiang</th><td>600 mm tiang kayu poles</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072040_1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072040_1.jpg",
+      "scrapedTitle": "Burette Stand &#8211; Double, Base size: 290x110mm"
+    },
+    {
+      "query": "pipette stand.*wooden|vertical-inclined",
+      "fallbackIndex": 13,
+      "file": "woodenware-pipette-stand.jpg",
+      "title": "Pipette Stand Vertical-Inclined Wooden Organizer",
+      "item_code": "ARCO-2072240-1",
+      "standard": "Laboratory Bench Organizer",
+      "material": "Hardwood with Varnish Finish",
+      "tagline": "Stand pipet kayu posisi miring ergonomis untuk penataan pipet ukur dan volumetrik.",
+      "description": "Desain miring memudahkan analis mengambil dan mengidentifikasi pipet berdasarkan kapasitas volumenya tanpa risiko ujung runcing terbentur meja.",
+      "highlights": [
+        "Kapasitas 12 hingga 24 Pipet",
+        "Posisi Miring Ergonomis",
+        "Dasar Berparit Penampung Air",
+        "Finishing Mengkilap Tahan Lembab"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>12-24 lubang untuk pipet berbagai ukuran</td></tr><tr><th>Tinggi</th><td>450 mm</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072240_1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072240_1.jpg",
+      "scrapedTitle": "Pipette Stand, Vertical-Inclined, Wooden"
+    },
+    {
+      "query": "funnel stand.*double",
+      "fallbackIndex": 14,
+      "file": "woodenware-funnel-stand.jpg",
+      "title": "Funnel Stand Double Wooden with Adjustable Height",
+      "item_code": "ARCO-2072160_2",
+      "standard": "Gravity Filtration Stand",
+      "material": "Hardwood with Wooden Screws",
+      "tagline": "Stand corong penyaring kayu dengan ketinggian jepit yang dapat diatur fleksibel.",
+      "description": "Menopang 2 corong kaca sekaligus untuk proses filtrasi gravitasi paralel. Ketinggian cincin penopang corong dapat diatur naik turun menggunakan sekrup kayu pengunci halus.",
+      "highlights": [
+        "Menampung 2 Corong Sekaligus",
+        "Ketinggian Dapat Disesuaikan",
+        "Sekrup Pengunci Kayu Halus",
+        "Dasar Luas Penampung Beaker"
+      ],
+      "specs_table": "<tr><th>Ukuran Dasar</th><td>290 x 110 mm</td></tr><tr><th>Diameter Lubang</th><td>35 mm (sesuai corong 50-100 mm)</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072160_2-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072160_2.jpg",
+      "scrapedTitle": "Funnel Stand &#8211; Double, Base size 290×110mm"
+    },
+    {
+      "query": "dropping bottles stand",
+      "fallbackIndex": 5,
+      "file": "woodenware-dropping-stand.jpg",
+      "title": "Dropping Bottles Stand Wooden (Reagent Rack)",
+      "item_code": "ARCO-2072120_2",
+      "standard": "Chemical Dispensing Stand",
+      "material": "Polished Seasoned Wood",
+      "tagline": "Rak botol tetes kayu untuk penataan botol indikator dan larutan pewarna mikroskopi.",
+      "description": "Tingkatan bertingkat memberikan keterbacaan label botol reagen pewarnaan Gram dan indikator pH secara jelas di atas meja kerja praktikum.",
+      "highlights": [
+        "Menampung 6 s/d 12 Botol Tetes",
+        "Desain Bertingkat Teratur",
+        "Lubang Berdiameter 40 mm",
+        "Kayu Halus Tahan Percikan"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>6 hingga 12 botol tetes diameter 35-40 mm</td></tr><tr><th>Material</th><td>Polished seasoned hardwood</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2026/02/2072120-2-DROPPING-BOTTLES-STAND-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2026/02/2072120-2-DROPPING-BOTTLES-STAND.jpg",
+      "scrapedTitle": "DROPPING BOTTLES STAND, WOODEN"
+    },
+    {
+      "query": "double rack with 12 holes",
+      "fallbackIndex": 12,
+      "file": "woodenware-stand-12holes.jpg",
+      "title": "Test Tube Stand Double Rack with 12 Holes",
+      "item_code": "ARCO-2072760_3",
+      "standard": "Classic Laboratory Furniture",
+      "material": "Hardwood Heavy Construction",
+      "tagline": "Rak tabung reaksi kayu 2 baris (12 lubang) untuk penataan tabung reaksi reaksi kimia.",
+      "description": "Konstruksi dua baris memberikan stabilitas maksimal untuk deretan tabung reaksi volume besar tanpa risiko goyang atau tumpah.",
+      "highlights": [
+        "12 Lubang (2 Baris x 6)",
+        "Diameter Lubang 22 mm",
+        "Dinding Kayu Solid Tebal",
+        "Finishing Vernis Tahan Jamur"
+      ],
+      "specs_table": "<tr><th>Lubang</th><td>12 lubang diameter 22 mm</td></tr><tr><th>Dimensi</th><td>Panjang 250 mm, tinggi 120 mm</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072760_3-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072760_3.jpg",
+      "scrapedTitle": "Test Tube Stand Double Rack with 12 holes"
+    },
+    {
+      "query": "without drying pegs",
+      "fallbackIndex": 9,
+      "file": "woodenware-stand-no-pegs.jpg",
+      "title": "Test Tube Stand Heavy Wooden Block (Without Pegs)",
+      "item_code": "ARCO-2072800_3",
+      "standard": "Benchtop Tube Block",
+      "material": "Seasoned Hardwood Block",
+      "tagline": "Blok rak tabung reaksi kayu padat tanpa pin untuk meja lab bersih minimalis.",
+      "description": "Blok kayu solid padat yang sangat stabil di atas meja laboratorium. Cocok untuk menempatkan tabung reaksi reaksi pengujian kuantitatif.",
+      "highlights": [
+        "Pilihan Lubang: 14mm, 18mm, 22mm",
+        "Blok Kayu Solid Padat",
+        "Sangat Stabil Anti Terguling",
+        "Permukaan Halus Rata"
+      ],
+      "specs_table": "<tr><th>Diameter Lubang</th><td>14 mm, 18 mm, 22 mm (kapasitas 6 & 12 tabung)</td></tr><tr><th>Material</th><td>Kayu keras oven padat</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072800_3-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072800_3.jpg",
+      "scrapedTitle": "Test Tube Stand, Without Drying Pegs, Hole Dia 14mm"
+    },
+    {
+      "query": "cork sheet",
+      "fallbackIndex": 6,
+      "file": "woodenware-cork-sheet.jpg",
+      "title": "Natural Cork Sheet Laboratory Pad (Thickness 1.2 - 1.5mm)",
+      "item_code": "ARCO-2062290",
+      "standard": "Bench Cushioning Standards",
+      "material": "Natural Compressed Cork",
+      "tagline": "Lembaran gabus alami peredam benturan dan isolator panas meja laboratorium.",
+      "description": "Melindungi permukaan meja lab keramik atau marmer dari benturan wadah kaca panas, serta dapat dipotong menjadi gasket segel tutup kustom.",
+      "highlights": [
+        "Tebal: 1.2 mm & 1.5 mm",
+        "Isolator Panas Alami Meja Lab",
+        "Mudah Dipotong Sesuai Kebutuhan",
+        "Tahan Bahan Kimia Netral"
+      ],
+      "specs_table": "<tr><th>Ketebalan</th><td>1.2 mm dan 1.5 mm</td></tr><tr><th>Ukuran Lembar</th><td>300 x 300 mm dan 600 x 900 mm</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2062290_1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2062290_1.jpg",
+      "scrapedTitle": "Cork Sheet"
+    },
+    {
+      "query": "wood & plastic",
+      "fallbackIndex": 3,
+      "file": "woodenware-stand-hybrid.jpg",
+      "title": "Test Tube Stand Wood & Acrylic Hybrid Construction",
+      "item_code": "ARCO-2072680_2",
+      "standard": "Modern Lab Organizer",
+      "material": "Seasoned Wood + Polypropylene/Acrylic",
+      "tagline": "Rak tabung reaksi kombinasi kayu alami dan polimer bening modern.",
+      "description": "Menggabungkan kehangatan dasar kayu stabil dengan pelat atas polimer tahan bahan kimia untuk kemudahan pembersihan dan tampilan modern laboratorium.",
+      "highlights": [
+        "Kombinasi Kayu + Polimer",
+        "Kapasitas 6 Tabung Reaksi",
+        "Dinding Halus Bebas Jamur",
+        "Desain Modern & Estetik"
+      ],
+      "specs_table": "<tr><th>Kapasitas</th><td>6 tabung diameter 25 mm</td></tr><tr><th>Material</th><td>Hardwood base + acrylic/PP top plate</td></tr>",
+      "imgUrl": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072680_1-300x300.jpg",
+      "imgFull": "https://www.arcoscientific.com/wp-content/uploads/2025/01/2072680_1.jpg",
+      "scrapedTitle": "Test Tube Stand, Wood & Plastic for 6 test tubes"
+    }
+  ]
+}

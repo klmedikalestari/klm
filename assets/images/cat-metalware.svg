@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Metalware: Blue Laboratory Scissor Jack with Adjustment Knob -->
+  <rect width="120" height="120" rx="16" fill="#f0f9ff"/>
+  <!-- Top plate -->
+  <rect x="25" y="32" width="68" height="8" rx="2" fill="#0284c7" stroke="#0369a1" stroke-width="2"/>
+  <!-- Bottom plate -->
+  <rect x="25" y="82" width="68" height="8" rx="2" fill="#0284c7" stroke="#0369a1" stroke-width="2"/>
+  <!-- Scissor cross metal links -->
+  <line x1="34" y1="38" x2="60" y2="61" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="60" y1="61" x2="84" y2="84" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="84" y1="38" x2="60" y2="61" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+  <line x1="60" y1="61" x2="34" y2="84" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+  <!-- Pivot pins -->
+  <circle cx="34" cy="38" r="3" fill="#334155"/>
+  <circle cx="84" cy="38" r="3" fill="#334155"/>
+  <circle cx="60" cy="61" r="3.5" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
+  <circle cx="34" cy="84" r="3" fill="#334155"/>
+  <circle cx="84" cy="84" r="3" fill="#334155"/>
+  <!-- Adjustment Knob on side -->
+  <rect x="14" y="55" width="10" height="12" rx="2" fill="#1e293b"/>
+  <line x1="24" y1="61" x2="34" y2="61" stroke="#475569" stroke-width="3"/>
+  <circle cx="16" cy="61" r="5" fill="#334155"/>
+</svg>
