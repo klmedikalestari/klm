@@ -324,7 +324,7 @@ $cdr_systems = array(
     <div class="cdr-nav-wrapper" id="cdr-sticky-nav">
         <div class="cdr-container">
             <div class="cdr-nav-container">
-                <!-- Baris 1: Filter Kategori & Quick Jump Hint -->
+                <!-- Baris 1: Filter Kategori (Pusat Simetris) -->
                 <div class="cdr-nav-filter-row">
                     <div class="cdr-filter-tabs" role="tablist" aria-label="Filter Kategori Sistem">
                         <button class="cdr-filter-btn active" data-filter="all" type="button">
@@ -339,10 +339,6 @@ $cdr_systems = array(
                         <button class="cdr-filter-btn" data-filter="compact" type="button">
                             <i class="fas fa-suitcase"></i> <?php esc_html_e('Kompak & Portabel', 'Kinglab_Medika_Lestari'); ?>
                         </button>
-                    </div>
-                    <div class="cdr-nav-quick-hint">
-                        <i class="fas fa-bolt"></i>
-                        <span><?php esc_html_e('Pilih instrumen untuk lompat cepat ke spesifikasi', 'Kinglab_Medika_Lestari'); ?></span>
                     </div>
                 </div>
 

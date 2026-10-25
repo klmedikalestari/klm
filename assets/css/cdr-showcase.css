@@ -221,27 +221,27 @@
 .cdr-nav-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
     width: 100%;
 }
 
-/* Row 1: Category Filter Tabs & Quick Jump Hint */
+/* Row 1: Category Filter Tabs - Centered & Symmetrical */
 .cdr-nav-filter-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
+    justify-content: center;
     width: 100%;
 }
 
 .cdr-filter-tabs {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    overflow-x: auto;
+    padding: 2px 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding: 2px 0;
 }
 
 .cdr-filter-tabs::-webkit-scrollbar {
@@ -252,7 +252,7 @@
     appearance: none;
     background: var(--cdr-slate-100);
     border: 1px solid #e2e8f0;
-    padding: 7px 16px;
+    padding: 7px 18px;
     border-radius: 999px;
     font-size: 0.84rem;
     font-weight: 600;
@@ -271,7 +271,7 @@
 }
 
 .cdr-filter-btn:hover {
-    background: #e6ebf1;
+    background: #e7ecf2;
     color: var(--cdr-slate-900);
     border-color: #cbd5e1;
 }
@@ -287,69 +287,37 @@
     color: #a7f3d0;
 }
 
-.cdr-nav-quick-hint {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--cdr-slate-500);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-}
-
-.cdr-nav-quick-hint i {
-    color: var(--cdr-gold);
-    font-size: 0.84rem;
-}
-
-/* Row 2: Quick Jump Instrument Pills Bar */
+/* Row 2: Quick Jump Instrument Pills Bar - Symmetrically Centered */
 .cdr-nav-pills-row {
     position: relative;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .cdr-icon-scroller {
     display: flex;
     align-items: center;
-    gap: 8px;
-    width: 100%;
+    justify-content: center;
+    gap: 7px;
+    width: auto;
     max-width: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 2px 0 4px;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    flex-wrap: wrap;
 }
 
 .cdr-icon-scroller::-webkit-scrollbar {
     display: none;
 }
 
-/* Desktop Width: Span gracefully across the full container */
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
     .cdr-icon-scroller {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 8px;
-        width: 100%;
-        overflow: visible;
-    }
-    .cdr-icon-pill {
-        flex: 1 1 auto;
+        flex-wrap: nowrap;
         justify-content: center;
-        padding: 7px 10px;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    .cdr-icon-scroller {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        width: 100%;
-        overflow: visible;
+        gap: 7px;
     }
 }
 
@@ -357,32 +325,31 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
-    padding: 7px 12px;
+    gap: 6px;
+    padding: 6px 11px;
     background: #ffffff;
     border: 1px solid var(--cdr-slate-200);
     border-radius: 999px;
     text-decoration: none;
     color: var(--cdr-slate-700);
-    font-size: 0.80rem;
+    font-size: 0.78rem;
     font-weight: 600;
     white-space: nowrap;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
+    flex: 0 0 auto;
 }
 
 .cdr-icon-pill img {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     object-fit: contain;
     flex-shrink: 0;
     transition: transform 0.25s ease;
 }
 
 .cdr-icon-pill span {
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
 }
 
@@ -426,14 +393,17 @@
     
     .cdr-nav-container {
         gap: 8px;
+        align-items: stretch;
     }
     
-    .cdr-nav-quick-hint {
-        display: none;
+    .cdr-nav-filter-row {
+        justify-content: flex-start;
     }
     
     .cdr-filter-tabs {
         width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
         padding-bottom: 2px;
         -webkit-overflow-scrolling: touch;
     }
@@ -446,18 +416,19 @@
     
     /* Horizontal swipe on mobile with subtle fade indicator */
     .cdr-nav-pills-row {
-        position: relative;
+        justify-content: flex-start;
         mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
         -webkit-mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
     }
     
     .cdr-icon-scroller {
-        display: flex;
+        justify-content: flex-start;
         overflow-x: auto;
         flex-wrap: nowrap;
         gap: 8px;
         padding: 2px 20px 4px 2px;
         -webkit-overflow-scrolling: touch;
+        width: 100%;
     }
     
     .cdr-icon-pill {
