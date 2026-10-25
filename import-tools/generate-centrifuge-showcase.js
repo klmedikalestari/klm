@@ -340,7 +340,7 @@ $yingtai_products = array(
 
                 <div class="yingtai-brochure-card">
                     <div class="yingtai-brochure-icon">
-                        <i class="fas fa-file-pdf"></i>
+                        <i class="fas fa-file-lines fa-file-alt"></i>
                     </div>
                     <h4>Katalog Lengkap Yingtai Centrifuge</h4>
                     <div class="yingtai-brochure-meta">
@@ -846,7 +846,7 @@ function generatePreviewHtml() {
 
                     <div class="yingtai-brochure-card">
                         <div class="yingtai-brochure-icon">
-                            <i class="fas fa-file-pdf"></i>
+                            <i class="fas fa-file-lines fa-file-alt"></i>
                         </div>
                         <h4>Katalog Lengkap Yingtai Centrifuge</h4>
                         <div class="yingtai-brochure-meta">
