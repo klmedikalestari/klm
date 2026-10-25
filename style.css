@@ -607,6 +607,7 @@ img {
     }
 
     .main-navigation {
+        display: block;
         position: fixed;
         top: 68px;
         left: 0;
@@ -625,19 +626,63 @@ img {
     }
 
     .main-navigation ul {
+        display: flex;
         flex-direction: column;
+        width: 100%;
         gap: 0;
         padding: 10px 0;
+        box-sizing: border-box;
+    }
+
+    .main-navigation ul li {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .main-navigation ul li a {
+        display: block;
+        width: 100%;
         padding: 14px 24px;
         font-size: 0.95rem;
         border-bottom: 1px solid var(--medium-grey);
+        box-sizing: border-box;
     }
 
     .main-navigation ul li a::after {
         display: none;
+    }
+
+    /* Mega menu toggle link di mobile */
+    .main-navigation ul li.has-mega-menu > a,
+    .main-navigation ul li.menu-item-has-children > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .main-navigation ul li.has-mega-menu > a::after,
+    .main-navigation ul li.menu-item-has-children > a::after {
+        display: inline-block;
+        content: '';
+        position: static;
+        margin-left: auto;
+        transform: rotate(45deg);
+        width: 8px;
+        height: 8px;
+        background: none;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transition: transform var(--transition-normal);
+        margin-top: -2px;
+        flex-shrink: 0;
+    }
+
+    .main-navigation ul li.has-mega-menu.mobile-open > a::after,
+    .main-navigation ul li.menu-item-has-children.mobile-open > a::after {
+        transform: rotate(-135deg);
+        margin-top: 2px;
     }
 
     /* Mega menu di mobile: accordion, dibuka dengan tap (class .mobile-open) */
@@ -654,6 +699,7 @@ img {
         max-height: none;
         overflow: visible;
         background: var(--light-grey, #f7f9f9);
+        box-sizing: border-box;
     }
 
     .main-navigation ul li.has-mega-menu:hover .mega-menu-wrapper {
@@ -665,43 +711,18 @@ img {
         display: block;
     }
 
-    .main-navigation ul li.has-mega-menu > a,
-    .main-navigation ul li.menu-item-has-children > a {
-        display: inline-flex;
-        align-items: center;
-    }
-
-    .main-navigation ul li.has-mega-menu > a::after,
-    .main-navigation ul li.menu-item-has-children > a::after {
-        display: inline-block;
-        content: '';
-        position: static;
-        margin-left: 8px;
-        transform: rotate(45deg);
-        width: 7px;
-        height: 7px;
-        background: none;
-        border-right: 2px solid currentColor;
-        border-bottom: 2px solid currentColor;
-        transition: transform var(--transition-normal);
-        margin-top: -3px;
-        flex-shrink: 0;
-    }
-
-    .main-navigation ul li.has-mega-menu.mobile-open > a::after,
-    .main-navigation ul li.menu-item-has-children.mobile-open > a::after {
-        transform: rotate(-135deg);
-        margin-top: 1px;
-    }
-
-    .main-navigation ul li.has-mega-menu .mega-menu-list li a {
-        padding: 10px 0;
-    }
-
     .mega-menu-container {
+        display: flex;
         flex-direction: column;
-        padding: 15px 24px;
-        gap: 15px;
+        padding: 20px 24px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mega-menu-col {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .mega-menu-col:first-child {
@@ -709,7 +730,31 @@ img {
         padding-right: 0;
         margin-right: 0;
         border-bottom: 1px solid var(--medium-grey);
-        padding-bottom: 15px;
+        padding-bottom: 20px;
+    }
+
+    .main-navigation ul li.has-mega-menu .mega-menu-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px 16px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .main-navigation ul li.has-mega-menu .mega-menu-list li {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .main-navigation ul li.has-mega-menu .mega-menu-list li a {
+        display: block;
+        padding: 8px 0;
+        font-size: 0.9rem;
+        border-bottom: none;
+        width: 100%;
+        word-break: break-word;
     }
 }
 

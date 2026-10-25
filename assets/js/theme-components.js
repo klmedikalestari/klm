@@ -34,7 +34,44 @@ window.ThemeComponents = {
                     <ul>
                         <li><a href="preview.html">Home</a></li>
                         <li><a href="preview-about.html">About</a></li>
-                        <li><a href="preview-products.html">Products</a></li>
+                        <li class="has-mega-menu">
+                            <a href="javascript:void(0);">Products</a>
+                            <div class="mega-menu-wrapper">
+                                <div class="mega-menu-container">
+                                    <div class="mega-menu-col">
+                                        <h4 class="mega-menu-title">By Brand</h4>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="preview-product-grid.html">Aczet</a></li>
+                                            <li><a href="preview-product-grid.html">Arco</a></li>
+                                            <li><a href="preview-product-grid.html">Biobase</a></li>
+                                            <li><a href="preview-product-grid.html">Biolab</a></li>
+                                            <li><a href="preview-product-grid.html">CDR FoodLab</a></li>
+                                            <li><a href="preview-product-grid.html">CHM Lab</a></li>
+                                            <li><a href="preview-product-grid.html">CHN Spec</a></li>
+                                            <li><a href="preview-product-grid.html">Dlab</a></li>
+                                            <li><a href="preview-product-grid.html">Four E'S</a></li>
+                                            <li><a href="preview-product-grid.html">General Lab Instruments</a></li>
+                                            <li><a href="preview-product-grid.html">IAT</a></li>
+                                            <li><a href="preview-product-grid.html">iCare</a></li>
+                                            <li><a href="preview-product-grid.html">Infitek</a></li>
+                                            <li><a href="preview-product-grid.html">Innova</a></li>
+                                            <li><a href="preview-product-grid.html">Kanomax</a></li>
+                                            <li><a href="preview-product-grid.html">Kason</a></li>
+                                            <li><a href="preview-product-grid.html">MDK</a></li>
+                                            <li><a href="preview-product-grid.html">Scitek</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-col">
+                                        <h4 class="mega-menu-title">By Industry</h4>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="preview-products.html">Hospital</a></li>
+                                            <li><a href="preview-products.html">Industry</a></li>
+                                            <li><a href="preview-products.html">Life Science</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         <li><a href="preview-news.html">News</a></li>
                         <li><a href="preview-services.html">Services</a></li>
                         <li><a href="preview-contact.html">Contact</a></li>
