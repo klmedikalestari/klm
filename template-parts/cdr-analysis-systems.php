@@ -643,9 +643,6 @@ $cdr_systems = array(
                     <a href="https://api.whatsapp.com/send/?phone=<?php echo esc_attr($clean_phone); ?>&text=<?php echo rawurlencode('Halo PT Kinglab Medika Lestari, saya ingin konsultasi sistem analisis CDR FoodLab untuk fasilitas kami.'); ?>&type=phone_number&app_absent=0" class="cdr-cta-btn-wa" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-whatsapp"></i> Chat WhatsApp Spesialis Kami
                     </a>
-                    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="cdr-cta-btn-contact">
-                        <i class="fas fa-envelope"></i> Kirim Form Permintaan Resmi
-                    </a>
                 </div>
             </div>
         </div>
