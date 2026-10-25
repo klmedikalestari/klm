@@ -641,7 +641,7 @@ $cdr_systems = array(
                 </p>
                 <div class="cdr-cta-btns">
                     <a href="https://api.whatsapp.com/send/?phone=<?php echo esc_attr($clean_phone); ?>&text=<?php echo rawurlencode('Halo PT Kinglab Medika Lestari, saya ingin konsultasi sistem analisis CDR FoodLab untuk fasilitas kami.'); ?>&type=phone_number&app_absent=0" class="cdr-cta-btn-wa" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-whatsapp"></i> Chat WhatsApp Spesialis Kami
+                        <i class="fab fa-whatsapp"></i> Hubungi Kami
                     </a>
                 </div>
             </div>
