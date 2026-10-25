@@ -528,19 +528,22 @@
     position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
+    min-height: 290px;
     border-radius: var(--cdr-radius-md);
     background: radial-gradient(circle at center, #ffffff 40%, #f1f5f9 100%);
     border: 1px solid var(--cdr-slate-200);
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
+    justify-content: space-between;
+    padding: 22px 20px 14px;
 }
 
 .cdr-image-frame img {
+    flex: 1;
     width: 100%;
-    height: 100%;
+    max-height: calc(100% - 46px);
     object-fit: contain;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -550,14 +553,12 @@
 }
 
 .cdr-distributor-badge {
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-    right: 12px;
+    position: relative;
+    width: 100%;
     background: rgba(15, 23, 42, 0.88);
     backdrop-filter: blur(6px);
     color: #ffffff;
-    padding: 6px 12px;
+    padding: 7px 12px;
     border-radius: 6px;
     font-size: 0.74rem;
     font-weight: 600;
@@ -566,6 +567,8 @@
     justify-content: center;
     gap: 6px;
     letter-spacing: 0.02em;
+    margin-top: 14px;
+    box-sizing: border-box;
 }
 
 .cdr-distributor-badge i {
@@ -1179,6 +1182,20 @@
     }
     .cdr-card-body {
         grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .cdr-image-frame {
+        aspect-ratio: 4 / 3;
+        min-height: 275px;
+        padding: 20px 16px 14px;
+    }
+    .cdr-image-frame img {
+        max-height: calc(100% - 44px);
+    }
+    .cdr-distributor-badge {
+        font-size: 0.72rem;
+        padding: 6px 8px;
+        margin-top: 14px;
     }
     .cdr-card-header-bar {
         padding: 14px 20px;
