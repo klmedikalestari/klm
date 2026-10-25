@@ -500,7 +500,7 @@ function generatePreviewHtml(prods) {
                             <span>Bahasa: <strong>Indonesia &amp; English</strong></span>
                         </div>
 
-                        <a href="assets/docs/Katalog-Lengkap-ARCO-Scientific-PT-Kinglab-Medika-Lestari.pdf" class="arco-btn-download-pdf" download="Katalog-Lengkap-ARCO-Scientific-Kinglab.pdf" id="arcoDownloadBtn">
+                        <a href="assets/pdf/BROSUR%20ARCO.pdf" class="arco-btn-download-pdf" download="BROSUR-ARCO-Scientific-Kinglab.pdf" id="arcoDownloadBtn" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-download"></i> Unduh Katalog PDF
                         </a>
                         <div class="arco-download-note">

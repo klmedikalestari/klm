@@ -24,7 +24,7 @@ if (empty($clean_phone)) {
 $theme_uri = Kinglab_Medika_Lestari_URI;
 
 // Brochure PDF URL (Prepared for brochure attachment)
-$brochure_pdf_url = $theme_uri . '/assets/docs/Katalog-Lengkap-ARCO-Scientific-PT-Kinglab-Medika-Lestari.pdf';
+$brochure_pdf_url = $theme_uri . '/assets/pdf/BROSUR ARCO.pdf';
 
 // 5 Categories definition
 $arco_categories = array(
@@ -1021,7 +1021,7 @@ $arco_products = array(
                         <span>Bahasa: <strong>Indonesia &amp; English</strong></span>
                     </div>
 
-                    <a href="<?php echo esc_url($brochure_pdf_url); ?>" class="arco-btn-download-pdf" download="Katalog-Lengkap-ARCO-Scientific-Kinglab.pdf" id="arcoDownloadBtn">
+                    <a href="<?php echo esc_url($brochure_pdf_url); ?>" class="arco-btn-download-pdf" download="BROSUR-ARCO-Scientific-Kinglab.pdf" id="arcoDownloadBtn" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-download"></i> Unduh Katalog PDF
                     </a>
                     <div class="arco-download-note">
