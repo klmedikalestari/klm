@@ -392,12 +392,6 @@ function generatePreviewHtml(prods) {
                             <span class="arco-cat-header-badge ${catMeta.tag_class}">Produk Unggulan</span>
                         </h2>
                         <p class="arco-cat-header-desc">${catMeta.desc}</p>
-                    </div>
-                    <div>
-                        <a href="#arco-brochure-section" class="arco-btn-spec-modal" style="font-size:0.8rem; padding:6px 12px;">
-                            <i class="fas fa-download"></i> Unduh Katalog Lengkap ${catMeta.name}
-                        </a>
-                    </div>
                 </div>
 
                 <div class="arco-products-grid" data-category-group="${catKey}">

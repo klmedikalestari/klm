@@ -483,20 +483,13 @@ $yingtai_products = array(
             ?>
                 <!-- Category Section Header Anchor -->
                 <div class="yingtai-section-category-header" id="cat-<?php echo esc_attr($cat_slug); ?>" data-category="<?php echo esc_attr($cat_slug); ?>">
-                    <div>
-                        <h2 class="yingtai-cat-header-title">
-                            <?php echo esc_html($cat_meta['name']); ?>
-                            <span class="yingtai-cat-header-badge <?php echo esc_attr($cat_meta['tag_class']); ?>">
-                                Produk Pilihan
-                            </span>
-                        </h2>
-                        <p class="yingtai-cat-header-desc"><?php echo esc_html($cat_meta['description']); ?></p>
-                    </div>
-                    <div>
-                        <a href="#yingtai-brochure-section" class="yingtai-btn-spec-modal" style="font-size:0.8rem; padding:6px 12px;">
-                            <i class="fas fa-download"></i> Unduh Katalog Lengkap
-                        </a>
-                    </div>
+                    <h2 class="yingtai-cat-header-title">
+                        <?php echo esc_html($cat_meta['name']); ?>
+                        <span class="yingtai-cat-header-badge <?php echo esc_attr($cat_meta['tag_class']); ?>">
+                            Produk Pilihan
+                        </span>
+                    </h2>
+                    <p class="yingtai-cat-header-desc"><?php echo esc_html($cat_meta['description']); ?></p>
                 </div>
 
                 <!-- Products Grid -->

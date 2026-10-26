@@ -886,20 +886,13 @@ $arco_products = array(
             ?>
                 <!-- Category Section Header Anchor -->
                 <div class="arco-section-category-header" id="cat-<?php echo esc_attr($cat_slug); ?>" data-category="<?php echo esc_attr($cat_slug); ?>">
-                    <div>
-                        <h2 class="arco-cat-header-title">
-                            <?php echo esc_html($cat_meta['name']); ?>
-                            <span class="arco-cat-header-badge <?php echo esc_attr($cat_meta['tag_class']); ?>">
-                                Produk Unggulan
-                            </span>
-                        </h2>
-                        <p class="arco-cat-header-desc"><?php echo esc_html($cat_meta['description']); ?></p>
-                    </div>
-                    <div>
-                        <a href="#arco-brochure-section" class="arco-btn-spec-modal" style="font-size:0.8rem; padding:6px 12px;">
-                            <i class="fas fa-download"></i> Unduh Katalog Lengkap <?php echo esc_html($cat_meta['name']); ?>
-                        </a>
-                    </div>
+                    <h2 class="arco-cat-header-title">
+                        <?php echo esc_html($cat_meta['name']); ?>
+                        <span class="arco-cat-header-badge <?php echo esc_attr($cat_meta['tag_class']); ?>">
+                            Produk Unggulan
+                        </span>
+                    </h2>
+                    <p class="arco-cat-header-desc"><?php echo esc_html($cat_meta['description']); ?></p>
                 </div>
 
                 <!-- Products Grid -->

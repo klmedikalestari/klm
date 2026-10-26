@@ -439,12 +439,9 @@
     margin: 40px 0 24px;
     padding-bottom: 14px;
     border-bottom: 2px solid var(--arco-slate-200);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 12px;
     scroll-margin-top: calc(var(--header-height, 118px) + 70px);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .arco-section-category-header:first-of-type {
@@ -458,8 +455,9 @@
     color: var(--arco-slate-900);
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 12px;
-    margin: 0;
+    margin: 0 0 8px;
 }
 
 .arco-cat-header-badge {
@@ -1153,25 +1151,15 @@
         flex-shrink: 0;
     }
     .arco-section-category-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+        margin: 28px 0 16px;
+        padding-bottom: 14px;
         scroll-margin-top: calc(var(--header-height, 68px) + 75px);
     }
     .arco-cat-header-title {
         font-size: 1.35rem;
         flex-wrap: wrap;
         gap: 8px 12px;
-    }
-    .arco-section-category-header > div:last-child {
-        width: 100%;
-    }
-    .arco-section-category-header .arco-btn-spec-modal {
-        display: inline-flex;
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        box-sizing: border-box;
+        margin-bottom: 6px;
     }
     .arco-products-grid {
         grid-template-columns: 1fr;
