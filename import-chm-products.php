@@ -117,8 +117,16 @@ if ($thomas_pid) {
         'post_excerpt' => 'New Model 4',
         'post_status'  => 'publish',
         'post_type'    => 'product',
-    ));
+    ), true);
 }
+
+echo "<!-- THOMAS_PID_DEBUG: ";
+if (is_wp_error($thomas_pid)) {
+    echo "ERROR: " . $thomas_pid->get_error_message();
+} else {
+    echo "SUCCESS_ID_" . $thomas_pid;
+}
+echo " -->\n";
 
 if ($thomas_pid && !is_wp_error($thomas_pid)) {
     update_post_meta($thomas_pid, '_specification_content', $thomas_spec);
