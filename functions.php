@@ -1361,6 +1361,36 @@ function kinglab_thomas_import_page() {
     echo '</div>';
 }
 
+/**
+ * Register Thomas Scientific Importer in Tools -> Import (import.php)
+ */
+function kinglab_register_thomas_importer() {
+    if (function_exists('register_importer')) {
+        register_importer(
+            'thomas-wiley',
+            'Thomas Scientific - Wiley Mill',
+            'Import resmi produk New Model 4 Wiley® Cutting Mill lengkap dengan spesifikasi teknis, gambar, kategori Brand & Industry.',
+            'kinglab_thomas_import_page'
+        );
+    }
+}
+add_action('admin_init', 'kinglab_register_thomas_importer');
+
+/**
+ * Notice in WP-Admin when visiting import.php
+ */
+function kinglab_thomas_admin_notice() {
+    $screen = function_exists('get_current_screen') ? get_current_screen() : null;
+    if ($screen && $screen->id === 'import') {
+        echo '<div class="notice notice-info" style="border-left: 4px solid #1B6B5A; padding: 15px; margin-top: 20px;">';
+        echo '<h3 style="margin-top: 0; color: #1B6B5A;">🔬 Import Produk Thomas Scientific</h3>';
+        echo '<p style="font-size: 14px;">Untuk mengimpor produk <strong>New Model 4 Wiley® Cutting Mill</strong> ke database, klik tombol di bawah ini:</p>';
+        echo '<p><a href="' . esc_url(admin_url('tools.php?page=thomas-import&auto_run=1')) . '" class="button button-primary button-hero" style="background: #1B6B5A; border-color: #1B6B5A;">Import Wiley Mill Model 4 Sekarang &rarr;</a></p>';
+        echo '</div>';
+    }
+}
+add_action('admin_notices', 'kinglab_thomas_admin_notice');
+
 function kinglab_mdk_import_page() {
     if (!current_user_can('manage_options')) {
         wp_die('Unauthorized access');
