@@ -48,6 +48,7 @@ get_header(); ?>
                             echo '<li><a href="#">IDEXX</a></li>';
                             echo '<li><a href="#">Interscience</a></li>';
                             echo '<li><a href="#">LI-COR</a></li>';
+                            echo '<li><a href="' . esc_url(home_url('/product_brand/thomas-scientific/')) . '" style="font-weight:600; color:#1B6B5A;">Thomas Scientific</a></li>';
                             echo '<li><a href="' . esc_url(home_url('/product_brand/yingtai/')) . '" style="font-weight:600; color:#0d47a1;">Yingtai Centrifuge</a></li>';
                             echo '</ul>';
                         },

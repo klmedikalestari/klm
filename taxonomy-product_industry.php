@@ -31,6 +31,14 @@ get_header(); ?>
                         </div>
                         <h3 style="font-size: 1.1rem; color: var(--dark-corporate); font-weight: 500; line-height: 1.4; transition: color var(--transition-fast);">CDR FoodLab</h3>
                     </a>
+
+                    <!-- Thomas Scientific Product Card (Links to Thomas Scientific Brand / Wiley Mill) -->
+                    <a href="<?php echo esc_url(home_url('/product_brand/thomas-scientific/')); ?>" class="industry-product-card" style="text-decoration: none; display: block;">
+                        <div class="image-wrapper" style="border-radius: 16px; overflow: hidden; background: #ffffff; margin-bottom: 20px; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/wiley-mill-model-4.jpg'); ?>" alt="Thomas Scientific - New Model 4 Wiley® Cutting Mill" style="width: 100%; max-width: 100%; height: 100%; object-fit: contain; padding: 15px; background: #fff; box-sizing: border-box;">
+                        </div>
+                        <h3 style="font-size: 1.1rem; color: var(--dark-corporate); font-weight: 500; line-height: 1.4; transition: color var(--transition-fast);">Thomas Scientific - Wiley® Cutting Mill</h3>
+                    </a>
                 <?php endif; ?>
 
                 <?php if ($is_life_science) : ?>

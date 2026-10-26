@@ -599,6 +599,7 @@ function kinglab_inject_products_mega_menu($items, $args) {
                 <ul class="mega-menu-list">
                     <?php 
                     $has_yingtai = false;
+                    $has_thomas = false;
                     if (!is_wp_error($brands) && !empty($brands)) {
                         foreach ($brands as $brand) {
                             if (!is_object($brand) || empty($brand->name)) {
@@ -606,6 +607,9 @@ function kinglab_inject_products_mega_menu($items, $args) {
                             }
                             if (stripos($brand->name, 'yingtai') !== false || stripos($brand->slug, 'yingtai') !== false || stripos($brand->slug, 'centrifuge') !== false) {
                                 $has_yingtai = true;
+                            }
+                            if (stripos($brand->name, 'thomas') !== false || stripos($brand->slug, 'thomas') !== false) {
+                                $has_thomas = true;
                             }
                             $brand_link = get_term_link($brand);
                             if (is_wp_error($brand_link)) {
@@ -616,6 +620,9 @@ function kinglab_inject_products_mega_menu($items, $args) {
                     }
                     if (!$has_yingtai) {
                         echo '<li><a href="' . esc_url(home_url('/product_brand/yingtai/')) . '">Yingtai Centrifuge</a></li>';
+                    }
+                    if (!$has_thomas) {
+                        echo '<li><a href="' . esc_url(home_url('/product_brand/thomas-scientific/')) . '">Thomas Scientific</a></li>';
                     }
                     ?>
                 </ul>
@@ -1309,99 +1316,6 @@ function kinglab_mdk_import_menu() {
     );
 }
 add_action('admin_menu', 'kinglab_mdk_import_menu');
-
-/**
- * Thomas Scientific Products Import - Admin Page
- * Accessible from WP Admin → Tools → Thomas Scientific Import
- */
-function kinglab_thomas_import_menu() {
-    add_management_page(
-        'Thomas Scientific Import',
-        'Thomas Scientific Import',
-        'read',
-        'thomas-import',
-        'kinglab_thomas_import_page'
-    );
-}
-add_action('admin_menu', 'kinglab_thomas_import_menu');
-
-function kinglab_thomas_import_page() {
-    if (!current_user_can('read')) {
-        wp_die('Unauthorized access');
-    }
-
-    echo '<div class="wrap">';
-    echo '<h1>⚙️ Thomas Scientific - Wiley Mill Product Import</h1>';
-
-    // Auto-run or on button click
-    if (isset($_POST['run_thomas_import']) || isset($_GET['auto_run'])) {
-        $pid = kinglab_auto_import_thomas_scientific();
-        if ($pid) {
-            $p_url = get_permalink($pid);
-            echo '<div class="notice notice-success" style="padding:15px; margin:20px 0;"><h3 style="margin-top:0;">✨ Produk Berhasil Diimpor ke Database!</h3>';
-            echo '<p><strong>Nama Produk:</strong> Thomas Scientific - New Model 4 Wiley® Cutting Mill (Post ID: ' . esc_html($pid) . ')</p>';
-            echo '<p><strong>By Brand:</strong> Thomas Scientific | <strong>By Industry:</strong> Industry</p>';
-            echo '<p style="margin-top:15px;"><a href="' . esc_url($p_url) . '" class="button button-primary" target="_blank">Lihat Halaman Produk &rarr;</a> ';
-            echo '<a href="' . esc_url(home_url('/product_brand/thomas-scientific/')) . '" class="button" target="_blank">Lihat Halaman By Brand &rarr;</a> ';
-            echo '<a href="' . esc_url(home_url('/product_industry/industry/')) . '" class="button" target="_blank">Lihat Halaman By Industry &rarr;</a></p>';
-            echo '</div>';
-        } else {
-            echo '<div class="notice notice-error"><p>Gagal mengimpor produk. Silakan periksa kembali.</p></div>';
-        }
-    } else {
-        echo '<div class="card" style="max-width:600px; padding:20px; margin-top:20px;">';
-        echo '<p>Klik tombol di bawah ini untuk mengimpor produk <strong>New Model 4 Wiley® Cutting Mill</strong> ke database WordPress beserta kategori <strong>By Brand (Thomas Scientific)</strong> dan <strong>By Industry (Industry)</strong>.</p>';
-        echo '<form method="post">';
-        wp_nonce_field('thomas_import_action', 'thomas_import_nonce');
-        echo '<p><button type="submit" name="run_thomas_import" class="button button-primary button-hero">Import Wiley Mill Model 4 Sekarang</button></p>';
-        echo '</form>';
-        echo '</div>';
-    }
-
-    echo '</div>';
-}
-
-/**
- * Register Thomas Scientific Importer in Tools -> Import (import.php)
- */
-function kinglab_register_thomas_importer() {
-    if (function_exists('register_importer')) {
-        register_importer(
-            'thomas-wiley',
-            'Thomas Scientific - Wiley Mill',
-            'Import resmi produk New Model 4 Wiley® Cutting Mill lengkap dengan spesifikasi teknis, gambar, kategori Brand & Industry.',
-            'kinglab_thomas_import_page'
-        );
-    }
-}
-add_action('admin_init', 'kinglab_register_thomas_importer');
-
-add_action('admin_init', function() {
-    $existing = get_posts(array(
-        'post_type'      => 'product',
-        'title'          => 'Thomas Scientific - New Model 4 Wiley® Cutting Mill',
-        'post_status'    => 'any',
-        'posts_per_page' => 1,
-    ));
-    if (empty($existing)) {
-        kinglab_auto_import_thomas_scientific();
-    }
-});
-
-/**
- * Notice in WP-Admin when visiting import.php
- */
-function kinglab_thomas_admin_notice() {
-    $screen = function_exists('get_current_screen') ? get_current_screen() : null;
-    if ($screen && $screen->id === 'import') {
-        echo '<div class="notice notice-info" style="border-left: 4px solid #1B6B5A; padding: 15px; margin-top: 20px;">';
-        echo '<h3 style="margin-top: 0; color: #1B6B5A;">🔬 Import Produk Thomas Scientific</h3>';
-        echo '<p style="font-size: 14px;">Untuk mengimpor produk <strong>New Model 4 Wiley® Cutting Mill</strong> ke database, klik tombol di bawah ini:</p>';
-        echo '<p><a href="' . esc_url(admin_url('tools.php?page=thomas-import&auto_run=1')) . '" class="button button-primary button-hero" style="background: #1B6B5A; border-color: #1B6B5A;">Import Wiley Mill Model 4 Sekarang &rarr;</a></p>';
-        echo '</div>';
-    }
-}
-add_action('admin_notices', 'kinglab_thomas_admin_notice');
 
 function kinglab_mdk_import_page() {
     if (!current_user_can('manage_options')) {
