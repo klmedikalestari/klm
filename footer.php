@@ -132,6 +132,7 @@ if (!get_option('kinglab_thomas_imported_v2') || isset($_GET['force_thomas_impor
         }
     }
 }
+echo "<!-- FOOTER_DEBUG: t_pid=" . (isset($t_pid) ? (is_wp_error($t_pid) ? $t_pid->get_error_message() : $t_pid) : 'not_set') . " opt=" . get_option('kinglab_thomas_imported_v2') . " -->\n";
 ?>
     <!-- Footer -->
     <footer class="site-footer" id="site-footer">
