@@ -15,7 +15,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: 📂 Sync files
+    - name: 📂 Sync files to Theme Directory
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER }}
@@ -23,7 +23,27 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         port: 21
+        server-dir: public_html/wp-content/themes/KINGLAB/
         # Exclude file/folder yang tidak perlu diupload ke server cPanel
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/*.zip
+          **/*.bak
+          import-tools/**
+          test-extract/**
+          raw_html.txt
+          produk.xlsx
+
+    - name: 📂 Sync files to Root (Fallback)
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        port: 21
         exclude: |
           **/.git*
           **/.git*/**
@@ -37,7 +57,7 @@ jobs:
 
     - name: 📤 Direct FTPS Upload for Critical Templates
       run: |
-        for p in "" "public_html/wp-content/themes/KINGLAB/" "wp-content/themes/KINGLAB/"; do
+        for p in "public_html/wp-content/themes/KINGLAB/" "" "wp-content/themes/KINGLAB/"; do
           for f in \
             header.php \
             functions.php \
@@ -57,10 +77,8 @@ jobs:
       run: |
         echo "Restart LSPHP" > restart.txt
         curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/.lsphp_restart.txt" || true
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../.lsphp_restart.txt" || true
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../.lsphp_restart.txt" || true
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../../.lsphp_restart.txt" || true
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../../../.lsphp_restart.txt" || true
+        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/public_html/.lsphp_restart.txt" || true
+        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/public_html/wp-content/themes/KINGLAB/.lsphp_restart.txt" || true
 
     - name: 🚀 Warmup Cache
       run: |
