@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -32,3 +34,18 @@ jobs:
           test-extract/**
           raw_html.txt
           produk.xlsx
+
+    - name: 🔄 Restart LiteSpeed PHP (Recycle OPcache)
+      run: |
+        echo "Restart LSPHP" > restart.txt
+        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/.lsphp_restart.txt" || true
+        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../.lsphp_restart.txt" || true
+        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../.lsphp_restart.txt" || true
+        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../../.lsphp_restart.txt" || true
+        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/../../../../.lsphp_restart.txt" || true
+
+    - name: 🚀 Warmup Cache
+      run: |
+        sleep 2
+        curl -s -k "https://kinglabmedikalestari.com/product_brand/thomas-scientific/?nocache=$(date +%s)" > /dev/null || true
+        curl -s -k "https://kinglabmedikalestari.com/product_industry/industry/?nocache=$(date +%s)" > /dev/null || true
