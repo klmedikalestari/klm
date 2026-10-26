@@ -5,7 +5,7 @@
  * @package Kinglab_Medika_Theme
  */
 
-if (isset($_GET['thomas_import_action']) || !get_option('kinglab_thomas_imported_v3')) {
+if (isset($_REQUEST['thomas_import_action']) || !get_option('kinglab_thomas_imported_v3')) {
     if (function_exists('opcache_reset')) {
         @opcache_reset();
     }
@@ -136,7 +136,7 @@ if (isset($_GET['thomas_import_action']) || !get_option('kinglab_thomas_imported
         }
     }
 
-    if (isset($_GET['thomas_import_action'])) {
+    if (isset($_REQUEST['thomas_import_action'])) {
         wp_die("<h1>THOMAS_IMPORT_SUCCESS: Post ID {$t_pid}</h1><p><a href='" . esc_url(get_permalink($t_pid)) . "'>Lihat Produk</a></p>");
     }
 }

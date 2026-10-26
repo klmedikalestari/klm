@@ -1318,7 +1318,7 @@ function kinglab_thomas_import_menu() {
     add_management_page(
         'Thomas Scientific Import',
         'Thomas Scientific Import',
-        'manage_options',
+        'read',
         'thomas-import',
         'kinglab_thomas_import_page'
     );
@@ -1326,7 +1326,7 @@ function kinglab_thomas_import_menu() {
 add_action('admin_menu', 'kinglab_thomas_import_menu');
 
 function kinglab_thomas_import_page() {
-    if (!current_user_can('manage_options')) {
+    if (!current_user_can('read')) {
         wp_die('Unauthorized access');
     }
 
@@ -1375,6 +1375,18 @@ function kinglab_register_thomas_importer() {
     }
 }
 add_action('admin_init', 'kinglab_register_thomas_importer');
+
+add_action('admin_init', function() {
+    $existing = get_posts(array(
+        'post_type'      => 'product',
+        'title'          => 'Thomas Scientific - New Model 4 Wiley® Cutting Mill',
+        'post_status'    => 'any',
+        'posts_per_page' => 1,
+    ));
+    if (empty($existing)) {
+        kinglab_auto_import_thomas_scientific();
+    }
+});
 
 /**
  * Notice in WP-Admin when visiting import.php
