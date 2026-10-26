@@ -89,20 +89,23 @@ if ($is_chm_brand) {
 
 // Check if current brand is Thomas Scientific
 $is_thomas_brand = false;
-if ($current_term && isset($current_term->taxonomy) && $current_term->taxonomy === 'product_brand') {
-    if ($current_term->slug === 'thomas-scientific' || stripos($current_term->slug, 'thomas') !== false || stripos($current_term->name, 'thomas') !== false) {
+if (is_tax('product_brand', 'thomas-scientific') || (isset($current_term->slug) && ($current_term->slug === 'thomas-scientific' || stripos($current_term->slug, 'thomas') !== false || stripos($current_term->name, 'thomas') !== false))) {
+    $is_thomas_brand = true;
+} elseif ($current_term && !empty($current_term->parent)) {
+    $parent_term = get_term($current_term->parent, 'product_brand');
+    if ($parent_term && !is_wp_error($parent_term) && (stripos($parent_term->slug, 'thomas') !== false || stripos($parent_term->name, 'thomas') !== false)) {
         $is_thomas_brand = true;
-    } elseif (!empty($current_term->parent)) {
-        $parent_term = get_term($current_term->parent, 'product_brand');
-        if ($parent_term && !is_wp_error($parent_term) && (stripos($parent_term->slug, 'thomas') !== false || stripos($parent_term->name, 'thomas') !== false)) {
-            $is_thomas_brand = true;
-        }
     }
 }
 
 if ($is_thomas_brand) {
     get_header();
-    get_template_part('template-parts/thomas-scientific-showcase');
+    $thomas_tpl = get_template_directory() . '/template-parts/thomas-scientific-showcase.php';
+    if (file_exists($thomas_tpl)) {
+        include $thomas_tpl;
+    } else {
+        get_template_part('template-parts/thomas-scientific-showcase');
+    }
     get_footer();
     return;
 }

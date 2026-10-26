@@ -15,7 +15,7 @@ get_header(); ?>
         <?php 
         $current_term = get_queried_object();
         $is_hospital = ($current_term && (strtolower($current_term->slug) === 'hospital' || stripos($current_term->name, 'hospital') !== false));
-        $is_industry = ($current_term && (strtolower($current_term->slug) === 'industry' || stripos($current_term->name, 'industry') !== false));
+        $is_industry = (is_tax('product_industry', 'industry') || ($current_term && (strtolower($current_term->slug) === 'industry' || stripos($current_term->slug, 'industry') !== false || stripos($current_term->name, 'industry') !== false)));
         $is_life_science = ($current_term && (strtolower($current_term->slug) === 'life-science' || stripos($current_term->slug, 'life-science') !== false || stripos($current_term->name, 'life science') !== false));
         ?>
 
