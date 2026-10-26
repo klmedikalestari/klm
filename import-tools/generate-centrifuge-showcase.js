@@ -26,8 +26,11 @@ $brochure_pdf_url = file_exists(get_template_directory() . '/assets/pdf/BROSUR Y
     ? $theme_uri . '/assets/pdf/BROSUR YINGTAI CENTRIFUGE.pdf'
     : 'https://api.whatsapp.com/send/?phone=' . $clean_phone . '&text=' . rawurlencode('Halo PT Kinglab Medika Lestari, saya ingin meminta E-Katalog & Brosur Lengkap Yingtai Centrifuge. Terima kasih.') . '&type=phone_number&app_absent=0';
 
-// Enqueue styles
-wp_enqueue_style('yingtai-centrifuge-showcase', $theme_uri . '/assets/css/centrifuge-showcase.css', array('Kinglab_Medika_Lestari-style'), '1.0.0');
+// Enqueue styles with dynamic timestamp for instant cache busting
+$yingtai_css_ver = file_exists(get_template_directory() . '/assets/css/centrifuge-showcase.css') 
+    ? filemtime(get_template_directory() . '/assets/css/centrifuge-showcase.css') 
+    : time();
+wp_enqueue_style('yingtai-centrifuge-showcase', $theme_uri . '/assets/css/centrifuge-showcase.css', array('Kinglab_Medika_Lestari-style'), $yingtai_css_ver);
 
 // Categories Definition
 $yingtai_categories = array(

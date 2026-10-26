@@ -17,8 +17,11 @@ $brochure_pdf_url = file_exists(get_template_directory() . '/assets/pdf/BROSUR Y
     ? $theme_uri . '/assets/pdf/BROSUR YINGTAI CENTRIFUGE.pdf'
     : 'https://api.whatsapp.com/send/?phone=' . $clean_phone . '&text=' . rawurlencode('Halo PT Kinglab Medika Lestari, saya ingin meminta E-Katalog & Brosur Lengkap Yingtai Centrifuge. Terima kasih.') . '&type=phone_number&app_absent=0';
 
-// Enqueue styles
-wp_enqueue_style('yingtai-centrifuge-showcase', $theme_uri . '/assets/css/centrifuge-showcase.css', array('Kinglab_Medika_Lestari-style'), '1.0.0');
+// Enqueue styles with dynamic timestamp for instant cache busting
+$yingtai_css_ver = file_exists(get_template_directory() . '/assets/css/centrifuge-showcase.css') 
+    ? filemtime(get_template_directory() . '/assets/css/centrifuge-showcase.css') 
+    : time();
+wp_enqueue_style('yingtai-centrifuge-showcase', $theme_uri . '/assets/css/centrifuge-showcase.css', array('Kinglab_Medika_Lestari-style'), $yingtai_css_ver);
 
 // Categories Definition
 $yingtai_categories = array(
@@ -343,6 +346,132 @@ $yingtai_products = array(
     ),
 );
 ?>
+
+<!-- Direct Stylesheet Link with Cache Busting -->
+<link rel="stylesheet" href="<?php echo esc_url($theme_uri . '/assets/css/centrifuge-showcase.css?v=' . $yingtai_css_ver); ?>" type="text/css" media="all">
+
+<!-- Critical Mobile Layout Inline CSS (Immune to Browser Caching) -->
+<style id="yingtai-mobile-critical-css">
+.yingtai-section-category-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+.yingtai-cat-header-title {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px 10px !important;
+    margin-bottom: 6px !important;
+}
+.yingtai-cat-header-desc {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    margin: 4px 0 0 !important;
+    line-height: 1.55 !important;
+}
+@media (max-width: 768px) {
+    .yingtai-showcase-wrapper {
+        margin-top: var(--header-height, 68px) !important;
+        padding-bottom: 70px !important;
+    }
+    .yingtai-nav-wrapper {
+        position: sticky !important;
+        top: var(--header-height, 68px) !important;
+        z-index: 100 !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        padding: 8px 0 !important;
+        margin: 10px 0 16px !important;
+        box-shadow: 0 4px 14px rgba(7, 35, 109, 0.08) !important;
+    }
+    .yingtai-filter-tabs {
+        padding: 4px 16px !important;
+        gap: 8px !important;
+        display: flex !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .yingtai-filter-btn {
+        padding: 8px 14px !important;
+        font-size: 0.78rem !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+    }
+    .yingtai-section-category-header {
+        margin: 24px 0 14px !important;
+        padding-bottom: 12px !important;
+        scroll-margin-top: calc(var(--header-height, 68px) + 60px) !important;
+    }
+    .yingtai-cat-header-title {
+        font-size: 1.25rem !important;
+    }
+    .yingtai-products-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    .yingtai-card-body {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 16px 14px !important;
+        gap: 14px !important;
+    }
+    .yingtai-card-visual-col {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .yingtai-card-img-frame {
+        width: 100% !important;
+        max-width: 220px !important;
+        height: 180px !important;
+        margin: 0 auto !important;
+    }
+    .yingtai-card-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        width: 100% !important;
+        padding-top: 12px !important;
+    }
+    .yingtai-btn-wa,
+    .yingtai-card-actions .yingtai-btn-spec-modal {
+        width: 100% !important;
+        min-height: 44px !important;
+        padding: 10px 16px !important;
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        border-radius: 8px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+    .floating-btn {
+        bottom: 18px !important;
+        right: 14px !important;
+        width: 46px !important;
+        height: 46px !important;
+        font-size: 1.25rem !important;
+        box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4) !important;
+        z-index: 997 !important;
+    }
+    .scroll-to-top {
+        bottom: 72px !important;
+        right: 16px !important;
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 0.95rem !important;
+        z-index: 996 !important;
+    }
+}
+</style>
 
 <div class="yingtai-showcase-wrapper">
 
