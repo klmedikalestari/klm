@@ -15,13 +15,44 @@ get_header(); ?>
         <?php 
         $current_term = get_queried_object();
         $is_hospital = ($current_term && (strtolower($current_term->slug) === 'hospital' || stripos($current_term->name, 'hospital') !== false));
+        $is_industry = ($current_term && (strtolower($current_term->slug) === 'industry' || stripos($current_term->name, 'industry') !== false));
         ?>
 
         <!-- Product Grid (No Sidebar) -->
-        <?php if (have_posts() || $is_hospital) : ?>
+        <?php if (have_posts() || $is_hospital || $is_industry) : ?>
             <div class="industry-product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; text-align: center;">
+                
+                <?php if ($is_industry) : ?>
+                    <!-- CDR FoodLab Product Card (Links to CDR FoodLab Brand, positioned on the left) -->
+                    <a href="<?php echo esc_url(home_url('/product_brand/cdr-foodlab/')); ?>" class="industry-product-card" style="text-decoration: none; display: block;">
+                        <div class="image-wrapper" style="border-radius: 16px; overflow: hidden; background: #e0e5ed; margin-bottom: 20px; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center;">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/cdr-foodlab-analyzer.png'); ?>" alt="CDR FoodLab" style="width: 100%; max-width: 100%; height: 100%; object-fit: contain; padding: 15px; background: #fff; box-sizing: border-box;">
+                        </div>
+                        <h3 style="font-size: 1.1rem; color: var(--dark-corporate); font-weight: 500; line-height: 1.4; transition: color var(--transition-fast);">CDR FoodLab</h3>
+                    </a>
+                <?php endif; ?>
+
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
+                        <?php 
+                        // If on industry page, skip duplicate single CDR posts since we display the main CDR FoodLab brand card
+                        if ($is_industry) {
+                            $title = get_the_title();
+                            $post_brands = get_the_terms(get_the_ID(), 'product_brand');
+                            $is_cdr_post = (stripos($title, 'CDR') !== false || stripos($title, 'FoodLab') !== false);
+                            if ($post_brands && !is_wp_error($post_brands)) {
+                                foreach ($post_brands as $brand_term) {
+                                    if (stripos($brand_term->slug, 'cdr') !== false || stripos($brand_term->name, 'cdr') !== false) {
+                                        $is_cdr_post = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if ($is_cdr_post) {
+                                continue;
+                            }
+                        }
+                        ?>
                         <a href="<?php the_permalink(); ?>" class="industry-product-card" style="text-decoration: none; display: block;">
                             <div class="image-wrapper" style="border-radius: 16px; overflow: hidden; background: #e0e5ed; margin-bottom: 20px; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center;">
                                 <?php if (has_post_thumbnail()) : ?>
