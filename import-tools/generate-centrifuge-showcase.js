@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', function() {
         catHeaders.forEach(function(header) {
             var cat = header.getAttribute('data-category');
             if (filter === 'all' || cat === filter) {
-                header.style.display = 'flex';
+                header.style.display = '';
             } else {
                 header.style.display = 'none';
             }
@@ -464,10 +464,24 @@ document.addEventListener('DOMContentLoaded', function() {
         catGroups.forEach(function(group) {
             var cat = group.getAttribute('data-category-group');
             if (filter === 'all' || cat === filter) {
-                group.style.display = 'grid';
+                group.style.display = '';
             } else {
                 group.style.display = 'none';
             }
+        });
+    }
+
+    function smoothScrollTo(targetElem) {
+        if (!targetElem) return;
+        var headerEl = document.getElementById('site-header');
+        var stickyNav = document.getElementById('yingtai-sticky-nav');
+        var headerH = headerEl ? headerEl.offsetHeight : (window.innerWidth <= 768 ? 68 : 118);
+        var navH = stickyNav ? stickyNav.offsetHeight : 54;
+        var totalOffset = headerH + navH + 16;
+        var elemPosition = targetElem.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+            top: Math.max(0, elemPosition - totalOffset),
+            behavior: 'smooth'
         });
     }
 
@@ -475,6 +489,12 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', function() {
             var filter = this.getAttribute('data-filter');
             applyFilter(filter);
+            if (filter !== 'all') {
+                var targetHeader = document.querySelector('.yingtai-section-category-header[data-category="' + filter + '"]');
+                if (targetHeader) {
+                    smoothScrollTo(targetHeader);
+                }
+            }
         });
     });
 
@@ -487,7 +507,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 var targetElem = document.querySelector(targetId);
                 if (targetElem) {
                     e.preventDefault();
-                    targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    smoothScrollTo(targetElem);
                 }
             }
         });
@@ -968,7 +988,7 @@ function generatePreviewHtml() {
             catHeaders.forEach(function(header) {
                 var cat = header.getAttribute('data-category');
                 if (filter === 'all' || cat === filter) {
-                    header.style.display = 'flex';
+                    header.style.display = '';
                 } else {
                     header.style.display = 'none';
                 }
@@ -977,10 +997,24 @@ function generatePreviewHtml() {
             catGroups.forEach(function(group) {
                 var cat = group.getAttribute('data-category-group');
                 if (filter === 'all' || cat === filter) {
-                    group.style.display = 'grid';
+                    group.style.display = '';
                 } else {
                     group.style.display = 'none';
                 }
+            });
+        }
+
+        function smoothScrollTo(targetElem) {
+            if (!targetElem) return;
+            var headerEl = document.getElementById('site-header');
+            var stickyNav = document.getElementById('yingtai-sticky-nav');
+            var headerH = headerEl ? headerEl.offsetHeight : (window.innerWidth <= 768 ? 68 : 118);
+            var navH = stickyNav ? stickyNav.offsetHeight : 54;
+            var totalOffset = headerH + navH + 16;
+            var elemPosition = targetElem.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+                top: Math.max(0, elemPosition - totalOffset),
+                behavior: 'smooth'
             });
         }
 
@@ -988,6 +1022,12 @@ function generatePreviewHtml() {
             btn.addEventListener('click', function() {
                 var filter = this.getAttribute('data-filter');
                 applyFilter(filter);
+                if (filter !== 'all') {
+                    var targetHeader = document.querySelector('.yingtai-section-category-header[data-category="' + filter + '"]');
+                    if (targetHeader) {
+                        smoothScrollTo(targetHeader);
+                    }
+                }
             });
         });
 
@@ -1000,7 +1040,7 @@ function generatePreviewHtml() {
                     var targetElem = document.querySelector(targetId);
                     if (targetElem) {
                         e.preventDefault();
-                        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        smoothScrollTo(targetElem);
                     }
                 }
             });

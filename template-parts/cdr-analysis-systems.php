@@ -764,7 +764,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         cards.forEach(function(card) { card.style.display = 'block'; });
                         pills.forEach(function(p) { p.classList.remove('dimmed', 'highlighted'); });
                     }
-                    targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    var headerEl = document.getElementById('site-header');
+                    var stickyNav = document.getElementById('cdr-sticky-nav');
+                    var headerH = headerEl ? headerEl.offsetHeight : (window.innerWidth <= 768 ? 68 : 118);
+                    var navH = stickyNav ? stickyNav.offsetHeight : 54;
+                    var totalOffset = headerH + navH + 16;
+                    var elemPosition = targetElem.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                        top: Math.max(0, elemPosition - totalOffset),
+                        behavior: 'smooth'
+                    });
                     // Highlight effect
                     targetElem.style.boxShadow = '0 0 0 3px #0a4d3c, 0 20px 40px rgba(10, 77, 60, 0.2)';
                     setTimeout(function() {
