@@ -679,6 +679,20 @@ function kinglab_inject_products_mega_menu($items, $args) {
 add_filter('wp_nav_menu_items', 'kinglab_inject_products_mega_menu', 10, 2);
 
 /**
+ * Direct template routing for Thomas Scientific showcase
+ */
+function kinglab_thomas_scientific_template_include($template) {
+    if (is_tax('product_brand', 'thomas-scientific') || (is_tax('product_brand') && (get_query_var('product_brand') === 'thomas-scientific' || stripos(get_query_var('product_brand'), 'thomas') !== false))) {
+        $brand_tpl = get_template_directory() . '/taxonomy-product_brand-thomas-scientific.php';
+        if (file_exists($brand_tpl)) {
+            return $brand_tpl;
+        }
+    }
+    return $template;
+}
+add_filter('template_include', 'kinglab_thomas_scientific_template_include', 99);
+
+/**
  * Customizer Settings
  */
 function Kinglab_Medika_Lestari_customizer($wp_customize) {
