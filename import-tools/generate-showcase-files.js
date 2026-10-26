@@ -386,12 +386,11 @@ function generatePreviewHtml(prods) {
                 <!-- KATEGORI: ${catMeta.name.toUpperCase()} -->
                 <!-- ======================================================= -->
                 <div class="arco-section-category-header" id="cat-${catKey}" data-category="${catKey}">
-                    <div>
-                        <h2 class="arco-cat-header-title">
-                            ${catMeta.name}
-                            <span class="arco-cat-header-badge ${catMeta.tag_class}">Produk Unggulan</span>
-                        </h2>
-                        <p class="arco-cat-header-desc">${catMeta.desc}</p>
+                    <h2 class="arco-cat-header-title">
+                        ${catMeta.name}
+                        <span class="arco-cat-header-badge ${catMeta.tag_class}">Produk Unggulan</span>
+                    </h2>
+                    <p class="arco-cat-header-desc">${catMeta.desc}</p>
                 </div>
 
                 <div class="arco-products-grid" data-category-group="${catKey}">

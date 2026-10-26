@@ -1712,6 +1712,24 @@ img {
     transform: translateY(-3px);
 }
 
+@media (max-width: 768px) {
+    .floating-btn {
+        bottom: 18px;
+        right: 14px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+    }
+
+    .scroll-to-top {
+        bottom: 74px;
+        right: 16px;
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+}
+
 /* ============================================
    PAGE TEMPLATES
    ============================================ */
