@@ -16,10 +16,11 @@ get_header(); ?>
         $current_term = get_queried_object();
         $is_hospital = ($current_term && (strtolower($current_term->slug) === 'hospital' || stripos($current_term->name, 'hospital') !== false));
         $is_industry = ($current_term && (strtolower($current_term->slug) === 'industry' || stripos($current_term->name, 'industry') !== false));
+        $is_life_science = ($current_term && (strtolower($current_term->slug) === 'life-science' || stripos($current_term->slug, 'life-science') !== false || stripos($current_term->name, 'life science') !== false));
         ?>
 
         <!-- Product Grid (No Sidebar) -->
-        <?php if (have_posts() || $is_hospital || $is_industry) : ?>
+        <?php if (have_posts() || $is_hospital || $is_industry || $is_life_science) : ?>
             <div class="industry-product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; text-align: center;">
                 
                 <?php if ($is_industry) : ?>
@@ -29,6 +30,16 @@ get_header(); ?>
                             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/cdr-foodlab-analyzer.png'); ?>" alt="CDR FoodLab" style="width: 100%; max-width: 100%; height: 100%; object-fit: contain; padding: 15px; background: #fff; box-sizing: border-box;">
                         </div>
                         <h3 style="font-size: 1.1rem; color: var(--dark-corporate); font-weight: 500; line-height: 1.4; transition: color var(--transition-fast);">CDR FoodLab</h3>
+                    </a>
+                <?php endif; ?>
+
+                <?php if ($is_life_science) : ?>
+                    <!-- CHM Lab Product Card (Links to CHM Lab Brand) -->
+                    <a href="<?php echo esc_url(home_url('/product_brand/chm-lab/')); ?>" class="industry-product-card" style="text-decoration: none; display: block;">
+                        <div class="image-wrapper" style="border-radius: 16px; overflow: hidden; background: #e0e5ed; margin-bottom: 20px; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center;">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/chm/chm-qualitative-filter-paper.jpg'); ?>" alt="CHM Lab" style="width: 100%; max-width: 100%; height: 100%; object-fit: contain; padding: 15px; background: #fff; box-sizing: border-box;">
+                        </div>
+                        <h3 style="font-size: 1.1rem; color: var(--dark-corporate); font-weight: 500; line-height: 1.4; transition: color var(--transition-fast);">CHM Lab</h3>
                     </a>
                 <?php endif; ?>
 
@@ -49,6 +60,24 @@ get_header(); ?>
                                 }
                             }
                             if ($is_cdr_post) {
+                                continue;
+                            }
+                        }
+
+                        // If on life science page, skip duplicate single CHM filter paper posts since we display the main CHM Lab brand card
+                        if ($is_life_science) {
+                            $title = get_the_title();
+                            $post_brands = get_the_terms(get_the_ID(), 'product_brand');
+                            $is_chm_post = (stripos($title, 'Filter Paper') !== false || stripos($title, 'CHM') !== false);
+                            if ($post_brands && !is_wp_error($post_brands)) {
+                                foreach ($post_brands as $brand_term) {
+                                    if (stripos($brand_term->slug, 'chm') !== false || stripos($brand_term->name, 'chm') !== false) {
+                                        $is_chm_post = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if ($is_chm_post) {
                                 continue;
                             }
                         }
