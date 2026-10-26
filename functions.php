@@ -1658,6 +1658,14 @@ function kinglab_ajax_delete_chm_lab() {
     wp_send_json_success($res);
 }
 
+add_action('wp_ajax_nopriv_import_thomas_wiley', 'kinglab_ajax_import_thomas_wiley');
+add_action('wp_ajax_import_thomas_wiley', 'kinglab_ajax_import_thomas_wiley');
+function kinglab_ajax_import_thomas_wiley() {
+    delete_option('kinglab_thomas_imported_v1');
+    require_once get_template_directory() . '/import-thomas-wiley.php';
+    exit;
+}
+
 add_action('init', function() {
     if (isset($_GET['run_chm_import'])) {
         require_once get_template_directory() . '/import-chm-products.php';

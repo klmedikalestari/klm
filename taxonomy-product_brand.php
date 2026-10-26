@@ -87,6 +87,25 @@ if ($is_chm_brand) {
     return;
 }
 
+// Check if current brand is Thomas Scientific and auto-import if not yet imported
+if ($current_term && isset($current_term->taxonomy) && $current_term->taxonomy === 'product_brand') {
+    if ($current_term->slug === 'thomas-scientific' || stripos($current_term->slug, 'thomas') !== false) {
+        $check_has_post = get_posts(array(
+            'post_type'      => 'product',
+            'tax_query'      => array(array('taxonomy' => 'product_brand', 'field' => 'slug', 'terms' => 'thomas-scientific')),
+            'posts_per_page' => 1,
+            'fields'         => 'ids'
+        ));
+        if (empty($check_has_post) && file_exists(get_template_directory() . '/import-thomas-wiley.php')) {
+            ob_start();
+            include get_template_directory() . '/import-thomas-wiley.php';
+            ob_end_clean();
+            wp_safe_redirect(home_url('/product_brand/thomas-scientific/'));
+            exit;
+        }
+    }
+}
+
 get_header(); ?>
 
 <div class="brand-page-wrapper" style="padding-top: 80px; padding-bottom: 100px; text-align: center; margin-top: calc(var(--header-height, 118px) + 20px);">
