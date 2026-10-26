@@ -90,16 +90,17 @@ if ($is_chm_brand) {
 // Check if current brand is Thomas Scientific and auto-import if not yet imported
 if ($current_term && isset($current_term->taxonomy) && $current_term->taxonomy === 'product_brand') {
     if ($current_term->slug === 'thomas-scientific' || stripos($current_term->slug, 'thomas') !== false) {
+        $fn_exists = function_exists('kinglab_auto_import_thomas_scientific');
         $check_has_post = get_posts(array(
             'post_type'      => 'product',
             'tax_query'      => array(array('taxonomy' => 'product_brand', 'field' => 'slug', 'terms' => 'thomas-scientific')),
             'posts_per_page' => 1,
             'fields'         => 'ids'
         ));
-        if (empty($check_has_post) && function_exists('kinglab_auto_import_thomas_scientific')) {
-            kinglab_auto_import_thomas_scientific();
-            wp_safe_redirect(home_url('/product_brand/thomas-scientific/'));
-            exit;
+        echo "<!-- DEBUG_THOMAS: term=" . esc_html($current_term->slug) . " fn=" . ($fn_exists ? 'yes' : 'no') . " count=" . count($check_has_post) . " -->\n";
+        if (empty($check_has_post) && $fn_exists) {
+            $imported_id = kinglab_auto_import_thomas_scientific();
+            echo "<!-- IMPORTED_ID: " . esc_html($imported_id) . " -->\n";
         }
     }
 }
