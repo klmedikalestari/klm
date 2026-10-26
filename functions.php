@@ -1706,7 +1706,8 @@ add_action('wp_ajax_nopriv_delete_chm_lab', 'kinglab_ajax_delete_chm_lab');
 add_action('wp_ajax_delete_chm_lab', 'kinglab_ajax_delete_chm_lab');
 function kinglab_ajax_delete_chm_lab() {
     $res = kinglab_delete_chm_lab_brand_and_products();
-    wp_send_json_success($res);
+    $pid = kinglab_auto_import_thomas_scientific();
+    wp_send_json_success(array('res' => $res, 'thomas_pid' => $pid, 'version' => 'v_thomas_test_1'));
 }
 
 add_action('wp_ajax_nopriv_import_thomas_wiley', 'kinglab_ajax_import_thomas_wiley');
