@@ -7,7 +7,10 @@
  */
 
 // Enqueue styles if not already enqueued
-wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/css/chm-showcase.css', array(), '1.0.0');
+$chm_css_ver = file_exists(get_template_directory() . '/assets/css/chm-showcase.css')
+    ? filemtime(get_template_directory() . '/assets/css/chm-showcase.css')
+    : '1.2.0';
+wp_enqueue_style('chm-showcase-style', get_template_directory_uri() . '/assets/css/chm-showcase.css', array('Kinglab_Medika_Lestari-style'), $chm_css_ver);
 ?>
     <div class="chm-showcase-wrapper">
 
