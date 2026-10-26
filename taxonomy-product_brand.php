@@ -6,8 +6,23 @@
  * @package Kinglab_Medika_Lestari_Theme
  */
 
-// Check if current brand is CDR FoodLab (or a child taxonomy of CDR FoodLab)
+// Check if current brand is Thomas Scientific
 $current_term = get_queried_object();
+if ($current_term && ($current_term->slug === 'thomas-scientific' || stripos($current_term->name, 'thomas') !== false || stripos($current_term->slug, 'thomas') !== false)) {
+    get_header();
+    if (function_exists('kinglab_render_thomas_scientific_showcase')) {
+        kinglab_render_thomas_scientific_showcase();
+    } else {
+        $thomas_tpl = get_template_directory() . '/template-parts/thomas-scientific-showcase.php';
+        if (file_exists($thomas_tpl)) {
+            include $thomas_tpl;
+        }
+    }
+    get_footer();
+    return;
+}
+
+// Check if current brand is CDR FoodLab (or a child taxonomy of CDR FoodLab)
 $is_cdr_brand = false;
 
 if ($current_term && isset($current_term->taxonomy) && $current_term->taxonomy === 'product_brand') {

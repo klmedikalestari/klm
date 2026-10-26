@@ -3,7 +3,7 @@
  * Kinglab_Medika_Lestari Theme Functions & Definitions
  *
  * @package Kinglab_Medika_Theme
- * @version 1.0.0
+ * @version 2.2.0-thomas-scientific
  */
 
 if (!defined('ABSPATH')) exit;

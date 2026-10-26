@@ -110,7 +110,7 @@
             </div>
         </div>
     </div>
-</header>
+</header><!-- KINGLAB_THOMAS_ROUTING_V2 -->
 <?php
 $request_uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
 
