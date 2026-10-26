@@ -1662,8 +1662,8 @@ add_action('wp_ajax_nopriv_import_thomas_wiley', 'kinglab_ajax_import_thomas_wil
 add_action('wp_ajax_import_thomas_wiley', 'kinglab_ajax_import_thomas_wiley');
 function kinglab_ajax_import_thomas_wiley() {
     delete_option('kinglab_thomas_imported_v1');
-    require_once get_template_directory() . '/import-thomas-wiley.php';
-    exit;
+    $pid = kinglab_auto_import_thomas_scientific();
+    wp_send_json_success(array('status' => 'success', 'post_id' => $pid, 'url' => get_permalink($pid)));
 }
 
 add_action('init', function() {
