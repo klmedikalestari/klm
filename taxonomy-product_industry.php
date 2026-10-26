@@ -1,6 +1,7 @@
 <?php
 /**
  * Taxonomy Archive Template for Products
+ * @version 2.1-thomas-sync
  * 
  * @package Kinglab_Medika_Lestari_Theme
  */

@@ -3,6 +3,7 @@
  * Template Part: Thomas Scientific - New Model 4 Wiley® Cutting Mill Showcase
  * 
  * Inspired by: https://www.thomassci.com/p/new-model-4-wiley-mill
+ * @version 2.1-thomas-sync
  * @package Kinglab_Medika_Lestari_Theme
  */
 

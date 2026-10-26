@@ -2,6 +2,7 @@
 /**
  * Taxonomy Template for Brand: Thomas Scientific
  * Displays the specialized Wiley Mill Showcase
+ * @version 2.1-thomas-sync
  * 
  * @package Kinglab_Medika_Lestari_Theme
  */
