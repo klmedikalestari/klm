@@ -39,6 +39,7 @@ jobs:
       run: |
         for p in "" "public_html/wp-content/themes/KINGLAB/" "wp-content/themes/KINGLAB/"; do
           for f in \
+            header.php \
             functions.php \
             page-products.php \
             taxonomy-product_brand.php \

@@ -111,3 +111,47 @@
         </div>
     </div>
 </header>
+<?php
+$request_uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+
+// 1. Direct showcase rendering for Thomas Scientific By Brand
+if (stripos($request_uri, 'thomas-scientific') !== false || (stripos($request_uri, 'product_brand') !== false && stripos($request_uri, 'thomas') !== false)) {
+    if (function_exists('kinglab_render_thomas_scientific_showcase')) {
+        kinglab_render_thomas_scientific_showcase();
+    } else {
+        $showcase_file = get_template_directory() . '/template-parts/thomas-scientific-showcase.php';
+        if (file_exists($showcase_file)) {
+            include $showcase_file;
+        }
+    }
+    get_footer();
+    exit;
+}
+
+// 2. Guarantee Thomas Scientific card appears in By Industry
+if (stripos($request_uri, 'product_industry/industry') !== false) {
+    ob_start(function($html) {
+        if (strpos($html, 'wiley-mill-model-4.jpg') === false && (strpos($html, 'CDR FoodLab') !== false || strpos($html, 'cdr-foodlab') !== false)) {
+            $theme_uri = get_template_directory_uri();
+            $brand_url = esc_url(home_url('/product_brand/thomas-scientific/'));
+            $img_url = esc_url($theme_uri . '/assets/images/wiley-mill-model-4.jpg');
+            $card = '
+                <!-- Thomas Scientific Product Card -->
+                <a href="' . $brand_url . '" class="industry-product-card" style="text-decoration: none; display: block;">
+                    <div class="image-wrapper" style="border-radius: 16px; overflow: hidden; background: #ffffff; margin-bottom: 20px; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <img src="' . $img_url . '" alt="Thomas Scientific - New Model 4 Wiley® Cutting Mill" style="width: 100%; max-width: 100%; height: 100%; object-fit: contain; padding: 15px; background: #fff; box-sizing: border-box;">
+                    </div>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-corporate); font-weight: 500; line-height: 1.4; transition: color var(--transition-fast);">Thomas Scientific - Wiley® Cutting Mill</h3>
+                </a>';
+            
+            $needle = 'CDR FoodLab</h3>' . "\n" . '                    </a>';
+            if (strpos($html, $needle) !== false) {
+                $html = str_replace($needle, $needle . "\n" . $card, $html);
+            } else {
+                $html = preg_replace('/(CDR FoodLab<\/h3>\s*<\/a>)/i', '$1' . $card, $html, 1);
+            }
+        }
+        return $html;
+    });
+}
+?>
