@@ -96,10 +96,8 @@ if ($current_term && isset($current_term->taxonomy) && $current_term->taxonomy =
             'posts_per_page' => 1,
             'fields'         => 'ids'
         ));
-        if (empty($check_has_post) && file_exists(get_template_directory() . '/import-thomas-wiley.php')) {
-            ob_start();
-            include get_template_directory() . '/import-thomas-wiley.php';
-            ob_end_clean();
+        if (empty($check_has_post) && function_exists('kinglab_auto_import_thomas_scientific')) {
+            kinglab_auto_import_thomas_scientific();
             wp_safe_redirect(home_url('/product_brand/thomas-scientific/'));
             exit;
         }
