@@ -1310,6 +1310,57 @@ function kinglab_mdk_import_menu() {
 }
 add_action('admin_menu', 'kinglab_mdk_import_menu');
 
+/**
+ * Thomas Scientific Products Import - Admin Page
+ * Accessible from WP Admin → Tools → Thomas Scientific Import
+ */
+function kinglab_thomas_import_menu() {
+    add_management_page(
+        'Thomas Scientific Import',
+        'Thomas Scientific Import',
+        'manage_options',
+        'thomas-import',
+        'kinglab_thomas_import_page'
+    );
+}
+add_action('admin_menu', 'kinglab_thomas_import_menu');
+
+function kinglab_thomas_import_page() {
+    if (!current_user_can('manage_options')) {
+        wp_die('Unauthorized access');
+    }
+
+    echo '<div class="wrap">';
+    echo '<h1>⚙️ Thomas Scientific - Wiley Mill Product Import</h1>';
+
+    // Auto-run or on button click
+    if (isset($_POST['run_thomas_import']) || isset($_GET['auto_run'])) {
+        $pid = kinglab_auto_import_thomas_scientific();
+        if ($pid) {
+            $p_url = get_permalink($pid);
+            echo '<div class="notice notice-success" style="padding:15px; margin:20px 0;"><h3 style="margin-top:0;">✨ Produk Berhasil Diimpor ke Database!</h3>';
+            echo '<p><strong>Nama Produk:</strong> Thomas Scientific - New Model 4 Wiley® Cutting Mill (Post ID: ' . esc_html($pid) . ')</p>';
+            echo '<p><strong>By Brand:</strong> Thomas Scientific | <strong>By Industry:</strong> Industry</p>';
+            echo '<p style="margin-top:15px;"><a href="' . esc_url($p_url) . '" class="button button-primary" target="_blank">Lihat Halaman Produk &rarr;</a> ';
+            echo '<a href="' . esc_url(home_url('/product_brand/thomas-scientific/')) . '" class="button" target="_blank">Lihat Halaman By Brand &rarr;</a> ';
+            echo '<a href="' . esc_url(home_url('/product_industry/industry/')) . '" class="button" target="_blank">Lihat Halaman By Industry &rarr;</a></p>';
+            echo '</div>';
+        } else {
+            echo '<div class="notice notice-error"><p>Gagal mengimpor produk. Silakan periksa kembali.</p></div>';
+        }
+    } else {
+        echo '<div class="card" style="max-width:600px; padding:20px; margin-top:20px;">';
+        echo '<p>Klik tombol di bawah ini untuk mengimpor produk <strong>New Model 4 Wiley® Cutting Mill</strong> ke database WordPress beserta kategori <strong>By Brand (Thomas Scientific)</strong> dan <strong>By Industry (Industry)</strong>.</p>';
+        echo '<form method="post">';
+        wp_nonce_field('thomas_import_action', 'thomas_import_nonce');
+        echo '<p><button type="submit" name="run_thomas_import" class="button button-primary button-hero">Import Wiley Mill Model 4 Sekarang</button></p>';
+        echo '</form>';
+        echo '</div>';
+    }
+
+    echo '</div>';
+}
+
 function kinglab_mdk_import_page() {
     if (!current_user_can('manage_options')) {
         wp_die('Unauthorized access');
