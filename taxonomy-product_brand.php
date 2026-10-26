@@ -8,15 +8,21 @@
 
 // Check if current brand is Thomas Scientific
 $current_term = get_queried_object();
-if ($current_term && ($current_term->slug === 'thomas-scientific' || stripos($current_term->name, 'thomas') !== false || stripos($current_term->slug, 'thomas') !== false)) {
+$req_uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+$is_thomas_req = false;
+if (is_tax('product_brand', 'thomas-scientific') || stripos($req_uri, 'thomas-scientific') !== false) {
+    $is_thomas_req = true;
+} elseif ($current_term && ($current_term->slug === 'thomas-scientific' || stripos($current_term->name, 'thomas') !== false || stripos($current_term->slug, 'thomas') !== false)) {
+    $is_thomas_req = true;
+}
+
+if ($is_thomas_req) {
     get_header();
-    if (function_exists('kinglab_render_thomas_scientific_showcase')) {
+    $thomas_tpl = get_template_directory() . '/template-parts/thomas-scientific-showcase.php';
+    if (file_exists($thomas_tpl)) {
+        include $thomas_tpl;
+    } elseif (function_exists('kinglab_render_thomas_scientific_showcase')) {
         kinglab_render_thomas_scientific_showcase();
-    } else {
-        $thomas_tpl = get_template_directory() . '/template-parts/thomas-scientific-showcase.php';
-        if (file_exists($thomas_tpl)) {
-            include $thomas_tpl;
-        }
     }
     get_footer();
     return;

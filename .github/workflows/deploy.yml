@@ -12,31 +12,8 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
 
-    - name: 📂 Sync files to Theme Directory
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        port: 21
-        server-dir: public_html/wp-content/themes/KINGLAB/
-        # Exclude file/folder yang tidak perlu diupload ke server cPanel
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/*.zip
-          **/*.bak
-          import-tools/**
-          test-extract/**
-          raw_html.txt
-          produk.xlsx
-
-    - name: 📂 Sync files to Root (Fallback)
+    - name: 📂 Sync files to cPanel
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER }}
@@ -57,31 +34,37 @@ jobs:
 
     - name: 📤 Direct FTPS Upload for Critical Templates
       run: |
-        for p in "public_html/wp-content/themes/KINGLAB/" "" "wp-content/themes/KINGLAB/"; do
-          for f in \
-            header.php \
-            functions.php \
-            page-products.php \
-            taxonomy-product_brand.php \
-            taxonomy-product_industry.php \
-            taxonomy-product_brand-thomas-scientific.php \
-            template-parts/thomas-scientific-showcase.php \
-            assets/images/wiley-mill-model-4.jpg
-          do
-            echo "Direct uploading ${p}${f} ..."
-            curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T "$f" "ftp://${{ secrets.FTP_SERVER }}/${p}${f}" || true
-          done
+        files=(
+          "taxonomy-product_brand-thomas-scientific.php"
+          "taxonomy-product_brand.php"
+          "taxonomy-product_industry.php"
+          "header.php"
+          "functions.php"
+          "page-products.php"
+          "template-parts/thomas-scientific-showcase.php"
+          "assets/images/wiley-mill-model-4.jpg"
+        )
+        
+        # 1. Upload directly to FTP root (where theme files live)
+        for f in "${files[@]}"; do
+          echo "Uploading $f to root..."
+          curl -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T "$f" "ftp://${{ secrets.FTP_SERVER }}/$f" || true
         done
 
-    - name: 🔄 Restart LiteSpeed PHP (Recycle OPcache)
-      run: |
-        echo "Restart LSPHP" > restart.txt
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/.lsphp_restart.txt" || true
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/public_html/.lsphp_restart.txt" || true
-        curl -s -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/public_html/wp-content/themes/KINGLAB/.lsphp_restart.txt" || true
+        # 2. Also upload to public_html/wp-content/themes/KINGLAB/ as dual-target
+        for f in "${files[@]}"; do
+          echo "Uploading $f to public_html/wp-content/themes/KINGLAB/..."
+          curl -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T "$f" "ftp://${{ secrets.FTP_SERVER }}/public_html/wp-content/themes/KINGLAB/$f" || true
+        done
 
-    - name: 🚀 Warmup Cache
+    - name: 🔄 Restart LiteSpeed PHP & Purge Cache
       run: |
+        echo "Restart LSPHP $(date)" > restart.txt
+        curl -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/.lsphp_restart.txt" || true
+        curl -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/public_html/.lsphp_restart.txt" || true
+        curl -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/public_html/wp-content/themes/KINGLAB/.lsphp_restart.txt" || true
+        
         sleep 2
+        curl -s -k "https://kinglabmedikalestari.com/?run_chm_import=1&reset_cache=1" || true
         curl -s -k "https://kinglabmedikalestari.com/product_brand/thomas-scientific/?nocache=$(date +%s)" > /dev/null || true
         curl -s -k "https://kinglabmedikalestari.com/product_industry/industry/?nocache=$(date +%s)" > /dev/null || true
