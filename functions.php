@@ -1720,8 +1720,16 @@ add_action('init', function() {
         }
     }
 
-    // Auto import Thomas Scientific Wiley Mill product if not yet present
-    if (!get_option('kinglab_thomas_imported_v1')) {
+    // Auto import Thomas Scientific Wiley Mill product if not yet present in database
+    $thomas_check_posts = get_posts(array(
+        'post_type'      => 'product',
+        'title'          => 'Thomas Scientific - New Model 4 Wiley® Cutting Mill',
+        'post_status'    => 'any',
+        'posts_per_page' => 1,
+        'fields'         => 'ids',
+    ));
+    if (empty($thomas_check_posts)) {
+        delete_option('kinglab_thomas_imported_v1');
         kinglab_auto_import_thomas_scientific();
     }
 });
