@@ -9,12 +9,15 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
     - name: 📂 Sync files to cPanel
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      continue-on-error: true
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
@@ -32,39 +35,35 @@ jobs:
           raw_html.txt
           produk.xlsx
 
-    - name: 📤 Direct FTPS Upload for Critical Templates
+    - name: 🔍 Upload critical files + diagnose
       run: |
-        files=(
-          "taxonomy-product_brand-thomas-scientific.php"
-          "taxonomy-product_brand.php"
-          "taxonomy-product_industry.php"
-          "header.php"
-          "functions.php"
-          "page-products.php"
-          "template-parts/thomas-scientific-showcase.php"
-          "assets/images/wiley-mill-model-4.jpg"
-        )
-        
-        # 1. Upload directly to FTP root (where theme files live)
-        for f in "${files[@]}"; do
-          echo "Uploading $f to root..."
-          curl -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T "$f" "ftp://${{ secrets.FTP_SERVER }}/$f" || true
-        done
-
-        # 2. Also upload to public_html/wp-content/themes/KINGLAB/ as dual-target
-        for f in "${files[@]}"; do
-          echo "Uploading $f to public_html/wp-content/themes/KINGLAB/..."
-          curl -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T "$f" "ftp://${{ secrets.FTP_SERVER }}/public_html/wp-content/themes/KINGLAB/$f" || true
-        done
-
-    - name: 🔄 Restart LiteSpeed PHP & Purge Cache
-      run: |
-        echo "Restart LSPHP $(date)" > restart.txt
-        curl -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/.lsphp_restart.txt" || true
-        curl -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/public_html/.lsphp_restart.txt" || true
-        curl -k --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T restart.txt "ftp://${{ secrets.FTP_SERVER }}/public_html/wp-content/themes/KINGLAB/.lsphp_restart.txt" || true
-        
-        sleep 2
-        curl -s -k "https://kinglabmedikalestari.com/?run_chm_import=1&reset_cache=1" || true
-        curl -s -k "https://kinglabmedikalestari.com/product_brand/thomas-scientific/?nocache=$(date +%s)" > /dev/null || true
-        curl -s -k "https://kinglabmedikalestari.com/product_industry/industry/?nocache=$(date +%s)" > /dev/null || true
+        H="${{ secrets.FTP_SERVER }}"
+        A="${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}"
+        {
+          echo "=== DATE: $(date -u) ==="
+          echo "=== LIST / (before) ==="
+          curl -s -k --ftp-ssl --user "$A" "ftp://$H/" 2>&1 | head -80
+          echo "=== LIST template-parts/ ==="
+          curl -s -k --ftp-ssl --user "$A" "ftp://$H/template-parts/" 2>&1 | grep -i -E "thomas|arco|cdr" || true
+          echo "=== SYNC STATE (head) ==="
+          curl -s -k --ftp-ssl --user "$A" "ftp://$H/.ftp-deploy-sync-state.json" 2>&1 | head -c 400
+          echo ""
+          for f in header.php functions.php taxonomy-product_brand.php taxonomy-product_industry.php taxonomy-product_brand-thomas-scientific.php page-products.php template-parts/thomas-scientific-showcase.php; do
+            echo "=== UPLOAD $f ==="
+            curl -sS -k --ftp-ssl --ftp-create-dirs --user "$A" -T "$f" "ftp://$H/$f" -w "code=%{response_code} bytes=%{size_upload}\n" 2>&1 || echo "FAILED exit=$?"
+          done
+          echo "=== LIST / (after) ==="
+          curl -s -k --ftp-ssl --user "$A" "ftp://$H/" 2>&1 | grep -E "header.php|functions.php|taxonomy-product" || true
+          echo "=== QUOTA / SITE ==="
+          curl -s -k --ftp-ssl --user "$A" "ftp://$H/" -Q "STAT" 2>&1 | head -20 || true
+          echo "=== LIVE PAGE CHECK ==="
+          sleep 3
+          curl -s -k "https://kinglabmedikalestari.com/product_brand/thomas-scientific/?d=$(date +%s)" | grep -o -E "Wiley[^<]{0,40}|No products found|KINGLAB_THOMAS_ROUTING_V2" | head -5
+        } > ftp_diag.txt 2>&1
+        cat ftp_diag.txt
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout -B debug-ftp
+        git add -f ftp_diag.txt
+        git commit -m "debug: ftp diag $(date -u +%H%M)" || true
+        git push -f origin debug-ftp || true
