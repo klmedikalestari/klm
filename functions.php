@@ -12,6 +12,10 @@ define('Kinglab_Medika_Lestari_VERSION', time());
 define('Kinglab_Medika_Lestari_DIR', get_template_directory());
 define('Kinglab_Medika_Lestari_URI', get_template_directory_uri());
 
+if (isset($_GET['test_functions_ver'])) {
+    die("FUNCTIONS_VER_20261027_01");
+}
+
 /**
  * Force-apply correct defaults on theme activation.
  * This ensures WordPress database values match the latest code.
