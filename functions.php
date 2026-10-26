@@ -1668,6 +1668,11 @@ add_action('init', function() {
         require_once get_template_directory() . '/import-cdr-products.php';
         exit;
     }
+    if (isset($_GET['run_thomas_import']) || isset($_GET['force_thomas_import'])) {
+        delete_option('kinglab_thomas_imported_v1');
+        require_once get_template_directory() . '/import-thomas-wiley.php';
+        exit;
+    }
     // Auto rename brand "CHM" to "CHM Lab"
     if (!get_option('kinglab_chm_to_chm_lab_v1')) {
         $chm_term = get_term_by('name', 'CHM', 'product_brand');
@@ -1703,6 +1708,27 @@ add_action('init', function() {
                 include get_template_directory() . '/import-cdr-products.php';
                 ob_end_clean();
                 update_option('kinglab_cdr_imported_v1', 1);
+            }
+        }
+    }
+
+    // Auto import Thomas Scientific Wiley Mill product if not yet present
+    if (!get_option('kinglab_thomas_imported_v1')) {
+        $check_thomas = get_posts(array(
+            'post_type'   => 'product',
+            'title'       => 'Thomas Scientific - New Model 4 Wiley® Cutting Mill',
+            'post_status' => 'any',
+            'numberposts' => 1,
+        ));
+
+        if (!empty($check_thomas)) {
+            update_option('kinglab_thomas_imported_v1', 1);
+        } else {
+            if (file_exists(get_template_directory() . '/import-thomas-wiley.php')) {
+                ob_start();
+                include get_template_directory() . '/import-thomas-wiley.php';
+                ob_end_clean();
+                update_option('kinglab_thomas_imported_v1', 1);
             }
         }
     }
