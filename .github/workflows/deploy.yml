@@ -37,17 +37,19 @@ jobs:
 
     - name: 📤 Direct FTPS Upload for Critical Templates
       run: |
-        for f in \
-          functions.php \
-          page-products.php \
-          taxonomy-product_brand.php \
-          taxonomy-product_industry.php \
-          taxonomy-product_brand-thomas-scientific.php \
-          template-parts/thomas-scientific-showcase.php \
-          assets/images/wiley-mill-model-4.jpg
-        do
-          echo "Direct uploading $f ..."
-          curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T "$f" "ftp://${{ secrets.FTP_SERVER }}/$f" || true
+        for p in "" "public_html/wp-content/themes/KINGLAB/" "wp-content/themes/KINGLAB/"; do
+          for f in \
+            functions.php \
+            page-products.php \
+            taxonomy-product_brand.php \
+            taxonomy-product_industry.php \
+            taxonomy-product_brand-thomas-scientific.php \
+            template-parts/thomas-scientific-showcase.php \
+            assets/images/wiley-mill-model-4.jpg
+          do
+            echo "Direct uploading ${p}${f} ..."
+            curl -s -k --ftp-ssl --ftp-create-dirs --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" -T "$f" "ftp://${{ secrets.FTP_SERVER }}/${p}${f}" || true
+          done
         done
 
     - name: 🔄 Restart LiteSpeed PHP (Recycle OPcache)
