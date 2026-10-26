@@ -1,0 +1,119 @@
+=== DATE: Mon Oct 26 18:08:30 UTC 2026 ===
+=== LIST / (before) ===
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         1714 Oct 20 04:46 404.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         3916 Oct 16 02:06 archive.php
+drwxr-xr-x   7 kinglab@ambrawarnakemasan.com 1220           70 Oct 25 12:25 assets
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         1101 Oct  6 04:32 comments.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         8417 Oct 26 16:33 footer.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          418 Oct 20 04:46 front-page.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220       105914 Oct 26 17:53 functions.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         7869 Oct 26 17:53 header.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        27091 Oct 20 05:44 import-cdr-products.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        22256 Oct 26 14:01 import-chm-products.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        13069 Oct 19 12:21 import-mdk-products.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        10591 Oct  6 04:33 import-products.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        15952 Oct 26 13:24 import-thomas-wiley.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         4916 Oct 16 02:06 index.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220           31 Oct 20 05:18 marker.txt
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         3364 Oct  6 04:33 package-lock.json
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220           50 Oct  6 04:33 package.json
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        12892 Oct  6 04:33 page-about.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         4485 Oct 26 17:53 page-products.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         1739 Oct  6 04:33 page.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        13535 Oct  6 04:33 preview-about.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220       269454 Oct 26 04:55 preview-arco-equipment.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        89384 Oct 25 11:48 preview-cdr-systems.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220       113761 Oct 26 06:37 preview-chm-filtration.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        10859 Oct  6 04:33 preview-contact.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        10727 Oct 16 02:06 preview-news.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         4841 Oct  6 04:33 preview-product-grid.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         3760 Oct 25 14:42 preview-products.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         4893 Oct  6 04:33 preview-services.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        24516 Oct 19 12:21 preview-single-product.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        20542 Oct 26 13:24 preview-thomas-wiley-mill.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220       164874 Oct 26 05:09 preview-yingtai-centrifuge.html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        11292 Oct  6 04:33 preview.html
+drwxr-xr-x   3 kinglab@ambrawarnakemasan.com 1220          193 Oct 26 17:25 public_html
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        49175 Oct  6 04:33 screenshot.png
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         2136 Oct 20 02:28 search.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          181 Oct  6 04:33 sidebar.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        22827 Oct 19 12:21 single-product.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         3425 Oct  6 04:33 single.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        80251 Oct 26 05:09 style.css
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          259 Oct 25 05:39 taxonomy-product_brand-arco.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          248 Oct 25 01:45 taxonomy-product_brand-cdr-foodlab.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          256 Oct 25 14:42 taxonomy-product_brand-chm-lab.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          257 Oct 25 14:42 taxonomy-product_brand-chm.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          259 Oct 25 14:20 taxonomy-product_brand-cn-centrifuge.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          452 Oct 26 17:52 taxonomy-product_brand-thomas-scientific.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          267 Oct 25 14:20 taxonomy-product_brand-yingtai.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         7701 Oct 26 17:52 taxonomy-product_brand.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         9721 Oct 26 17:53 taxonomy-product_industry.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          281 Oct 25 01:45 template-cdr-systems.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         4536 Oct 26 16:33 template-contact.php
+drwxr-xr-x   2 kinglab@ambrawarnakemasan.com 1220         4096 Oct 26 16:33 template-parts
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         4463 Oct  6 04:34 template-services.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         3025 Oct  6 04:34 undo-import.php
+drwxr-xr-x   3 kinglab@ambrawarnakemasan.com 1220           20 Oct 20 05:12 wp-content
+=== LIST template-parts/ ===
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        82081 Oct 26 04:24 arco-equipment-showcase.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        51366 Oct 26 03:29 cdr-analysis-systems.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        12722 Oct 26 17:53 thomas-scientific-showcase.php
+=== SYNC STATE (head) ===
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1793038104637,
+    "data": [
+        {
+            "type": "file",
+   
+=== UPLOAD header.php ===
+code=226 bytes=7869
+=== UPLOAD functions.php ===
+code=226 bytes=105914
+=== UPLOAD taxonomy-product_brand.php ===
+code=226 bytes=7701
+=== UPLOAD taxonomy-product_industry.php ===
+code=226 bytes=9721
+=== UPLOAD taxonomy-product_brand-thomas-scientific.php ===
+code=226 bytes=452
+=== UPLOAD page-products.php ===
+code=226 bytes=4485
+=== UPLOAD template-parts/thomas-scientific-showcase.php ===
+code=226 bytes=12722
+=== LIST / (after) ===
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220       105914 Oct 26 18:08 functions.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         7869 Oct 26 18:08 header.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          259 Oct 25 05:39 taxonomy-product_brand-arco.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          248 Oct 25 01:45 taxonomy-product_brand-cdr-foodlab.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          256 Oct 25 14:42 taxonomy-product_brand-chm-lab.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          257 Oct 25 14:42 taxonomy-product_brand-chm.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          259 Oct 25 14:20 taxonomy-product_brand-cn-centrifuge.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          452 Oct 26 18:08 taxonomy-product_brand-thomas-scientific.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          267 Oct 25 14:20 taxonomy-product_brand-yingtai.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         7701 Oct 26 18:08 taxonomy-product_brand.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         9721 Oct 26 18:08 taxonomy-product_industry.php
+=== QUOTA / SITE ===
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         1714 Oct 20 04:46 404.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         3916 Oct 16 02:06 archive.php
+drwxr-xr-x   7 kinglab@ambrawarnakemasan.com 1220           70 Oct 25 12:25 assets
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         1101 Oct  6 04:32 comments.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         8417 Oct 26 16:33 footer.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220          418 Oct 20 04:46 front-page.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220       105914 Oct 26 18:08 functions.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         7869 Oct 26 18:08 header.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        27091 Oct 20 05:44 import-cdr-products.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        22256 Oct 26 14:01 import-chm-products.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        13069 Oct 19 12:21 import-mdk-products.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        10591 Oct  6 04:33 import-products.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        15952 Oct 26 13:24 import-thomas-wiley.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         4916 Oct 16 02:06 index.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220           31 Oct 20 05:18 marker.txt
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         3364 Oct  6 04:33 package-lock.json
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220           50 Oct  6 04:33 package.json
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220        12892 Oct  6 04:33 page-about.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         4485 Oct 26 18:08 page-products.php
+-rw-r--r--   1 kinglab@ambrawarnakemasan.com 1220         1739 Oct  6 04:33 page.php
+=== LIVE PAGE CHECK ===
+No products found
