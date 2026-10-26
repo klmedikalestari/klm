@@ -3,3 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/ambrawar/public_html/wp-content/themes/KINGLAB/
     - /bin/cp -R * $DEPLOYPATH || true
+    - /bin/touch /home/ambrawar/.lsphp_restart.txt || true

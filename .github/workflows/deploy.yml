@@ -61,13 +61,7 @@ jobs:
         H="${{ secrets.FTP_SERVER }}"
         A="${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}"
         
-        # 1. Upload test-probe.php to docroot and theme
-        echo "=== Uploading probe ==="
-        curl -sS -k --ftp-ssl --ftp-create-dirs --user "$A" -T "test-probe.php" "ftp://$H/public_html/test-probe.php" || true
-        curl -sS -k --ftp-ssl --ftp-create-dirs --user "$A" -T "test-probe.php" "ftp://$H/public_html/wp-content/themes/KINGLAB/test-probe.php" || true
-        curl -sS -k --ftp-ssl --ftp-create-dirs --user "$A" -T "test-probe.php" "ftp://$H/test-probe.php" || true
-
-        # 2. Upload critical theme files to public_html/wp-content/themes/KINGLAB/
+        # 1. Upload critical theme files
         DESTS=(
           "public_html/wp-content/themes/KINGLAB"
           "wp-content/themes/KINGLAB"
@@ -109,12 +103,6 @@ jobs:
 
         # 5. Diagnostics & Verification
         sleep 3
-        echo "=== TEST PROBE DOCROOT ==="
-        curl -s -k "https://kinglabmedikalestari.com/test-probe.php" || true
-        echo ""
-        echo "=== TEST PROBE THEME ==="
-        curl -s -k "https://kinglabmedikalestari.com/wp-content/themes/KINGLAB/test-probe.php" || true
-        echo ""
         echo "=== CHECK BRAND PAGE ==="
         curl -s -k "https://kinglabmedikalestari.com/product_brand/thomas-scientific/?d=$(date +%s)" | grep -o -E "Wiley[^<]{0,40}|No products found|Thomas Scientific" | head -10 || true
         echo "=== CHECK INDUSTRY PAGE ==="
