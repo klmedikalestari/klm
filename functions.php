@@ -237,9 +237,15 @@ function Kinglab_Medika_Lestari_register_post_types() {
     if (!term_exists('Arco', 'product_brand')) {
         wp_insert_term('Arco', 'product_brand', array('slug' => 'arco'));
     }
+    if (!term_exists('Thomas Scientific', 'product_brand')) {
+        wp_insert_term('Thomas Scientific', 'product_brand', array('slug' => 'thomas-scientific'));
+    }
     // Ensure key industry terms exist
     if (!term_exists('Hospital', 'product_industry')) {
         wp_insert_term('Hospital', 'product_industry', array('slug' => 'hospital'));
+    }
+    if (!term_exists('Industry', 'product_industry')) {
+        wp_insert_term('Industry', 'product_industry', array('slug' => 'industry'));
     }
 }
 add_action('init', 'Kinglab_Medika_Lestari_register_post_types');
