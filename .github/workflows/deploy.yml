@@ -15,7 +15,28 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    - name: 📂 Sync files to cPanel
+    - name: 📂 Sync files to Theme Directory
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      continue-on-error: true
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        port: 21
+        server-dir: public_html/wp-content/themes/KINGLAB/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/*.zip
+          **/*.bak
+          import-tools/**
+          test-extract/**
+          raw_html.txt
+          produk.xlsx
+
+    - name: 📂 Sync files to Root (Fallback)
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       continue-on-error: true
       with:
@@ -35,35 +56,66 @@ jobs:
           raw_html.txt
           produk.xlsx
 
-    - name: 🔍 Upload critical files + diagnose
+    - name: 📤 Direct FTPS Upload to Theme Directory and Webroot
       run: |
         H="${{ secrets.FTP_SERVER }}"
         A="${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}"
-        {
-          echo "=== DATE: $(date -u) ==="
-          echo "=== LIST / (before) ==="
-          curl -s -k --ftp-ssl --user "$A" "ftp://$H/" 2>&1 | head -80
-          echo "=== LIST template-parts/ ==="
-          curl -s -k --ftp-ssl --user "$A" "ftp://$H/template-parts/" 2>&1 | grep -i -E "thomas|arco|cdr" || true
-          echo "=== SYNC STATE (head) ==="
-          curl -s -k --ftp-ssl --user "$A" "ftp://$H/.ftp-deploy-sync-state.json" 2>&1 | head -c 400
-          echo ""
-          for f in header.php functions.php taxonomy-product_brand.php taxonomy-product_industry.php taxonomy-product_brand-thomas-scientific.php page-products.php template-parts/thomas-scientific-showcase.php; do
-            echo "=== UPLOAD $f ==="
-            curl -sS -k --ftp-ssl --ftp-create-dirs --user "$A" -T "$f" "ftp://$H/$f" -w "code=%{response_code} bytes=%{size_upload}\n" 2>&1 || echo "FAILED exit=$?"
+        
+        # 1. Upload test-probe.php to docroot and theme
+        echo "=== Uploading probe ==="
+        curl -sS -k --ftp-ssl --ftp-create-dirs --user "$A" -T "test-probe.php" "ftp://$H/public_html/test-probe.php" || true
+        curl -sS -k --ftp-ssl --ftp-create-dirs --user "$A" -T "test-probe.php" "ftp://$H/public_html/wp-content/themes/KINGLAB/test-probe.php" || true
+        curl -sS -k --ftp-ssl --ftp-create-dirs --user "$A" -T "test-probe.php" "ftp://$H/test-probe.php" || true
+
+        # 2. Upload critical theme files to public_html/wp-content/themes/KINGLAB/
+        DESTS=(
+          "public_html/wp-content/themes/KINGLAB"
+          "wp-content/themes/KINGLAB"
+          ""
+        )
+        FILES=(
+          "taxonomy-product_brand-thomas-scientific.php"
+          "taxonomy-product_brand.php"
+          "taxonomy-product_industry.php"
+          "header.php"
+          "functions.php"
+          "page-products.php"
+          "template-parts/thomas-scientific-showcase.php"
+          "assets/images/wiley-mill-model-4.jpg"
+        )
+        
+        for d in "${DESTS[@]}"; do
+          echo "=== Deploying to destination: '$d' ==="
+          for f in "${FILES[@]}"; do
+            target_url="ftp://$H/$d/$f"
+            if [ -z "$d" ]; then
+              target_url="ftp://$H/$f"
+            fi
+            echo "Uploading $f -> $target_url"
+            curl -sS -k --ftp-ssl --ftp-create-dirs --user "$A" -T "$f" "$target_url" -w " code=%{response_code}\n" || true
           done
-          echo "=== LIST / (after) ==="
-          curl -s -k --ftp-ssl --user "$A" "ftp://$H/" 2>&1 | grep -E "header.php|functions.php|taxonomy-product" || true
-          echo "=== QUOTA / SITE ==="
-          curl -s -k --ftp-ssl --user "$A" "ftp://$H/" -Q "STAT" 2>&1 | head -20 || true
-          echo "=== LIVE PAGE CHECK ==="
-          sleep 3
-          curl -s -k "https://kinglabmedikalestari.com/product_brand/thomas-scientific/?d=$(date +%s)" | grep -o -E "Wiley[^<]{0,40}|No products found|KINGLAB_THOMAS_ROUTING_V2" | head -5
-        } > ftp_diag.txt 2>&1
-        cat ftp_diag.txt
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git checkout -B debug-ftp
-        git add -f ftp_diag.txt
-        git commit -m "debug: ftp diag $(date -u +%H%M)" || true
-        git push -f origin debug-ftp || true
+        done
+
+        # 3. Restart LSPHP / clear caches
+        echo "restart $(date -u)" > restart.txt
+        curl -s -k --ftp-ssl --user "$A" -T restart.txt "ftp://$H/public_html/.lsphp_restart.txt" || true
+        curl -s -k --ftp-ssl --user "$A" -T restart.txt "ftp://$H/public_html/wp-content/themes/KINGLAB/.lsphp_restart.txt" || true
+        curl -s -k --ftp-ssl --user "$A" -T restart.txt "ftp://$H/.lsphp_restart.txt" || true
+
+        # 4. Trigger LiteSpeed purge
+        curl -s -k -H "X-LiteSpeed-Purge: *" "https://kinglabmedikalestari.com/" > /dev/null || true
+        curl -s -k -H "X-LiteSpeed-Purge: *" "https://kinglabmedikalestari.com/product_brand/thomas-scientific/" > /dev/null || true
+        curl -s -k -H "X-LiteSpeed-Purge: *" "https://kinglabmedikalestari.com/product_industry/industry/" > /dev/null || true
+
+        # 5. Diagnostics & Verification
+        sleep 3
+        echo "=== TEST PROBE DOCROOT ==="
+        curl -s -k "https://kinglabmedikalestari.com/test-probe.php" || true
+        echo ""
+        echo "=== TEST PROBE THEME ==="
+        curl -s -k "https://kinglabmedikalestari.com/wp-content/themes/KINGLAB/test-probe.php" || true
+        echo ""
+        echo "=== CHECK BRAND PAGE ==="
+        curl -s -k "https://kinglabmedikalestari.com/product_brand/thomas-scientific/?d=$(date +%s)" | grep -o -E "Wiley[^<]{0,40}|No products found|Thomas Scientific" | head -10 || true
+        echo "=== CHECK INDUSTRY PAGE ==="
+        curl -s -k "https://kinglabmedikalestari.com/product_industry/industry/?d=$(date +%s)" | grep -o -E "Wiley[^<]{0,40}|Thomas Scientific" | head -10 || true
