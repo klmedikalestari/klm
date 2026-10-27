@@ -22,21 +22,7 @@ $wa_url = "https://api.whatsapp.com/send/?phone={$clean_phone}&text=" . urlencod
     padding: 40px 0 80px;
 }
 .thomas-breadcrumb {
-    font-size: 0.9rem;
-    color: #64748b;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-.thomas-breadcrumb a {
-    color: #64748b;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-.thomas-breadcrumb a:hover {
-    color: #1B6B5A;
+    display: none !important;
 }
 .thomas-brand-badge {
     background: #e6f4f1;
@@ -204,8 +190,41 @@ $wa_url = "https://api.whatsapp.com/send/?phone={$clean_phone}&text=" . urlencod
 <div class="single-product-page-wrapper">
     <div class="container">
 
-        <!-- Breadcrumb -->
-        <div class="thomas-breadcrumb">
+        <!-- SEO Breadcrumb Schema (JSON-LD) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "<?php echo esc_url(home_url('/')); ?>"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Industry",
+                    "item": "<?php echo esc_url(home_url('/product_industry/industry/')); ?>"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Thomas Scientific",
+                    "item": "<?php echo esc_url(home_url('/product_brand/thomas-scientific/')); ?>"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "New Model 4 Wiley® Cutting Mill"
+                }
+            ]
+        }
+        </script>
+
+        <!-- Breadcrumb (Visually hidden for clean UI, preserved in DOM for SEO & Accessibility) -->
+        <nav class="thomas-breadcrumb" aria-label="Breadcrumb">
             <a href="<?php echo esc_url(home_url('/')); ?>"><i class="fas fa-home"></i> Home</a>
             <span>/</span>
             <a href="<?php echo esc_url(home_url('/product_industry/industry/')); ?>">Industry</a>
@@ -213,7 +232,7 @@ $wa_url = "https://api.whatsapp.com/send/?phone={$clean_phone}&text=" . urlencod
             <span class="thomas-brand-badge"><i class="fas fa-tag"></i> Thomas Scientific</span>
             <span>/</span>
             <span style="color:#0f172a; font-weight:600;">New Model 4 Wiley® Cutting Mill</span>
-        </div>
+        </nav>
 
         <div class="thomas-product-grid">
             
