@@ -263,7 +263,7 @@ $wa_url = "https://api.whatsapp.com/send/?phone={$clean_phone}&text=" . urlencod
                 <div>
                     <a href="<?php echo esc_url($wa_url); ?>" class="thomas-cta-btn" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i>
-                        <span>Hubungi Sales Kinglab (Inquiry / Harga)</span>
+                        <span>Hubungi Kami</span>
                     </a>
                 </div>
             </div>
